@@ -33,6 +33,16 @@
                                         <success>Always</success>
                                         <xpath>/Defs/ThingDef[comps/li/hatcherPawn="{DARAnimalDef}"]</xpath>
                                     </li>
+                                    <li Class="PatchOperationAdd">
+                                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
+                                        <order>Append</order>
+                                        <value>
+                                            <li Class="XmlExtensions.Setting.Text">
+                                                <font>Tiny</font>
+                                                <text>DAR: "{DARAnimalDef}" from "{DARMod2}" removed because "{DARMod1}" is loaded.</text>
+                                            </li>
+                                        </value>
+                                    </li>
                                     <!-- animal end --> 
                                 </operations>
                             </match>
@@ -40,16 +50,6 @@
                         <!-- modname end -->
                     </operations>
                 </match>
-            </Operation>
-            <Operation Class="PatchOperationAdd">
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
-                <order>Append</order>
-                <value>
-                    <li Class="XmlExtensions.Setting.Text">
-                        <font>Tiny</font>
-                        <text>DAR: "{DARAnimalDef}" from "{DARMod2}" removed because "{DARMod1}" is loaded.</text>
-                    </li>
-                </value>
             </Operation>
         </apply>
     </XmlExtensions.PatchDef>
