@@ -129,7 +129,7 @@
                         <li Class="XmlExtensions.Setting.Section">
                             <settings>
                                 <li Class="XmlExtensions.Setting.Text">
-                                    <text>You don't have Humanoid Alien Races enabled. Those settings will have no effect! You can still have them enabled in case you want to install HAR in the future.</text>
+                                    <text>Humanoid Alien Races is not installed.</text>
                                 </li>
                                 <li Class="XmlExtensions.Setting.SetColor">
                                     <color>(155,155,155)</color>
