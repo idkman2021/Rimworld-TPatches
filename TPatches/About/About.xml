@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>TPatches</name>
+  <author>test</author>
+  <url>https://github.com/idkman2021/Rimworld-AssortedMods</url>
+  <packageId>carnap2.TPatches</packageId>
+  <supportedVersions>
+	<li>1.3</li>
+  </supportedVersions>
+  <description>i j</description>
+    <modDependencies>
+    <!-- Using hugslib as an example here. -->
+        <li>
+            <packageId>imranfish.xmlextensions</packageId>
+            <displayName>XML Extensions</displayName>
+            <downloadUrl>https://github.com/15adhami/XmlExtensions/releases/latest</downloadUrl>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2574315206</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+  <loadAfter>
+        <li>imranfish.xmlextensions</li>
+    </loadAfter>
+  <incompatibleWith>
+<li>test.HAR.researchList.remover</li>
+<li>fix.factions.not.showing.in.create.world.menu</li>
+<li>test.HAR.thoughtSettings.remover</li>
+<li>test.just.monika.nerubians.fix</li>
+    </incompatibleWith>
+</ModMetaData>
