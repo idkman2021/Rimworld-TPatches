@@ -28,8 +28,9 @@
                             <li Class="XmlExtensions.Setting.Text">
                                 <text>If you run into problems adding TPatches into an existing save, try disabling Duplicate Animal Remover. DAR completely deletes duplicate animals, meaning they won't be loaded if you happen to have them on the map in your save. With that being said, usually removing animals even when they are on the map shouldn't cause any problems.</text>
                             </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(200,200,200)</color>
+                            <li Class="XmlExtensions.Setting.GapLine"/>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <text>Duplicate Animals Remover log:</text>
                             </li>
                         </settings>
                     </li>
