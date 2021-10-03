@@ -8,19 +8,68 @@
         <modId>carnap2.TPatches</modId> <!--MUST be the same as the one entered earlier-->    
         <label>TPatches</label> <!-- This is what displays as your mod's name-->    
         <settings> <!--This is where you define what settings are in the settings menu-->
-            <li Class="XmlExtensions.Setting.Text">
-                <text>Make sure TPatches is loaded as close to the end as possible. It can only affect mods that are loaded before it.</text>
+            <li Class="XmlExtensions.Setting.TabView">
+                <tabs>
+                    <li>
+                        <label>Info</label>
+                        <settings>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <text>Make sure TPatches is loaded as close to the end as possible. It can only affect mods that are loaded before it.</text>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <text>All XML Extensions settings require a restart to be applied!</text>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>12</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <text>To the best of my knowledge settings in this mod will have zero performance impact. Settings that apply to mods you don't have enabled are greyed out. You can still use those settings, in case you might install those mods in the future.</text>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <text>If you run into problems adding TPatches into an existing save, try disabling Duplicate Animal Remover. DAR completely deletes duplicate animals, meaning they won't be loaded if you happen to have them on the map in your save. With that being said, usually removing animals even when they are on the map shouldn't cause any problems.</text>
+                            </li>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(200,200,200)</color>
+                            </li>
+                        </settings>
+                    </li>
+                    <li>
+                        <label>General patches and fixes</label>
+                        <settings>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(255,255,255)</color>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>12</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Section">
+                                <settings>
+                                    <li Class="XmlExtensions.Setting.Checkbox">
+                                        <key>TPatchesDAR</key>
+                                        <label>Remove duplicate animals from mods</label>
+                                        <tooltip>this xpath contains a manually collected list of rules for removing animals when appropriate mods are loaded. Removes ThingDef, PawnKindDef and egg ThingDef.</tooltip>
+                                    </li>
+                                    <li Class="XmlExtensions.Setting.Text">
+                                        <font>Tiny</font>
+                                        <text>This will remove duplicate animals from mods. Vanilla Expanded mods are the highest priority and animals from them won't be removed. For example, if both VE and ACP add a Cheetah, it will be deleted from ACP. Some animals are renamed instead where appropriate. If DAR is enabled, there is a list of affected animals in the Info tab.</text>
+                                    </li>
+                                </settings>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>12</spacing>
+                            </li>
+                            <!-- following defs are replaced by patches -->
+                            <carnap2TPatches1></carnap2TPatches1>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>12</spacing>
+                            </li>
+                            <carnap2TPatches2></carnap2TPatches2>
+                            <!--As many settings in this tab as you want-->
+                        </settings>
+                    </li>
+                    <!--As many tabs as you want-->
+                </tabs>
             </li>
-            <li Class="XmlExtensions.Setting.Text">
-                <text>All XML Extensions settings require a restart to be applied!</text>
-            </li>
-            
-            <!-- following defs are replaced by patches -->
-            <carnap2TPatches1></carnap2TPatches1>
-            <li Class="XmlExtensions.Setting.Gap">
-                <spacing>12</spacing>
-            </li>
-            <carnap2TPatches2></carnap2TPatches2>
         </settings>
     </XmlExtensions.SettingsMenuDef>
     
