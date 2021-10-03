@@ -10,7 +10,7 @@
                 <success>Normal</success>
             </li>
             <li Class="PatchOperationReplace">
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/carnap2TPatches1</xpath>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/carnap2TPatches1</xpath>
                 <value>
                     <li Class="XmlExtensions.Setting.Section">
                         <settings>
@@ -48,7 +48,7 @@
                 <success>Invert</success>
             </li>
             <li Class="PatchOperationReplace">
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/carnap2TPatches1</xpath>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/carnap2TPatches1</xpath>
                 <value>
                     <li Class="XmlExtensions.Setting.Section">
                         <settings>
@@ -92,7 +92,7 @@
         <match Class="PatchOperationSequence">
             <operations>
                 <li Class="PatchOperationReplace">
-                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/carnap2TPatches2</xpath>
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/carnap2TPatches2</xpath>
                     <value>
                         <li Class="XmlExtensions.Setting.Section">
                             <settings>
@@ -124,7 +124,7 @@
         <nomatch Class="PatchOperationSequence">
             <operations>
                 <li Class="PatchOperationReplace">
-                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/carnap2TPatches2</xpath>
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/carnap2TPatches2</xpath>
                     <value>
                         <li Class="XmlExtensions.Setting.Section">
                             <settings>
