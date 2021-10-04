@@ -7,7 +7,248 @@
         <key>TPatchesDAR</key>
         <defaultValue>true</defaultValue>
         <caseTrue>
-            <!-- Erin's Wildlife -->
+            <!-- Vanilla Animals Expanded — Arid Shrubland -->
+            <!-- Cheetah -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPCheetah</li>
+                </arguments>
+            </Operation>
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
+                    <li>HC_Animal_3</li>
+                    <li>HC_Cheetah</li>
+                </arguments>
+            </Operation>
+            <!-- Giraffe -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
+                    <li>HC_Animal_4</li>
+                    <li>HC_Giraffe</li>
+                </arguments>
+            </Operation>
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPGiraffe</li>
+                </arguments>
+            </Operation>
+            <!-- Crocodile -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
+                    <li>HC_Animal_4</li>
+                    <li>HC_Crocodale</li>
+                </arguments>
+            </Operation>
+            <!-- Hippopotamus -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
+                    <li>HC_Animal_4</li>
+                    <li>HC_Hippo</li>
+                </arguments>
+            </Operation>
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPHippopotamus</li>
+                </arguments>
+            </Operation>
+            <!-- Coyote -->
+            <!-- Zebra -->
+            
+            
+            <!-- Vanilla Animals Expanded — Cats and Dogs -->
+            <!-- Munchkin Cat -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Cats and Dogs</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPMunchkinCat</li>
+                </arguments>
+            </Operation>
+            <!-- Pug -->
+            
+            
+            <!-- Vanilla Animals Expanded — Desert -->
+            <!-- Lion -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Desert</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPLion</li>
+                </arguments>
+            </Operation>
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Desert</li>
+                    <li>HC_Animal_3</li>
+                    <li>HC_Lion</li>
+                </arguments>
+            </Operation>
+            <!-- Hyena -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Desert</li>
+                    <li>HC_Animal_3</li>
+                    <li>HC_Hyena</li>
+                </arguments>
+            </Operation>
+            <!-- Desert tortoise -->
+            
+            
+            <!-- Vanilla Animals Expanded — Extreme Desert -->
+            <!-- Camel -->
+            <!-- Rattlesnake -->
+            
+            <!-- Vanilla Animals Expanded — Tundra -->
+            <!-- Porcupine -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Tundra</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPPorcupine</li>
+                </arguments>
+            </Operation>
+            <!-- Moose -->
+            <!-- Musk ox -->
+            
+            <!-- Vanilla Animals Expanded — Boreal Forest -->
+            <!-- Black Bear -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Boreal Forest</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPBlackbear</li>
+                </arguments>
+            </Operation>
+            <!-- Otter -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Boreal Forest</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPOtter</li>
+                </arguments>
+            </Operation>
+            <!-- Arctic coyote -->
+            
+            
+            
+            <!-- Vanilla Animals Expanded — Tropical Rainforest -->
+            <!-- Tapir -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Tropical Rainforest</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPTapir</li>
+                </arguments>
+            </Operation>
+            <!-- Tiger -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Tropical Rainforest</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPTiger</li>
+                </arguments>
+            </Operation>
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Tropical Rainforest</li>
+                    <li>HC_Animal_3</li>
+                    <li>HC_Tiger</li>
+                </arguments>
+            </Operation>
+            <!-- Jaguar -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Tropical Rainforest</li>
+                    <li>HC_Animal_3</li>
+                    <li>HC_Jaguar</li>
+                </arguments>
+            </Operation>
+            <!-- Gorilla -->
+            <!-- Lemur -->
+            <!-- Mandrill -->
+            
+            <!-- Vanilla Animals Expanded — Tropical Swamp -->
+            <!-- Anaconda -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Tropical Swamp</li>
+                    <li>HC_Animal_2</li>
+                    <li>HC_Anacondas</li>
+                </arguments>
+            </Operation>
+            <!-- Alligator -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Tropical Swamp</li>
+                    <li>HC_Animal_4</li>
+                    <li>HC_Alligator</li>
+                </arguments>
+            </Operation>
+            <!-- Indian elephant -->
+            
+            <!-- Vanilla Animals Expanded — Ice Sheet -->
+            <!-- Penguin -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Ice Sheet</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPPenguin</li>
+                </arguments>
+            </Operation>
+            <!-- Walrus -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Ice Sheet</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPWalrus</li>
+                </arguments>
+            </Operation>
+            <!-- Seal -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Ice Sheet</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPSpottedSeal</li>
+                </arguments>
+            </Operation>
+            
+            <!-- Vanilla Animals Expanded — Australia -->
+            
+            <!-- Vanilla Animals Expanded — Temperate Forest -->
+            <!-- Hedgehog -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
@@ -19,13 +260,34 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
+                    <li>Vanilla Animals Expanded — Temperate Forest</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPHedgehog</li>
+                </arguments>
+            </Operation>
+            <!-- Red panda -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
                     <li>Vanilla Animals Expanded — Temperate Forest</li> <!-- higher priority mod -->
                     <li>Erin's Wildlife</li> <!-- lower priority mod -->
                     <li>ERN_Redpanda</li> <!-- defName of animal that will be removed -->
                 </arguments>
             </Operation>
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Vanilla Animals Expanded — Temperate Forest</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPRedPanda</li>
+                </arguments>
+            </Operation>
+            <!-- Badger -->
+            <!-- Beaver -->
+            <!-- Wild goose -->
             
-            <!-- Animal Collab Project Vanilla-Style -->
+            <!-- Vanilla Animals Expanded — Endangered -->
+            <!-- African wild dog -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
@@ -34,6 +296,7 @@
                     <li>ACPWildDog</li> <!-- defName of animal that will be removed -->
                 </arguments>
             </Operation>
+            <!-- Black rhinoceros -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
@@ -42,86 +305,38 @@
                     <li>ACPBlackRhinoceros</li>
                 </arguments>
             </Operation>
+            <!-- Black-footed ferr -->
+            <!-- Bonobo -->
+            <!-- Giant panda -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <li>Vanilla Animals Expanded — Boreal Forest</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPBlackbear</li>
+                    <li>Vanilla Animals Expanded — Endangered</li> <!-- higher priority mod -->
+                    <li>Animal Collab Project Vanilla-Style</li> <!-- lower priority mod -->
+                    <li>ACPPanda</li> <!-- defName of animal that will be removed -->
                 </arguments>
             </Operation>
+            <!-- Giant pangolin -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <li>Vanilla Animals Expanded — Boreal Forest</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPOtter</li>
+                    <li>Vanilla Animals Expanded — Endangered</li>
+                    <li>HC_Animal_1</li>
+                    <li>HC_Pangolin</li>
                 </arguments>
             </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPCheetah</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>HC_Animal_3</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPCheetah</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPGiraffe</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>HC_Animal_4</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPGiraffe</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPHippopotamus</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>HC_Animal_4</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPHippopotamus</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Erin's Friendly Ferrets</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPFerret</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Temperate Forest</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPHedgehog</li>
-                </arguments>
-            </Operation>
+            <!-- Moa -->
+            <!-- Quagga -->
+            <!-- Rockhopper penguin -->
+            <!-- Tasmanian devil -->
+            <!-- Thylacine -->
+            
+            
+            <!-- Erin's Wildlife -->
+            <!-- Armadillo -->
+            <!-- Gartersnake -->
+            <!-- Grey fox -->
+            <!-- Hedgehog -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
@@ -130,62 +345,8 @@
                     <li>ACPHedgehog</li>
                 </arguments>
             </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Desert</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPLion</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>HC_Animal_3</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPLion</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Cats and Dogs</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPMunchkinCat</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Ice Sheet</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPPenguin</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Ice Sheet</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPWalrus</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Ice Sheet</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPSpottedSeal</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Tundra</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPPorcupine</li>
-                </arguments>
-            </Operation>
+            <!-- Mink -->
+            <!-- Ptarmigan -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
@@ -194,14 +355,7 @@
                     <li>ACPPtarmigan</li>
                 </arguments>
             </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Temperate Forest</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPRedPanda</li>
-                </arguments>
-            </Operation>
+            <!-- Red panda -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
@@ -210,107 +364,9 @@
                     <li>ACPRedPanda</li>
                 </arguments>
             </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Erin's Mountain Animals</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPSnowLeopard</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>HC_Animal_3</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPSnowLeopard</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Tropical Rainforest</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPTapir</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Tropical Rainforest</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPTiger</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>HC_Animal_3</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPTiger</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>HC_Animal_1</li>
-                    <li>Animal Collab Project Vanilla-Style</li>
-                    <li>ACPKomodo</li>
-                </arguments>
-            </Operation>
-            
-            <!-- HC_Animal_2 -->
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Tropical Swamp</li>
-                    <li>HC_Animal_2</li>
-                    <li>HC_Anacondas</li>
-                </arguments>
-            </Operation>
             
             
-            <!-- HC_Animal_3 -->
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Desert</li>
-                    <li>HC_Animal_3</li>
-                    <li>HC_Lion</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Tropical Rainforest</li>
-                    <li>HC_Animal_3</li>
-                    <li>HC_Jaguar</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
-                    <li>HC_Animal_3</li>
-                    <li>HC_Cheetah</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Desert</li>
-                    <li>HC_Animal_3</li>
-                    <li>HC_Hyena</li>
-                </arguments>
-            </Operation>
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>Vanilla Animals Expanded — Tropical Rainforest</li>
-                    <li>HC_Animal_3</li>
-                    <li>HC_Tiger</li>
-                </arguments>
-            </Operation>
+            <!-- Erin's Mountain Animals -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
@@ -319,41 +375,170 @@
                     <li>HC_Snowleopard</li>
                 </arguments>
             </Operation>
-            
-            <!-- HC_Animal_4 -->
+            <!-- Argali -->
+            <!-- Pallas' cat -->
+            <!-- Pika -->
+            <!-- Snow leopard -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
-                    <li>HC_Animal_4</li>
-                    <li>HC_Giraffe</li>
+                    <li>Erin's Mountain Animals</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPSnowLeopard</li>
                 </arguments>
             </Operation>
-             <Operation Class="XmlExtensions.ApplyPatch">
+            
+            <!-- Erin's Friendly Ferrets -->
+            <!-- Ferret -->
+            <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <li>Vanilla Animals Expanded — Tropical Swamp</li>
-                    <li>HC_Animal_4</li>
-                    <li>HC_Alligator</li>
+                    <li>Erin's Friendly Ferrets</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPFerret</li>
                 </arguments>
             </Operation>
-             <Operation Class="XmlExtensions.ApplyPatch">
+            
+            <!-- HC_Animal_1 -->
+            <!-- Komodo dragon -->
+            <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
-                    <li>HC_Animal_4</li>
-                    <li>HC_Crocodale</li>
+                    <li>HC_Animal_1</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPKomodo</li>
                 </arguments>
             </Operation>
-             <Operation Class="XmlExtensions.ApplyPatch">
+            <!-- Samoyed -->
+            <!-- Serval -->
+            <!-- Pangolin -->
+            <!-- Weasel -->
+            
+            <!-- HC_Animal_2 -->
+            <!-- Alligator turtle -->
+            <!-- Anaconda -->
+            <!-- Bullfrog -->
+            <!-- Galapagos tortoise -->
+            <!-- leopard gecko -->
+            <!-- Water monitor -->
+            
+            <!-- HC_Animal_3 -->
+            <!-- Lion -->
+            <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <li>Vanilla Animals Expanded — Arid Shrubland</li>
-                    <li>HC_Animal_4</li>
-                    <li>HC_Hippo</li>
+                    <li>HC_Animal_3</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPLion</li>
                 </arguments>
             </Operation>
-           
+            <!-- Jaguar -->
+            <!-- cheetah -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>HC_Animal_3</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPCheetah</li>
+                </arguments>
+            </Operation>
+            <!-- Hyena -->
+            <!-- Tiger -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>HC_Animal_3</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPTiger</li>
+                </arguments>
+            </Operation>
+            <!-- Snow leopard -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>HC_Animal_3</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPSnowLeopard</li>
+                </arguments>
+            </Operation>
+            
+            
+            <!-- HC_Animal_4 -->
+            <!-- Baboon -->
+            <!-- Giraffe -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>HC_Animal_4</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPGiraffe</li>
+                </arguments>
+            </Operation>
+            <!-- Alligator -->
+            <!-- Crocodile -->
+            <!-- Hippopotamus -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>HC_Animal_4</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPHippopotamus</li>
+                </arguments>
+            </Operation>
+            
+            <!-- Biomes! Core (stripped) -->
+            <!-- Flamingo -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Biomes! Core (stripped)</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPFlamingo</li>
+                </arguments>
+            </Operation>
+            
+            <!-- Biomes! Islands (stripped) -->
+            <!-- Kiwi -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Biomes! Islands (stripped)</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPKiwi</li>
+                </arguments>
+            </Operation>
+            <!-- Komodo Dragon -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Biomes! Islands (stripped)</li>
+                    <li>Animal Collab Project Vanilla-Style</li>
+                    <li>ACPKomodo</li>
+                </arguments>
+            </Operation>
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Biomes! Islands (stripped)</li>
+                    <li>HC_Animal_1</li>
+                    <li>HC_KomodoDragon</li>
+                </arguments>
+            </Operation>
+            <!-- Galapagos Tortoise -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>Biomes! Islands (stripped)</li>
+                    <li>HC_Animal_2</li>
+                    <li>HC_Galapagostortoise</li>
+                </arguments>
+            </Operation>
+            
+            
+            
+            
+            
+            
         </caseTrue>
         <caseFalse>
             <!--Patch operations here-->
