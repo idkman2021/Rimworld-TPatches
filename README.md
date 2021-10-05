@@ -9,3 +9,7 @@ https://docs.google.com/spreadsheets/d/1nhq6maAQgqy5VEXBN_rNa-neVqVlNxartAt38_Km
 - fix factions not showing in create world menu - Some modded factions don't appear in create world menu, this patch fixes that.
 - HAR thoughtSettings Remover - removes all custom thoughts from HAR races. Good for making races more balanced and also might slightly improve your performance
 - HAR Research Restrictions Remover - Removes research restrictions from HAR races. Useful if you use Random Research because it can choose a research your race can't research and you will be stuck on it
+
+![image](https://user-images.githubusercontent.com/76593873/136054790-0a3d4113-baca-4085-bd37-5e08de88997a.png)
+![image](https://user-images.githubusercontent.com/76593873/136054829-4ee5f1ba-81ed-4515-8433-e01ab91be643.png)
+![image](https://user-images.githubusercontent.com/76593873/136054894-26509f0a-a05a-4c3b-8f04-335610806ffb.png)
