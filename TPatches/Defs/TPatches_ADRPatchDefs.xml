@@ -18,7 +18,7 @@
                         <!-- start of operations after detecting the mod -->
                         <!-- tests the operation for logging -->
                         <li Class="PatchOperationTest">
-                            <xpath>/Defs/PawnKindDef[defName="{DARAnimalDef}"]</xpath>
+                            <xpath>/Defs/ThingDef[defName="{DARAnimalDef}"]</xpath>
                             <success>Normal</success>
                         </li>
                         <!-- log -->

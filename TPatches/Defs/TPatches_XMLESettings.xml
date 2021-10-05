@@ -48,11 +48,27 @@
                                     <li Class="XmlExtensions.Setting.Checkbox">
                                         <key>TPatchesDAR</key>
                                         <label>Duplicate Animal Remover</label>
-                                        <tooltip>this xpath contains a manually collected list of rules for removing animals when appropriate mods are loaded. Removes ThingDef, PawnKindDef and egg ThingDef.</tooltip>
+                                        <tooltip>this xpath contains a manually collected list of rules for removing animals when appropriate mods are loaded. Removes ThingDef, PawnKindDef and egg ThingDef. When a higher priority mod is detected, it tries to remove duplicate animals from lower priority mods. You can see the mod priority on TPatches Google Sheets.</tooltip>
                                     </li>
                                     <li Class="XmlExtensions.Setting.Text">
                                         <font>Tiny</font>
                                         <text>This will remove duplicate animals from mods. Vanilla Expanded mods are the highest priority and animals from them won't be removed. For example, if both VE and ACP add a Cheetah, it will be deleted from ACP. Some animals are renamed instead where appropriate.</text>
+                                    </li>
+                                </settings>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>12</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Section">
+                                <settings>
+                                    <li Class="XmlExtensions.Setting.Checkbox">
+                                        <key>TPatchesTypoCorrecter</key>
+                                        <label>Typo Correcter</label>
+                                        <tooltip>this xpath contains a manually collected list of rules for replacing texts with corrected versions.</tooltip>
+                                    </li>
+                                    <li Class="XmlExtensions.Setting.Text">
+                                        <font>Tiny</font>
+                                        <text>Corrects text typos in mods. For example, renames "crocodale" to "crocodile", "leopardgecko" to "leopard gecko", etc. Currently does a complete retranslation of HC_Animal_1, HC_Animal_2, HC_Animal_3, HC_Animal_4.</text>
                                     </li>
                                 </settings>
                             </li>
