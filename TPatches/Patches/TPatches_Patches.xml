@@ -15,11 +15,11 @@
                 </value>
             </Operation>
             <Operation Class="PatchOperationFindMod">
-                <success>Always</success>
                 <mods>
                     <li>The GiantRace</li>
                 </mods>
                 <match Class="PatchOperationAdd">
+                    <success>Always</success>
                     <xpath>/Defs/FactionDef[(defName="SavageGiants") and not(maxConfigurableAtWorldCreation)]</xpath>
                     <value>
                         <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
@@ -66,5 +66,16 @@
         </caseFalse>
     </Operation>
     
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesNerubiansFix</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+           
+        </caseTrue>
+        <caseFalse>
+           
+        </caseFalse>
+    </Operation>
     
 </Patch>
