@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- Bottom is highest priority!!! -->
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesFixSomeModdedFactionsNotShowingUpInCreateWorldMenu</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Fix some modded factions not showing up in create world menu</li>
+            <li>Some modded factions have a bug where they don't appear in create world menu, this setting fixes that.</li>
+            <li>xpath: adds maxConfigurableAtWorldCreation=9999 to all non-hidden non-player non-abstract factions that aren't based on anything other than factionBase and don't already have this line.</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesHARResearchRestrictionRemover</li>
+            <li>Humanoid Alien Races</li>
+            <li>Tweaks</li>
+            <li>Remove all research restrictions from HAR races</li>
+            <li>This will allow all races to research all research projects. Useful if you use mods like Random Research, since it might choose a project restricted to some race you don't have and you will be stuck.</li>
+            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/raceRestriction/researchList</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesHARthoughtSettingsRemover</li>
+            <li>Humanoid Alien Races</li> 
+            <li>Tweaks</li>
+            <li>Remove all custom thoughts from HAR races</li>
+            <li>Removes all custom thoughts, making them identical to vanilla human thoughts. Might make the game more balanced by reintroducing mood debuffs to races that had them disabled, and also might slightly improve performance.</li>
+            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/thoughtSettings</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesTypoCorrecter</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Typo Correcter</li>
+            <li>Corrects text typos in mods. For example, renames "crocodale" to "crocodile", "leopardgecko" to "leopard gecko", etc. Currently does a complete retranslation of HC_Animal_1, HC_Animal_2, HC_Animal_3, HC_Animal_4.</li>
+            <li>this xpath contains a manually collected list of rules for replacing texts with corrected versions.</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesDAR</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Duplicate Animal Remover</li>
+            <li>This will remove duplicate animals from mods. Vanilla Expanded mods are the highest priority and animals from them won't be removed. For example, if both VE and ACP add a Cheetah, it will be deleted from ACP. Some animals are renamed instead where appropriate.</li>
+            <li>this xpath contains a manually collected list of rules for removing animals when appropriate mods are loaded. Removes ThingDef, PawnKindDef and egg ThingDef. When a higher priority mod is detected, it tries to remove duplicate animals from lower priority mods. You can see the mod priority on TPatches Google Sheets.</li>
+        </arguments>
+    </Operation>
+    <!-- 
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>key</li>
+            <li>mod</li>
+            <li>tab</li>
+            <li>label</li>
+            <li>description</li>
+            <li>tooltip</li>
+        </arguments>
+    </Operation>
+    -->
+</Patch>
