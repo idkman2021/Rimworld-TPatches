@@ -11,6 +11,5 @@ Many fixes, tweaks, settings and mod compatibility patches. Everything is toggle
 - Typo Correcter
 - Research fixes
 - many small fixes, tweaks and balancing changes
-See screenshots.
 
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
