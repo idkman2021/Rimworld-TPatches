@@ -1,7 +1,7 @@
 # Rimworld-TPatches
 Many fixes, tweaks, settings and mod compatibility patches. Everything is toggleable. Made using XML Extensions!
 
-[Detailed list of all settings](https://docs.google.com/spreadsheets/d/1nhq6maAQgqy5VEXBN_rNa-neVqVlNxartAt38_Km4TA/edit?usp=sharing)
+### [Detailed list of all settings](https://docs.google.com/spreadsheets/d/1nhq6maAQgqy5VEXBN_rNa-neVqVlNxartAt38_Km4TA/edit?usp=sharing)
 
 [Discord](https://discord.gg/dcVj4b5VwJ)
 
