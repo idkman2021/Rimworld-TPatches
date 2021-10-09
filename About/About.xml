@@ -2,12 +2,13 @@
 <ModMetaData>
   <name>TPatches</name>
   <author>test</author>
-  <url>https://github.com/idkman2021/Rimworld-TPatches</url>
+  <url>https://github.com/idkman2021/Rimworld-TPatches/releases/latest</url>
   <packageId>carnap2.TPatches</packageId>
   <supportedVersions>
 	<li>1.3</li>
   </supportedVersions>
-  <description>i j</description>
+  <description>Load as close to the end as possible!
+Many fixes, tweaks, settings and mod compatibility patches. Everything is toggleable. Made using XML Extensions!</description>
     <modDependencies>
     <!-- Using hugslib as an example here. -->
         <li>
