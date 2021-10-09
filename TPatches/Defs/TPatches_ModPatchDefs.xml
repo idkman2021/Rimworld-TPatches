@@ -20,22 +20,38 @@
                             <order>Prepend</order>
                             <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings</xpath>
                             <value>
+                                <!-- <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>12</spacing>
+                                </li> -->
+                                <!-- <li Class="XmlExtensions.Setting.Section">
+                                <settings> -->
                                 <li Class="XmlExtensions.Setting.Gap">
-                                    <spacing>12</spacing>
+                                    <spacing>6</spacing>
                                 </li>
-                                <li Class="XmlExtensions.Setting.Section">
-                                    <settings>
-                                        <li Class="XmlExtensions.Setting.Checkbox">
-                                            <key>{key}</key>
-                                            <label>{label}</label>
-                                            <tooltip>{tooltip}</tooltip>
-                                        </li>
-                                        <li Class="XmlExtensions.Setting.Text">
-                                            <font>Tiny</font>
-                                            <text>{description}</text>
-                                        </li>
-                                    </settings>
+                                <li Class="XmlExtensions.Setting.Checkbox">
+                                    <key>{key}</key>
+                                    <label>{label}</label>
+                                    <tooltip>{tooltip}</tooltip>
                                 </li>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(205,205,205)</color>
+                                </li>
+                                <li Class="XmlExtensions.Setting.Text">
+                                    <font>Tiny</font>
+                                    <text>{mod}</text>
+                                </li>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(255,255,255)</color>
+                                </li>
+                                <li Class="XmlExtensions.Setting.Text">
+                                    <font>Tiny</font>
+                                    <text>{description}</text>
+                                </li>
+                                <li Class="XmlExtensions.Setting.GapLine">
+                                    <spacing>1</spacing>
+                                </li>
+                                <!-- </settings>
+                                </li> -->
                             </value>
                         </li>
                         <li Class="PatchOperationConditional">
@@ -59,31 +75,44 @@
                             <order>Append</order>
                             <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings</xpath>
                             <value>
+                                <!-- <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>12</spacing>
+                                </li> -->
+                                <!-- <li Class="XmlExtensions.Setting.Section">
+                                <settings> -->
                                 <li Class="XmlExtensions.Setting.Gap">
-                                    <spacing>12</spacing>
+                                    <spacing>6</spacing>
                                 </li>
-                                <li Class="XmlExtensions.Setting.Section">
-                                    <settings>
-                                        <li Class="XmlExtensions.Setting.Text">
-                                            <text>{mod} is not installed.</text>
-                                        </li>
-                                        <li Class="XmlExtensions.Setting.SetColor">
-                                            <color>(155,155,155)</color>
-                                        </li>
-                                        <li Class="XmlExtensions.Setting.Checkbox">
-                                            <key>{key}</key>
-                                            <label>{label}</label>
-                                            <tooltip>{tooltip}</tooltip>
-                                        </li>
-                                        <li Class="XmlExtensions.Setting.Text">
-                                            <font>Tiny</font>
-                                            <text>{description}</text>
-                                        </li>
-                                        <li Class="XmlExtensions.Setting.SetColor">
-                                            <color>(255,255,255)</color>
-                                        </li>
-                                    </settings>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(155,155,155)</color>
                                 </li>
+                                <li Class="XmlExtensions.Setting.Checkbox">
+                                    <key>{key}</key>
+                                    <label>{label}</label>
+                                    <tooltip>{tooltip}</tooltip>
+                                </li>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(205,205,205)</color>
+                                </li>
+                                <li Class="XmlExtensions.Setting.Text">
+                                    <font>Tiny</font>
+                                    <text>{mod} is not installed.</text>
+                                </li>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(155,155,155)</color>
+                                </li>
+                                <li Class="XmlExtensions.Setting.Text">
+                                    <font>Tiny</font>
+                                    <text>{description}</text>
+                                </li>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(255,255,255)</color>
+                                </li>
+                                <li Class="XmlExtensions.Setting.GapLine">
+                                    <spacing>1</spacing>
+                                </li>
+                                <!-- </settings>
+                                </li> -->
                             </value>
                         </li>
                         <li Class="PatchOperationConditional">
