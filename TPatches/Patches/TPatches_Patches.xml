@@ -103,14 +103,14 @@
         <defaultValue>false</defaultValue>
         <caseTrue>
             <Operation Class="PatchOperationReplace">
-                <!-- <success>Always</success> -->
+                <success>Always</success>
                 <xpath>/Defs/ThingDef[defName="VAEA_Apparel_RangedShieldBelt"]/statBases/EnergyShieldRechargeRate</xpath>
                 <value>
                     <EnergyShieldRechargeRate>0.05</EnergyShieldRechargeRate> <!-- default 0.13 -->
                 </value>
             </Operation>
             <Operation Class="PatchOperationReplace">
-                <!-- <success>Always</success> -->
+                <success>Always</success>
                 <xpath>/Defs/ThingDef[defName="VAEA_Apparel_RangedShieldBelt"]/statBases/EnergyShieldEnergyMax</xpath>
                 <value>
                     <EnergyShieldEnergyMax>0.3</EnergyShieldEnergyMax> <!-- default 0.9 -->
@@ -128,21 +128,21 @@
         <defaultValue>false</defaultValue>
         <caseTrue>
             <Operation Class="PatchOperationAdd">
-                <!-- <success>Always</success> -->
+                <success>Always</success>
                 <xpath>/Defs/ThingDef[defName="VAEA_Apparel_MiniTurretPack"]/recipeMaker[not (researchPrerequisite="GunTurrets")]</xpath>
                 <value>
                     <researchPrerequisite>GunTurrets</researchPrerequisite>
                 </value>
             </Operation>
             <Operation Class="PatchOperationReplace">
-                <!-- <success>Always</success> -->
+                <success>Always</success>
                 <xpath>/Defs/ThingDef[defName="VAEA_Apparel_MiniTurretPack"]/verbs/li/defaultProjectile</xpath>
                 <value>
                     <defaultProjectile>TPatches_Bullet_MiniTurretPack</defaultProjectile>
                 </value>
             </Operation>
             <Operation Class="PatchOperationReplace">
-                <!-- <success>Always</success> -->
+                <success>Always</success>
                 <xpath>/Defs/ThingDef[defName="VAEA_Apparel_MiniTurretPack"]/verbs/li/range</xpath>
                 <value>
                     <range>22.9</range> <!-- default 28.9 -->
