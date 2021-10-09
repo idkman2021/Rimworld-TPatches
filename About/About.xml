@@ -8,9 +8,12 @@
 	<li>1.3</li>
   </supportedVersions>
   <description>Load as close to the end as possible!
+
 Many fixes, tweaks, settings and mod compatibility patches. Everything is toggleable. Made using XML Extensions!
 
-Options > More Mod Settings > TPatches</description>
+The menu is at: Options > More Mod Settings > TPatches
+
+Supports ModSync RW for checking for updates!</description>
     <modDependencies>
     <!-- Using hugslib as an example here. -->
         <li>
