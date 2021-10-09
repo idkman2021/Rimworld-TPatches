@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModSyncNinjaData>
+  <ID>ef7d4f2d-28fc-495e-8fbc-3a7ad283ae95</ID>
+  <ModName>TPatches</ModName>
+  <Version>1.0.0</Version>
+  <SaveBreaking>False</SaveBreaking>
+  <Host name="Github">
+    <Owner>idkman2021</Owner>
+    <Project>Rimworld-TPatches</Project>
+    <AboutDir>About</AboutDir>
+    <DownloadFrom>ModSyncReleases</DownloadFrom>
+    <Branch>master</Branch>
+  </Host>
+</ModSyncNinjaData>
