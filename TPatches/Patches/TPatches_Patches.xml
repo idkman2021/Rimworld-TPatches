@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!--
+    <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>carnap2.TPatches</modId>
+    <key>TPatches???</key>
+    <defaultValue>???</defaultValue>
+    <caseTrue>
+    <Operation Class="???">
+    
+    </Operation>
+    </caseTrue>
+    <caseFalse>
+    
+    </caseFalse>
+    </Operation>
+    
+    -->
+    <!-- fix factions not showing in create world menu -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesFixSomeModdedFactionsNotShowingUpInCreateWorldMenu</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationAdd">
+                <success>Always</success>
+                <xpath>/Defs/FactionDef[defName and not(maxConfigurableAtWorldCreation) and not(hidden="true") and not(isPlayer="true") and(@ParentName="FactionBase" or not(@ParentName))]</xpath>
+                <value>
+                    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+                </value>
+            </Operation>
+            <Operation Class="PatchOperationFindMod">
+                <mods>
+                    <li>The GiantRace</li>
+                </mods>
+                <match Class="PatchOperationAdd">
+                    <success>Always</success>
+                    <xpath>/Defs/FactionDef[(defName="SavageGiants") and not(maxConfigurableAtWorldCreation)]</xpath>
+                    <value>
+                        <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+                    </value>
+                </match>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <!--Patch operations here - not needed-->
+        </caseFalse>
+    </Operation>
+    
+    
+    
+    <!-- HAR research restriction removers -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesHARResearchRestrictionRemover</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/AlienRace.ThingDef_AlienRace/alienRace/raceRestriction/researchList</xpath>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <!--Patch operations here-->
+        </caseFalse>
+    </Operation>
+    
+    <!-- HAR thoughtsettings removers -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesHARthoughtSettingsRemover</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/AlienRace.ThingDef_AlienRace/alienRace/thoughtSettings</xpath>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            <!--Patch operations here-->
+        </caseFalse>
+    </Operation>
+    
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesNerubiansFix</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Nerubian"]/alienRace/raceRestriction/weaponList</xpath>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            
+        </caseFalse>
+    </Operation>
+    
+    
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesVAEARangedShieldBelt</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationReplace">
+                <!-- <success>Always</success> -->
+                <xpath>/Defs/ThingDef[defName="VAEA_Apparel_RangedShieldBelt"]/statBases/EnergyShieldRechargeRate</xpath>
+                <value>
+                    <EnergyShieldRechargeRate>0.05</EnergyShieldRechargeRate> <!-- default 0.13 -->
+                </value>
+            </Operation>
+            <Operation Class="PatchOperationReplace">
+                <!-- <success>Always</success> -->
+                <xpath>/Defs/ThingDef[defName="VAEA_Apparel_RangedShieldBelt"]/statBases/EnergyShieldEnergyMax</xpath>
+                <value>
+                    <EnergyShieldEnergyMax>0.3</EnergyShieldEnergyMax> <!-- default 0.9 -->
+                </value>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            
+        </caseFalse>
+    </Operation>
+    
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesVAEAMiniTurretPack</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationAdd">
+                <!-- <success>Always</success> -->
+                <xpath>/Defs/ThingDef[defName="VAEA_Apparel_MiniTurretPack"]/recipeMaker[not (researchPrerequisite="GunTurrets")]</xpath>
+                <value>
+                    <researchPrerequisite>GunTurrets</researchPrerequisite>
+                </value>
+            </Operation>
+            <Operation Class="PatchOperationReplace">
+                <!-- <success>Always</success> -->
+                <xpath>/Defs/ThingDef[defName="VAEA_Apparel_MiniTurretPack"]/verbs/li/defaultProjectile</xpath>
+                <value>
+                    <defaultProjectile>TPatches_Bullet_MiniTurretPack</defaultProjectile>
+                </value>
+            </Operation>
+            <Operation Class="PatchOperationReplace">
+                <!-- <success>Always</success> -->
+                <xpath>/Defs/ThingDef[defName="VAEA_Apparel_MiniTurretPack"]/verbs/li/range</xpath>
+                <value>
+                    <range>22.9</range> <!-- default 28.9 -->
+                </value>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            
+        </caseFalse>
+    </Operation>
+</Patch>

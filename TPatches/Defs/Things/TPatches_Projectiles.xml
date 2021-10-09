@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="BaseBullet">
+        <defName>TPatches_Bullet_MiniTurretPack</defName>
+        <label>mini-turret pack bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>4</damageAmountBase> <!-- default 11 -->
+            <speed>35</speed> <!-- default 70 -->
+        </projectile>
+    </ThingDef>
+</Defs>
