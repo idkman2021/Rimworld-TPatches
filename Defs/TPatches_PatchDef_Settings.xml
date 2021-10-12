@@ -30,6 +30,9 @@
                                 <li Class="XmlExtensions.Setting.Gap">
                                     <spacing>6</spacing>
                                 </li>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(200,200,255)</color>
+                                </li>
                                 <li Class="XmlExtensions.Setting.Checkbox">
                                     <key>{key}</key>
                                     <label>{label}</label>
@@ -46,7 +49,7 @@
                                     <color>(255,255,255)</color>
                                 </li>
                                 <li Class="XmlExtensions.Setting.Text">
-                                    <font>Tiny</font>
+                                    <!-- <font>Tiny</font> -->
                                     <text>{description}</text>
                                 </li>
                                 <li Class="XmlExtensions.Setting.GapLine">
@@ -88,7 +91,7 @@
                                     <spacing>6</spacing>
                                 </li>
                                 <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(100,100,100)</color>
+                                    <color>(100,100,155)</color>
                                 </li>
                                 <li Class="XmlExtensions.Setting.Checkbox">
                                     <key>{key}</key>
@@ -106,7 +109,7 @@
                                     <color>(100,100,100)</color>
                                 </li>
                                 <li Class="XmlExtensions.Setting.Text">
-                                    <font>Tiny</font>
+                                    <!-- <font>Tiny</font> -->
                                     <text>{description}</text>
                                 </li>
                                 <li Class="XmlExtensions.Setting.SetColor">
