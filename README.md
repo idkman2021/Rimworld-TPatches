@@ -11,6 +11,7 @@ Many fixes, tweaks, settings and mod compatibility patches. Everything is toggle
 - Duplicate Material Remover
 - Typo Correcter
 - Research fixes
+- filter for rottable items
 - many small fixes, tweaks and balancing changes
 
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
