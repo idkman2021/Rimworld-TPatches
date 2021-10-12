@@ -8,6 +8,7 @@ Many fixes, tweaks, settings and mod compatibility patches. Everything is toggle
 
 ## Content
 - Duplicate Animal Remover
+- Duplicate Material Remover
 - Typo Correcter
 - Research fixes
 - many small fixes, tweaks and balancing changes
