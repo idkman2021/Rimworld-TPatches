@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+    <!--
     <XmlExtensions.PatchDef Name="carnap2TPatchesModList" Abstract="True">
         <parameters>
             <li>mod</li>
@@ -10,10 +11,10 @@
                     <li>{mod}</li>
                 </mods>
                 <match Class="PatchOperationConditional">
-                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings/li[text="{mod}"]</xpath>
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="{mod}"]</xpath>
                     <nomatch Class="PatchOperationAdd">
                         <order>Append</order>
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
                         <value>
                             <li Class="XmlExtensions.Setting.Text">
                                 <font>Tiny</font>
@@ -26,10 +27,10 @@
                     </nomatch>
                 </match>
                 <nomatch Class="PatchOperationConditional">
-                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings/li[text="{mod}"]</xpath>
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="{mod}"]</xpath>
                     <nomatch Class="PatchOperationAdd">
                         <order>Append</order>
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
                         <value>
                             <li Class="XmlExtensions.Setting.SetColor">
                                 <color>(155,155,155)</color>
@@ -47,4 +48,5 @@
             </Operation>
         </apply>
     </XmlExtensions.PatchDef>
+    -->
 </Defs>

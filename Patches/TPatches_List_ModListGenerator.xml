@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Arid Shrubland</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Cats and Dogs</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Desert</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Extreme Desert</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Tundra</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Boreal Forest</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Tropical Rainforest</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Tropical Swamp</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Ice Sheet</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Australia</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Temperate Forest</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Vanilla Animals Expanded — Endangered</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Erin's Wildlife</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Erin's Mountain Animals</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Erin's Friendly Ferrets</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>HC_Animal_1</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>HC_Animal_2</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>HC_Animal_3</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>HC_Animal_4</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Animal Collab Project Vanilla-Style</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Biomes! Core (stripped)</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Biomes! Islands (stripped)</li></arguments></Operation>
-<Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Support shotguns - Weapon pack</li></arguments></Operation>
+    <!--
+    <Operation Class="XmlExtensions.ApplyPatch"><patchName>carnap2TPatchesModList</patchName><arguments><li>Support shotguns - Weapon pack</li></arguments></Operation>
+    -->
 </Patch>

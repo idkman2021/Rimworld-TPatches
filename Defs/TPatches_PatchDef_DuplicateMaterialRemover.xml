@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <XmlExtensions.PatchDef Name="carnap2TPatchesDuplicateMaterialRemoverDef" Abstract="True">
+        <parameters>
+            <li>DMRMaterialDefKeep</li> <!-- defname of the material that will be used if both materials are detected -->
+            <li>DMRMaterialDefRemove</li> <!-- defname of the duplicate material that will be deleted if both materials are detected -->
+        </parameters>
+        <apply>
+            
+            <Operation Class="PatchOperationSequence">
+                <success>Always</success>
+                <operations>
+                    <!-- tests if DMRMaterialDefRemove exists and terminates if it doesn't -->
+                    <li Class="PatchOperationTest">       
+                        <xpath>/Defs/ThingDef[defName="{DMRMaterialDefRemove}"]</xpath>
+                        <success>Normal</success>
+                    </li>
+                    
+                    <!-- adds active defName to the log tab if it isn't there already -->
+                    <li Class="PatchOperationConditional">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="material: {DMRMaterialDefRemove}"]</xpath>
+                        <nomatch Class="PatchOperationAdd">
+                            <order>Append</order>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                            <value>
+                                <li Class="XmlExtensions.Setting.Text">
+                                    <font>Tiny</font>
+                                    <text>material: {DMRMaterialDefRemove}</text>
+                                </li>
+                            </value>
+                        </nomatch>
+                    </li>
+                    
+                    <!-- tests if DMRMaterialDefKeep exists and terminates if it doesn't -->
+                    <li Class="PatchOperationTest">       
+                        <xpath>/Defs/ThingDef[defName="{DMRMaterialDefKeep}"]</xpath>
+                        <success>Normal</success>
+                    </li>
+                    
+                    <!-- adds an entry to the log -->
+                    <li Class="PatchOperationAdd">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
+                        <order>Append</order>
+                        <value>
+                            <li Class="XmlExtensions.Setting.SplitColumn">
+                                <split>0.5</split>
+                                <leftCol>
+                                    <li Class="XmlExtensions.Setting.Text">
+                                        <font>Tiny</font>
+                                        <text>M: replaced     "{DMRMaterialDefRemove}"</text>
+                                    </li>
+                                </leftCol>
+                                <rightCol>
+                                    <li Class="XmlExtensions.Setting.Text">
+                                        <font>Tiny</font>
+                                        <text>with     "{DMRMaterialDefKeep}"</text>
+                                    </li>
+                                </rightCol>
+                            </li>
+                        </value>
+                    </li>
+                    
+                    <!-- removes material 2 -->
+                    <li Class="PatchOperationRemove">
+                        <success>Always</success>
+                        <xpath>/Defs/ThingDef[defName="{DMRMaterialDefRemove}"]</xpath>
+                    </li>
+                    <!-- replaces recipes yields with material 1 -->
+                    <li Class="PatchOperationSetName">
+                        <success>Always</success>
+                        <xpath>/Defs/RecipeDef/products/{DMRMaterialDefRemove}</xpath>
+                        <name>{DMRMaterialDefKeep}</name>
+                    </li>
+                    
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>/Defs/RecipeDef/ingredients/li/filter/thingDefs/li[text()="{DMRMaterialDefRemove}"]</xpath>
+                        <value>
+                            <li>{DMRMaterialDefKeep}</li>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>/Defs/RecipeDef/fixedIngredientFilter/thingDefs/li[text()="{DMRMaterialDefRemove}"]</xpath>
+                        <value>
+                            <li>{DMRMaterialDefKeep}</li>
+                        </value>
+                    </li>
+                    <!-- replaces plant yields with material 1 -->
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>/Defs/ThingDef/plant/harvestedThingDef[text()="{DMRMaterialDefRemove}"]</xpath>
+                        <value>
+                            <harvestedThingDef>{DMRMaterialDefKeep}</harvestedThingDef>
+                        </value>
+                    </li>
+                    <!-- replaces building recipes with material 1 -->
+                    <li Class="PatchOperationSetName">
+                        <success>Always</success>
+                        <xpath>/Defs/ThingDef/costList/{DMRMaterialDefRemove}</xpath>
+                        <name>{DMRMaterialDefKeep}</name>
+                    </li>
+                    <!-- replace fuelFilter with material 1 -->
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>/Defs/ThingDef/comps/li/fuelFilter/thingDefs/li[text()="{DMRMaterialDefRemove}"]</xpath>
+                        <value>
+                            <li>{DMRMaterialDefKeep}</li>
+                        </value>
+                    </li>
+                    <!-- replace mineableThing with material 1 -->
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>/Defs/ThingDef/building/mineableThing[text()="{DMRMaterialDefRemove}"]</xpath>
+                        <value>
+                            <mineableThing>{DMRMaterialDefKeep}</mineableThing>
+                        </value>
+                    </li>
+                    <!-- replace TerrainDef costList -->
+                    <li Class="PatchOperationSetName">
+                        <success>Always</success>
+                        <xpath>/Defs/TerrainDef/costList/{DMRMaterialDefRemove}</xpath>
+                        <name>{DMRMaterialDefKeep}</name>
+                    </li>
+                    
+                </operations>
+            </Operation>
+            <Operation Class="PatchOperationConditional">       
+                <xpath>/Defs/ThingDef[defName="{DMRMaterialDefKeep}"]</xpath>
+                <success>Normal</success>
+                <match Class="PatchOperationConditional">
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="material: {DMRMaterialDefKeep}"]</xpath>
+                    <nomatch Class="PatchOperationAdd">
+                        <order>Append</order>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                        <value>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <font>Tiny</font>
+                                <text>material: {DMRMaterialDefKeep}</text>
+                            </li>
+                        </value>
+                    </nomatch>
+                </match>
+                
+                <!-- adds inactive defNames to the log tab if they aren't there already -->
+                <nomatch Class="PatchOperationConditional">
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="material: {DMRMaterialDefKeep}"]</xpath>
+                    <nomatch Class="PatchOperationAdd">
+                        <order>Append</order>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                        <value>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(155,155,155)</color>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <font>Tiny</font>
+                                <text>material: {DMRMaterialDefKeep}</text>
+                            </li>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(255,255,255)</color>
+                            </li>
+                        </value>
+                    </nomatch>
+                </nomatch>
+            </Operation>
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="material: {DMRMaterialDefRemove}"]</xpath>
+                <nomatch Class="PatchOperationAdd">
+                    <order>Append</order>
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                    <value>
+                        <li Class="XmlExtensions.Setting.SetColor">
+                            <color>(155,155,155)</color>
+                        </li>
+                        <li Class="XmlExtensions.Setting.Text">
+                            <font>Tiny</font>
+                            <text>material: {DMRMaterialDefRemove}</text>
+                        </li>
+                        <li Class="XmlExtensions.Setting.SetColor">
+                            <color>(255,255,255)</color>
+                        </li>
+                    </value>
+                </nomatch>
+            </Operation>
+        </apply>
+    </XmlExtensions.PatchDef>
+</Defs>

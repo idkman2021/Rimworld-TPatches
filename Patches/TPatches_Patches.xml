@@ -24,22 +24,10 @@
         <caseTrue>
             <Operation Class="PatchOperationAdd">
                 <success>Always</success>
-                <xpath>/Defs/FactionDef[defName and not(maxConfigurableAtWorldCreation) and not(hidden="true") and not(isPlayer="true") and(@ParentName="FactionBase" or not(@ParentName))]</xpath>
+                <xpath>/Defs/FactionDef[(defName and not(maxConfigurableAtWorldCreation) and not(hidden="true") and not(isPlayer="true") and(@ParentName="FactionBase" or not(@ParentName))) or (defName="SavageGiants") and not(maxConfigurableAtWorldCreation)]</xpath>
                 <value>
                     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
                 </value>
-            </Operation>
-            <Operation Class="PatchOperationFindMod">
-                <mods>
-                    <li>The GiantRace</li>
-                </mods>
-                <match Class="PatchOperationAdd">
-                    <success>Always</success>
-                    <xpath>/Defs/FactionDef[(defName="SavageGiants") and not(maxConfigurableAtWorldCreation)]</xpath>
-                    <value>
-                        <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-                    </value>
-                </match>
             </Operation>
         </caseTrue>
         <caseFalse>
@@ -96,7 +84,7 @@
         </caseFalse>
     </Operation>
     
-    
+    <!-- VAE Accessories - Ranged Shield Belt nerf -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesVAEARangedShieldBelt</key>
@@ -122,6 +110,7 @@
         </caseFalse>
     </Operation>
     
+    <!-- VAE Accessories - Mini-turret pack nerf -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesVAEAMiniTurretPack</key>
@@ -153,4 +142,160 @@
             
         </caseFalse>
     </Operation>
+    
+    <!-- fantasy metals rebalance -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesFantasyMetals</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationSequence">
+                <success>Always</success>
+                <operations>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Mithril"]/deepCommonality</xpath>
+                        <value>
+                            <deepCommonality>0.03</deepCommonality>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Mithril"]/deepLumpSizeRange</xpath>
+                        <value>
+                            <deepLumpSizeRange>
+                                <min>1</min>
+                                <max>5</max>
+                            </deepLumpSizeRange>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Orichalcum"]/deepCommonality</xpath>
+                        <value>
+                            <deepCommonality>0.03</deepCommonality>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Orichalcum"]/deepCountPerPortion</xpath>
+                        <value>
+                            <deepCountPerPortion>5</deepCountPerPortion>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Orichalcum"]/deepLumpSizeRange</xpath>
+                        <value>
+                            <deepLumpSizeRange>
+                                <min>1</min>
+                                <max>5</max>
+                            </deepLumpSizeRange>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Adamantite"]/deepCommonality</xpath>
+                        <value>
+                            <deepCommonality>0.03</deepCommonality>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Adamantite"]/deepLumpSizeRange</xpath>
+                        <value>
+                            <deepLumpSizeRange>
+                                <min>1</min>
+                                <max>4</max>
+                            </deepLumpSizeRange>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Tozra"]/deepCommonality</xpath>
+                        <value>
+                            <deepCommonality>0.03</deepCommonality>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Tozra"]/deepCountPerPortion</xpath>
+                        <value>
+                            <deepCountPerPortion>5</deepCountPerPortion>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Tozra"]/deepLumpSizeRange</xpath>
+                        <value>
+                            <deepLumpSizeRange>
+                                <min>1</min>
+                                <max>5</max>
+                            </deepLumpSizeRange>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Solorite"]/deepCommonality</xpath>
+                        <value>
+                            <deepCommonality>0.05</deepCommonality>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Solorite"]/deepCountPerPortion</xpath>
+                        <value>
+                            <deepCountPerPortion>5</deepCountPerPortion>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Skelsshkrum"]/deepCommonality</xpath>
+                        <value>
+                            <deepCommonality>0.03</deepCommonality>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Skelsshkrum"]/deepCountPerPortion</xpath>
+                        <value>
+                            <deepCountPerPortion>5</deepCountPerPortion>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Normal</success>
+                        <xpath>/Defs/ThingDef[defName="Skelsshkrum"]/deepLumpSizeRange</xpath>
+                        <value>
+                            <deepLumpSizeRange>
+                                <min>1</min>
+                                <max>5</max>
+                            </deepLumpSizeRange>
+                        </value>
+                    </li>
+                </operations>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            
+        </caseFalse>
+    </Operation>
+    
+    <!-- replace "golden?" with solpyrite -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesFantasyMetalSolpyrite</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Solorite"]/stuffProps/stuffAdjective</xpath>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            
+        </caseFalse>
+    </Operation>
+    
+    
+    
 </Patch>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    
+    
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesDMR</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <!-- Expanded Materials - Plastics / Materials+ -->
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>VMEu_PolyesterCloth</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>AM_Polyester</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>VMEu_PlasticPellets_TierOne</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>AM_MixedPlastic</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+                
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>VMEu_DarkOil</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>AM_BioOil</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>OilBarrel</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>AM_CrudeOil</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>VMEu_PolyesterCloth</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>carnap_polyethylene</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>AM_Polyester</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>carnap_polyethylene</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>VMEu_PlasticPellets_TierOne</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>carnap_polypropylene</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>AM_MixedPlastic</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>carnap_polypropylene</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            <!-- rename concrete to reinforced concrete -->
+            <Operation Class="PatchOperationSequence">
+                <success>Always</success>
+                <operations>
+                    <li Class="PatchOperationTest">
+                        <xpath>/Defs/ThingDef[defName="Stuff_RefConcreteAM"]</xpath>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <xpath>/Defs/ThingDef[defName="ConcreteSlab"]/label</xpath>
+                        <value>
+                            <label>reinforced concrete slabs</label>
+                        </value>
+                    </li>
+                </operations>
+            </Operation>
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>ConcreteSlab</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>Stuff_RefConcreteAM</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+             <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>ConcreteSlab</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>Stuff_RefConcreteAM</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+              
+            <!--
+            <Operation Class="PatchOperationSequence">
+                <success>Normal</success>
+                <operations>
+                    <li Class="PatchOperationTest">
+                        <xpath>/Defs/ThingDef[defName="VMEu_Coal"]</xpath>
+                    </li>
+                    <li Class="PatchOperationRemove">
+                        <xpath>/Defs/RecipeDef[defName="AM_MakeCoal"]</xpath>
+                    </li>
+                    <li Class="PatchOperationRemove">
+                        <xpath>/Defs/RecipeDef[defName="AM_MakeCoalBulk"]</xpath>
+                    </li>
+                </operations>
+            </Operation>
+            -->
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>VMEu_Coal</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>AM_CokeCoal</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>VMEu_Charcoal</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>AM_Coal</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
+                <arguments>
+                    <li>VMEu_Concrete</li> <!-- defName of the material that will be used if both materials are detected -->
+                    <li>Stuff_ConcreteAM</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
+                </arguments>
+            </Operation>
+            
+            
+        </caseTrue>
+        <caseFalse>
+            <!--Patch operations here-->
+        </caseFalse>
+    </Operation>
+    
+    
+</Patch>

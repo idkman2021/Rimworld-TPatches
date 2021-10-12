@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
     <!-- Bottom is highest priority!!! -->
+    
+    
+    <!-- 
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>key</li>
+            <li>mod</li>
+            <li>tab</li>
+            <li>label</li>
+            <li>description</li>
+            <li>tooltip</li>
+        </arguments>
+    </Operation>
+    -->
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesFantasyMetals</li>
+            <li>Fantasy Metals Reforged</li>
+            <li>Balancing</li>
+            <li>Fantasy Metals Reforge deep drilling rebalance</li>
+            <li>Makes metals from this mod rarer. Otherwise it is harder to get vanilla materials, and those materials are expensive, making it too easy to sell them.</li>
+            <li>commonalities reduced from 0.3 to 0.03, halved lump sizes and portion sizes.</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesFantasyMetalSolpyrite</li>
+            <li>Fantasy Metals Reforged</li>
+            <li>Tweaks</li>
+            <li>Replace "golden?" with solpyrite</li>
+            <li>Items made from solpyrite will have "solpyrite" adjective instead of "golden?"</li>
+            <li>xpath: removes /Defs/ThingDef[defName="Solorite"]/stuffAdjective</li>
+        </arguments>
+    </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -87,6 +124,17 @@
             <li>Typo Correcter</li>
             <li>Corrects text typos in mods. For example, renames "crocodale" to "crocodile", "leopardgecko" to "leopard gecko", etc. Currently does a complete retranslation of HC_Animal_1, HC_Animal_2, HC_Animal_3, HC_Animal_4.</li>
             <li>this xpath contains a manually collected list of rules for replacing texts with corrected versions.</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesDMR</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Duplicate Material Remover</li>
+            <li>Removes duplicate materials and patches everything to use new materials.</li>
+            <li>this xpath contains a manually collected list of rules for removing materials when appropriate mods are loaded.</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">

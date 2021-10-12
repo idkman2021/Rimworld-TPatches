@@ -10,12 +10,14 @@
             <li>tooltip</li><!-- tooltip -->
         </parameters>
         <apply>
+            <!-- checks if the mod is active -->
             <Operation Class="PatchOperationFindMod">
                 <mods>
                     <li>{mod}</li>
                 </mods>
                 <match Class="PatchOperationSequence">
                     <operations>
+                        <!-- mod is active, adds the setting to the top of settings list -->
                         <li Class="PatchOperationAdd">
                             <order>Prepend</order>
                             <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings</xpath>
@@ -54,21 +56,23 @@
                                 </li> -->
                             </value>
                         </li>
+                        <!-- adds the active mod to the log tab if it isn't already there -->
                         <li Class="PatchOperationConditional">
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings/li[text="{mod}"]</xpath>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
                             <nomatch Class="PatchOperationAdd">
                                 <order>Append</order>
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
+                                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
                                 <value>
                                     <li Class="XmlExtensions.Setting.Text">
                                         <font>Tiny</font>
-                                        <text>{mod}</text>
+                                        <text>mod: {mod}</text>
                                     </li>
                                 </value>
                             </nomatch>
                         </li>
                     </operations>
                 </match>
+                <!-- mod isn't active, setting is greyed out and added to the bottom of settings list -->
                 <nomatch Class="PatchOperationSequence">
                     <operations>
                         <li Class="PatchOperationAdd">
@@ -84,7 +88,7 @@
                                     <spacing>6</spacing>
                                 </li>
                                 <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(155,155,155)</color>
+                                    <color>(100,100,100)</color>
                                 </li>
                                 <li Class="XmlExtensions.Setting.Checkbox">
                                     <key>{key}</key>
@@ -92,14 +96,14 @@
                                     <tooltip>{tooltip}</tooltip>
                                 </li>
                                 <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(205,205,205)</color>
+                                    <color>(155,155,155)</color>
                                 </li>
                                 <li Class="XmlExtensions.Setting.Text">
                                     <font>Tiny</font>
                                     <text>{mod} is not installed.</text>
                                 </li>
                                 <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(155,155,155)</color>
+                                    <color>(100,100,100)</color>
                                 </li>
                                 <li Class="XmlExtensions.Setting.Text">
                                     <font>Tiny</font>
@@ -115,18 +119,19 @@
                                 </li> -->
                             </value>
                         </li>
+                         <!-- adds the non-active mod to the modlist tab if it isn't already there -->
                         <li Class="PatchOperationConditional">
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings/li[text="{mod}"]</xpath>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
                             <nomatch Class="PatchOperationAdd">
                                 <order>Append</order>
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
+                                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
                                 <value>
                                     <li Class="XmlExtensions.Setting.SetColor">
                                         <color>(155,155,155)</color>
                                     </li>
                                     <li Class="XmlExtensions.Setting.Text">
                                         <font>Tiny</font>
-                                        <text>{mod}</text>
+                                        <text>mod: {mod}</text>
                                     </li>
                                     <li Class="XmlExtensions.Setting.SetColor">
                                         <color>(255,255,255)</color>
@@ -134,6 +139,7 @@
                                 </value>
                             </nomatch>
                         </li>
+                        <!-- modlist-->
                     </operations>
                 </nomatch>
             </Operation>
