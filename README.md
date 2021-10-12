@@ -16,7 +16,8 @@ Many fixes, tweaks, settings and mod compatibility patches. Everything is toggle
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/76593873/136654567-e1330d6d-cd69-415c-b2ca-fd76ffe32c59.png)
-![image](https://user-images.githubusercontent.com/76593873/136654573-2c445c2f-33ae-4234-b340-f08e42304470.png)
-![image](https://user-images.githubusercontent.com/76593873/136654598-85b571d1-6822-455c-8f91-4352f7b1ca23.png)
-![image](https://user-images.githubusercontent.com/76593873/136654601-cf8e50ac-3712-423c-bd3d-803bfb16ffbf.png)
+![image](https://user-images.githubusercontent.com/76593873/137011197-77af973f-c791-46d1-a3c3-a63ec137c729.png)
+![image](https://user-images.githubusercontent.com/76593873/137011210-e827b089-c395-4ee0-89d2-b28c49110538.png)
+![image](https://user-images.githubusercontent.com/76593873/137011227-53aaf321-9e0e-446b-a041-8f9863cb6086.png)
+![image](https://user-images.githubusercontent.com/76593873/137011244-0826ca96-747d-48d3-9e8e-64f5649baa1b.png)
+![image](https://user-images.githubusercontent.com/76593873/137011270-0e951d25-f926-427e-ad78-3fbec460151b.png)
