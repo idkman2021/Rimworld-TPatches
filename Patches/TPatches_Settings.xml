@@ -96,6 +96,17 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
+            <li>TPatchesFilterRottable</li>
+            <li>Core</li>
+            <li>Tweaks</li>
+            <li>Rottable filter</li>
+            <li>Adds a filter for all items that can rot unless frozen (supports modded items)</li>
+            <li>The filter is at the bottom of the list, I don't know an xml way to move it to the top.</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
             <li>TPatchesFixSomeModdedFactionsNotShowingUpInCreateWorldMenu</li>
             <li>Core</li>
             <li>Fixes</li>

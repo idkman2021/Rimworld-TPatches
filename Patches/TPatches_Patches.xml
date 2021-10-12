@@ -297,5 +297,42 @@
     </Operation>
     
     
+    <!-- Rottable filter -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesFilterRottable</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationAdd">
+                <xpath>/Defs</xpath>
+                <value>
+                    <ThingCategoryDef>
+                        <defName>TPatchesRottable</defName>
+                        <label>*Rottable</label>
+                        <parent>Root</parent>
+                    </ThingCategoryDef>
+                </value>
+            </Operation>
+            <Operation Class="PatchOperationAdd">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[comps/li/daysToRotStart]/thingCategories</xpath>
+                <value>
+                    <li>TPatchesRottable</li>
+                </value>
+            </Operation>
+            <Operation Class="PatchOperationAdd">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[(comps/li/daysToRotStart) and (not(thingCategories))]</xpath>
+                <value>
+                    <thingCategories>
+                        <li>TPatchesRottable</li>
+                    </thingCategories>
+                </value>
+            </Operation>
+        </caseTrue>
+        <caseFalse>
+            
+        </caseFalse>
+    </Operation>
     
 </Patch>
