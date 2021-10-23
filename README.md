@@ -1,7 +1,7 @@
 # Rimworld-TPatches
 Many fixes, tweaks, settings and mod compatibility patches. Everything is toggleable. Made using XML Extensions!
 
-It is a framework which allows me to add new toggleable patches with almost no additional effort.
+It is a framework which allows me to add new toggleable patches into mod settings with as little effort as just writing a patch.
 
 ### [Detailed list of all settings](https://docs.google.com/spreadsheets/d/1nhq6maAQgqy5VEXBN_rNa-neVqVlNxartAt38_Km4TA/edit?usp=sharing)
 
