@@ -308,7 +308,7 @@
                 <value>
                     <ThingCategoryDef>
                         <defName>TPatchesRottable</defName>
-                        <label>*Rottable</label>
+                        <label>*Rottable (except meat!)</label>
                         <parent>Root</parent>
                     </ThingCategoryDef>
                 </value>
@@ -465,6 +465,7 @@
         </caseFalse>
     </Operation>
     
+    <!-- great memory tweak -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatches_GreatMemoryTweak</key>

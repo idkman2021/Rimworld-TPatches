@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>TPatches</name> <!-- ModSync test! -->
+  <name>TPatches</name>
   <author>test</author>
   <url>https://github.com/idkman2021/Rimworld-TPatches/releases/latest</url>
   <packageId>carnap2.TPatches</packageId>

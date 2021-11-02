@@ -39,17 +39,7 @@
             <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/thoughtSettings</li>
         </arguments>
     </Operation>
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
-        <arguments>
-            <li>TPatches_InfiniteTurrets</li>
-            <li>Core</li>
-            <li>Tweaks</li>
-            <li>Infinite Turrets</li>
-            <li>Significantly increases barrel sizes and removes rearm cost (reduces it to 1). Affects all vanilla and modded turrets, but not mortars.</li>
-            <li>xpath: affects all buildings with ShootingAccuracyTurret statbase. Sets fuelCapacity and fuelMultiplier to 10000.</li>
-        </arguments>
-    </Operation>
+   
     
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
@@ -106,6 +96,17 @@
             <li>GlobalLearningFactor=0.5</li>
         </arguments>
     </Operation>
+     <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatches_InfiniteTurrets</li>
+            <li>Core</li>
+            <li>Tweaks</li>
+            <li>Infinite Turrets</li>
+            <li>Significantly increases barrel sizes and removes rearm cost (reduces it to 1). Affects all vanilla and modded turrets, but not mortars.</li>
+            <li>xpath: affects all buildings with ShootingAccuracyTurret statbase. Sets fuelCapacity and fuelMultiplier to 10000.</li>
+        </arguments>
+    </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -147,7 +148,7 @@
             <li>Core</li>
             <li>Tweaks</li>
             <li>Rottable filter</li>
-            <li>Adds a filter for all items that can rot unless frozen (supports modded items)</li>
+            <li>Adds a filter for all items that can rot unless frozen, except corpses (including all modded items). IMPORTANT: Doesn't include meat because that apparently requires c#</li>
             <li>The filter is at the bottom of the list, I don't know an xml way to move it to the top.</li>
         </arguments>
     </Operation>
