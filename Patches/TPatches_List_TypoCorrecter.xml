@@ -584,9 +584,9 @@
                 </value>
             </Operation>
             <Operation Class="PatchOperationReplace"> <success>Always</success>
-                <xpath>/Defs/ThingDef[label="Heavylizardskin"]/label</xpath>
+                <xpath>/Defs/ThingDef/label[text()="Heavylizardskin"]</xpath>
                 <value>
-                    <label>heavy lizard skin</label>
+                    <label>heavy lizardskin</label>
                 </value>
             </Operation>
         </caseTrue>

@@ -1,20 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-<Operation Class="XmlExtensions.OptionalPatch">
-    <modId>carnap2.TPatches</modId>
-    <key>TPatchesResearchFixes</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-        <Operation Class="PatchOperationReplace">
-            <success>Always</success>
-            <xpath>Defs/ResearchProjectDef[defName="SupportShotgun"]/prerequisites[li="Machining"]/li</xpath>
-            <value>
-                <li>Gunsmithing</li>
-            </value>
-        </Operation> 
-    </caseTrue>
-    <caseFalse>
-        
-    </caseFalse>
-</Operation>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesResearchFixes</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <!-- support shotguns require gunsmithing -->
+            <Operation Class="PatchOperationReplace">
+                <success>Always</success>
+                <xpath>Defs/ResearchProjectDef[defName="SupportShotgun"]/prerequisites[li="Machining"]/li</xpath>
+                <value>
+                    <li>Gunsmithing</li>
+                </value>
+            </Operation> 
+            <!-- defence tech pistols require blowback operation -->
+            <Operation Class="PatchOperationReplace">
+                <success>Always</success>
+                <xpath>Defs/ResearchProjectDef[defName="DefenceTech"]/prerequisites[li="Machining"]/li</xpath>
+                <value>
+                    <li>BlowbackOperation</li>
+                </value>
+            </Operation>
+            <!-- spacer medicine requires spacer medicine research -->
+            <Operation Class="PatchOperationAdd">
+                <success>Always</success>
+                <xpath>Defs/ThingDef[defName="MedicineSpacer"]/recipeMaker[not(researchPrerequisite)]</xpath>
+                <value>
+                    <researchPrerequisite>SpacerMedicineProduction</researchPrerequisite>
+                </value>
+            </Operation>
+            
+            
+            <!-- apex rimworld legends fix -->
+            <!--
+            <Operation Class="PatchOperationSequence">
+                <success>Always</success>
+                <operations>
+                    <li Class="PatchOperationAdd">
+                        <success>Normal</success>
+                        <xpath>Defs/ThingDef[defName="ARL_ShotgunHandgun"]/recipeMaker[not(researchPrerequisite)]</xpath>
+                        <value>
+                            <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationAdd">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef[defName="ARL_LeverActionShotgun"]/recipeMaker[not(researchPrerequisite)]</xpath>
+                        <value>
+                            <researchPrerequisite>GasOperation</researchPrerequisite>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationAdd">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef[defName="ARL_HandCannon"]/recipeMaker[not(researchPrerequisite)]</xpath>
+                        <value>
+                            <researchPrerequisite>GasOperation</researchPrerequisite>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationAdd">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef[defName="ARL_LeverActionShotgun"]/recipeMaker[not(researchPrerequisite)]</xpath>
+                        <value>
+                            <researchPrerequisite>GasOperation</researchPrerequisite>
+                        </value>
+                    </li>
+                    
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef[defName="ARL_MechanoidLMG"]/recipeMaker[not(researchPrerequisites)]/researchPrerequisite</xpath>
+                        <value>
+                            <researchPrerequisites>
+                                <li>ChargedShot</li>
+                                <li>ShipEngine</li>
+                            </researchPrerequisites>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef[defName="ARL_MechanoidRifle"]/recipeMaker[not(researchPrerequisites)]/researchPrerequisite</xpath>
+                        <value>
+                            <researchPrerequisites>
+                                <li>ChargedShot</li>
+                                <li>ShipEngine</li>
+                            </researchPrerequisites>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef[defName="ARL_MechanoidSniperRifle"]/recipeMaker[not(researchPrerequisites)]/researchPrerequisite</xpath>
+                        <value>
+                            <researchPrerequisites>
+                                <li>ChargedShot</li>
+                                <li>ShipEngine</li>
+                            </researchPrerequisites>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef[defName="ARL_MechanoidRocketLauncher"]/recipeMaker[not(researchPrerequisites)]/researchPrerequisite</xpath>
+                        <value>
+                            <researchPrerequisites>
+                                <li>ChargedShot</li>
+                                <li>ShipEngine</li>
+                            </researchPrerequisites>
+                        </value>
+                    </li>
+                    <li Class="PatchOperationReplace">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef[defName="ARL_ChargeMinigun"]/recipeMaker[not(researchPrerequisites)]/researchPrerequisite</xpath>
+                        <value>
+                            <researchPrerequisites>
+                                <li>ChargedShot</li>
+                                <li>ShipEngine</li>
+                            </researchPrerequisites>
+                        </value>
+                    </li>
+                    
+                    <li Class="PatchOperationAdd">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef[defName="ARL_SemiautomaticRifle"]/recipeMaker[not(researchPrerequisite)]</xpath>
+                        <value>
+                            <researchPrerequisite>GasOperation</researchPrerequisite>
+                        </value>
+                    </li>
+                </operations>
+            </Operation>
+            -->
+        </caseTrue>
+        <caseFalse>
+            
+        </caseFalse>
+    </Operation>
 </Patch>

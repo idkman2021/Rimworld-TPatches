@@ -44,22 +44,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
-                    <li>VMEu_PolyesterCloth</li> <!-- defName of the material that will be used if both materials are detected -->
-                    <li>carnap_polyethylene</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
-                </arguments>
-            </Operation>
-            
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
-                <arguments>
-                    <li>AM_Polyester</li> <!-- defName of the material that will be used if both materials are detected -->
-                    <li>carnap_polyethylene</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
-                </arguments>
-            </Operation>
-            
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
-                <arguments>
                     <li>VMEu_PlasticPellets_TierOne</li> <!-- defName of the material that will be used if both materials are detected -->
                     <li>carnap_polypropylene</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
                 </arguments>
@@ -97,14 +81,6 @@
                 </arguments>
             </Operation>
             
-             <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
-                <arguments>
-                    <li>ConcreteSlab</li> <!-- defName of the material that will be used if both materials are detected -->
-                    <li>Stuff_RefConcreteAM</li> <!-- defName of the duplicate material that will be deleted if both materials are detected -->
-                </arguments>
-            </Operation>
-              
             <!--
             <Operation Class="PatchOperationSequence">
                 <success>Normal</success>

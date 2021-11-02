@@ -16,6 +16,63 @@
         </arguments>
     </Operation>
     -->
+    
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesHARResearchRestrictionRemover</li>
+            <li>Humanoid Alien Races</li>
+            <li>Tweaks</li>
+            <li>Remove all research restrictions from HAR races</li>
+            <li>This will allow all races to research all research projects. Useful if you use mods like Random Research, since it might choose a project restricted to some race you don't have and you will be stuck.</li>
+            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/raceRestriction/researchList</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesHARthoughtSettingsRemover</li>
+            <li>Humanoid Alien Races</li> 
+            <li>Tweaks</li>
+            <li>Remove all custom thoughts from HAR races</li>
+            <li>Removes all custom thoughts, making them identical to vanilla human thoughts. Might make the game more balanced by reintroducing mood debuffs to races that had them disabled, and also might slightly improve performance.</li>
+            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/thoughtSettings</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatches_InfiniteTurrets</li>
+            <li>Core</li>
+            <li>Tweaks</li>
+            <li>Infinite Turrets</li>
+            <li>Significantly increases barrel sizes and removes rearm cost (reduces it to 1). Affects all vanilla and modded turrets, but not mortars.</li>
+            <li>xpath: affects all buildings with ShootingAccuracyTurret statbase. Sets fuelCapacity and fuelMultiplier to 10000.</li>
+        </arguments>
+    </Operation>
+    
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatches_DubsMintStorageResearch</li>
+            <li>Dubs Mint Storage - DEV</li>
+            <li>Tweaks</li>
+            <li>Add a research for dubs mint storage</li>
+            <li>Tribals can't build high tech deep storage anymore! Adds a required research after microelectronics.</li>
+            <li>Adds a 3600 points "Deep storage" research</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesMegafauna_manhunterOnTameFailChance</li>
+            <li>Megafauna</li>
+            <li>Fixes</li>
+            <li>Megafauna tame revenge chance fix</li>
+            <li>Fixes several animal tame revenge chances being 0.28% instead of 28%.</li>
+            <li>Chalicotherium, Procoptodon, Castoroides, Sivatherium, Macrauchenia, Megaloceros</li>
+        </arguments>
+    </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -36,6 +93,17 @@
             <li>Replace "golden?" with solpyrite</li>
             <li>Items made from solpyrite will have "solpyrite" adjective instead of "golden?"</li>
             <li>xpath: removes /Defs/ThingDef[defName="Solorite"]/stuffAdjective</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatches_GreatMemoryTweak</li>
+            <li>Core</li>
+            <li>Tweaks</li>
+            <li>Great Memory trait increases learning speed</li>
+            <li>If you've disabled skill degradation, great memory trait does nothing. This patch makes it increase learning speed.</li>
+            <li>GlobalLearningFactor=0.5</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
@@ -71,28 +139,7 @@
             <li>xpath: removes weaponList node from race with defName="Nerubian".</li>
         </arguments>
     </Operation>
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
-        <arguments>
-            <li>TPatchesHARResearchRestrictionRemover</li>
-            <li>Humanoid Alien Races</li>
-            <li>Tweaks</li>
-            <li>Remove all research restrictions from HAR races</li>
-            <li>This will allow all races to research all research projects. Useful if you use mods like Random Research, since it might choose a project restricted to some race you don't have and you will be stuck.</li>
-            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/raceRestriction/researchList</li>
-        </arguments>
-    </Operation>
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
-        <arguments>
-            <li>TPatchesHARthoughtSettingsRemover</li>
-            <li>Humanoid Alien Races</li> 
-            <li>Tweaks</li>
-            <li>Remove all custom thoughts from HAR races</li>
-            <li>Removes all custom thoughts, making them identical to vanilla human thoughts. Might make the game more balanced by reintroducing mood debuffs to races that had them disabled, and also might slightly improve performance.</li>
-            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/thoughtSettings</li>
-        </arguments>
-    </Operation>
+    
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
