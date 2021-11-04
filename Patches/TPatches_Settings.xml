@@ -17,17 +17,7 @@
     </Operation>
     -->
     
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
-        <arguments>
-            <li>TPatchesHARResearchRestrictionRemover</li>
-            <li>Humanoid Alien Races</li>
-            <li>Tweaks</li>
-            <li>Remove all research restrictions from HAR races</li>
-            <li>This will allow all races to research all research projects. Useful if you use mods like Random Research, since it might choose a project restricted to some race you don't have and you will be stuck.</li>
-            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/raceRestriction/researchList</li>
-        </arguments>
-    </Operation>
+    
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -35,11 +25,32 @@
             <li>Humanoid Alien Races</li> 
             <li>Tweaks</li>
             <li>Remove all custom thoughts from HAR races</li>
-            <li>Removes all custom thoughts, making them identical to vanilla human thoughts. Might make the game more balanced by reintroducing mood debuffs to races that had them disabled, and also might slightly improve performance.</li>
+            <li>Removes all custom thoughts, making them identical to vanilla human thoughts. Might make the game more balanced by reintroducing mood debuffs to races that had them disabled, and also might slightly improve performance. Default - Disabled</li>
             <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/thoughtSettings</li>
         </arguments>
     </Operation>
-   
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesHARResearchRestrictionRemover</li>
+            <li>Humanoid Alien Races</li>
+            <li>Tweaks</li>
+            <li>Remove all research restrictions from HAR races</li>
+            <li>This will allow all races to research all research projects. Useful if you use mods like Random Research, since it might choose a project restricted to some race you don't have and you will be stuck. Default - Disabled</li>
+            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/raceRestriction/researchList</li>
+        </arguments>
+    </Operation>
+   <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesMegafauna_manhunterOnTameFailChance</li>
+            <li>Megafauna</li>
+            <li>Tweaks</li>
+            <li>Megafauna tame revenge chance tweak</li>
+            <li>Fixes several animal tame revenge chances being 0.28% instead of 28%. Default - Disabled</li>
+            <li>Chalicotherium, Procoptodon, Castoroides, Sivatherium, Macrauchenia, Megaloceros</li>
+        </arguments>
+    </Operation>
     
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
@@ -48,30 +59,20 @@
             <li>Dubs Mint Storage - DEV</li>
             <li>Tweaks</li>
             <li>Add a research for dubs mint storage</li>
-            <li>Tribals can't build high tech deep storage anymore! Adds a required research after microelectronics.</li>
+            <li>Tribals can't build high tech deep storage anymore! Adds a required research after microelectronics. Default - Disabled</li>
             <li>Adds a 3600 points "Deep storage" research</li>
         </arguments>
     </Operation>
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
-        <arguments>
-            <li>TPatchesMegafauna_manhunterOnTameFailChance</li>
-            <li>Megafauna</li>
-            <li>Fixes</li>
-            <li>Megafauna tame revenge chance fix</li>
-            <li>Fixes several animal tame revenge chances being 0.28% instead of 28%.</li>
-            <li>Chalicotherium, Procoptodon, Castoroides, Sivatherium, Macrauchenia, Megaloceros</li>
-        </arguments>
-    </Operation>
+    
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
             <li>TPatchesFantasyMetals</li>
             <li>Fantasy Metals Reforged</li>
             <li>Balancing</li>
-            <li>Fantasy Metals Reforge deep drilling rebalance</li>
-            <li>Makes metals from this mod rarer. Otherwise it is harder to get vanilla materials, and those materials are expensive, making it too easy to sell them.</li>
-            <li>commonalities reduced from 0.3 to 0.03, halved lump sizes and portion sizes.</li>
+            <li>Fantasy Metals Reforge deep drilling rarity</li>
+            <li>Makes Fantasy Metals rarer, which in turn makes vanilla materials more common. Makes lumps smaller. Default - Disabled</li>
+            <li>commonalities reduced from 0.3 to 0.06, reduced lump sizes and portion sizes.</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
@@ -81,7 +82,7 @@
             <li>Fantasy Metals Reforged</li>
             <li>Tweaks</li>
             <li>Replace "golden?" with solpyrite</li>
-            <li>Items made from solpyrite will have "solpyrite" adjective instead of "golden?"</li>
+            <li>Items made from solpyrite will have "solpyrite" adjective instead of "golden?". Default - Disabled</li>
             <li>xpath: removes /Defs/ThingDef[defName="Solorite"]/stuffAdjective</li>
         </arguments>
     </Operation>
@@ -92,7 +93,7 @@
             <li>Core</li>
             <li>Tweaks</li>
             <li>Great Memory trait increases learning speed</li>
-            <li>If you've disabled skill degradation, great memory trait does nothing. This patch makes it increase learning speed.</li>
+            <li>If you've disabled skill degradation, great memory trait does nothing. This patch makes it increase learning speed. Default - Disabled</li>
             <li>GlobalLearningFactor=0.5</li>
         </arguments>
     </Operation>
@@ -103,7 +104,7 @@
             <li>Core</li>
             <li>Tweaks</li>
             <li>Infinite Turrets</li>
-            <li>Significantly increases barrel sizes and removes rearm cost (reduces it to 1). Affects all vanilla and modded turrets, but not mortars.</li>
+            <li>Significantly increases barrel sizes and removes rearm cost (reduces it to 1). Affects all vanilla and modded turrets, but not mortars. Default - Disabled</li>
             <li>xpath: affects all buildings with ShootingAccuracyTurret statbase. Sets fuelCapacity and fuelMultiplier to 10000.</li>
         </arguments>
     </Operation>
@@ -114,7 +115,7 @@
             <li>Vanilla Apparel Expanded — Accessories</li>
             <li>Balancing</li>
             <li>Mini-Turret Pack nerf</li>
-            <li>3 times less damage, adds gunsmithing and gun turrets research requirements.</li>
+            <li>3 times less damage, adds gunsmithing and gun turrets research requirements. Default - Disabled</li>
             <li>Replaces projectile from Bullet_MiniTurret with a custom one with damage 11 > 4, speed 70 > 35. Range 29 > 23</li>
         </arguments>
     </Operation>
@@ -125,7 +126,7 @@
             <li>Vanilla Apparel Expanded — Accessories</li>
             <li>Balancing</li>
             <li>Ranged Shield Belt nerf</li>
-            <li>Three times lower recharge rate and capacity. Without this patch, ranged shield belt is only about 10 % weaker than normal shield belt, making it very OP.</li>
+            <li>Three times lower recharge rate and capacity. Without this patch, ranged shield belt is only about 10 % weaker than normal shield belt, making it very OP. Default - Disabled</li>
             <li>EnergyShieldRechargeRate 0.13 > 0.5; EnergyShieldEnergyMax 0.9 > 0.3</li>
         </arguments>
     </Operation>
@@ -136,7 +137,7 @@
             <li>World of Warcraft - Playable Nerubians</li>
             <li>Fixes</li>
             <li>Fix being unable to equip some vanilla weapons</li>
-            <li>Nerubians has a bug which makes all other races unable to equip some vanilla weapons, this fixes that. Please tell the mod author to replace /alienRace/raceRestriction/weaponList with whiteWeaponList</li>
+            <li>Nerubians has a bug which makes all other races unable to equip some vanilla weapons, this fixes that. Please tell the mod author to replace /alienRace/raceRestriction/weaponList with whiteWeaponList. Default - Enabled</li>
             <li>xpath: removes weaponList node from race with defName="Nerubian".</li>
         </arguments>
     </Operation>
@@ -148,7 +149,7 @@
             <li>Core</li>
             <li>Tweaks</li>
             <li>Rottable filter</li>
-            <li>Adds a filter for all items that can rot unless frozen, except corpses (including all modded items). IMPORTANT: Doesn't include meat because that apparently requires c#</li>
+            <li>Adds a filter for all items that can rot unless frozen, except corpses (including all modded items). IMPORTANT: Doesn't include meat because that apparently requires c#. Default - Enabled</li>
             <li>The filter is at the bottom of the list, I don't know an xml way to move it to the top.</li>
         </arguments>
     </Operation>
@@ -159,7 +160,7 @@
             <li>Core</li>
             <li>Fixes</li>
             <li>Fix some modded factions not showing up in create world menu</li>
-            <li>Some modded factions have a bug where they don't appear in create world menu, this setting fixes that.</li>
+            <li>Some modded factions have a bug where they don't appear in create world menu, this setting fixes that. Default - Enabled</li>
             <li>xpath: adds maxConfigurableAtWorldCreation=9999 to all non-hidden non-player non-abstract factions that aren't based on anything other than factionBase and don't already have this line.</li>
         </arguments>
     </Operation>
@@ -170,7 +171,7 @@
             <li>Core</li>
             <li>Fixes</li>
             <li>Research Fixes</li>
-            <li>Fixes research oversights in mods. For example, all gun researches should require gunsmithing/gunpowder.</li>
+            <li>Fixes research oversights in mods. For example, all gun researches should require gunsmithing/gunpowder. Default - Enabled</li>
             <li>this xpath contains a manually collected list of rules for adding research requirements.</li>
         </arguments>
     </Operation>
@@ -181,7 +182,7 @@
             <li>Core</li>
             <li>Fixes</li>
             <li>Typo Correcter</li>
-            <li>Corrects text typos in mods. For example, renames "crocodale" to "crocodile", "leopardgecko" to "leopard gecko", etc. Currently does a complete retranslation of HC_Animal_1, HC_Animal_2, HC_Animal_3, HC_Animal_4.</li>
+            <li>Corrects text typos in mods. For example, renames "crocodale" to "crocodile", "leopardgecko" to "leopard gecko", etc. Currently does a complete retranslation of HC_Animal_1, HC_Animal_2, HC_Animal_3, HC_Animal_4. Default - Enabled</li>
             <li>this xpath contains a manually collected list of rules for replacing texts with corrected versions.</li>
         </arguments>
     </Operation>
@@ -192,8 +193,8 @@
             <li>Core</li>
             <li>Fixes</li>
             <li>Duplicate Material Remover</li>
-            <li>Removes duplicate materials and patches everything to use new materials.</li>
-            <li>this xpath contains a manually collected list of rules for removing materials when appropriate mods are loaded.</li>
+            <li>Removes duplicate materials and patches everything to use new materials. IMPORTANT: This patch is currently being tested because it could create balancing issues. Currently affects Rimfeller, Expanded Materials, materials+. Default - Disabled.</li>
+            <li>this xpath contains a manually collected list of rules for removing materials when appropriate mods are loaded. All recipes, plants, ore veins, and buildings are patched to use the alternative material instead.</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
@@ -203,7 +204,7 @@
             <li>Core</li>
             <li>Fixes</li>
             <li>Duplicate Animal Remover</li>
-            <li>This will remove duplicate animals from mods. Vanilla Expanded mods are the highest priority and animals from them won't be removed. For example, if both VE and ACP add a Cheetah, it will be deleted from ACP. Some animals are renamed instead where appropriate.</li>
+            <li>This will remove duplicate animals from mods. Vanilla Expanded mods are the highest priority and animals from them won't be removed. For example, if both VE and ACP add a Cheetah, it will be deleted from ACP. Some animals are renamed instead where appropriate. Default - Enabled</li>
             <li>this xpath contains a manually collected list of rules for removing animals when appropriate mods are loaded. Removes ThingDef, PawnKindDef and egg ThingDef. When a higher priority mod is detected, it tries to remove duplicate animals from lower priority mods. You can see the mod priority on TPatches Google Sheets.</li>
         </arguments>
     </Operation>
