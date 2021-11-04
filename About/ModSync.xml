@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>ef7d4f2d-28fc-495e-8fbc-3a7ad283ae95</ID>
   <ModName>TPatches</ModName>
-  <Version>1.2.0</Version>
+  <Version>1.2.1</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>idkman2021</Owner>
