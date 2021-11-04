@@ -5,7 +5,7 @@
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesDMR</key>
-        <defaultValue>true</defaultValue>
+        <defaultValue>false</defaultValue>
         <caseTrue>
             <!-- Expanded Materials - Plastics / Materials+ -->
             
