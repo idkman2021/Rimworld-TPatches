@@ -19,7 +19,7 @@ It is a framework which allows me to add new toggleable patches into mod setting
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
 
 ## Screenshots
-Screenshots show default settings. (might be slightly outdated)
+Screenshots (might be slightly outdated)
 ![image](https://user-images.githubusercontent.com/76593873/140619025-2ab37e31-435d-497a-989b-64e57a303b81.png)
 ![image](https://user-images.githubusercontent.com/76593873/140619057-b614c063-f10b-44d4-b01a-4a9399c6bc86.png)
 ![image](https://user-images.githubusercontent.com/76593873/140619072-45d298b6-6045-4187-a839-88d55dfb6b06.png)
