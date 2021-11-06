@@ -20,9 +20,10 @@ By default all fixes are enabled, all tweaks and balancing changes are disabled.
 
 ## Screenshots
 Screenshots show default settings. (might be slightly outdated)
-![image](https://user-images.githubusercontent.com/76593873/140305906-4add5c41-97d8-4280-a216-eecc0c868118.png)
-![image](https://user-images.githubusercontent.com/76593873/140305975-01c383ec-b0a6-4cbb-a9d2-9c2dd4be220d.png)
-![image](https://user-images.githubusercontent.com/76593873/140306028-504681d3-1ee6-4109-bcba-948dbaf10e54.png)
+![image](https://user-images.githubusercontent.com/76593873/140619025-2ab37e31-435d-497a-989b-64e57a303b81.png)
+![image](https://user-images.githubusercontent.com/76593873/140619057-b614c063-f10b-44d4-b01a-4a9399c6bc86.png)
+![image](https://user-images.githubusercontent.com/76593873/140619072-45d298b6-6045-4187-a839-88d55dfb6b06.png)
+![image](https://user-images.githubusercontent.com/76593873/140619086-51164aa5-1ced-4018-abd9-a5521a38f88b.png)
 ![image](https://user-images.githubusercontent.com/76593873/137011197-77af973f-c791-46d1-a3c3-a63ec137c729.png)
 ![image](https://user-images.githubusercontent.com/76593873/137011210-e827b089-c395-4ee0-89d2-b28c49110538.png)
 
