@@ -29,3 +29,13 @@ Screenshots (might be slightly outdated)
 
 ## Bugs
 - Rottable items filter doesn't include meat. That is because meat is not defined in xml and there is no way to modify it without c#.
+
+## Info
+Requires [XML Extensions](https://steamcommunity.com/sharedfiles/filedetails/?id=2574315206).
+
+Imranfish's XML Extensions is an incredible modding tool, using it I made a "framework" which automatically creates a fancy setting entry for each patch I make. If you have any suggestions, I can now very easily implement them into the mod.
+
+
+Load as low as possible! TPatches only affects mods loaded before it.
+
+To access settings menu, go to rimworld settings and press the "More Mod Settings" button which is added by XML Extensions.
