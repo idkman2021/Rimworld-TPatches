@@ -156,7 +156,7 @@
                         <success>Normal</success>
                         <xpath>/Defs/ThingDef[defName="Mithril"]/deepCommonality</xpath>
                         <value>
-                            <deepCommonality>0.03</deepCommonality>
+                            <deepCommonality>0.06</deepCommonality>
                         </value>
                     </li>
                     <li Class="PatchOperationReplace">
@@ -173,7 +173,7 @@
                         <success>Always</success>
                         <xpath>/Defs/ThingDef[defName="Orichalcum"]/deepCommonality</xpath>
                         <value>
-                            <deepCommonality>0.03</deepCommonality>
+                            <deepCommonality>0.06</deepCommonality>
                         </value>
                     </li>
                     <li Class="PatchOperationReplace">
@@ -197,7 +197,7 @@
                         <success>Always</success>
                         <xpath>/Defs/ThingDef[defName="Adamantite"]/deepCommonality</xpath>
                         <value>
-                            <deepCommonality>0.03</deepCommonality>
+                            <deepCommonality>0.06</deepCommonality>
                         </value>
                     </li>
                     <li Class="PatchOperationReplace">
@@ -214,7 +214,7 @@
                         <success>Always</success>
                         <xpath>/Defs/ThingDef[defName="Tozra"]/deepCommonality</xpath>
                         <value>
-                            <deepCommonality>0.03</deepCommonality>
+                            <deepCommonality>0.06</deepCommonality>
                         </value>
                     </li>
                     <li Class="PatchOperationReplace">
@@ -238,7 +238,7 @@
                         <success>Always</success>
                         <xpath>/Defs/ThingDef[defName="Solorite"]/deepCommonality</xpath>
                         <value>
-                            <deepCommonality>0.05</deepCommonality>
+                            <deepCommonality>0.1</deepCommonality>
                         </value>
                     </li>
                     <li Class="PatchOperationReplace">
@@ -252,7 +252,7 @@
                         <success>Always</success>
                         <xpath>/Defs/ThingDef[defName="Skelsshkrum"]/deepCommonality</xpath>
                         <value>
-                            <deepCommonality>0.03</deepCommonality>
+                            <deepCommonality>0.06</deepCommonality>
                         </value>
                     </li>
                     <li Class="PatchOperationReplace">
@@ -328,7 +328,35 @@
                         <li>TPatchesRottable</li>
                     </thingCategories>
                 </value>
+            </Operation><!--
+            <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
+                <objPath>ThingDef/*/thingCategories/[defName="MeatRaw"]</objPath>
+                <order>Append</order>
+                <value>
+                    <li>TPatchesRottable</li>
+                </value>
+            </Operation>         -->   
+            <!-- <Operation Class="XmlExtensions.DefDatabaseForEach">
+                <defType>ThingDef</defType>
+                <storeIn>carnap2_meats</storeIn>
+                <apply>
+                    <Operation Class="XmlExtensions.DefDatabaseConditional">
+                        <objPath>{carnap2_meats}/thingCategories/li/MeatRaw</objPath>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.DefDatabaseOperationInsert">
+                                <objPath>{carnap2_meats}/thingCategories</objPath>
+                                <order>Append</order>
+                                <value>
+                                    <li>TPatchesRottable</li>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                        <caseFalse>
+                        </caseFalse>
+                    </Operation>
+                </apply>
             </Operation>
+            -->
         </caseTrue>
         <caseFalse>
             
@@ -366,7 +394,7 @@
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesMegafauna_manhunterOnTameFailChance</key>
-        <defaultValue>true</defaultValue>
+        <defaultValue>false</defaultValue>
         <caseTrue>
             <Operation Class="PatchOperationSequence">
                 <success>Always</success>
@@ -511,6 +539,7 @@
              
          </caseFalse>
      </Operation>
+     
     <!--
     <Operation Class="XmlExtensions.OptionalPatch">
     <modId>carnap2.TPatches</modId>

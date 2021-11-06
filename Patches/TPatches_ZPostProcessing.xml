@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+ <!-- Tab descriptions that are added at the top after all settings are added -->
+    <Operation Class="PatchOperationAdd">
+        <order>Prepend</order>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
+        <value>
+            <li Class="XmlExtensions.Setting.Text">
+                 <font>Medium</font>
+                <text>Information page</text>
+            </li>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <order>Prepend</order>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Fixes"]/settings</xpath>
+        <value>
+            <li Class="XmlExtensions.Setting.SetColor">
+                <color>(255,255,255)</color>
+            </li>
+            <li Class="XmlExtensions.Setting.Text">
+                 <font>Small</font>
+                <text>Fixes for obvious bugs, inconsistencies and inconveniences in vanilla and between mods.</text>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.Gap">
+                <spacing>8</spacing>
+            </li>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <order>Prepend</order>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Tweaks"]/settings</xpath>
+        <value>
+            <li Class="XmlExtensions.Setting.SetColor">
+                <color>(255,255,255)</color>
+            </li>
+            <li Class="XmlExtensions.Setting.Text">
+                <font>Small</font>
+                <text>Various optional tweaks.</text>
+            </li>
+           <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.Gap">
+                <spacing>8</spacing>
+            </li>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <order>Prepend</order>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Balancing"]/settings</xpath>
+        <value>
+            <li Class="XmlExtensions.Setting.SetColor">
+                <color>(255,255,255)</color>
+            </li>
+            <li Class="XmlExtensions.Setting.Text">
+                 <font>Small</font>
+                <text>Nerfs for modded items that are potentially overpowered.</text>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.Gap">
+                <spacing>8</spacing>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <order>Prepend</order>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Settings"]/settings</xpath>
+        <value>
+            <li Class="XmlExtensions.Setting.SetColor">
+                <color>(255,255,255)</color>
+            </li>
+            <li Class="XmlExtensions.Setting.Text">
+                 <font>Small</font>
+                <text>Settings to customize various stats according to player preferences.</text>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.Gap">
+                <spacing>8</spacing>
+            </li>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAdd">
+        <order>Prepend</order>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Fun"]/settings</xpath>
+        <value>
+            <li Class="XmlExtensions.Setting.SetColor">
+                <color>(255,255,255)</color>
+            </li>
+            <li Class="XmlExtensions.Setting.Text">
+                 <font>Small</font>
+                <text>Addons or changes that might be overpowered or not lore-friendly.</text>
+            </li>
+           <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>0</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.GapLine">
+                <spacing>1</spacing>
+            </li>
+            <li Class="XmlExtensions.Setting.Gap">
+                <spacing>8</spacing>
+            </li>
+        </value>
+    </Operation>
+    
+    <!-- "core" is not displayed as a mod -->
+    <!-- remove gap for mod name -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li[settings/li/li/text="Core"]/splits</xpath>
+        <value>
+            <splits>
+                <li>-0.002</li>
+                <li>0.912</li>
+            </splits>
+        </value>
+    </Operation>
+    <!-- remove mod name -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/li[text="Core"]</xpath>
+    </Operation>
+</Patch>
