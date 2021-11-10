@@ -76,21 +76,6 @@
     </Operation>
     
     <!-- if all supported mods are installed, the list for settings for non-installed mods is hidden -->
-    <Operation Class="PatchOperationTest">
-        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[li/settings/li/li]</xpath>
-    </Operation>
-    <Operation Class="PatchOperationTest">
-        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[li/settings/li/li/color]</xpath>
-    </Operation>
-    <Operation Class="PatchOperationTest">
-        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[li/settings/li/li/color="(100,100,155)"]</xpath>
-    </Operation>
-     <Operation Class="PatchOperationTest">
-        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li[@Class="XmlExtensions.Setting.Group"]</xpath>
-    </Operation>
-    <Operation Class="PatchOperationTest">
-        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[li/settings/li/li/color="(100,100,155)"]/li[@Class="XmlExtensions.Setting.Group"]</xpath>
-    </Operation>
     <Operation Class="PatchOperationRemove">
         <success>Always</success>
         <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[not(li/settings/li/li/color="(100,100,155)")]/li[@Class="XmlExtensions.Setting.Group"]</xpath>
