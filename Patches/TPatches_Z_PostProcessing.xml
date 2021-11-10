@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+ <!-- Tab descriptions that are added at the top after all settings are added -->
+    <Operation Class="PatchOperationAdd">
+        <order>Prepend</order>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
+        <value>
+            <li Class="XmlExtensions.Setting.Text">
+                 <font>Medium</font>
+                <text>Information page</text>
+            </li>
+        </value>
+    </Operation>
+    <!-- 
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatches_AddTitleToTab</patchName>
+        <arguments>
+            <li>tab</li>
+            <li>description</li>
+        </arguments>
+    </Operation>
+    -->
+    <!-- adds headers to all settings tabs -->
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatches_AddTitleToTab</patchName>
+        <arguments>
+            <li>Fixes</li>
+            <li>Fixes for obvious bugs, inconsistencies and inconveniences in vanilla and between mods.</li>
+        </arguments>
+    </Operation>
+     <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatches_AddTitleToTab</patchName>
+        <arguments>
+            <li>Tweaks</li>
+            <li>Various optional tweaks.</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatches_AddTitleToTab</patchName>
+        <arguments>
+            <li>Balancing</li>
+            <li>Nerfs for modded items that are potentially overpowered.</li>
+        </arguments>
+    </Operation>
+    <!--
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatches_AddTitleToTab</patchName>
+        <arguments>
+            <li>Settings</li>
+            <li>Settings to customize various stats according to player preferences.</li>
+        </arguments>
+    </Operation>
+    -->
+   <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatches_AddTitleToTab</patchName>
+        <arguments>
+            <li>Fun</li>
+            <li>Addons or changes that might be overpowered or not lore-friendly.</li>
+        </arguments>
+    </Operation>
+    
+    <!-- "core" is not displayed as a mod -->
+    <!-- remove gap for mod name -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li[settings/li/li/text="Core"]/splits</xpath>
+        <value>
+            <splits>
+                <li>-0.002</li>
+                <li>0.912</li>
+            </splits>
+        </value>
+    </Operation>
+    <!-- remove mod name -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/li[text="Core"]</xpath>
+    </Operation>
+    
+    <!-- if all supported mods are installed, the list for settings for non-installed mods is hidden -->
+    <Operation Class="PatchOperationTest">
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[li/settings/li/li]</xpath>
+    </Operation>
+    <Operation Class="PatchOperationTest">
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[li/settings/li/li/color]</xpath>
+    </Operation>
+    <Operation Class="PatchOperationTest">
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[li/settings/li/li/color="(100,100,155)"]</xpath>
+    </Operation>
+     <Operation Class="PatchOperationTest">
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li[@Class="XmlExtensions.Setting.Group"]</xpath>
+    </Operation>
+    <Operation Class="PatchOperationTest">
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[li/settings/li/li/color="(100,100,155)"]/li[@Class="XmlExtensions.Setting.Group"]</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <success>Always</success>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[not(li/settings/li/li/color="(100,100,155)")]/li[@Class="XmlExtensions.Setting.Group"]</xpath>
+    </Operation>
+</Patch>

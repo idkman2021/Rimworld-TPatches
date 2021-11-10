@@ -308,7 +308,7 @@
                 <value>
                     <ThingCategoryDef>
                         <defName>TPatchesRottable</defName>
-                        <label>*Rottable (except meat!)</label>
+                        <label>*Rottable</label>
                         <parent>Root</parent>
                     </ThingCategoryDef>
                 </value>
@@ -328,35 +328,40 @@
                         <li>TPatchesRottable</li>
                     </thingCategories>
                 </value>
-            </Operation><!--
-            <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
-                <objPath>ThingDef/*/thingCategories/[defName="MeatRaw"]</objPath>
-                <order>Append</order>
-                <value>
-                    <li>TPatchesRottable</li>
-                </value>
-            </Operation>         -->   
-            <!-- <Operation Class="XmlExtensions.DefDatabaseForEach">
-                <defType>ThingDef</defType>
-                <storeIn>carnap2_meats</storeIn>
+            </Operation>
+            <!-- patch by imranfish -->
+            <Operation Class="XmlExtensions.DefDatabaseForEach">
+                <objPath>ThingDef/[thingCategories/[defName="MeatRaw"]]</objPath>
+                <storeIn>path</storeIn>
                 <apply>
-                    <Operation Class="XmlExtensions.DefDatabaseConditional">
-                        <objPath>{carnap2_meats}/thingCategories/li/MeatRaw</objPath>
-                        <caseTrue>
-                            <Operation Class="XmlExtensions.DefDatabaseOperationInsert">
-                                <objPath>{carnap2_meats}/thingCategories</objPath>
-                                <order>Append</order>
-                                <value>
-                                    <li>TPatchesRottable</li>
-                                </value>
-                            </Operation>
-                        </caseTrue>
-                        <caseFalse>
-                        </caseFalse>
+                    <!--Add the category to the ThingDef-->
+                    <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
+                        <objPath>{path}/thingCategories</objPath>
+                        <objPath2>ThingCategoryDef/[defName="TPatchesRottable"]</objPath2>
+                    </Operation>
+                    <!--Add the ThingDef to the ThingCategory-->
+                    <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
+                        <objPath>ThingCategoryDef/[defName="TPatchesRottable"]/childThingDefs</objPath>
+                        <objPath2>{path}</objPath2>
+                    </Operation>
+                    <!--Add the ThingDef to the ThingCategory's HashSet-->
+                    <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
+                        <objPath>ThingCategoryDef/[defName="TPatchesRottable"]/allChildThingDefsCached</objPath>
+                        <objPath2>{path}</objPath2>
+                    </Operation>
+                    <!--Add the ThingDef to the ThingCategory's cachedList-->
+                    <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
+                        <objPath>ThingCategoryDef/[defName="TPatchesRottable"]/sortedChildThingDefsCached</objPath>
+                        <objPath2>{path}</objPath2>
                     </Operation>
                 </apply>
             </Operation>
-            -->
+            <!--Sort the cached list in the ThingCategory-->
+            <Operation Class="XmlExtensions.DefDatabaseOperationSortList">
+                <nonNumeric>true</nonNumeric>
+                <objPath>ThingCategoryDef/[defName="TPatchesRottable"]/sortedChildThingDefsCached</objPath>
+                <objPathLocal>label</objPathLocal>
+            </Operation>
         </caseTrue>
         <caseFalse>
             
@@ -540,6 +545,74 @@
          </caseFalse>
      </Operation>
      
+     <!-- Enable Oversized Weapons -->
+     <Operation Class="XmlExtensions.OptionalPatch">
+         <modId>carnap2.TPatches</modId>
+         <key>TPatches_CompOversizedReplace</key>
+         <defaultValue>false</defaultValue>
+         <caseTrue>
+             <Operation Class="PatchOperationFindMod">
+                 <mods>
+                     <li>Enable Oversized Weapons</li>
+                 </mods>
+                 <match Class="PatchOperationRemove">
+                     <success>Always</success>
+                     <xpath>/Defs/ThingDef/comps/li[@Class="CompOversizedWeapon.CompOversizedWeapon" or compClass="CompOversizedWeapon.CompOversizedWeapon" or @Class="CompOversizedWeapon.CompProperties_OversizedWeapon"][not(verticalFlipNorth) and not(angleAdjustmentWest) and not(angleAdjustmentEast) and not(angleAdjustmentSouth) and not(angleAdjustmentEast) and not(northOffset) and not(eastOffset) and not(westOffset) and not(southOffset) and not(isDualWeapon) and not(verticalFlipOutsideCombat)]</xpath>
+                 </match>
+             </Operation>
+         </caseTrue>
+         <caseFalse>
+             
+         </caseFalse>
+     </Operation>
+     
+     <!-- drugged ribs for every drug type -->
+     <!-- <Operation Class="XmlExtensions.OptionalPatch">
+         <modId>carnap2.TPatches</modId>
+         <key>TPatches_MoreDruggedRibs</key>
+         <defaultValue>false</defaultValue>
+         <caseTrue>
+             <Operation Class="XmlExtensions.CreateDocument">
+                 <docName>DrugsDoc</docName>
+                 <xpath>Defs/ThingDef/ingestible/outcomeDoers/li[@Class="IngestionOutcomeDoer_GiveHediff"]<xpath>
+            </Operation>
+             <Operation Class="XmlExtensions.ForEach">
+                 <objPath>DrugsDoc/ThingDef/ingestible/outcomeDoers/li[@Class="IngestionOutcomeDoer_GiveHediff"]</objPath>
+                 <storeIn>{drugpath}</storeIn>
+                 <apply>
+                     <!**Add the category to the ThingDef**>
+                     <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
+                         <objPath>{path}/thingCategories</objPath>
+                         <objPath2>ThingCategoryDef/[defName="ExampleCategory"]</objPath2>
+                     </Operation>
+                     <!**Add the ThingDef to the ThingCategory**>
+                     <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
+                         <objPath>ThingCategoryDef/[defName="ExampleCategory"]/childThingDefs</objPath>
+                         <objPath2>{path}</objPath2>
+                     </Operation>
+                     <!**Add the ThingDef to the ThingCategory's HashSet**>
+                     <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
+                         <objPath>ThingCategoryDef/[defName="ExampleCategory"]/allChildThingDefsCached</objPath>
+                         <objPath2>{path}</objPath2>
+                     </Operation>
+                     <!**Add the ThingDef to the ThingCategory's cachedList**>
+                     <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
+                         <objPath>ThingCategoryDef/[defName="ExampleCategory"]/sortedChildThingDefsCached</objPath>
+                         <objPath2>{path}</objPath2>
+                     </Operation>
+                 </apply>
+             </Operation>
+             <!**Sort the cached list in the ThingCategory**>
+             <Operation Class="XmlExtensions.DefDatabaseOperationSortList">
+                 <objPath>ThingCategoryDef/[defName="ExampleCategory"]/sortedChildThingDefsCached</objPath>
+                 <objPathLocal>label</objPathLocal>
+             </Operation>
+         </caseTrue>
+         <caseFalse>
+             
+         </caseFalse>
+     </Operation>
+     -->
     <!--
     <Operation Class="XmlExtensions.OptionalPatch">
     <modId>carnap2.TPatches</modId>
