@@ -19,16 +19,16 @@ It is a framework which allows me to add new toggleable patches into mod setting
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
 
 ## Screenshots
-Screenshots (might be slightly outdated)
-![image](https://user-images.githubusercontent.com/76593873/140619025-2ab37e31-435d-497a-989b-64e57a303b81.png)
-![image](https://user-images.githubusercontent.com/76593873/140619057-b614c063-f10b-44d4-b01a-4a9399c6bc86.png)
-![image](https://user-images.githubusercontent.com/76593873/140619072-45d298b6-6045-4187-a839-88d55dfb6b06.png)
-![image](https://user-images.githubusercontent.com/76593873/140619086-51164aa5-1ced-4018-abd9-a5521a38f88b.png)
+Screenshots show default settings.
+![tp1](https://user-images.githubusercontent.com/76593873/141163396-b440bfdf-3465-43d0-8a3c-3399d2f1ffc7.png)
+![tp2](https://user-images.githubusercontent.com/76593873/141163402-e20055a0-8aff-4125-a058-7a6e495008cd.png)
+![tp3](https://user-images.githubusercontent.com/76593873/141163406-67d18562-620b-4d57-83ec-c22489028e85.png)
+![tp4](https://user-images.githubusercontent.com/76593873/141163416-67a1cbb8-751c-4348-9f1d-c20a26bfeb60.png)
 ![image](https://user-images.githubusercontent.com/76593873/137011197-77af973f-c791-46d1-a3c3-a63ec137c729.png)
 ![image](https://user-images.githubusercontent.com/76593873/137011210-e827b089-c395-4ee0-89d2-b28c49110538.png)
 
 ## Bugs
-- Rottable items filter doesn't include meat. That is because meat is not defined in xml and there is no way to modify it without c#.
+- No known bugs.
 
 ## Info
 Requires [XML Extensions](https://steamcommunity.com/sharedfiles/filedetails/?id=2574315206).
