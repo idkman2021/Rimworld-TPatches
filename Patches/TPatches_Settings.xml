@@ -48,6 +48,19 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
+            <li>TPatches_IgnoreIllegalCharacters</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Prevent "illegal characters" log spam</li>
+            <li>Prevents "label contains illegal character(s): "[]{}"." from being spammed into the log. Doesn't remove the illegal characters, just adds the ignore flag!</li>
+            <li>adds ignoreIllegalLabelCharacterConfigError to all Defs/node()[(not(ignoreIllegalLabelCharacterConfigError)) and ((label[contains(., "{")]) or (label[contains(., "}")]) or (label[contains(., "[")]) or (label[contains(., "]")]))]</li>
+            <li>true</li>
+        </arguments>
+    </Operation>
+    
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
             <li>TPatchesFixSomeModdedFactionsNotShowingUpInCreateWorldMenu</li>
             <li>Core</li>
             <li>Fixes</li>

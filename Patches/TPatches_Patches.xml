@@ -313,22 +313,6 @@
                     </ThingCategoryDef>
                 </value>
             </Operation>
-            <Operation Class="PatchOperationAdd">
-                <success>Always</success>
-                <xpath>/Defs/ThingDef[comps/li/daysToRotStart]/thingCategories</xpath>
-                <value>
-                    <li>TPatchesRottable</li>
-                </value>
-            </Operation>
-            <Operation Class="PatchOperationAdd">
-                <success>Always</success>
-                <xpath>/Defs/ThingDef[(comps/li/daysToRotStart) and (not(thingCategories))]</xpath>
-                <value>
-                    <thingCategories>
-                        <li>TPatchesRottable</li>
-                    </thingCategories>
-                </value>
-            </Operation>
             <!-- patch by imranfish -->
             <Operation Class="XmlExtensions.DefDatabaseForEach">
                 <objPath>ThingDef/[thingCategories/[defName="MeatRaw"]]</objPath>
@@ -361,6 +345,30 @@
                 <nonNumeric>true</nonNumeric>
                 <objPath>ThingCategoryDef/[defName="TPatchesRottable"]/sortedChildThingDefsCached</objPath>
                 <objPathLocal>label</objPathLocal>
+            </Operation>
+            
+            <!-- my xml stuff -->
+            <Operation Class="PatchOperationAdd">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[comps/li/daysToRotStart]/thingCategories[not(li="TPatchesRottable")]</xpath>
+                <value>
+                    <li>TPatchesRottable</li>
+                </value>
+            </Operation>
+            <Operation Class="PatchOperationAdd">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[(comps/li/daysToRotStart) and (not(thingCategories))]</xpath>
+                <value>
+                    <thingCategories>
+                        <li>TPatchesRottable</li>
+                    </thingCategories>
+                </value>
+            </Operation>
+            
+            <!-- The GiantRace -->
+             <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[@Name="GIMeal"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
             </Operation>
         </caseTrue>
         <caseFalse>
@@ -559,6 +567,23 @@
                      <success>Always</success>
                      <xpath>/Defs/ThingDef/comps/li[@Class="CompOversizedWeapon.CompOversizedWeapon" or compClass="CompOversizedWeapon.CompOversizedWeapon" or @Class="CompOversizedWeapon.CompProperties_OversizedWeapon"][not(verticalFlipNorth) and not(angleAdjustmentWest) and not(angleAdjustmentEast) and not(angleAdjustmentSouth) and not(angleAdjustmentEast) and not(northOffset) and not(eastOffset) and not(westOffset) and not(southOffset) and not(isDualWeapon) and not(verticalFlipOutsideCombat)]</xpath>
                  </match>
+             </Operation>
+         </caseTrue>
+         <caseFalse>
+             
+         </caseFalse>
+     </Operation>
+     
+     <Operation Class="XmlExtensions.OptionalPatch">
+         <modId>carnap2.TPatches</modId>
+         <key>TPatches_IgnoreIllegalCharacters</key>
+         <defaultValue>true</defaultValue>
+         <caseTrue>
+             <Operation Class="PatchOperationAdd"><success>Always</success>
+                 <xpath>Defs/node()[(not(ignoreIllegalLabelCharacterConfigError)) and ((label[contains(., "{")]) or (label[contains(., "}")]) or (label[contains(., "[")]) or (label[contains(., "]")]))]</xpath>
+                 <value>
+                     <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+                 </value>
              </Operation>
          </caseTrue>
          <caseFalse>
