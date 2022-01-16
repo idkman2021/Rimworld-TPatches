@@ -16,6 +16,8 @@
     </Operation>
     
     -->
+    
+    
     <!-- fix factions not showing in create world menu -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -574,6 +576,7 @@
          </caseFalse>
      </Operation>
      
+     <!-- ignore illegal characters -->
      <Operation Class="XmlExtensions.OptionalPatch">
          <modId>carnap2.TPatches</modId>
          <key>TPatches_IgnoreIllegalCharacters</key>
@@ -591,53 +594,6 @@
          </caseFalse>
      </Operation>
      
-     <!-- drugged ribs for every drug type -->
-     <!-- <Operation Class="XmlExtensions.OptionalPatch">
-         <modId>carnap2.TPatches</modId>
-         <key>TPatches_MoreDruggedRibs</key>
-         <defaultValue>false</defaultValue>
-         <caseTrue>
-             <Operation Class="XmlExtensions.CreateDocument">
-                 <docName>DrugsDoc</docName>
-                 <xpath>Defs/ThingDef/ingestible/outcomeDoers/li[@Class="IngestionOutcomeDoer_GiveHediff"]<xpath>
-            </Operation>
-             <Operation Class="XmlExtensions.ForEach">
-                 <objPath>DrugsDoc/ThingDef/ingestible/outcomeDoers/li[@Class="IngestionOutcomeDoer_GiveHediff"]</objPath>
-                 <storeIn>{drugpath}</storeIn>
-                 <apply>
-                     <!**Add the category to the ThingDef**>
-                     <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
-                         <objPath>{path}/thingCategories</objPath>
-                         <objPath2>ThingCategoryDef/[defName="ExampleCategory"]</objPath2>
-                     </Operation>
-                     <!**Add the ThingDef to the ThingCategory**>
-                     <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
-                         <objPath>ThingCategoryDef/[defName="ExampleCategory"]/childThingDefs</objPath>
-                         <objPath2>{path}</objPath2>
-                     </Operation>
-                     <!**Add the ThingDef to the ThingCategory's HashSet**>
-                     <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
-                         <objPath>ThingCategoryDef/[defName="ExampleCategory"]/allChildThingDefsCached</objPath>
-                         <objPath2>{path}</objPath2>
-                     </Operation>
-                     <!**Add the ThingDef to the ThingCategory's cachedList**>
-                     <Operation Class="XmlExtensions.DefDatabaseOperationAdd">
-                         <objPath>ThingCategoryDef/[defName="ExampleCategory"]/sortedChildThingDefsCached</objPath>
-                         <objPath2>{path}</objPath2>
-                     </Operation>
-                 </apply>
-             </Operation>
-             <!**Sort the cached list in the ThingCategory**>
-             <Operation Class="XmlExtensions.DefDatabaseOperationSortList">
-                 <objPath>ThingCategoryDef/[defName="ExampleCategory"]/sortedChildThingDefsCached</objPath>
-                 <objPathLocal>label</objPathLocal>
-             </Operation>
-         </caseTrue>
-         <caseFalse>
-             
-         </caseFalse>
-     </Operation>
-     -->
     <!--
     <Operation Class="XmlExtensions.OptionalPatch">
     <modId>carnap2.TPatches</modId>

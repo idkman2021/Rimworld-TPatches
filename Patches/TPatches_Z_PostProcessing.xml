@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+    
  <!-- Tab descriptions that are added at the top after all settings are added -->
     <Operation Class="PatchOperationAdd">
         <order>Prepend</order>
@@ -11,15 +12,8 @@
             </li>
         </value>
     </Operation>
-    <!-- 
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatches_AddTitleToTab</patchName>
-        <arguments>
-            <li>tab</li>
-            <li>description</li>
-        </arguments>
-    </Operation>
-    -->
+    
+    
     <!-- adds headers to all settings tabs -->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_AddTitleToTab</patchName>
@@ -28,6 +22,7 @@
             <li>Fixes for obvious bugs, inconsistencies and inconveniences in vanilla and between mods.</li>
         </arguments>
     </Operation>
+    
      <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_AddTitleToTab</patchName>
         <arguments>
@@ -35,6 +30,7 @@
             <li>Various optional tweaks.</li>
         </arguments>
     </Operation>
+    
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_AddTitleToTab</patchName>
         <arguments>
@@ -42,6 +38,7 @@
             <li>Nerfs for modded items that are potentially overpowered.</li>
         </arguments>
     </Operation>
+    
     <!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_AddTitleToTab</patchName>
@@ -51,6 +48,17 @@
         </arguments>
     </Operation>
     -->
+    
+    <!--
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatches_AddTitleToTab</patchName>
+        <arguments>
+            <li>Compatibility</li>
+            <li>Settings to solve compatibility issues.</li>
+        </arguments>
+    </Operation>
+    -->
+    
    <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_AddTitleToTab</patchName>
         <arguments>
@@ -58,6 +66,7 @@
             <li>Addons or changes that might be overpowered or not lore-friendly.</li>
         </arguments>
     </Operation>
+    
     
     <!-- "core" is not displayed as a mod -->
     <!-- remove gap for mod name -->
@@ -70,14 +79,17 @@
             </splits>
         </value>
     </Operation>
+    
     <!-- remove mod name -->
     <Operation Class="PatchOperationRemove">
         <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/li[text="Core"]</xpath>
     </Operation>
+    
     
     <!-- if all supported mods are installed, the list for settings for non-installed mods is hidden -->
     <Operation Class="PatchOperationRemove">
         <success>Always</success>
         <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings[not(li/settings/li/li/color="(100,100,155)")]/li[@Class="XmlExtensions.Setting.Group"]</xpath>
     </Operation>
+    
 </Patch>

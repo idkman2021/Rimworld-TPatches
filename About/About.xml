@@ -13,7 +13,7 @@ Many fixes, tweaks, settings and mod compatibility patches. Everything is toggle
 
 The menu is at: Options > More Mod Settings > TPatches
 
-Supports ModSync RW for checking for updates!</description>
+Supports ModSync RW for checking for updates</description>
     <modDependencies>
     <!-- Using hugslib as an example here. -->
         <li>

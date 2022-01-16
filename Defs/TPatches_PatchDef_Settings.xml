@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- PatchDef - creates a new toggleable patch setting -->
+
 <Defs>
+    
     <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch" Abstract="True">
         <parameters>
             <li>key</li><!-- key -->
@@ -11,6 +14,7 @@
             <li>default</li><!-- ENABLED/DISABLED -->
         </parameters>
         <apply>
+            
             <!-- checks if the mod is active -->
             <Operation Class="PatchOperationFindMod">
                 <mods>
@@ -18,6 +22,7 @@
                 </mods>
                 <match Class="PatchOperationSequence">
                     <operations>
+                        
                         <!-- mod is active, adds the setting to the top of settings list -->
                         <li Class="PatchOperationAdd">
                             <order>Prepend</order>
@@ -112,6 +117,7 @@
                                 </li>
                             </value>
                         </li>
+                        
                         <!-- adds the active mod to the log tab if it isn't already there -->
                         <li Class="PatchOperationConditional">
                             <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
@@ -128,6 +134,7 @@
                         </li>
                     </operations>
                 </match>
+                
                 <!-- mod isn't active, setting is greyed out and added to the bottom of settings list -->
                 <nomatch Class="PatchOperationSequence">
                     <operations>
@@ -227,6 +234,7 @@
                                 </li>
                             </value>
                         </li>
+                        
                         <!-- adds the non-active mod to the modlist tab if it isn't already there -->
                         <li Class="PatchOperationConditional">
                             <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
@@ -247,20 +255,24 @@
                                 </value>
                             </nomatch>
                         </li>
-                        <!-- modlist-->
+                        
+
                     </operations>
                 </nomatch>
             </Operation>
         </apply>
     </XmlExtensions.PatchDef>
     
-    <!-- adds a header to the tab -->
+    
+    
+<!-- PatchDef - adds a header to the tab. This patch is called after all settings are added, because settings can both append and prepend, so the header appears somewhere between them. -->
     <XmlExtensions.PatchDef Name="carnap2TPatches_AddTitleToTab" Abstract="True">
         <parameters>
             <li>tab</li>
             <li>description</li>
         </parameters>
         <apply>
+            
             <Operation Class="PatchOperationAdd">
                 <order>Prepend</order>
                 <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings</xpath>
@@ -295,15 +307,18 @@
                     </li>
                 </value>
             </Operation>
+            
         </apply>
     </XmlExtensions.PatchDef>
     
-     <!-- creates the tab -->
+    
+<!-- PatchDef - creates the tab -->
     <XmlExtensions.PatchDef Name="carnap2TPatches_CreateTab" Abstract="True">
         <parameters>
             <li>tab</li>
         </parameters>
         <apply>
+            
             <Operation Class="PatchOperationInsert">
                 <order>Prepend</order>
                 <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]</xpath>
@@ -355,6 +370,7 @@
                     </li>
                 </value>
             </Operation>
+            
         </apply>
     </XmlExtensions.PatchDef>
 </Defs>

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- PatchDef - asks for two defNames, if both exist, one of them is deleted. Patches all yields and recipes to use the new material. -->
 <Defs>
+    
     <XmlExtensions.PatchDef Name="carnap2TPatchesDuplicateMaterialRemoverDef" Abstract="True">
         <parameters>
-            <li>DMRMaterialDefKeep</li> <!-- defname of the material that will be used if both materials are detected -->
-            <li>DMRMaterialDefRemove</li> <!-- defname of the duplicate material that will be deleted if both materials are detected -->
+            <li>DMRMaterialDefKeep</li>
+            <li>DMRMaterialDefRemove</li>
         </parameters>
         <apply>
             
+            <!-- main operation that removes duplicate material and patches all recipes -->
             <Operation Class="PatchOperationSequence">
                 <success>Always</success>
                 <operations>
+                    
                     <!-- tests if DMRMaterialDefRemove exists and terminates if it doesn't -->
                     <li Class="PatchOperationTest">       
                         <xpath>/Defs/ThingDef[defName="{DMRMaterialDefRemove}"]</xpath>
@@ -37,7 +41,7 @@
                         <success>Normal</success>
                     </li>
                     
-                    <!-- adds an entry to the log -->
+                    <!-- adds an entry to the info tab -->
                     <li Class="PatchOperationAdd">
                         <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
                         <order>Append</order>
@@ -65,13 +69,17 @@
                         <success>Always</success>
                         <xpath>/Defs/ThingDef[defName="{DMRMaterialDefRemove}"]</xpath>
                     </li>
+                    
                     <!-- replaces recipes yields with material 1 -->
+                    
+                    <!-- RecipeDef products -->
                     <li Class="PatchOperationSetName">
                         <success>Always</success>
                         <xpath>/Defs/RecipeDef/products/{DMRMaterialDefRemove}</xpath>
                         <name>{DMRMaterialDefKeep}</name>
                     </li>
                     
+                    <!-- RecipeDef ingridients -->
                     <li Class="PatchOperationReplace">
                         <success>Always</success>
                         <xpath>/Defs/RecipeDef/ingredients/li/filter/thingDefs/li[text()="{DMRMaterialDefRemove}"]</xpath>
@@ -79,6 +87,8 @@
                             <li>{DMRMaterialDefKeep}</li>
                         </value>
                     </li>
+                    
+                    <!-- RecipeDef ingridient filter -->
                     <li Class="PatchOperationReplace">
                         <success>Always</success>
                         <xpath>/Defs/RecipeDef/fixedIngredientFilter/thingDefs/li[text()="{DMRMaterialDefRemove}"]</xpath>
@@ -86,7 +96,8 @@
                             <li>{DMRMaterialDefKeep}</li>
                         </value>
                     </li>
-                    <!-- replaces plant yields with material 1 -->
+                    
+                    <!-- plant yields -->
                     <li Class="PatchOperationReplace">
                         <success>Always</success>
                         <xpath>/Defs/ThingDef/plant/harvestedThingDef[text()="{DMRMaterialDefRemove}"]</xpath>
@@ -94,13 +105,15 @@
                             <harvestedThingDef>{DMRMaterialDefKeep}</harvestedThingDef>
                         </value>
                     </li>
-                    <!-- replaces building recipes with material 1 -->
+                    
+                    <!-- ThingDef costlist -->
                     <li Class="PatchOperationSetName">
                         <success>Always</success>
                         <xpath>/Defs/ThingDef/costList/{DMRMaterialDefRemove}</xpath>
                         <name>{DMRMaterialDefKeep}</name>
                     </li>
-                    <!-- replace fuelFilter with material 1 -->
+                    
+                    <!-- fuelFilter -->
                     <li Class="PatchOperationReplace">
                         <success>Always</success>
                         <xpath>/Defs/ThingDef/comps/li/fuelFilter/thingDefs/li[text()="{DMRMaterialDefRemove}"]</xpath>
@@ -108,7 +121,8 @@
                             <li>{DMRMaterialDefKeep}</li>
                         </value>
                     </li>
-                    <!-- replace mineableThing with material 1 -->
+                    
+                    <!-- mineableThing -->
                     <li Class="PatchOperationReplace">
                         <success>Always</success>
                         <xpath>/Defs/ThingDef/building/mineableThing[text()="{DMRMaterialDefRemove}"]</xpath>
@@ -116,7 +130,8 @@
                             <mineableThing>{DMRMaterialDefKeep}</mineableThing>
                         </value>
                     </li>
-                    <!-- replace TerrainDef costList -->
+                    
+                    <!-- TerrainDef costList -->
                     <li Class="PatchOperationSetName">
                         <success>Always</success>
                         <xpath>/Defs/TerrainDef/costList/{DMRMaterialDefRemove}</xpath>
@@ -125,6 +140,9 @@
                     
                 </operations>
             </Operation>
+            
+            
+            <!-- logging -->
             <Operation Class="PatchOperationConditional">       
                 <xpath>/Defs/ThingDef[defName="{DMRMaterialDefKeep}"]</xpath>
                 <success>Normal</success>
@@ -163,6 +181,7 @@
                     </nomatch>
                 </nomatch>
             </Operation>
+            
             <Operation Class="PatchOperationConditional">
                 <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="material: {DMRMaterialDefRemove}"]</xpath>
                 <nomatch Class="PatchOperationAdd">
@@ -182,6 +201,7 @@
                     </value>
                 </nomatch>
             </Operation>
+            
         </apply>
     </XmlExtensions.PatchDef>
 </Defs>

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <Patch>
+    
+    <!--
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatches_CreateTab</patchName>
+        <arguments>
+            <li>Settings</li>
+        </arguments>
+    </Operation>
+    -->
+    
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_CreateTab</patchName>
         <arguments>
@@ -18,18 +29,11 @@
             <li>Balancing</li>
         </arguments>
     </Operation>
-    <!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatches_CreateTab</patchName>
-        <arguments>
-            <li>Settings</li>
-        </arguments>
-    </Operation>
-    -->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_CreateTab</patchName>
         <arguments>
             <li>Fun</li>
         </arguments>
     </Operation>
+    
 </Patch>

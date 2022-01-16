@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- PatchDef - asks for 2 defNames, if both exist, one of them is deleted -->
 <Defs>
+    
     <XmlExtensions.PatchDef Name="carnap2TPatchesDuplicateAnimalRemoverDef" Abstract="True">
         <parameters>
-            <!-- <li>DARMod1</li>--> <!-- higher priority mod -->
-            <!--<li>DARMod2</li> --><!-- lower priority mod -->
-            <li>DARAnimalDefKeep</li> <!-- defName of animal that will be kept if both animals are detected-->
-            <li>DARAnimalDefRemove</li> <!-- defName of duplicate animal that will be removed if both animals are detected-->
+            <li>DARAnimalDefKeep</li>
+            <li>DARAnimalDefRemove</li>
         </parameters>
         <apply>
+            
+            <!-- main operation that removes duplicate animal -->
             <Operation Class="PatchOperationSequence">
                 <success>Always</success>
-                
                 <operations>
                     
                     <!-- tests if DARAnimalRemove exists and terminates if it doesn't -->
@@ -55,9 +56,9 @@
                         <xpath>/Defs/ThingDef[comps/li/hatcherPawn="{DARAnimalDefRemove}"]</xpath>
                     </li>
                     
-                    <!-- adds an entry to the log -->
+                    <!-- adds an entry to the info tab -->
                     <li Class="PatchOperationAdd">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings/li/settings</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
                         <order>Append</order>
                         <value>
                             <li Class="XmlExtensions.Setting.SplitColumn">
@@ -79,8 +80,8 @@
                     </li>
                     
                 </operations>
-                <!-- </match> -->
             </Operation>
+            
             
             <!-- adds active defName to the log tab if it isn't there already -->
             <Operation Class="PatchOperationConditional">

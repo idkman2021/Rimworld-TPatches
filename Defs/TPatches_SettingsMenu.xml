@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- the SettingsMenuDef with two tabs defined. All other tabs are added by patches -->
 <Defs>
-    
-    
     
     <XmlExtensions.SettingsMenuDef>
         <defName>TPatches_SettingsMenu</defName> <!--Can be anything unique with no periods-->
         <modId>carnap2.TPatches</modId> <!--MUST be the same as the one entered earlier-->    
         <label>TPatches</label> <!-- This is what displays as your mod's name-->    
         <settings> <!--This is where you define what settings are in the settings menu-->
+            
             <li Class="XmlExtensions.Setting.TabView">
                 <tabs>
+                    
                     <li>
                         <label>Info</label>
                         <settings>
@@ -36,203 +37,7 @@
                             </li>
                         </settings>
                     </li>
-                    <!--
-                    <li>
-                        <label>Fixes</label>
-                        <settings>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>12</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(195,195,195)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Text">
-                                <font>Tiny</font>
-                                <text>If any settings affect mods you currently don't have installed, they will appear below. You can still change them, but they will have no effect.</text>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(90,90,90)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>8</spacing>
-                            </li>
-                        </settings>
-                    </li>
-                    <li>
-                        <label>Tweaks</label>
-                        <settings>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>12</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(195,195,195)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Text">
-                                <font>Tiny</font>
-                                <text>If any settings affect mods you currently don't have installed, they will appear below. You can still change them, but they will have no effect.</text>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(90,90,90)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>8</spacing>
-                            </li>
-                        </settings>
-                    </li>
-                    <li>
-                        <label>Balancing</label>
-                        <settings>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>12</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(195,195,195)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Text">
-                                <font>Tiny</font>
-                                <text>If any settings affect mods you currently don't have installed, they will appear below. You can still change them, but they will have no effect.</text>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(90,90,90)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>8</spacing>
-                            </li>
-                        </settings>
-                    </li>
-                    <li>
-                        <label>Settings</label>
-                        <settings>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>12</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(195,195,195)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Text">
-                                <font>Tiny</font>
-                                <text>If any settings affect mods you currently don't have installed, they will appear below. You can still change them, but they will have no effect.</text>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(90,90,90)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>8</spacing>
-                            </li>
-                        </settings>
-                    </li>
-                    <li>
-                        <label>Fun</label>
-                        <settings>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>12</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(195,195,195)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Text">
-                                <font>Tiny</font>
-                                <text>If any settings affect mods you currently don't have installed, they will appear below. You can still change them, but they will have no effect.</text>
-                            </li>
-                            <li Class="XmlExtensions.Setting.SetColor">
-                                <color>(90,90,90)</color>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>0</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.GapLine">
-                                <spacing>1</spacing>
-                            </li>
-                            <li Class="XmlExtensions.Setting.Gap">
-                                <spacing>8</spacing>
-                            </li>
-                        </settings>
-                    </li>
-                    -->
+                    
                     <li>
                         <label>Log</label>
                         <settings>
@@ -242,8 +47,10 @@
                             <li Class="XmlExtensions.Setting.GapLine"/>
                         </settings>
                     </li>
+                    
                 </tabs>
             </li>
+            
         </settings>
     </XmlExtensions.SettingsMenuDef>
     

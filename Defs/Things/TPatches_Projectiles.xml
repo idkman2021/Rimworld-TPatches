@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+    
+    <!-- A bullet with reduced damage - for mobile turret pack from VE Accessories -->
     <ThingDef ParentName="BaseBullet">
         <defName>TPatches_Bullet_MiniTurretPack</defName>
         <label>mini-turret pack bullet</label>
