@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    
+
     <!-- "core" is not displayed as a mod -->
     <!-- remove gap for mod name -->
     <Operation Class="PatchOperationReplace">
-        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li[gapSize=3 and tag="Core"]/splits</xpath>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li[gapSize=3 and tag="Core"]/splits</xpath>
         <value>
             <splits>
                 <li>-0.002</li>
@@ -12,16 +12,16 @@
             </splits>
         </value>
     </Operation>
-    
+
     <!-- remove mod name -->
     <Operation Class="PatchOperationRemove">
-        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li[tag="Core"]/settings/li/li[text="Core"]</xpath>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li[tag="Core"]/settings/li/li[text="Core"]</xpath>
     </Operation>
-    
-    
+
+
     <!-- if all supported mods are installed, the list for settings for non-installed mods is hidden -->
     <Operation Class="PatchOperationRemove">
-        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li[(tag="disabled") and (not(settings/li/tag="DisabledCheck"))]</xpath>
+        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li[(tag="disabled") and (not(settings/li/caseTrue/li/tag="DisabledCheck"))]</xpath>
     </Operation>
-    
+
 </Patch>

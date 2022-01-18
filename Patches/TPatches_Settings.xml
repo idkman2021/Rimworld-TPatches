@@ -14,7 +14,7 @@
     </arguments>
     </Operation>
     -->
-    
+
     <!-- Fixes -->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
@@ -28,7 +28,7 @@
             <li>true</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -41,7 +41,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -54,7 +54,7 @@
             <li>true</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -67,7 +67,7 @@
             <li>true</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -80,8 +80,8 @@
             <li>true</li>
         </arguments>
     </Operation>
-    
-    
+
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -94,7 +94,7 @@
             <li>true</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -107,7 +107,7 @@
             <li>true</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -120,7 +120,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -133,11 +133,8 @@
             <li>true</li>
         </arguments>
     </Operation>
-    
-    
-    
-    
-    
+
+
     <!-- Tweaks -->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
@@ -151,7 +148,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -164,7 +161,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -177,7 +174,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -190,7 +187,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -203,12 +200,12 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
             <li>TPatchesHARthoughtSettingsRemover</li>
-            <li>Humanoid Alien Races</li> 
+            <li>Humanoid Alien Races</li>
             <li>Tweaks</li>
             <li>Remove custom thoughts</li>
             <li>Removes custom thoughts from all races, making them identical to vanilla human thoughts. Might make the game more balanced by reintroducing mood debuffs to races that had them disabled.</li>
@@ -216,16 +213,10 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
-    
-    
-    
-    
-    
-    
-    
+
+
     <!-- Balancing -->
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -238,7 +229,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -251,8 +242,8 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
-    
+
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -265,7 +256,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -278,13 +269,10 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
-    
-    
-    
-    
+
+
     <!-- Settings -->
-    
+
     <!-- Fun -->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
@@ -298,8 +286,8 @@
             <li>false</li>
         </arguments>
     </Operation>
-    
-    
+
+
     <!-- 
     <Operation Class="XmlExtensions.ApplyPatch">
     <patchName>carnap2TPatchesModPatch</patchName>
@@ -314,5 +302,5 @@
     </arguments>
     </Operation>
     -->
-    
+
 </Patch>

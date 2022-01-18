@@ -2,280 +2,983 @@
 <!-- PatchDef - creates a new toggleable patch setting -->
 
 <Defs>
-    
-    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch" Abstract="True">
+
+    <!-- mod is active, adds the setting to the top of settings list -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatchBaseEnabled" Abstract="True">
         <parameters>
-            <li>key</li><!-- key -->
-            <li>mod</li><!-- required mods -->
-            <li>tab</li><!-- tab - Fixes Tweaks Balancing Settings-->
-            <li>label</li><!-- label -->
-            <li>description</li><!-- description -->
-            <li>tooltip</li><!-- tooltip -->
-            <li>default</li><!-- ENABLED/DISABLED -->
+            <li>key</li> <!-- key -->
+            <li>mod</li> <!-- required mod -->
+            <li>tab</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+            <li>label</li> <!-- label -->
+            <li>description</li> <!-- description -->
+            <li>tooltip</li> <!-- tooltip -->
+            <li>default</li> <!-- ENABLED/DISABLED -->
+            <li>color</li>
+            <li>split1</li>
+            <li>split2</li>
+            <li>group</li>
+            <li>enabled</li>
         </parameters>
         <apply>
-            
-            <!-- checks if the mod is active -->
+
+            <Operation Class="PatchOperationAdd">
+                <order>Append</order>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="{enabled}"]/settings</xpath>
+                <value>
+                    <li Class="XmlExtensions.Setting.ToggleableSettings">
+                        <key>{group}</key>
+                        <caseTrue>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>1</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.SplitColumns">
+                                <gapSize>6</gapSize>
+                                <drawLine>false</drawLine>
+                                <splits>
+                                    <li>0.5</li>
+                                </splits>
+                                <settings>
+                                    <!-- title -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.SetColor">
+                                            <color>(200,200,255)</color>
+                                        </li>
+                                        <li Class="XmlExtensions.Setting.Text">
+                                            <text>{label}</text>
+                                        </li>
+                                    </li>
+                                    <!-- checkbox -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.Checkbox">
+                                            <key>{key}</key>
+                                            <!-- <label>{label}</label> -->
+                                            <tooltip>{tooltip}</tooltip>
+                                        </li>
+                                    </li>
+                                </settings>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>-4</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.SplitColumns">
+                                <tag>{mod}</tag>
+                                <gapSize>3</gapSize>
+                                <drawLine>false</drawLine>
+                                <splits>
+                                    <li>{split1}</li> <!-- 0.11 -->
+                                    <li>{split2}</li> <!-- 0.8 -->
+                                </splits>
+                                <settings>
+                                    <!-- mod -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.SetColor">
+                                            <color>{color}</color> <!-- (155,225,155) -->
+                                        </li>
+
+                                        <li Class="XmlExtensions.Setting.Text">
+                                            <font>Tiny</font>
+                                            <anchor>Left</anchor>
+                                            <text>{mod}</text>
+                                            <tag>{key}</tag>
+                                        </li>
+                                    </li>
+                                    <!-- description -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.SetColor">
+                                            <color>(235,235,235)</color>
+                                        </li>
+                                        <li Class="XmlExtensions.Setting.Text">
+                                            <!-- <font>Tiny</font> -->
+                                            <text>{description}</text>
+                                        </li>
+                                    </li>
+                                    <!-- default -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.SetColor">
+                                            <color>(155,155,155)</color>
+                                        </li>
+                                        <li Class="XmlExtensions.Setting.Text">
+                                            <font>Tiny</font>
+                                            <anchor>Right</anchor>
+                                            <text>default: {default}</text>
+                                        </li>
+                                    </li>
+                                </settings>
+                            </li>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(80,80,80)</color>
+                            </li>
+                            <li Class="XmlExtensions.Setting.GapLine">
+                                <spacing>-6</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>12</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(255,255,255)</color>
+                            </li>
+                        </caseTrue>
+                    </li>
+                </value>
+            </Operation>
+
+        </apply>
+    </XmlExtensions.PatchDef>
+
+
+    <!-- mod isn't active, setting is greyed out and added to the bottom of settings list -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatchBaseDisabled" Abstract="True">
+        <parameters>
+            <li>key</li> <!-- key -->
+            <li>mod</li> <!-- required mod -->
+            <li>tab</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+            <li>label</li> <!-- label -->
+            <li>description</li> <!-- description -->
+            <li>tooltip</li> <!-- tooltip -->
+            <li>default</li> <!-- ENABLED/DISABLED -->
+            <li>color</li>
+            <li>split1</li>
+            <li>split2</li>
+            <li>group</li>
+            <li>enabled</li>
+        </parameters>
+        <apply>
+            <Operation Class="PatchOperationAdd">
+                <order>Append</order>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="{enabled}"]/settings</xpath>
+                <value>
+                    <li Class="XmlExtensions.Setting.ToggleableSettings">
+                        <key>{group}</key>
+                        <caseTrue>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <tag>DisabledCheck</tag>
+                                <spacing>-4</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.SplitColumns">
+                                <gapSize>6</gapSize>
+                                <drawLine>false</drawLine>
+                                <splits>
+                                    <li>0.5</li>
+                                </splits>
+                                <settings>
+                                    <!-- title -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.SetColor">
+                                            <color>(100,100,155)</color>
+                                        </li>
+                                        <li Class="XmlExtensions.Setting.Text">
+                                            <font>Tiny</font>
+                                            <text>{label}</text>
+                                        </li>
+                                    </li>
+                                    <!-- checkbox -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.SetColor">
+                                            <color>(100,100,100)</color>
+                                        </li>
+                                        <li Class="XmlExtensions.Setting.Checkbox">
+                                            <key>{key}</key>
+                                            <!-- <label>{label}</label> -->
+                                            <tooltip>{tooltip}</tooltip>
+                                        </li>
+                                    </li>
+                                </settings>
+                            </li>
+
+                            <li Class="XmlExtensions.Setting.SplitColumns">
+                                <tag>{mod}</tag>
+                                <gapSize>3</gapSize>
+                                <drawLine>false</drawLine>
+                                <splits>
+                                    <li>{split1}</li> <!-- 0.11 -->
+                                    <li>{split2}</li> <!-- 0.8 -->
+                                </splits>
+                                <settings>
+                                    <!-- mod -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.SetColor">
+                                            <color>{color}</color> <!-- (175,105,105) -->
+                                        </li>
+                                        <li Class="XmlExtensions.Setting.Text">
+                                            <font>Tiny</font>
+                                            <anchor>Left</anchor>
+                                            <text>{mod}</text>
+                                            <tag>{key}</tag>
+                                        </li>
+                                    </li>
+                                    <!-- description -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.SetColor">
+                                            <color>(100,100,100)</color>
+                                        </li>
+                                        <li Class="XmlExtensions.Setting.Text">
+                                            <font>Tiny</font>
+                                            <!-- <font>Tiny</font> -->
+                                            <text>{description}</text>
+                                        </li>
+                                    </li>
+                                    <!-- default -->
+                                    <li>
+                                        <li Class="XmlExtensions.Setting.SetColor">
+                                            <color>(100,100,100)</color>
+                                        </li>
+                                        <li Class="XmlExtensions.Setting.Text">
+                                            <font>Tiny</font>
+                                            <anchor>Right</anchor>
+                                            <text>default: {default}</text>
+                                        </li>
+                                    </li>
+                                </settings>
+                            </li>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(60,60,60)</color>
+                            </li>
+                            <li Class="XmlExtensions.Setting.GapLine">
+                                <spacing>-9</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>12</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(255,255,255)</color>
+                            </li>
+                        </caseTrue>
+                    </li>
+                </value>
+            </Operation>
+
+
+        </apply>
+    </XmlExtensions.PatchDef>
+
+
+    <!-- Logs the mod name -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesModLog" Abstract="True">
+        <parameters>
+            <li>mod</li>
+            <li>color</li>
+        </parameters>
+        <apply>
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
+                <nomatch Class="PatchOperationAdd">
+                    <order>Append</order>
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                    <value>
+                        <li Class="XmlExtensions.Setting.SetColor">
+                            <color>{color}</color> <!-- (155,155,155) -->
+                        </li>
+                        <li Class="XmlExtensions.Setting.Text">
+                            <font>Tiny</font>
+                            <text>mod: {mod}</text>
+                        </li>
+                        <li Class="XmlExtensions.Setting.SetColor">
+                            <color>(255,255,255)</color> <!-- (155,155,155) -->
+                        </li>
+                    </value>
+                </nomatch>
+            </Operation>
+        </apply>
+    </XmlExtensions.PatchDef>
+
+
+    <!-- checks if a single chosen mod is active and applies the appropriate patchdefs -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch" Abstract="True">
+        <parameters>
+            <li>key</li> <!-- key -->
+            <li>mod</li> <!-- required mods -->
+            <li>tab</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+            <li>label</li> <!-- label -->
+            <li>description</li> <!-- description -->
+            <li>tooltip</li> <!-- tooltip -->
+            <li>default</li> <!-- ENABLED/DISABLED -->
+        </parameters>
+        <apply>
+
             <Operation Class="PatchOperationFindMod">
                 <mods>
                     <li>{mod}</li>
                 </mods>
                 <match Class="PatchOperationSequence">
                     <operations>
-                        
-                        <!-- mod is active, adds the setting to the top of settings list -->
-                        <li Class="PatchOperationAdd">
-                            <order>Append</order>
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="enabled"]/settings</xpath>
-                            <value>
-                                <li Class="XmlExtensions.Setting.Gap">
-                                    <spacing>1</spacing>
-                                </li>
-                                <li Class="XmlExtensions.Setting.SplitColumns">
-                                    <gapSize>6</gapSize>
-                                    <drawLine>false</drawLine>
-                                    <splits>
-                                        <li>0.5</li>
-                                    </splits>
-                                    <settings>
-                                        <!-- title -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.SetColor">
-                                                <color>(200,200,255)</color>
-                                            </li>
-                                            <li Class="XmlExtensions.Setting.Text">
-                                                <text>{label}</text>
-                                            </li>
-                                        </li>
-                                        <!-- checkbox -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.Checkbox">
-                                                <key>{key}</key>
-                                                <!-- <label>{label}</label> -->
-                                                <tooltip>{tooltip}</tooltip>
-                                            </li>
-                                        </li>
-                                    </settings>
-                                </li>
-                                <li Class="XmlExtensions.Setting.Gap">
-                                    <spacing>-4</spacing>
-                                </li>
-                                <li Class="XmlExtensions.Setting.SplitColumns">
-                                    <tag>{mod}</tag>
-                                    <gapSize>3</gapSize>
-                                    <drawLine>false</drawLine>
-                                    <splits>
-                                        <li>0.11</li>
-                                        <li>0.8</li>
-                                    </splits>
-                                    <settings>
-                                        <!-- mod -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.SetColor">
-                                                <color>(155,225,155)</color>
-                                            </li>
-                                            
-                                            <li Class="XmlExtensions.Setting.Text">
-                                                <font>Tiny</font>
-                                                <anchor>Left</anchor>
-                                                <text>{mod}</text>
-                                            </li>
-                                        </li>
-                                        <!-- description -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.SetColor">
-                                                <color>(235,235,235)</color>
-                                            </li>
-                                            <li Class="XmlExtensions.Setting.Text">
-                                                <!-- <font>Tiny</font> -->
-                                                <text>{description}</text>
-                                            </li>
-                                        </li>
-                                        <!-- default -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.SetColor">
-                                                <color>(155,155,155)</color>
-                                            </li>
-                                            <li Class="XmlExtensions.Setting.Text">
-                                                <font>Tiny</font>
-                                                <anchor>Right</anchor>
-                                                <text>default: {default}</text>
-                                            </li>
-                                        </li>
-                                    </settings>
-                                </li>
-                                <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(80,80,80)</color>
-                                </li>
-                                <li Class="XmlExtensions.Setting.GapLine">
-                                    <spacing>-6</spacing>
-                                </li>
-                                <li Class="XmlExtensions.Setting.Gap">
-                                    <spacing>12</spacing>
-                                </li>
-                                <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(255,255,255)</color>
-                                </li>
-                            </value>
+                        <li Class="XmlExtensions.ApplyPatch">
+                            <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                            <arguments>
+                                <li>{key}</li> <!-- key -->
+                                <li>{mod}</li> <!-- required mods -->
+                                <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                                <li>{label}</li> <!-- label -->
+                                <li>{description}</li> <!-- description -->
+                                <li>{tooltip}</li> <!-- tooltip -->
+                                <li>{default}</li> <!-- ENABLED/DISABLED -->
+                                <li>(155,225,155)</li>
+                                <li>0.11</li>
+                                <li>0.8</li>
+                                <li>TPatchesAlwaysOn</li>
+                                <li>enabled</li>
+                            </arguments>
                         </li>
-                        
-                        <!-- adds the active mod to the log tab if it isn't already there -->
-                        <li Class="PatchOperationConditional">
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
-                            <nomatch Class="PatchOperationAdd">
-                                <order>Append</order>
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
-                                <value>
-                                    <li Class="XmlExtensions.Setting.Text">
-                                        <font>Tiny</font>
-                                        <text>mod: {mod}</text>
-                                    </li>
-                                </value>
-                            </nomatch>
+                        <li Class="XmlExtensions.ApplyPatch">
+                            <patchName>carnap2TPatchesModLog</patchName>
+                            <arguments>
+                                <li>{mod}</li> <!-- required mods -->
+                                <li>(255,255,255)</li>
+                            </arguments>
                         </li>
+
                     </operations>
                 </match>
-                
-                <!-- mod isn't active, setting is greyed out and added to the bottom of settings list -->
+
                 <nomatch Class="PatchOperationSequence">
                     <operations>
-                        <li Class="PatchOperationAdd">
-                            <order>Append</order>
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="disabled"]/settings</xpath>
-                            <value>
-                                <li Class="XmlExtensions.Setting.Gap">
-                                    <tag>DisabledCheck</tag>
-                                    <spacing>-8</spacing>
-                                </li>
-                                <li Class="XmlExtensions.Setting.SplitColumns">
-                                    <gapSize>6</gapSize>
-                                    <drawLine>false</drawLine>
-                                    <splits>
-                                        <li>0.5</li>
-                                    </splits>
-                                    <settings>
-                                        <!-- title -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.SetColor">
-                                                <color>(100,100,155)</color>
-                                            </li>
-                                            <li Class="XmlExtensions.Setting.Text">
-                                                <font>Tiny</font>
-                                                <text>{label}</text>
-                                            </li>
-                                        </li>
-                                        <!-- checkbox -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.SetColor">
-                                                <color>(100,100,100)</color>
-                                            </li>
-                                            <li Class="XmlExtensions.Setting.Checkbox">
-                                                <key>{key}</key>
-                                                <!-- <label>{label}</label> -->
-                                                <tooltip>{tooltip}</tooltip>
-                                            </li>
-                                        </li>
-                                    </settings>
-                                </li>
-                                
-                                <li Class="XmlExtensions.Setting.SplitColumns">
-                                    <tag>{mod}</tag>
-                                    <gapSize>3</gapSize>
-                                    <drawLine>false</drawLine>
-                                    <splits>
-                                        <li>0.11</li>
-                                        <li>0.8</li>
-                                    </splits>
-                                    <settings>
-                                        <!-- mod -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.SetColor">
-                                                <color>(175,105,105)</color>
-                                            </li>
-                                            <li Class="XmlExtensions.Setting.Text">
-                                                <font>Tiny</font>
-                                                <anchor>Left</anchor>
-                                                <text>{mod}</text>
-                                            </li>
-                                        </li>
-                                        <!-- description -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.SetColor">
-                                                <color>(100,100,100)</color>
-                                            </li>
-                                            <li Class="XmlExtensions.Setting.Text">
-                                                <font>Tiny</font>
-                                                <!-- <font>Tiny</font> -->
-                                                <text>{description}</text>
-                                            </li>
-                                        </li>
-                                        <!-- default -->
-                                        <li>
-                                            <li Class="XmlExtensions.Setting.SetColor">
-                                                <color>(100,100,100)</color>
-                                            </li>
-                                            <li Class="XmlExtensions.Setting.Text">
-                                                <font>Tiny</font>
-                                                <anchor>Right</anchor>
-                                                <text>default: {default}</text>
-                                            </li>
-                                        </li>
-                                    </settings>
-                                </li>
-                                <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(60,60,60)</color>
-                                </li>
-                                <li Class="XmlExtensions.Setting.GapLine">
-                                    <spacing>-9</spacing>
-                                </li>
-                                <li Class="XmlExtensions.Setting.Gap">
-                                    <spacing>12</spacing>
-                                </li>
-                                <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(255,255,255)</color>
-                                </li>
-                            </value>
+                        <li Class="XmlExtensions.ApplyPatch">
+                            <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                            <arguments>
+                                <li>{key}</li> <!-- key -->
+                                <li>{mod}</li> <!-- required mods -->
+                                <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                                <li>{label}</li> <!-- label -->
+                                <li>{description}</li> <!-- description -->
+                                <li>{tooltip}</li> <!-- tooltip -->
+                                <li>{default}</li> <!-- ENABLED/DISABLED -->
+                                <li>(175,105,105)</li>
+                                <li>0.11</li>
+                                <li>0.8</li>
+                                <li>TPatchesAlwaysOn</li>
+                                <li>disabled</li>
+                            </arguments>
                         </li>
-                        
-                        <!-- adds the non-active mod to the modlist tab if it isn't already there -->
-                        <li Class="PatchOperationConditional">
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
-                            <nomatch Class="PatchOperationAdd">
-                                <order>Append</order>
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
-                                <value>
-                                    <li Class="XmlExtensions.Setting.SetColor">
-                                        <color>(155,155,155)</color>
-                                    </li>
-                                    <li Class="XmlExtensions.Setting.Text">
-                                        <font>Tiny</font>
-                                        <text>mod: {mod}</text>
-                                    </li>
-                                    <li Class="XmlExtensions.Setting.SetColor">
-                                        <color>(255,255,255)</color>
-                                    </li>
-                                </value>
-                            </nomatch>
+                        <li Class="XmlExtensions.ApplyPatch">
+                            <patchName>carnap2TPatchesModLog</patchName>
+                            <arguments>
+                                <li>{mod}</li> <!-- required mods -->
+                                <li>(155,155,155)</li>
+                            </arguments>
                         </li>
-                        
-                        
-                        
-                        
+
                     </operations>
                 </nomatch>
             </Operation>
         </apply>
     </XmlExtensions.PatchDef>
-    
-    
-    <!-- PatchDef - creates a tab -->
+
+
+    <!-- display more than one mod in a setting -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesMultiDisplay" Abstract="True">
+        <parameters>
+            <li>key</li> <!-- key -->
+            <li>mod</li> <!-- required mod -->
+        </parameters>
+        <apply>
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>{mod1}</li>
+                    <li>{mod2}</li>
+                </mods>
+                <logic>{logic}</logic>
+                <caseTrue>
+
+                    <!-- mod is enabled -->
+                    <!-- add mod name to setting -->
+                    <Operation Class="PatchOperationInsert">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <value>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(155,225,155)</color>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <font>Tiny</font>
+                                <anchor>Left</anchor>
+                                <text>{mod}</text>
+                            </li>
+                        </value>
+                    </Operation>
+
+                    <!-- log mod name -->
+                    <Operation Class="PatchOperationConditional">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
+                        <nomatch Class="PatchOperationAdd">
+                            <order>Append</order>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                            <value>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(255,255,255)</color> <!-- (155,155,155) -->
+                                </li>
+                                <li Class="XmlExtensions.Setting.Text">
+                                    <font>Tiny</font>
+                                    <text>mod: {mod}</text>
+                                </li>
+                            </value>
+                        </nomatch>
+                    </Operation>
+
+                </caseTrue>
+
+
+                <caseFalse>
+
+                    <!-- mod is disabled -->
+                    <!-- add mod name to setting -->
+                    <Operation Class="PatchOperationInsert">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <value>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(175,105,105)</color>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <font>Tiny</font>
+                                <anchor>Left</anchor>
+                                <text>{mod}</text>
+                            </li>
+                        </value>
+                    </Operation>
+
+                    <!-- log mod name -->
+                    <Operation Class="PatchOperationConditional">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
+                        <nomatch Class="PatchOperationAdd">
+                            <order>Append</order>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                            <value>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(155,155,155)</color> <!-- (155,155,155) -->
+                                </li>
+                                <li Class="XmlExtensions.Setting.Text">
+                                    <font>Tiny</font>
+                                    <text>mod: {mod}</text>
+                                </li>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(255,255,255)</color> <!-- (155,155,155) -->
+                                </li>
+                            </value>
+                        </nomatch>
+                    </Operation>
+
+                </caseFalse>
+
+            </Operation>
+        </apply>
+    </XmlExtensions.PatchDef>
+
+
+    <!-- checks if 2 mods are active -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch2" Abstract="True">
+        <parameters>
+            <li>key</li> <!-- key -->
+            <li>mod1</li> <!-- required mods -->
+            <li>mod2</li> <!-- required mods -->
+            <li>logic</li> <!-- or/and -->
+            <li>tab</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+            <li>label</li> <!-- label -->
+            <li>description</li> <!-- description -->
+            <li>tooltip</li> <!-- tooltip -->
+            <li>default</li> <!-- ENABLED/DISABLED -->
+        </parameters>
+        <apply>
+
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>{mod1}</li>
+                    <li>{mod2}</li>
+                </mods>
+                <logic>{logic}</logic>
+                <caseTrue>
+
+                    <!-- displays active setting -->
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mods -->
+                            <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                            <li>{label}</li> <!-- label -->
+                            <li>{description}</li> <!-- description -->
+                            <li>{tooltip}</li> <!-- tooltip -->
+                            <li>{default}</li> <!-- ENABLED/DISABLED -->
+                            <li>(155,225,155)</li>
+                            <li>0.15</li>
+                            <li>0.76</li>
+                            <li>TPatchesAlwaysOn</li>
+                            <li>enabled</li>
+                        </arguments>
+                    </Operation>
+
+                    <!-- adds multiple mods display -->
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod2}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <!-- removes the original mod displayer -->
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                    </Operation>
+
+                </caseTrue>
+
+                <caseFalse>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mods -->
+                            <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                            <li>{label}</li> <!-- label -->
+                            <li>{description}</li> <!-- description -->
+                            <li>{tooltip}</li> <!-- tooltip -->
+                            <li>{default}</li> <!-- ENABLED/DISABLED -->
+                            <li>(155,225,155)</li>
+                            <li>0.15</li>
+                            <li>0.76</li>
+                            <li>TPatchesAlwaysOn</li>
+                            <li>disabled</li>
+                        </arguments>
+                    </Operation>
+
+                    <!-- adds multiple mods display -->
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod2}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <!-- removes the original mod displayer -->
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                    </Operation>
+
+                </caseFalse>
+
+            </Operation>
+        </apply>
+    </XmlExtensions.PatchDef>
+
+    <!-- checks if 3 mods are active -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch3" Abstract="True">
+        <parameters>
+            <li>key</li> <!-- key -->
+            <li>mod1</li> <!-- required mods -->
+            <li>mod2</li> <!-- required mods -->
+            <li>mod3</li> <!-- required mods -->
+            <li>logic</li> <!-- or/and -->
+            <li>tab</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+            <li>label</li> <!-- label -->
+            <li>description</li> <!-- description -->
+            <li>tooltip</li> <!-- tooltip -->
+            <li>default</li> <!-- ENABLED/DISABLED -->
+        </parameters>
+        <apply>
+
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>{mod1}</li>
+                    <li>{mod2}</li>
+                    <li>{mod3}</li>
+                </mods>
+                <logic>{logic}</logic>
+                <caseTrue>
+
+                    <!-- displays active setting -->
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mods -->
+                            <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                            <li>{label}</li> <!-- label -->
+                            <li>{description}</li> <!-- description -->
+                            <li>{tooltip}</li> <!-- tooltip -->
+                            <li>{default}</li> <!-- ENABLED/DISABLED -->
+                            <li>(155,225,155)</li>
+                            <li>0.15</li>
+                            <li>0.76</li>
+                            <li>TPatchesAlwaysOn</li>
+                            <li>enabled</li>
+                        </arguments>
+                    </Operation>
+
+                    <!-- adds multiple mods display -->
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod2}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod3}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <!-- removes the original mod displayer -->
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                    </Operation>
+
+                </caseTrue>
+
+                <caseFalse>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mods -->
+                            <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                            <li>{label}</li> <!-- label -->
+                            <li>{description}</li> <!-- description -->
+                            <li>{tooltip}</li> <!-- tooltip -->
+                            <li>{default}</li> <!-- ENABLED/DISABLED -->
+                            <li>(155,225,155)</li>
+                            <li>0.15</li>
+                            <li>0.76</li>
+                            <li>TPatchesAlwaysOn</li>
+                            <li>disabled</li>
+                        </arguments>
+                    </Operation>
+
+                    <!-- adds multiple mods display -->
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod2}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod3}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <!-- removes the original mod displayer -->
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                    </Operation>
+
+                </caseFalse>
+
+            </Operation>
+        </apply>
+    </XmlExtensions.PatchDef>
+
+
+    <!-- checks if 4 mods are active -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch4" Abstract="True">
+        <parameters>
+            <li>key</li> <!-- key -->
+            <li>mod1</li> <!-- required mods -->
+            <li>mod2</li> <!-- required mods -->
+            <li>mod3</li> <!-- required mods -->
+            <li>mod4</li> <!-- required mods -->
+            <li>logic</li> <!-- or/and -->
+            <li>tab</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+            <li>label</li> <!-- label -->
+            <li>description</li> <!-- description -->
+            <li>tooltip</li> <!-- tooltip -->
+            <li>default</li> <!-- ENABLED/DISABLED -->
+        </parameters>
+        <apply>
+
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>{mod1}</li>
+                    <li>{mod2}</li>
+                    <li>{mod3}</li>
+                    <li>{mod4}</li>
+                </mods>
+                <logic>{logic}</logic>
+                <caseTrue>
+
+                    <!-- displays active setting -->
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mods -->
+                            <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                            <li>{label}</li> <!-- label -->
+                            <li>{description}</li> <!-- description -->
+                            <li>{tooltip}</li> <!-- tooltip -->
+                            <li>{default}</li> <!-- ENABLED/DISABLED -->
+                            <li>(155,225,155)</li>
+                            <li>0.15</li>
+                            <li>0.76</li>
+                            <li>TPatchesAlwaysOn</li>
+                            <li>enabled</li>
+                        </arguments>
+                    </Operation>
+
+                    <!-- adds multiple mods display -->
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod2}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod3}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod4}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <!-- removes the original mod displayer -->
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                    </Operation>
+
+                </caseTrue>
+
+                <caseFalse>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mods -->
+                            <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                            <li>{label}</li> <!-- label -->
+                            <li>{description}</li> <!-- description -->
+                            <li>{tooltip}</li> <!-- tooltip -->
+                            <li>{default}</li> <!-- ENABLED/DISABLED -->
+                            <li>(155,225,155)</li>
+                            <li>0.15</li>
+                            <li>0.76</li>
+                            <li>TPatchesAlwaysOn</li>
+                            <li>disabled</li>
+                        </arguments>
+                    </Operation>
+
+                    <!-- adds multiple mods display -->
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod1}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod2}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod3}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.ApplyPatch">
+                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <arguments>
+                            <li>{key}</li> <!-- key -->
+                            <li>{mod4}</li> <!-- required mod -->
+                        </arguments>
+                    </Operation>
+
+                    <!-- removes the original mod displayer -->
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                    </Operation>
+
+                </caseFalse>
+
+            </Operation>
+        </apply>
+    </XmlExtensions.PatchDef>
+
+
+    <!-- a simple toggle for groups -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesSimpleToggle" Abstract="True">
+        <parameters>
+            <li>key</li> <!-- key -->
+            <li>tab</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+            <li>label</li> <!-- label -->
+            <li>tooltip</li> <!-- tooltip -->
+        </parameters>
+        <apply>
+
+            <Operation Class="PatchOperationAdd">
+                <order>Append</order>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="enabled"]/settings</xpath>
+                <value>
+                    <li Class="XmlExtensions.Setting.Gap">
+                        <spacing>1</spacing>
+                    </li>
+                    <li Class="XmlExtensions.Setting.Checkbox">
+                        <key>{key}</key>
+                        <label>{label}</label>
+                        <tooltip>{tooltip}</tooltip>
+                    </li>
+
+                </value>
+            </Operation>
+
+        </apply>
+    </XmlExtensions.PatchDef>
+
+
+    <!-- shows only when a given key is true. checks if a single chosen mod is active and applies the appropriate patchdefs -->
+    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatchGrouped" Abstract="True">
+        <parameters>
+            <li>key</li> <!-- key -->
+            <li>mod</li> <!-- required mods -->
+            <li>tab</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+            <li>label</li> <!-- label -->
+            <li>description</li> <!-- description -->
+            <li>tooltip</li> <!-- tooltip -->
+            <li>default</li> <!-- ENABLED/DISABLED -->
+            <li>group</li> <!-- key of the setting that shows this -->
+        </parameters>
+        <apply>
+
+            <Operation Class="PatchOperationFindMod">
+                <mods>
+                    <li>{mod}</li>
+                </mods>
+                <match Class="PatchOperationSequence">
+                    <operations>
+                        <li Class="XmlExtensions.ApplyPatch">
+                            <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                            <arguments>
+                                <li>{key}</li> <!-- key -->
+                                <li>{mod}</li> <!-- required mods -->
+                                <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                                <li>{label}</li> <!-- label -->
+                                <li>{description}</li> <!-- description -->
+                                <li>{tooltip}</li> <!-- tooltip -->
+                                <li>{default}</li> <!-- ENABLED/DISABLED -->
+                                <li>(155,225,155)</li>
+                                <li>0.11</li>
+                                <li>0.8</li>
+                                <li>{group}</li>
+                                <li>enabled</li>
+                            </arguments>
+                        </li>
+                        <li Class="XmlExtensions.ApplyPatch">
+                            <patchName>carnap2TPatchesModLog</patchName>
+                            <arguments>
+                                <li>{mod}</li> <!-- required mods -->
+                                <li>(255,255,255)</li>
+                            </arguments>
+                        </li>
+
+                    </operations>
+                </match>
+
+                <nomatch Class="PatchOperationSequence">
+                    <operations>
+                        <li Class="XmlExtensions.ApplyPatch">
+                            <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                            <arguments>
+                                <li>{key}</li> <!-- key -->
+                                <li>{mod}</li> <!-- required mods -->
+                                <li>{tab}</li> <!-- tab - Fixes Tweaks Balancing Settings-->
+                                <li>{label}</li> <!-- label -->
+                                <li>{description}</li> <!-- description -->
+                                <li>{tooltip}</li> <!-- tooltip -->
+                                <li>{default}</li> <!-- ENABLED/DISABLED -->
+                                <li>(175,105,105)</li>
+                                <li>0.11</li>
+                                <li>0.8</li>
+                                <li>{group}</li>
+                                <li>enabled</li>
+                            </arguments>
+                        </li>
+                        <li Class="XmlExtensions.ApplyPatch">
+                            <patchName>carnap2TPatchesModLog</patchName>
+                            <arguments>
+                                <li>{mod}</li> <!-- required mods -->
+                                <li>(155,155,155)</li>
+                            </arguments>
+                        </li>
+
+                    </operations>
+                </nomatch>
+            </Operation>
+        </apply>
+    </XmlExtensions.PatchDef>
+
+
+    <!-- creates a tab -->
     <XmlExtensions.PatchDef Name="carnap2TPatches_CreateTab" Abstract="True">
         <parameters>
             <li>tab</li>
             <li>description</li>
         </parameters>
         <apply>
-            
+
             <Operation Class="PatchOperationInsert">
                 <order>Prepend</order>
                 <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]</xpath>
@@ -284,8 +987,8 @@
                         <label>{tab}</label>
                         <settings>
                             <!--<li Class="XmlExtensions.Setting.Group">
-                            <settings>-->
-                            
+                                    <settings>-->
+
                             <!-- description -->
                             <li Class="XmlExtensions.Setting.SetColor">
                                 <color>(255,255,255)</color>
@@ -315,15 +1018,13 @@
                             <li Class="XmlExtensions.Setting.Gap">
                                 <spacing>8</spacing>
                             </li>
-                            
+
                             <!-- enabled mods -->
                             <li Class="XmlExtensions.Setting.Group">
                                 <tag>enabled</tag>
-                                <settings>
-                                    
-                                </settings>
+                                <settings></settings>
                             </li>
-                            
+
                             <!-- disabled mods -->
                             <li Class="XmlExtensions.Setting.Group">
                                 <tag>disabled</tag>
@@ -360,19 +1061,19 @@
                                         <spacing>1</spacing>
                                     </li>
                                     <li Class="XmlExtensions.Setting.Gap">
-                                        <spacing>8</spacing>
+                                        <spacing>9</spacing>
                                     </li>
-                                    
+
                                 </settings>
                             </li>
                             <!--</settings>
-                            </li>-->
-                            
+                                    </li>-->
+
                         </settings>
                     </li>
                 </value>
             </Operation>
-            
+
         </apply>
     </XmlExtensions.PatchDef>
 </Defs>

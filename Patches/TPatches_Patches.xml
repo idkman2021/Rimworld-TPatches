@@ -16,8 +16,20 @@
     </Operation>
     
     -->
-    
-    
+
+    <!-- an always on key -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesAlwaysOn</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <!-- nothing -->
+        </caseTrue>
+        <caseFalse>
+            <!-- nothing -->
+        </caseFalse>
+    </Operation>
+
     <!-- fix factions not showing in create world menu -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -36,9 +48,8 @@
             <!--Patch operations here - not needed-->
         </caseFalse>
     </Operation>
-    
-    
-    
+
+
     <!-- HAR research restriction removers -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -54,7 +65,7 @@
             <!--Patch operations here-->
         </caseFalse>
     </Operation>
-    
+
     <!-- HAR thoughtsettings removers -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -70,7 +81,7 @@
             <!--Patch operations here-->
         </caseFalse>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesNerubiansFix</key>
@@ -81,11 +92,9 @@
                 <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Nerubian"]/alienRace/raceRestriction/weaponList</xpath>
             </Operation>
         </caseTrue>
-        <caseFalse>
-            
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
+
     <!-- VAE Accessories - Ranged Shield Belt nerf -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -107,11 +116,9 @@
                 </value>
             </Operation>
         </caseTrue>
-        <caseFalse>
-            
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
+
     <!-- VAE Accessories - Mini-turret pack nerf -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -140,11 +147,9 @@
                 </value>
             </Operation>
         </caseTrue>
-        <caseFalse>
-            
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
+
     <!-- fantasy metals rebalance -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -277,11 +282,9 @@
                 </operations>
             </Operation>
         </caseTrue>
-        <caseFalse>
-            
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
+
     <!-- replace "golden?" with solpyrite -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -293,12 +296,10 @@
                 <xpath>/Defs/ThingDef[defName="Solorite"]/stuffProps/stuffAdjective</xpath>
             </Operation>
         </caseTrue>
-        <caseFalse>
-            
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
-    
+
+
     <!-- Rottable filter -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -348,7 +349,7 @@
                 <objPath>ThingCategoryDef/[defName="TPatchesRottable"]/sortedChildThingDefsCached</objPath>
                 <objPathLocal>label</objPathLocal>
             </Operation>
-            
+
             <!-- my xml stuff -->
             <Operation Class="PatchOperationAdd">
                 <success>Always</success>
@@ -366,20 +367,17 @@
                     </thingCategories>
                 </value>
             </Operation>
-            
+
             <!-- The GiantRace -->
-             <Operation Class="PatchOperationRemove">
+            <Operation Class="PatchOperationRemove">
                 <success>Always</success>
                 <xpath>/Defs/ThingDef[@Name="GIMeal"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
             </Operation>
         </caseTrue>
-        <caseFalse>
-            
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
-    
-    
+
+
     <!-- Drug policies overhaul -->
     <!--  
     <Operation Class="XmlExtensions.OptionalPatch">
@@ -404,7 +402,7 @@
     
     
     -->
-    
+
     <!--  Megafauna tame revenge chance -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -458,12 +456,10 @@
                 </operations>
             </Operation>
         </caseTrue>
-        <caseFalse>
-            
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
-    
+
+
     <!-- dubs mint storage research -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -501,13 +497,11 @@
                     </li>
                 </operations>
             </Operation>
-            
+
         </caseTrue>
-        <caseFalse>
-            
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
+
     <!-- great memory tweak -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
@@ -524,76 +518,70 @@
                 </value>
             </Operation>
         </caseTrue>
-        <caseFalse>
-            
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
+
     <!-- Infinite Turret Barrels -->
-     <Operation Class="XmlExtensions.OptionalPatch">
-         <modId>carnap2.TPatches</modId>
-         <key>TPatches_InfiniteTurrets</key>
-         <defaultValue>false</defaultValue>
-         <caseTrue>
-             <Operation Class="PatchOperationReplace">
-                 <success>Always</success>
-                 <xpath>Defs/ThingDef[statBases/ShootingAccuracyTurret]/comps/li/fuelCapacity</xpath>
-                     <value>
-                         <fuelCapacity>10000</fuelCapacity>
-                     </value>
-             </Operation>
-              <Operation Class="PatchOperationReplace">
-                 <success>Always</success>
-                 <xpath>Defs/ThingDef[statBases/ShootingAccuracyTurret]/comps/li/fuelMultiplier</xpath>
-                     <value>
-                         <fuelMultiplier>10000</fuelMultiplier>
-                     </value>
-             </Operation>
-         </caseTrue>
-         <caseFalse>
-             
-         </caseFalse>
-     </Operation>
-     
-     <!-- Enable Oversized Weapons -->
-     <Operation Class="XmlExtensions.OptionalPatch">
-         <modId>carnap2.TPatches</modId>
-         <key>TPatches_CompOversizedReplace</key>
-         <defaultValue>false</defaultValue>
-         <caseTrue>
-             <Operation Class="PatchOperationFindMod">
-                 <mods>
-                     <li>Enable Oversized Weapons</li>
-                 </mods>
-                 <match Class="PatchOperationRemove">
-                     <success>Always</success>
-                     <xpath>/Defs/ThingDef/comps/li[@Class="CompOversizedWeapon.CompOversizedWeapon" or compClass="CompOversizedWeapon.CompOversizedWeapon" or @Class="CompOversizedWeapon.CompProperties_OversizedWeapon"][not(verticalFlipNorth) and not(angleAdjustmentWest) and not(angleAdjustmentEast) and not(angleAdjustmentSouth) and not(angleAdjustmentEast) and not(northOffset) and not(eastOffset) and not(westOffset) and not(southOffset) and not(isDualWeapon) and not(verticalFlipOutsideCombat)]</xpath>
-                 </match>
-             </Operation>
-         </caseTrue>
-         <caseFalse>
-             
-         </caseFalse>
-     </Operation>
-     
-     <!-- ignore illegal characters -->
-     <Operation Class="XmlExtensions.OptionalPatch">
-         <modId>carnap2.TPatches</modId>
-         <key>TPatches_IgnoreIllegalCharacters</key>
-         <defaultValue>true</defaultValue>
-         <caseTrue>
-             <Operation Class="PatchOperationAdd"><success>Always</success>
-                 <xpath>Defs/node()[(not(ignoreIllegalLabelCharacterConfigError)) and ((label[contains(., "{")]) or (label[contains(., "}")]) or (label[contains(., "[")]) or (label[contains(., "]")]))]</xpath>
-                 <value>
-                     <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
-                 </value>
-             </Operation>
-         </caseTrue>
-         <caseFalse>
-             
-         </caseFalse>
-     </Operation>
-     
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatches_InfiniteTurrets</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationReplace">
+                <success>Always</success>
+                <xpath>Defs/ThingDef[statBases/ShootingAccuracyTurret]/comps/li/fuelCapacity</xpath>
+                <value>
+                    <fuelCapacity>10000</fuelCapacity>
+                </value>
+            </Operation>
+            <Operation Class="PatchOperationReplace">
+                <success>Always</success>
+                <xpath>Defs/ThingDef[statBases/ShootingAccuracyTurret]/comps/li/fuelMultiplier</xpath>
+                <value>
+                    <fuelMultiplier>10000</fuelMultiplier>
+                </value>
+            </Operation>
+        </caseTrue>
+        <caseFalse></caseFalse>
+    </Operation>
+
+    <!-- Enable Oversized Weapons -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatches_CompOversizedReplace</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationFindMod">
+                <mods>
+                    <li>Enable Oversized Weapons</li>
+                </mods>
+                <match Class="PatchOperationRemove">
+                    <success>Always</success>
+                    <xpath>/Defs/ThingDef/comps/li[@Class="CompOversizedWeapon.CompOversizedWeapon" or compClass="CompOversizedWeapon.CompOversizedWeapon" or @Class="CompOversizedWeapon.CompProperties_OversizedWeapon"][not(verticalFlipNorth) and not(angleAdjustmentWest) and not(angleAdjustmentEast) and not(angleAdjustmentSouth) and not(angleAdjustmentEast) and not(northOffset) and not(eastOffset) and not(westOffset) and not(southOffset) and not(isDualWeapon) and not(verticalFlipOutsideCombat)]</xpath>
+                </match>
+            </Operation>
+        </caseTrue>
+        <caseFalse></caseFalse>
+    </Operation>
+
+    <!-- ignore illegal characters -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatches_IgnoreIllegalCharacters</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationAdd">
+                <success>Always</success>
+                <xpath>Defs/node()[(not(ignoreIllegalLabelCharacterConfigError)) and ((label[contains(., "{")]) or (label[contains(., "}")]) or (label[contains(., "[")]) or (label[contains(., "]")]))]</xpath>
+                <value>
+                    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+                </value>
+            </Operation>
+        </caseTrue>
+        <caseFalse></caseFalse>
+    </Operation>
+
+
     <!--
     <Operation Class="XmlExtensions.OptionalPatch">
     <modId>carnap2.TPatches</modId>
