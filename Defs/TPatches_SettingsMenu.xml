@@ -15,6 +15,10 @@
                         <label>Info</label>
                         <settings>
                             <li Class="XmlExtensions.Setting.Text">
+                                <font>Medium</font>
+                                <text>Information page</text>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Text">
                                 <text>Make sure TPatches is loaded as close to the end as possible. It can only affect mods that are loaded before it.</text>
                             </li>
                             <li Class="XmlExtensions.Setting.Text">

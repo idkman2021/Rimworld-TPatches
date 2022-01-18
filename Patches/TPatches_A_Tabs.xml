@@ -15,25 +15,29 @@
         <patchName>carnap2TPatches_CreateTab</patchName>
         <arguments>
             <li>Fixes</li>
+            <li>Fixes for obvious bugs, inconsistencies and inconveniences in vanilla and between mods.</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_CreateTab</patchName>
         <arguments>
             <li>Tweaks</li>
+            <li>Various optional tweaks.</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_CreateTab</patchName>
         <arguments>
             <li>Balancing</li>
+            <li>Nerfs for items that are potentially overpowered.</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_CreateTab</patchName>
         <arguments>
             <li>Fun</li>
+            <li>Addons or changes that might be overpowered or not lore-friendly.</li>
         </arguments>
     </Operation>
-    
+
 </Patch>

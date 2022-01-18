@@ -25,8 +25,8 @@
                         
                         <!-- mod is active, adds the setting to the top of settings list -->
                         <li Class="PatchOperationAdd">
-                            <order>Prepend</order>
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings</xpath>
+                            <order>Append</order>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="enabled"]/settings</xpath>
                             <value>
                                 <li Class="XmlExtensions.Setting.Gap">
                                     <spacing>1</spacing>
@@ -61,6 +61,7 @@
                                     <spacing>-4</spacing>
                                 </li>
                                 <li Class="XmlExtensions.Setting.SplitColumns">
+                                    <tag>{mod}</tag>
                                     <gapSize>3</gapSize>
                                     <drawLine>false</drawLine>
                                     <splits>
@@ -140,9 +141,10 @@
                     <operations>
                         <li Class="PatchOperationAdd">
                             <order>Append</order>
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings</xpath>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="disabled"]/settings</xpath>
                             <value>
                                 <li Class="XmlExtensions.Setting.Gap">
+                                    <tag>DisabledCheck</tag>
                                     <spacing>-8</spacing>
                                 </li>
                                 <li Class="XmlExtensions.Setting.SplitColumns">
@@ -177,12 +179,12 @@
                                 </li>
                                 
                                 <li Class="XmlExtensions.Setting.SplitColumns">
+                                    <tag>{mod}</tag>
                                     <gapSize>3</gapSize>
                                     <drawLine>false</drawLine>
                                     <splits>
                                         <li>0.11</li>
                                         <li>0.8</li>
-                                        <!--As many splits as you want-->
                                     </splits>
                                     <settings>
                                         <!-- mod -->
@@ -256,7 +258,9 @@
                             </nomatch>
                         </li>
                         
-
+                        
+                        
+                        
                     </operations>
                 </nomatch>
             </Operation>
@@ -264,58 +268,11 @@
     </XmlExtensions.PatchDef>
     
     
-    
-<!-- PatchDef - adds a header to the tab. This patch is called after all settings are added, because settings can both append and prepend, so the header appears somewhere between them. -->
-    <XmlExtensions.PatchDef Name="carnap2TPatches_AddTitleToTab" Abstract="True">
-        <parameters>
-            <li>tab</li>
-            <li>description</li>
-        </parameters>
-        <apply>
-            
-            <Operation Class="PatchOperationAdd">
-                <order>Prepend</order>
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings</xpath>
-                <value>
-                    <li Class="XmlExtensions.Setting.SetColor">
-                        <color>(255,255,255)</color>
-                    </li>
-                    <li Class="XmlExtensions.Setting.Text">
-                        <font>Tiny</font>
-                        <text>{description}</text>
-                    </li>
-                    <li Class="XmlExtensions.Setting.GapLine">
-                        <spacing>0</spacing>
-                    </li>
-                    <li Class="XmlExtensions.Setting.GapLine">
-                        <spacing>1</spacing>
-                    </li>
-                    <li Class="XmlExtensions.Setting.GapLine">
-                        <spacing>0</spacing>
-                    </li>
-                    <li Class="XmlExtensions.Setting.GapLine">
-                        <spacing>1</spacing>
-                    </li>
-                    <li Class="XmlExtensions.Setting.GapLine">
-                        <spacing>0</spacing>
-                    </li>
-                    <li Class="XmlExtensions.Setting.GapLine">
-                        <spacing>1</spacing>
-                    </li>
-                    <li Class="XmlExtensions.Setting.Gap">
-                        <spacing>8</spacing>
-                    </li>
-                </value>
-            </Operation>
-            
-        </apply>
-    </XmlExtensions.PatchDef>
-    
-    
-<!-- PatchDef - creates the tab -->
+    <!-- PatchDef - creates a tab -->
     <XmlExtensions.PatchDef Name="carnap2TPatches_CreateTab" Abstract="True">
         <parameters>
             <li>tab</li>
+            <li>description</li>
         </parameters>
         <apply>
             
@@ -323,10 +280,53 @@
                 <order>Prepend</order>
                 <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]</xpath>
                 <value>
-                     <li>
+                    <li>
                         <label>{tab}</label>
                         <settings>
+                            <!--<li Class="XmlExtensions.Setting.Group">
+                            <settings>-->
+                            
+                            <!-- description -->
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(255,255,255)</color>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <font>Tiny</font>
+                                <text>{description}</text>
+                            </li>
+                            <li Class="XmlExtensions.Setting.GapLine">
+                                <spacing>0</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.GapLine">
+                                <spacing>1</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.GapLine">
+                                <spacing>0</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.GapLine">
+                                <spacing>1</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.GapLine">
+                                <spacing>0</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.GapLine">
+                                <spacing>1</spacing>
+                            </li>
+                            <li Class="XmlExtensions.Setting.Gap">
+                                <spacing>8</spacing>
+                            </li>
+                            
+                            <!-- enabled mods -->
                             <li Class="XmlExtensions.Setting.Group">
+                                <tag>enabled</tag>
+                                <settings>
+                                    
+                                </settings>
+                            </li>
+                            
+                            <!-- disabled mods -->
+                            <li Class="XmlExtensions.Setting.Group">
+                                <tag>disabled</tag>
                                 <settings>
                                     <li Class="XmlExtensions.Setting.Gap">
                                         <spacing>17.1</spacing>
@@ -362,9 +362,11 @@
                                     <li Class="XmlExtensions.Setting.Gap">
                                         <spacing>8</spacing>
                                     </li>
-                                    <!--As many settings as you want-->
+                                    
                                 </settings>
                             </li>
+                            <!--</settings>
+                            </li>-->
                             
                         </settings>
                     </li>
