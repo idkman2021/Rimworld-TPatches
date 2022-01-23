@@ -35,6 +35,13 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_CreateTab</patchName>
         <arguments>
+            <li>Menus</li>
+            <li>Changes or overhauls to the vanilla menus</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatches_CreateTab</patchName>
+        <arguments>
             <li>Fun</li>
             <li>Addons or changes that might be overpowered or not lore-friendly.</li>
         </arguments>
