@@ -202,6 +202,35 @@
         </nomatch>
     </Operation>
 
+    <!--
+        ROYALTY
+    -->
+    <Operation Class="PatchOperationSequence" MayRequire="ludeon.rimworld.royalty">
+        <operations>
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[@Name="NatureShrineBase"
+                or defName="Throne" or defName="GrandThrone"
+                or defName="AnimusStone"
+                or defName="Grave" defName="Sarcophagus"]/designationCategory</xpath>
+                <value>
+                    <designationCategory>DZ_Meditation</designationCategory>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName="Drape"]/designationCategory</xpath>
+                <value>
+                    <designationCategory>DZ_Decor</designationCategory>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName="Brazier"]/designationCategory</xpath>
+                <value>
+                    <designationCategory>DZ_Lighting</designationCategory>
+                </value>
+            </li>
+        </operations>
+    </Operation>  
+
     <!-- 
         IDEOLOGY 
     -->

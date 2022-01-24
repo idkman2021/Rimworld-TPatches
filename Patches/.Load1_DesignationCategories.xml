@@ -123,6 +123,28 @@
   </Operation>
 
   <!--
+    ROYALTY 
+  -->
+  <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.royalty">
+    <xpath>/Defs</xpath>
+    <value>
+
+    <DesignationCategoryDef>
+      <defName>DZ_Meditation</defName>
+      <label>Meditation</label>
+      <description>Objects that help one regain psyfocus.</description>
+      <order>500</order>
+      <specialDesignatorClasses>
+        <li>Designator_Cancel</li>
+        <li>Designator_Deconstruct</li>
+        <li>Designator_Uninstall</li>
+      </specialDesignatorClasses>
+    </DesignationCategoryDef>
+
+    </value>
+  </Operation>
+
+  <!--
     IDEOLOGY 
   -->
   <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.ideology">
