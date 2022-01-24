@@ -122,6 +122,28 @@
     </value>
   </Operation>
 
+  <!--
+    IDEOLOGY 
+  -->
+  <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.ideology">
+    <xpath>/Defs</xpath>
+    <value>
+
+    <DesignationCategoryDef>
+      <defName>DZ_Ideology</defName>
+      <label>Ideology</label>
+      <description>Objects to represent one's ideologion.</description>
+      <order>500</order>
+      <specialDesignatorClasses>
+        <li>Designator_Cancel</li>
+        <li>Designator_Deconstruct</li>
+        <li>Designator_Uninstall</li>
+      </specialDesignatorClasses>
+    </DesignationCategoryDef>
+
+    </value>
+  </Operation>
+
   <!--==========
     VANILLA
     ==========-->

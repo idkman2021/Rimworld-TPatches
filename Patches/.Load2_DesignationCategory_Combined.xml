@@ -34,6 +34,7 @@
 
         <match Class="PatchOperationSequence">
             <success>Always</success>
+            <!-- Quite messy. Might wanna clean this up later, it might imoprove-->
             <operations>
                 <li Class="PatchOperationReplace">
                     <xpath>/Defs/ThingDef[defName="AnimalSleepingSpot"]/designationCategory</xpath>
@@ -199,6 +200,20 @@
                 </value>
             </nomatch>
         </nomatch>
+    </Operation>
+
+    <!-- 
+        IDEOLOGY 
+    -->
+    <Operation Class="PatchOperationSequence" MayRequire="ludeon.rimworld.ideology">
+        <operations>
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[@Name="IdeoBuildingBase" or @Name="RitualSeatBase" or defName="Lectern" or defName="Reliquary" or defName="RitualSpot"]/designationCategory</xpath>
+                <value>
+                    <designationCategory>DZ_Ideology</designationCategory>
+                </value>
+            </li>
+        </operations>
     </Operation>
 
     <!--==========
