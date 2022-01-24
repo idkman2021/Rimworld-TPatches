@@ -283,7 +283,20 @@
             <li>true</li>
         </arguments>
     </Operation>
-    
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationCategoriesRoyalty</li>
+            <li>Core</li>
+            <li>Menus</li>
+            <li>Meditation category</li>
+            <li>Should Meditation-related items be separated in its own category?</li>
+            <li>DZ_Meditation</li>
+            <li>true</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+
     <!-- Settings -->
 
     <!-- Fun -->

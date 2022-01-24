@@ -208,10 +208,7 @@
     <Operation Class="PatchOperationSequence" MayRequire="ludeon.rimworld.royalty">
         <operations>
             <li Class="PatchOperationReplace">
-                <xpath>/Defs/ThingDef[@Name="NatureShrineBase"
-                or defName="Throne" or defName="GrandThrone"
-                or defName="AnimusStone"
-                or defName="Grave" defName="Sarcophagus"]/designationCategory</xpath>
+                <xpath>/Defs/ThingDef[@Name="NatureShrineBase" or defName="Throne" or defName="GrandThrone" or defName="AnimusStone" or defName="Grave" or defName="Sarcophagus"]/designationCategory</xpath>
                 <value>
                     <designationCategory>DZ_Meditation</designationCategory>
                 </value>
