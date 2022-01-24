@@ -208,7 +208,11 @@
     <Operation Class="PatchOperationSequence" MayRequire="ludeon.rimworld.ideology">
         <operations>
             <li Class="PatchOperationReplace">
-                <xpath>/Defs/ThingDef[@Name="IdeoBuildingBase" or @Name="RitualSeatBase" or defName="Lectern" or defName="Reliquary" or defName="RitualSpot"]/designationCategory</xpath>
+                <xpath>/Defs/ThingDef[@Name="IdeoBuildingBase" or @Name="RitualSeatBase"
+                or defName="Lectern" or defName="Reliquary" or defName="RitualSpot"
+                or defName="GibbetCage" or defName="Skullspike"
+                or defName="DryadCocoon" or defName="DryadHealingPod" or defName="GaumakerCocoon"
+                or defName="Autobong"]/designationCategory</xpath>
                 <value>
                     <designationCategory>DZ_Ideology</designationCategory>
                 </value>
