@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This file is under the Gnu General Public License version 3, see https://www.gnu.org/licenses/gpl-3.0.txt for more information.
+-->
+
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategories</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesSpots</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>NQoL_Spots</defName> <!-- compat with niilos qol -->
+                                <label>Spots</label>
+                                <description>Spots.</description>
+                                <order>240</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+                        </value>
+                    </Operation>
+
+                    <!-- replace -->
+                    <Operation Class="PatchOperationReplace">
+                        <xpath>Defs/ThingDef[designationCategory and useHitPoints="False"]/designationCategory</xpath>
+                        <value>
+                            <designationCategory>NQoL_Spots</designationCategory>
+                        </value>
+                    </Operation>
+
+                </caseTrue>
+                <caseFalse />
+            </Operation>
+        </caseTrue>
+    </Operation>
+</Patch>

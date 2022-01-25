@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This file is under the Gnu General Public License version 3, see https://www.gnu.org/licenses/gpl-3.0.txt for more information.
+-->
+
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesIdeology</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+
+            <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.ideology">
+                <xpath>/Defs</xpath>
+                <value>
+
+                    <DesignationCategoryDef>
+                        <defName>DZ_Ideology</defName>
+                        <label>Ideology</label>
+                        <description>Objects to represent one's ideologion.</description>
+                        <order>230</order>
+                        <specialDesignatorClasses>
+                            <li>Designator_Cancel</li>
+                            <li>Designator_Deconstruct</li>
+                            <li>Designator_Uninstall</li>
+                        </specialDesignatorClasses>
+                    </DesignationCategoryDef>
+
+                </value>
+            </Operation>
+
+            <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="ludeon.rimworld.ideology">
+                <xpath>/Defs/ThingDef[
+                            @Name="IdeoBuildingBase" or 
+                            @Name="RitualSeatBase" or 
+                            defName="Lectern" or 
+                            defName="Reliquary" or 
+                            defName="RitualSpot" or 
+                            defName="GibbetCage" or 
+                            defName="Skullspike" or 
+                            defName="DryadCocoon" or 
+                            defName="DryadHealingPod" or 
+                            defName="GaumakerCocoon" or
+                            defName="Autobong"
+                            ]</xpath>
+                <value>
+                    <designationCategory>DZ_Ideology</designationCategory>
+                </value>
+            </Operation>
+
+
+        </caseTrue>
+        <caseFalse />
+    </Operation>
+
+</Patch>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This file is under the Gnu General Public License version 3, see https://www.gnu.org/licenses/gpl-3.0.txt for more information.
+-->
+
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategories</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesMedical</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>DZ_Medical</defName>
+                                <label>Medical</label>
+                                <description>Hospitals.</description>
+                                <order>350</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+
+                        </value>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>CTS - Complete Tech Solutions (Continued)</li>
+                        </mods>
+                        <match Class="PatchOperationAdd">
+                            <xpath>/Defs/ThingDef[defName="CTSHiTechHospitalBed"]</xpath>
+                            <value>
+                                <designationCategory>DZ_Medical</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds tab.-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>MedPod</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[@Name="MedPodBedBase"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Medical</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                </caseTrue>
+                <caseFalse />
+            </Operation>
+        </caseTrue>
+    </Operation>
+</Patch>
