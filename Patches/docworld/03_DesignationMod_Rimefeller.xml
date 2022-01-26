@@ -26,13 +26,7 @@
                             <li>Rimefeller</li>
                         </mods>
                         <caseTrue>
-                            <Operation Class="PatchOperationAdd">
-                                <xpath>/Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
-                                <value>
-                                    <li>Rimefeller.Designator_CleanOil</li>
-                                    <li>Rimefeller.Designator_RemovePipeline</li>
-                                </value>
-                            </Operation>
+
 
                             <Operation Class="PatchOperationReplace">
                                 <xpath>/Defs/ThingDef[defName="Filth_NapalmTrail" or defName="SparkGrid"]/designationCategory</xpath>
@@ -63,18 +57,26 @@
                                 <key>DocWorld_DesignationCategoriesIndustrial</key>
                                 <defaultValue>true</defaultValue>
                                 <caseTrue>
+                                    <Operation Class="PatchOperationAdd">
+                                        <xpath>/Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
+                                        <value>
+                                            <li>Rimefeller.Designator_CleanOil</li>
+                                            <li>Rimefeller.Designator_RemovePipeline</li>
+                                        </value>
+                                    </Operation>
                                     <Operation Class="PatchOperationReplace">
                                         <xpath>/Defs/ThingDef//designationCategory[text()="Rimefeller"]</xpath>
                                         <value>
                                             <designationCategory>DZ_Industrial</designationCategory>
                                         </value>
                                     </Operation>
+                                    <Operation Class="PatchOperationRemove">
+                                        <xpath>/Defs/DesignationCategoryDef[defName="Rimefeller"]</xpath>
+                                    </Operation>
                                 </caseTrue>
                                 <caseFalse></caseFalse>
                             </Operation>
-                            <Operation Class="PatchOperationRemove">
-                                <xpath>/Defs/DesignationCategoryDef[defName="Rimefeller"]</xpath>
-                            </Operation>
+
                         </caseTrue>
                     </Operation>
 

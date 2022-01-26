@@ -30,6 +30,18 @@
         </caseFalse>
     </Operation>
 
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesRoyalty</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <!-- nothing -->
+        </caseTrue>
+        <caseFalse>
+            <!-- nothing -->
+        </caseFalse>
+    </Operation>
+
     <!-- fix factions not showing in create world menu -->
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>

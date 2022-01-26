@@ -16,10 +16,6 @@
                 <defaultValue>false</defaultValue>
                 <caseTrue>
 
-                    <!--==========
-    Alpha Biomes
-    ==========-->
-
                     <!--Move items to Floors, Power, Production, Security, Joy, Culinary, Temperature, and Structure tab-->
                     <Operation Class="XmlExtensions.FindMod">
                         <mods>

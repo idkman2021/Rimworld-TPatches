@@ -21,6 +21,7 @@
                     <Operation Class="XmlExtensions.FindMod">
                         <mods>
                             <li>Dubs Bad Hygiene</li>
+                            <li>Dubs Bad Hygiene Lite</li>
                         </mods>
                         <caseTrue>
                             <!--Husbandry-->
@@ -33,14 +34,14 @@
                                 </value>
                             </Operation>
                             <!--Structure-->
-                            <Operation Class="PatchOperationAdd">
+                            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                                 <xpath>/Defs/ThingDef[defName="ToiletStallDoor"]</xpath>
                                 <value>
                                     <designationCategory>Structure</designationCategory>
                                 </value>
                             </Operation>
                             <!--Temperature-->
-                            <Operation Class="PatchOperationAdd">
+                            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                                 <xpath>/Defs/ThingDef[@Name="BasedHeating" or defName="SolarHeater"]</xpath>
                                 <value>
                                     <designationCategory>Temperature</designationCategory>
@@ -71,7 +72,22 @@
 
 
                 </caseTrue>
-                <caseFalse />
+                <caseFalse>
+                    <Operation Class="XmlExtensions.FindMod">
+                        <mods>
+                            <li>Dubs Bad Hygiene</li>
+                            <li>Dubs Bad Hygiene Lite</li>
+                        </mods>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                                <xpath>/Defs/ThingDef[defName="WashingMachine"]</xpath>
+                                <value>
+                                    <designationCategory>Hygiene</designationCategory>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+                </caseFalse>
             </Operation>
         </caseTrue>
     </Operation>

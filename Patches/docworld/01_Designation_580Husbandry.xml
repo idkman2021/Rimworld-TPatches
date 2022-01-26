@@ -15,27 +15,7 @@
                 <key>DocWorld_DesignationCategoriesHusbandry</key>
                 <defaultValue>true</defaultValue>
                 <caseTrue>
-
-                    <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
-                        <value>
-
-                            <DesignationCategoryDef>
-                                <defName>DZ_Husbandry</defName>
-                                <label>Husbandry</label>
-                                <description>For all your agricultural and livestock needs.</description>
-                                <order>580</order>
-                                <specialDesignatorClasses>
-                                    <li>Designator_Cancel</li>
-                                    <li>Designator_Deconstruct</li>
-                                    <li>Designator_Uninstall</li>
-                                    <li>Designator_SmoothSurface</li>
-                                    <li>Designator_RemoveFloor</li>
-                                </specialDesignatorClasses>
-                            </DesignationCategoryDef>
-
-                        </value>
-                    </Operation>
+                    
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xpath>/Defs/ThingDef[
@@ -193,6 +173,7 @@
                     <Operation Class="PatchOperationFindMod">
                         <mods>
                             <li>Mechalit Core 1.1</li>
+                            <li>Mechalit Core v2</li>
                         </mods>
                         <match Class="PatchOperationSequence">
                             <success>Always</success>
@@ -276,7 +257,7 @@
                             <operations>
 
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="RB_BeeResearchTable" or defName="RB_Honey_Centrifuge" or defName="RB_Advanced_Honey_Centrifuge" or defName="RB_Beehouse" or defName="RB_ClimatizedBeehouse" or defName="RB_AdvancedBeehouse" or defName="RB_AdvancedClimatizedBeehouse" or defName="RB_BroodChamber" or defName="RB_HybridizationChamber"]/designationCategory</xpath>
+                                    <xpath>/Defs/ThingDef[defName="RB_BeeResearchTable" or defName="RB_Honey_Centrifuge" or defName="RB_Advanced_Honey_Centrifuge" or defName="RB_Beehouse" or defName="RB_ClimatizedBeehouse" or defName="RB_AdvancedBeehouse" or defName="RB_AdvancedClimatizedBeehouse" or defName="RB_BroodChamber" or defName="RB_HybridizationChamber" or defName="RB_PrefabBeehouse" or defName="RB_SpacerBeehouse" or defName="RB_IndustrialApiary"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Husbandry</designationCategory>
                                     </value>
@@ -479,6 +460,73 @@
                     </Operation>
 
 
+                    <!-- ============================ new =========================== -->
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Kit's Power Protein</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="KIT_MeatSynthesisStation"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Husbandry</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Expanded Materials Add-On - Minimalist Production</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="MP_PlasticHydroponics"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Husbandry</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>RimLife Expansion Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RLE_SunLamp"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Husbandry</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <!--LightColumnMod-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Utility Columns</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <!--Lights-->
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="SunColumnMod""]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+
+
+                     <!-- patches go above this -->
                 </caseTrue>
                 <caseFalse />
             </Operation>

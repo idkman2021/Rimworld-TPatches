@@ -220,7 +220,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="DecalBase" or @ParentName="BuildingBase" or @ParentName="FurnitureBase"]/designationCategory[text()="PropsandDecor"]</xpath>
+                                    <xpath>/Defs/ThingDef/designationCategory[text()="PropsandDecor"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -249,6 +249,92 @@
                     </Operation>
 
 
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Pen's Decor</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="PensFlowerOne" or
+                                defName="PensFlowerTwo" or
+                                defName="PensTreeOne" or
+                                defName="PensTreeTwo" or
+                                defName="PensSign" or
+                                defName="PensSignTwo" or
+                                defName="PensShelf" or
+                                defName="PensTrashCan"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Decor</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>[RH2] Uncle Boris' - Used Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RH2_Trashcan_Office" or
+                                defName="RH2_CzechHedgehogBarricade"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Decor</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Edo Themed Expansion</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="HSSashimono" or
+                                defName="HSKatanastand" or
+                                defName="HSToriiGate" or
+                                defName="HSHokora" or
+                                defName="HSRough_Tatami" or
+                                defName="HSTempleEave"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Decor</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Wall Decorations</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="ucp_ivyleaves" or
+                                defName="ucp_ivyleavesorange" or
+                                defName="ucp_ivyleavescorner" or
+                                defName="ucp_ivyleavescornerorange" or
+                                defName="ucp_ivyleavesinner" or
+                                defName="ucp_ivyleavesinnerorange" or
+                                defName="ucp_ivyleavespatternA" or
+                                defName="ucp_ivyleavespatternB" or
+                                defName="ucp_ivyleavespatternC" or
+                                defName="ucp_ivyleavespatternD" or
+                                defName="ucp_ivyleavespatternAorange" or
+                                defName="ucp_ivyleavespatternBprange" or
+                                defName="ucp_ivyleavespatternCorange" or
+                                defName="ucp_ivyleavespatternDorange"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Decor</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+                    
+
+
+
+                    <!-- patches go above this -->
                 </caseTrue>
                 <caseFalse />
             </Operation>

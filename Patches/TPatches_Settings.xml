@@ -71,20 +71,6 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
-            <li>TPatchesFilterRottable</li>
-            <li>Core</li>
-            <li>Fixes</li>
-            <li>Rottable filter</li>
-            <li>Adds a filter for all items that can rot unless frozen, except corpses (including all modded items).</li>
-            <li>xpath: adds new "*rottable" category to all items with daysToRotStart. Thanks to Imranfish for making a complex patch required to add meat to the category!</li>
-            <li>true</li>
-        </arguments>
-    </Operation>
-
-
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
-        <arguments>
             <li>TPatchesFixSomeModdedFactionsNotShowingUpInCreateWorldMenu</li>
             <li>Core</li>
             <li>Fixes</li>
@@ -115,7 +101,7 @@
             <li>Enable Oversized Weapons</li>
             <li>Fixes</li>
             <li>Replace CompOversized with Enabled Oversized Weapons</li>
-            <li>Replaces the old CompOversized method for drawing weapons with the new one from Enable Oversized Weapons mod for better performance. Patch by Bradson on dubs discord.</li>
+            <li>NOT TESTED! Replaces the old CompOversized method for drawing weapons with the new one from Enable Oversized Weapons mod for better performance.</li>
             <li>Patch by Bradson on dubs discord.</li>
             <li>false</li>
         </arguments>
@@ -139,38 +125,25 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
+            <li>TPatchesFilterRottable</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Rottable filter</li>
+            <li>Adds a filter for all items that can rot unless frozen, except corpses (including all modded items).</li>
+            <li>xpath: adds new "*rottable" category to all items with daysToRotStart. Thanks to Imranfish for making a complex patch required to add meat to the category!</li>
+            <li>true</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
             <li>TPatches_GreatMemoryTweak</li>
             <li>Core</li>
             <li>Tweaks</li>
             <li>Great Memory trait increases learning speed</li>
             <li>If you've disabled skill degradation, Great Memory trait does nothing. This setting makes it increase learning speed.</li>
             <li>GlobalLearningFactor=0.5</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
-
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
-        <arguments>
-            <li>TPatches_DubsMintStorageResearch</li>
-            <li>Dubs Mint Storage - DEV</li>
-            <li>Tweaks</li>
-            <li>Mint Storage Research</li>
-            <li>Tribals can't build high tech deep storage anymore! Adds a required research after microelectronics.</li>
-            <li>Adds a 3600 points "Deep storage" research</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
-
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
-        <arguments>
-            <li>TPatchesMegafauna_manhunterOnTameFailChance</li>
-            <li>Megafauna</li>
-            <li>Tweaks</li>
-            <li>Fix tame revenge chance</li>
-            <li>Fixes several megafauna tame revenge chances being 0.28% instead of 28% (which is probably a bug).</li>
-            <li>Chalicotherium, Procoptodon, Castoroides, Sivatherium, Macrauchenia, Megaloceros</li>
             <li>false</li>
         </arguments>
     </Operation>
@@ -260,6 +233,32 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
+            <li>TPatches_DubsMintStorageResearch</li>
+            <li>Dubs Mint Storage - DEV</li>
+            <li>Tweaks</li>
+            <li>Mint Storage Research</li>
+            <li>Tribals can't build high tech deep storage anymore! Adds a required research after microelectronics.</li>
+            <li>Adds a 3600 points "Deep storage" research</li>
+            <li>false</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
+            <li>TPatchesMegafauna_manhunterOnTameFailChance</li>
+            <li>Megafauna</li>
+            <li>Tweaks</li>
+            <li>Fix tame revenge chance</li>
+            <li>Fixes several megafauna tame revenge chances being 0.28% instead of 28% (which is probably a bug).</li>
+            <li>Chalicotherium, Procoptodon, Castoroides, Sivatherium, Macrauchenia, Megaloceros</li>
+            <li>false</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
             <li>TPatchesFantasyMetals</li>
             <li>Fantasy Metals Reforged</li>
             <li>Balancing</li>
@@ -293,6 +292,104 @@
             <li>Should Meditation-related items be separated in its own category?</li>
             <li>DZ_Meditation</li>
             <li>true</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationCategoriesSpots</li>
+            <li>Core</li>
+            <li>Menus</li>
+            <li>Spots category</li>
+            <li>Should spots be separated in its own category?</li>
+            <li>DZ_Spots</li>
+            <li>true</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationCategoriesMedical</li>
+            <li>Core</li>
+            <li>Menus</li>
+            <li>Medical category</li>
+            <li>Should medical items be separated in its own category?</li>
+            <li>DZ_Medical</li>
+            <li>true</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationAlphaBiomes</li>
+            <li>Alpha Biomes</li>
+            <li>Menus</li>
+            <li>Disable Alpha Biomes tab</li>
+            <li>Move Alpha Biomes items into other tabs</li>
+            <li></li>
+            <li>true</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationRimatomics</li>
+            <li>Dubs Rimatomics</li>
+            <li>Menus</li>
+            <li>Disable Rimatomics tab</li>
+            <li>Move Rimatomics items into industrial and other tabs.</li>
+            <li></li>
+            <li>false</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationRimefeller</li>
+            <li>Rimefeller</li>
+            <li>Menus</li>
+            <li>Disable Rimefeller tab</li>
+            <li>Move Rimefeller items into industrial and other tabs.</li>
+            <li></li>
+            <li>false</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationWhatTheHack</li>
+            <li>What the hack?!</li>
+            <li>Menus</li>
+            <li>Disable What the hack tab</li>
+            <li>Move What the hack items into other tabs.</li>
+            <li></li>
+            <li>false</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+
+
+    
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationDubsBadHygiene</li>
+            <li>Dubs Bad Hygiene</li>
+            <li>Menus</li>
+            <li>Disable Dubs Bad Hygiene tab</li>
+            <li>Move Dubs Bad Hygiene items into other tabs (not recommended)</li>
+            <li></li>
+            <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
     </Operation>

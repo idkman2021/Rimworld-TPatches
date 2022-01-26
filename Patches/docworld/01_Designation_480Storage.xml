@@ -23,24 +23,7 @@
                         </mods>
                         <caseFalse>
 
-                            <Operation Class="PatchOperationAdd">
-                                <xpath>/Defs</xpath>
-                                <value>
 
-                                    <DesignationCategoryDef>
-                                        <defName>DZ_Storage</defName>
-                                        <label>Storage</label>
-                                        <description>Furniture that can store items.</description>
-                                        <order>470</order>
-                                        <specialDesignatorClasses>
-                                            <li>Designator_Cancel</li>
-                                            <li>Designator_Deconstruct</li>
-                                            <li>Designator_Uninstall</li>
-                                        </specialDesignatorClasses>
-                                    </DesignationCategoryDef>
-
-                                </value>
-                            </Operation>
 
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                                 <xpath>/Defs/ThingDef[
@@ -249,7 +232,36 @@
                                 </match>
                             </Operation>
 
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>"Ancient" Buildings</li>
+                                </mods>
+                                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>/Defs/ThingDef[
+                                        defName="ABVending"
+                                        ]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Storage</designationCategory>
+                                    </value>
+                                </match>
+                            </Operation>
 
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>Rim-Effect: Core</li>
+                                </mods>
+                                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>/Defs/ThingDef[
+                                        defName="RE_PrefabShelf"
+                                        ]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Storage</designationCategory>
+                                    </value>
+                                </match>
+                            </Operation>
+
+
+                            <!-- patches go above this -->
                         </caseFalse>
                         <caseTrue>
 

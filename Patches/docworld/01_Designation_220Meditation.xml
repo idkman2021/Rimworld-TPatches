@@ -52,6 +52,48 @@
                         </value>
                     </Operation>
 
+                    <Operation Class="PatchOperationFindMod" MayRequire="ludeon.rimworld.royalty">
+                        <mods>
+                            <li>Vanilla Factions Expanded - Vikings</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="VFEV_RuneStone"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Meditation</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod" MayRequire="ludeon.rimworld.royalty">
+                        <mods>
+                            <li>Edo Themed Expansion</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="HSHaka"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Meditation</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod" MayRequire="ludeon.rimworld.royalty">
+                        <mods>
+                            <li>Rim-Effect: Core</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RE_GraveBodyBag"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Meditation</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
 
                 </caseTrue>
                 <caseFalse />

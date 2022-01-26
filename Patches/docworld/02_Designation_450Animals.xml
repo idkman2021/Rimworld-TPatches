@@ -212,6 +212,20 @@
                                 </match>
                             </Operation>
 
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>RimLife Expansion Furniture</li>
+                                </mods>
+                                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>/Defs/ThingDef[
+                                        defName="RLE_AnimalBed"
+                                        ]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Animals</designationCategory>
+                                    </value>
+                                </match>
+                            </Operation>
+
 
                         </caseTrue>
                     </Operation>

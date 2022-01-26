@@ -42,14 +42,33 @@
                             defName="DryadCocoon" or 
                             defName="DryadHealingPod" or 
                             defName="GaumakerCocoon" or
-                            defName="Autobong"
+                            defName="Autobong" or
+                            defName="LightBall" or
+                            defName="Loudspeaker" or
+                            defName="Drum"
                             ]</xpath>
                 <value>
                     <designationCategory>DZ_Ideology</designationCategory>
                 </value>
             </Operation>
 
+<!-- ================================ new ============================== -->
+            <Operation Class="PatchOperationFindMod" MayRequire="ludeon.rimworld.ideology">
+                <mods>
+                    <li>Vanilla Factions Expanded - Vikings</li>
+                </mods>
+                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <xpath>/Defs/ThingDef[
+                        defName="VFEV_FuneralPyre"
+                        ]</xpath>
+                    <value>
+                        <designationCategory>DZ_Ideology</designationCategory>
+                    </value>
+                </match>
+            </Operation>
 
+
+            <!-- patches go above this -->
         </caseTrue>
         <caseFalse />
     </Operation>

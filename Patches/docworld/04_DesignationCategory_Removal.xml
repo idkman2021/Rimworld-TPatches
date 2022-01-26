@@ -551,6 +551,16 @@
                   </match>
                </Operation>
 
+               <!--ZEN_Decoration Designation Category removal-->
+               <Operation Class="PatchOperationFindMod">
+                  <mods>
+                     <li>Edo Themed Expansion</li>
+                  </mods>
+                  <match Class="PatchOperationRemove">
+                     <xpath>/Defs/DesignationCategoryDef[defName="HSEdoBuildingsTab"]</xpath>
+                  </match>
+               </Operation>
+
 
             </caseTrue>
             <caseFalse />

@@ -16,24 +16,7 @@
                 <defaultValue>true</defaultValue>
                 <caseTrue>
 
-                    <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
-                        <value>
-
-                            <DesignationCategoryDef>
-                                <defName>DZ_Culinary</defName>
-                                <label>Culinary</label>
-                                <description>Cooking and fermenting.</description>
-                                <order>590</order>
-                                <specialDesignatorClasses>
-                                    <li>Designator_Cancel</li>
-                                    <li>Designator_Deconstruct</li>
-                                    <li>Designator_Uninstall</li>
-                                </specialDesignatorClasses>
-                            </DesignationCategoryDef>
-
-                        </value>
-                    </Operation>
+                    
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xpath>/Defs/ThingDef[
@@ -563,6 +546,177 @@
                     </Operation>
 
 
+                    <!-- ================================== NEW PATCHES =============================== -->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Comigo's Nutrition</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="COMIGO_SmallerBrewery" or
+                                defName="COMIGO_PortableChemfuelStove" or
+                                defName="COMIGO_SmallerElectricStove" or
+                                defName="COMIGO_InWallNutrientPasteDispenser" or
+                                defName="COMIGO_AdvancedNutrientPasteDispenser" or
+                                defName="COMIGO_CompactNutrientPasteDispenser" or
+                                defName="COMIGO_CuttingBoard" or
+                                defName="COMIGO_SmallerButcherTable"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Factions Expanded - Medieval</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="VFEM_MeatSmoker"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Salted Meat 2.0</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="SM_SausagePost" or
+                                defName="SM_MeatRack" or
+                                defName="SM_FishDrier"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Edo Themed Expansion</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="HSKamado" or
+                                defName="HSElectricKamado" or
+                                defName="HS_Irori_Small"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>"Ancient" Buildings</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="ABKitchenstove"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Expanded Materials Add-On - Minimalist Production</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="MP_SmallBrewery" or
+                                defName="MP_SmallButchering" or
+                                defName="MP_SmallStove" 
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Grains and Brewing</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="GAB_VinegarBarrel" or
+                                defName="GAB_RaksiStill" or
+                                defName="GAB_BaijuPot" 
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Fortifications - Medieval - Miscellaneous</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="FT_FoodTable" or
+                                defName="FT_StewPot"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Rim-Effect: Extended Cut</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RE_PreFabStove"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Monster Hunter Rimworld</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="BBQSpit"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Primitive Workbenches</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="VBY_PrimitiveButcherTable"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+                    <!-- patches go above this -->
                 </caseTrue>
                 <caseFalse />
             </Operation>

@@ -21,7 +21,7 @@
                         <value>
 
                             <DesignationCategoryDef>
-                                <defName>DZ_Medical</defName>
+                                <defName>NQoL_Medical</defName> <!-- niilo's qol compat -->
                                 <label>Medical</label>
                                 <description>Hospitals.</description>
                                 <order>350</order>
@@ -36,14 +36,33 @@
                         </value>
                     </Operation>
 
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>/Defs/ThingDef[defName="VitalsMonitor" or defName="HospitalBed"]</xpath>
+                        <value>
+                            <designationCategory>NQoL_Medical</designationCategory>
+                        </value>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Furniture Expanded - Medical Module</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[defName="Facility_IVDrip" or defName="Facility_VitalsCentre"]</xpath>
+                            <value>
+                                <designationCategory>NQoL_Medical</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
                     <Operation Class="PatchOperationFindMod">
                         <mods>
                             <li>CTS - Complete Tech Solutions (Continued)</li>
                         </mods>
-                        <match Class="PatchOperationAdd">
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
                             <xpath>/Defs/ThingDef[defName="CTSHiTechHospitalBed"]</xpath>
                             <value>
-                                <designationCategory>DZ_Medical</designationCategory>
+                                <designationCategory>NQoL_Medical</designationCategory>
                             </value>
                         </match>
                     </Operation>
@@ -56,16 +75,92 @@
                         <match Class="PatchOperationSequence">
                             <success>Always</success>
                             <operations>
-                                <li Class="PatchOperationAdd">
+                                <li Class="XmlExtensions.PatchOperationAddOrReplace">
                                     <xpath>/Defs/ThingDef[@Name="MedPodBedBase"]</xpath>
                                     <value>
-                                        <designationCategory>DZ_Medical</designationCategory>
+                                        <designationCategory>NQoL_Medical</designationCategory>
                                     </value>
                                 </li>
                             </operations>
                         </match>
                     </Operation>
 
+
+                    <!-- ================= new ================ -->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Factions Expanded - Ancients</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="VFEA_AncientCryptosleepSuspender"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>NQoL_Medical</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <!-- ================= new ================ -->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Rim-Effect: Core</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RE_PrefabMedicalBed"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>NQoL_Medical</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Furniture Expanded - Medical Module</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="Bed_OperatingTable" or 
+                                defName="Bed_CryptoBed"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>NQoL_Medical</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>RimLife Expansion Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RLE_AdHospitalBed"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>NQoL_Medical</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+<!--
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>More Linkables</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RLE_AdHospitalBed"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>NQoL_Medical</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+                -->
+
+                    <!-- patches go above this -->
                 </caseTrue>
                 <caseFalse />
             </Operation>

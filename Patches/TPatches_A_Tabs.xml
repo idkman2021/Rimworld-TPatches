@@ -32,7 +32,7 @@
             <li>Nerfs for items that are potentially overpowered.</li>
         </arguments>
     </Operation>
-    <Operation Class="XmlExtensions.ApplyPatch">
+<Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatches_CreateTab</patchName>
         <arguments>
             <li>Menus</li>

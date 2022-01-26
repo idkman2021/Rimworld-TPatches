@@ -22,10 +22,10 @@
                     
                     <!-- adds active defName to the log tab if it isn't there already -->
                     <li Class="PatchOperationConditional">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefRemove}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefRemove}"]</xpath>
                         <nomatch Class="PatchOperationAdd">
                             <order>Append</order>
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
                             <value>
                                 <li Class="XmlExtensions.Setting.Text">
                                     <font>Tiny</font>
@@ -58,7 +58,7 @@
                     
                     <!-- adds an entry to the info tab -->
                     <li Class="PatchOperationAdd">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Info"]/settings</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Info"]/settings</xpath>
                         <order>Append</order>
                         <value>
                             <li Class="XmlExtensions.Setting.SplitColumn">
@@ -87,10 +87,10 @@
             <Operation Class="PatchOperationConditional">
                 <xpath>/Defs/ThingDef[defName="{DARAnimalDefKeep}"]</xpath>
                 <match Class="PatchOperationConditional">
-                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefKeep}"]</xpath>
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefKeep}"]</xpath>
                     <nomatch Class="PatchOperationAdd">
                         <order>Append</order>
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
                         <value>
                             <li Class="XmlExtensions.Setting.Text">
                                 <font>Tiny</font>
@@ -101,10 +101,10 @@
                 </match>
                 <!-- adds inactive defNames to the log tab if they aren't there already -->
                 <nomatch Class="PatchOperationConditional">
-                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefKeep}"]</xpath>
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefKeep}"]</xpath>
                     <nomatch Class="PatchOperationAdd">
                         <order>Append</order>
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
                         <value>
                             <li Class="XmlExtensions.Setting.SetColor">
                                 <color>(155,155,155)</color>
@@ -121,10 +121,10 @@
                 </nomatch>
             </Operation>
             <Operation Class="PatchOperationConditional">
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefRemove}"]</xpath>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefRemove}"]</xpath>
                 <nomatch Class="PatchOperationAdd">
                     <order>Append</order>
-                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                    <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
                     <value>
                         <li Class="XmlExtensions.Setting.SetColor">
                             <color>(155,155,155)</color>
