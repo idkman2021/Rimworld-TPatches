@@ -27,6 +27,33 @@
                         </value>
                     </Operation>
 
+                    <!-- fix non spot spots -->
+                    <Operation Class="XmlExtensions.FindMod">
+                        <mods>
+                            <li>Edo Themed Expansion</li>
+                        </mods>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                                <xpath>/Defs/ThingDef[
+                                defName="HSEdoTailorSpot"
+                                ]</xpath>
+                                <value>
+                                    <designationCategory>Production</designationCategory>
+                                </value>
+                            </Operation>
+
+                            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                                <xpath>/Defs/ThingDef[
+                                defName="HS_HaikuSpot" or 
+                                defName="HSShogiboard"
+                                ]</xpath>
+                                <value>
+                                    <designationCategory>Joy</designationCategory>
+                                </value>
+                            </Operation>
+
+                        </caseTrue>
+                    </Operation>
 
 
                     <!-- replace -->
