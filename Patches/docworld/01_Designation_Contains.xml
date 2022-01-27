@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategories</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesCulinary</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>DZ_Culinary</defName>
+                                <label>Culinary</label>
+                                <description>Cooking and fermenting.</description>
+                                <order>590</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+                        </value>
+                    </Operation>
+
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[designationCategory][
+                            contains(label, "stove") or 
+                            contains(label, "Stove") or 
+                            contains(@Name, "stove") or 
+                            contains(@Name, "Stove") or
+                            contains(label, "ferment") or 
+                            contains(label, "Ferment") or 
+                            contains(@Name, "ferment") or 
+                            contains(@Name, "Ferment") or 
+                            contains(label, "nutrient") or 
+                            contains(label, "Nutrient") or 
+                            contains(@Name, "nutrient") or 
+                            contains(@Name, "Nutrient") or 
+                            contains(label, "butcher") or 
+                            contains(label, "Butcher") or 
+                            contains(@Name, "butcher") or 
+                            contains(@Name, "Butcher") or
+                            thingClass="Building_FermentingBarrel"]</xpath>
+                        <value>
+                            <designationCategory Inherit="False">DZ_Culinary</designationCategory>
+                        </value>
+                    </Operation>
+
+
+                </caseTrue>
+            </Operation>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesLighting</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>DZ_Lighting</defName>
+                                <label>Lighting</label>
+                                <description>Illumination.</description>
+                                <order>480</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[designationCategory or @ParentName="LampBase" or @ParentName="StandingLampBase"][
+                        contains(label, "lamp") or 
+                        contains(label, "torch") or 
+                        contains(label, "Lamp") or 
+                        contains(label, "Torch") or 
+                        contains(label, "wall light") or 
+                        contains(label, "Wall light") or 
+                        contains(@Name, "lamp") or 
+                        contains(@Name, "torch") or 
+                        contains(@Name, "Lamp") or 
+                        contains(@Name, "Torch")]</xpath>
+                        <value>
+                            <designationCategory Inherit="False">DZ_Lighting</designationCategory>
+                        </value>
+                    </Operation>
+
+                </caseTrue>
+            </Operation>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesBeds</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>DZ_Beds</defName>
+                                <label>Bedroom</label>
+                                <description>Spots for your pawns to rest.</description>
+                                <order>490</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+                        </value>
+                    </Operation>
+
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>
+                            Defs/ThingDef[
+                            (
+                                (
+                                    designationCategory or 
+                                    @ParentName="FurnitureBase" or
+                                    @ParentName="FurnitureWithQualityBase" or
+                                    @ParentName="ArtableFurnitureBase" or
+                                    @ParentName="ArtableFurnitureRegardlessOfQualityBase"
+                                ) 
+                                and 
+                                (
+                                    comps/li/compClass="CompAssignableToPawn_Bed" or 
+                                    thingClass="Building_Bed" or 
+                                    building/buildingTags/li="Bed"
+                                )
+                            ) or
+                            @ParentName="BedBase" or
+                            @ParentName="BedWithQualityBase" or 
+                            @ParentName="ArtableBedBase"
+                            ]
+                            <!--
+                            [
+                            contains(label, "sleep") or 
+                            contains(label, "Sleep") or 
+                            contains(@Name, "sleep") or 
+                            contains(@Name, "Sleep") or
+                            contains(label, "bed") or 
+                            contains(label, "Bed") or 
+                            contains(@Name, "bed") or 
+                            contains(@Name, "Bed")]
+                            -->
+                        </xpath>
+                        <value>
+                            <designationCategory Inherit="False">DZ_Beds</designationCategory>
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[
+                            designationCategory or 
+                            @ParentName="FurnitureBase" or
+                            @ParentName="FurnitureWithQualityBase" or
+                            @ParentName="ArtableFurnitureBase" or
+                            @ParentName="ArtableFurnitureRegardlessOfQualityBase" or
+                            @ParentName="TableBase"
+                            ][comps/li[@Class="CompProperties_Facility"]][
+                            contains(label, "dresser") or 
+                            contains(label, "Dresser") or 
+                            contains(@Name, "dresser") or 
+                            contains(@Name, "Dresser") or
+                            contains(label, "end table") or 
+                            contains(label, "End table") or 
+                            contains(@Name, "EndTable") or 
+                            contains(@Name, "Endtable") or
+                            contains(label, "wardrobe") or 
+                            contains(label, "Wardrobe") or 
+                            contains(@Name, "wardrobe") or 
+                            contains(@Name, "Wardrobe") or 
+                            contains(label, "bed") or 
+                            contains(label, "Bed") or 
+                            contains(@Name, "bed") or 
+                            contains(@Name, "Bed")]</xpath>
+                        <value>
+                            <designationCategory Inherit="False">DZ_Beds</designationCategory>
+                        </value>
+                    </Operation>
+
+                </caseTrue>
+            </Operation>
+
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesStorage</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>DZ_Storage</defName>
+                                <label>Storage</label>
+                                <description>Furniture that can store items.</description>
+                                <order>470</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+                        </value>
+                    </Operation>
+
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[
+                                    designationCategory or 
+                                    @ParentName="FurnitureBase" or
+                                    @ParentName="FurnitureWithQualityBase" or
+                                    @ParentName="ArtableFurnitureBase" or
+                                    @ParentName="ArtableFurnitureRegardlessOfQualityBase"
+                                    ][
+                                    building/fixedStorageSettings/filter/categories/li="Root"]</xpath>
+                        <value>
+                            <designationCategory Inherit="False">DZ_Storage</designationCategory>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesHusbandry</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>DZ_Husbandry</defName>
+                                <label>Husbandry</label>
+                                <description>For all your agricultural and livestock needs.</description>
+                                <order>580</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                    <li>Designator_SmoothSurface</li>
+                                    <li>Designator_RemoveFloor</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[designationCategory or @ParentName="LampBase"][
+                            contains(label, "hydroponic") or 
+                            contains(label, "sun") or 
+                            contains(label, "Hydroponic") or 
+                            contains(label, "Sun") or 
+                            contains(@Name, "hydroponic") or 
+                            contains(@Name, "sun") or 
+                            contains(@Name, "Hydroponic") or 
+                            contains(@Name, "Sun") or
+                            thingClass="Building_PlantGrower" or 
+                            thingClass="Building_SunLamp" or 
+                            building/defaultPlantToGrow]</xpath>
+                        <value>
+                            <designationCategory Inherit="False">DZ_Husbandry</designationCategory>
+                        </value>
+                    </Operation>
+
+                </caseTrue>
+            </Operation>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesMedical</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+
+                    <Operation Class="PatchOperationAdd">
+                        <success>Always</success>
+                        <xpath>/Defs[not(DesignationCategoryDef/defName="NQoL_Medical")]</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>NQoL_Medical</defName> <!-- niilo's qol compat -->
+                                <label>Medical</label>
+                                <description>Hospitals.</description>
+                                <order>350</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>
+                            Defs/ThingDef[designationCategory or @ParentName="LampBase"][
+                            contains(label, "hospital") or 
+                            contains(label, "Hospital") or 
+                            contains(@Name, "hospital") or 
+                            contains(@Name, "Hospital") or
+                            <!--
+                            contains(@Name, "medical") or 
+                            contains(@Name, "Medical") or
+                            contains(label, "medical") or 
+                            contains(label, "Medical") or 
+                            -->
+                            contains(label, "surgical") or 
+                            contains(label, "Surgical") or 
+                            contains(@Name, "surgical") or 
+                            contains(@Name, "Surgical")
+                            ]
+                        </xpath>
+                        <value>
+                            <designationCategory Inherit="False">NQoL_Medical</designationCategory>
+                        </value>
+                    </Operation>
+
+
+                </caseTrue>
+            </Operation>
+
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesSpots</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd">
+                        <success>Always</success>
+                        <xpath>/Defs[not(DesignationCategoryDef/defName="NQoL_Spots")]</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>NQoL_Spots</defName> <!-- compat with niilos qol -->
+                                <label>Spots</label>
+                                <description>Spots.</description>
+                                <order>50</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+                        </value>
+                    </Operation>
+
+
+                </caseTrue>
+            </Operation>
+
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesMeditation</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.royalty">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>DZ_Meditation</defName>
+                                <label>Royalty</label>
+                                <description>Objects that help one regain psyfocus.</description>
+                                <order>220</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[
+                            designationCategory or 
+                            @ParentName="FurnitureBase" or
+                            @ParentName="FurnitureWithQualityBase" or
+                            @ParentName="ArtableFurnitureBase" or
+                            @ParentName="ArtableFurnitureRegardlessOfQualityBase" or
+                            @ParentName="NatureShrineBase"
+                            ][
+                            comps/li/focusTypes/li="Natural" or
+                            comps/li/focusTypes/li="Dignified" or
+                            comps/li/focusTypes/li="Morbid"
+                            ]
+                        </xpath>
+                        <value>
+                            <designationCategory Inherit="False">DZ_Meditation</designationCategory>
+                        </value>
+                    </Operation>
+
+
+                </caseTrue>
+            </Operation>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesIdeology</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.ideology">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>DZ_Ideology</defName>
+                                <label>Ideology</label>
+                                <description>Objects to represent one's ideologion.</description>
+                                <order>230</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[
+                            designationCategory or 
+                            @ParentName="IdeoBuildingBase" or
+                            @ParentName="AltarBase" or
+                            @ParentName="IdeoBuildingConsumableBase" or
+                            @ParentName="IdeoBurnableBase" or
+                            @ParentName="IdeoSmokerBase"
+                            ][
+                            placeWorkers/li="PlaceWorker_RitualFocus" or
+                            isAltar="true" or
+                            building/buildingTags/li="RitualFocus" or
+                            placeWorkers/li="PlaceWorker_RitualFocusNoArrow" or
+                            ideoBuildingNamerBase
+                            ]
+                        </xpath>
+                        <value>
+                            <designationCategory Inherit="False">DZ_Ideology</designationCategory>
+                        </value>
+                    </Operation>
+
+                </caseTrue>
+            </Operation>
+
+
+        </caseTrue>
+        <caseFalse />
+    </Operation>
+
+</Patch>

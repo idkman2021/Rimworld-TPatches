@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This file is under the Gnu General Public License version 3, see https://www.gnu.org/licenses/gpl-3.0.txt for more information.
+-->
+
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>Alpha Biomes</li>
+        </mods>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategories</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>DocWorld_DesignationAlphaBiomes</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+
+                            <Operation Class="PatchOperationReplace">
+                                <xpath>/Defs/TerrainDef[@Name="AB_FloorBase"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory>Floors</designationCategory>
+                                </value>
+                            </Operation>
+                            <Operation Class="PatchOperationReplace">
+                                <xpath>/Defs/ThingDef[defName="AB_AlcyoniteSolar"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory>Power</designationCategory>
+                                </value>
+                            </Operation>
+                            <Operation Class="PatchOperationReplace">
+                                <xpath>/Defs/ThingDef[@Name="AB_SmelterBase" or defName="AB_CoreSampleDrill" or defName="AB_PropanePump" or defName="AB_TarPump"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory>Production</designationCategory>
+                                </value>
+                            </Operation>
+                            <Operation Class="PatchOperationReplace">
+                                <xpath>/Defs/ThingDef[defName="AB_OcularGasSpewer" or defName="AB_TrapIED_Tar"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory>Security</designationCategory>
+                                </value>
+                            </Operation>
+                            <Operation Class="PatchOperationReplace">
+                                <xpath>/Defs/ThingDef[defName="AB_AlienComplianceCenter"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory>Joy</designationCategory>
+                                </value>
+                            </Operation>
+                            <Operation Class="PatchOperationReplace">
+                                <xpath>/Defs/ThingDef[defName="AB_PropaneHeater"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory>Temperature</designationCategory>
+                                </value>
+                            </Operation>
+                            <Operation Class="PatchOperationReplace">
+                                <xpath>/Defs/ThingDef[@Name="AB_ExoticDoorBase" or defName="AB_ExoticWall" or defName="AB_ExoticColumn"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory>Structure</designationCategory>
+                                </value>
+                            </Operation>
+                            <Operation Class="PatchOperationReplace">
+                                <xpath>/Defs/TerrainDef[defName="AB_AsphaltBridge"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory>Structure</designationCategory>
+                                </value>
+                            </Operation>
+                            <Operation Class="XmlExtensions.OptionalPatch">
+                                <modId>carnap2.TPatches</modId>
+                                <key>DocWorld_DesignationCategoriesCulinary</key>
+                                <defaultValue>true</defaultValue>
+                                <caseTrue>
+                                    <Operation Class="PatchOperationReplace">
+                                        <xpath>/Defs/ThingDef[defName="AB_PropaneStove"]/designationCategory</xpath>
+                                        <value>
+                                            <designationCategory>DZ_Culinary</designationCategory>
+                                        </value>
+                                    </Operation>
+                                </caseTrue>
+                                <caseFalse>
+
+                                    <Operation Class="PatchOperationReplace">
+                                        <xpath>/Defs/ThingDef[defName="AB_PropaneStove"]/designationCategory</xpath>
+                                        <value>
+                                            <designationCategory>Production</designationCategory>
+                                        </value>
+                                    </Operation>
+
+                                </caseFalse>
+                            </Operation>
+                            <Operation Class="PatchOperationRemove">
+                                <xpath>/Defs/DesignationCategoryDef[defName="AB_AlphaBiomesBuildings"]</xpath>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+
+
+                </caseTrue>
+                <caseFalse />
+            </Operation>
+        </caseTrue>
+    </Operation>
+</Patch>

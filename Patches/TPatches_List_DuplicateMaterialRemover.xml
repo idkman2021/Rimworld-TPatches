@@ -1,62 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    
-    
+
+
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesDMR</key>
         <defaultValue>false</defaultValue>
         <caseTrue>
-            
+
             <!-- Expanded Materials - Plastics / Materials+ -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
-                    <li>VMEu_PolyesterCloth</li> 
+                    <li>VMEu_PolyesterCloth</li>
                     <li>AM_Polyester</li>
                 </arguments>
             </Operation>
-            
+
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
-                    <li>VMEu_PlasticPellets_TierOne</li> 
+                    <li>VMEu_PlasticPellets_TierOne</li>
                     <li>AM_MixedPlastic</li>
                 </arguments>
             </Operation>
-                
+
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
-                    <li>VMEu_DarkOil</li> 
+                    <li>VMEu_DarkOil</li>
                     <li>AM_BioOil</li>
                 </arguments>
             </Operation>
-            
+
+
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
-                    <li>OilBarrel</li> 
+                    <li>OilBarrel</li>
                     <li>AM_CrudeOil</li>
                 </arguments>
             </Operation>
-            
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
-                <arguments>
-                    <li>VMEu_PlasticPellets_TierOne</li> 
-                    <li>carnap_polypropylene</li>
-                </arguments>
-            </Operation>
-            
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
-                <arguments>
-                    <li>AM_MixedPlastic</li> 
-                    <li>carnap_polypropylene</li>
-                </arguments>
-            </Operation>
-            
+
+
             <!-- rename concrete to reinforced concrete -->
             <Operation Class="PatchOperationSequence">
                 <success>Always</success>
@@ -72,44 +58,43 @@
                     </li>
                 </operations>
             </Operation>
-            
+
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
-                    <li>ConcreteSlab</li> 
+                    <li>ConcreteSlab</li>
                     <li>Stuff_RefConcreteAM</li>
                 </arguments>
             </Operation>
-            
+
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
-                    <li>VMEu_Coal</li> 
+                    <li>VMEu_Coal</li>
                     <li>AM_CokeCoal</li>
                 </arguments>
             </Operation>
-            
+
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
-                    <li>VMEu_Charcoal</li> 
+                    <li>VMEu_Charcoal</li>
                     <li>AM_Coal</li>
                 </arguments>
             </Operation>
-            
+
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
-                    <li>VMEu_Concrete</li> 
+                    <li>VMEu_Concrete</li>
                     <li>Stuff_ConcreteAM</li>
                 </arguments>
             </Operation>
-            
-            
+
+
         </caseTrue>
-        <caseFalse>
-        </caseFalse>
+        <caseFalse></caseFalse>
     </Operation>
-    
-    
+
+
 </Patch>

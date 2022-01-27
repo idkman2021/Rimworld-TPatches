@@ -1,0 +1,32 @@
+
+   <!--Animals Designation Category removal, if mods not found. #animalbeds-->
+   <Operation Class="PatchOperationFindMod">
+      <mods>
+         <li>Animal Medical Bed</li>
+         <li>Dragon's Descent</li>
+         <li>Fast regen 1.1</li>
+         <li>Large Animal Beds</li>
+         <li>RIMkea</li>
+         <li>RimPlas (Continued)</li>
+         <li>RimPlas</li>
+         <li>[FSF] Invisible Animal Beds</li>
+         <li>[sd] Chicken Nest (Continued)</li>
+         <li>【1.1】Animalstrawbed</li>
+      </mods>
+      <nomatch Class="PatchOperationRemove">
+         <xpath>/Defs/DesignationCategoryDef[defName="DZ_Animals"]</xpath>
+      </nomatch>
+   </Operation>
+
+   <!--Industrial Designation Category removal, if mods not found. #industrial-->
+   <Operation Class="PatchOperationFindMod">
+      <mods>
+         <li>Industrial Rollers</li>
+         <li>Project RimFactory Revived</li>
+         <li>Rimefeller</li>
+         <li>Rimatomics</li>
+      </mods>
+      <nomatch Class="PatchOperationRemove">
+         <xpath>/Defs/DesignationCategoryDef[defName="DZ_Industrial"]</xpath>
+      </nomatch>
+   </Operation>

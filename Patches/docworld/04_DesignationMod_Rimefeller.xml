@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This file is under the Gnu General Public License version 3, see https://www.gnu.org/licenses/gpl-3.0.txt for more information.
+-->
+
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>Rimefeller</li>
+        </mods>
+        <caseTrue>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategories</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>DocWorld_DesignationRimefeller</key>
+                        <defaultValue>false</defaultValue>
+                        <caseTrue>
+
+                            <Operation Class="XmlExtensions.OptionalPatch">
+                                <modId>carnap2.TPatches</modId>
+                                <key>DocWorld_DesignationCategoriesIndustrial</key>
+                                <defaultValue>true</defaultValue>
+                                <caseTrue>
+                                    
+                                    <Operation Class="PatchOperationAdd"><success>Always</success>
+                                        <xpath>/Defs[not(DesignationCategoryDef/defName="DZ_Industrial")]</xpath>
+                                        <value>
+        
+                                            <DesignationCategoryDef>
+                                                <defName>DZ_Industrial</defName>
+                                                <label>Industrial</label>
+                                                <description>For all your industrial production.</description>
+                                                <order>570</order>
+                                                <specialDesignatorClasses>
+                                                    <li>Designator_Cancel</li>
+                                                    <li>Designator_Deconstruct</li>
+                                                    <li>Designator_Uninstall</li>
+                                                </specialDesignatorClasses>
+                                            </DesignationCategoryDef>
+        
+                                        </value>
+                                    </Operation>
+
+
+                                    <Operation Class="PatchOperationAdd">
+                                        <xpath>/Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
+                                        <value>
+                                            <li>Rimefeller.Designator_CleanOil</li>
+                                            <li>Rimefeller.Designator_RemovePipeline</li>
+                                        </value>
+                                    </Operation>
+
+                                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                                        <xpath>/Defs/ThingDef[defName="Filth_NapalmTrail" or defName="SparkGrid" or defName="NapalmBomb"]</xpath>
+                                        <value>
+                                            <designationCategory>Security</designationCategory>
+                                        </value>
+                                    </Operation>
+                                    <!--
+                            <Operation Class="PatchOperationReplace">
+                                <xpath>/Defs/ThingDef[defName="Filth_OilSlick"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory />
+                                </value>
+                            </Operation>
+                        -->
+                                    <Operation Class="PatchOperationReplace">
+                                        <xpath>/Defs/TerrainDef/designationCategory[text()="Rimefeller"]</xpath>
+                                        <value>
+                                            <designationCategory>Floors</designationCategory>
+                                        </value>
+                                    </Operation>
+
+
+                                    <Operation Class="PatchOperationReplace">
+                                        <xpath>/Defs/ThingDef/designationCategory[text()="Rimefeller"]</xpath>
+                                        <value>
+                                            <designationCategory>DZ_Industrial</designationCategory>
+                                        </value>
+                                    </Operation>
+
+                                    <!--
+                                    <Operation Class="PatchOperationRemove">
+                                        <xpath>/Defs/DesignationCategoryDef[defName="Rimefeller"]</xpath>
+                                    </Operation>
+                                -->
+
+
+                                </caseTrue>
+                            </Operation>
+
+
+                        </caseTrue>
+                        <caseFalse></caseFalse>
+                    </Operation>
+                </caseTrue>
+                <caseFalse />
+            </Operation>
+        </caseTrue>
+    </Operation>
+
+</Patch>

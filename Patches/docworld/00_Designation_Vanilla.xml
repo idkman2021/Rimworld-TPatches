@@ -134,6 +134,7 @@ Ship        50  | Temperature 25  |
       <Operation Class="PatchOperationFindMod">
         <mods>
           <li>More Furniture [1.1 + 1.2]</li>
+          <li>More Furniture (Continued)</li>
         </mods>
         <match Class="PatchOperationSequence">
           <success>Always</success>
@@ -572,6 +573,109 @@ Ship        50  | Temperature 25  |
             </value>
           </Operation>
 
+
+        </caseTrue>
+      </Operation>
+
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>GloomyFurniture</li>
+        </mods>
+        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+          <xpath>/Defs/ThingDef[
+                defName="GL_Bookshelf"
+                ]</xpath>
+          <value>
+            <designationCategory>Misc</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>GloomyFurniture</li>
+        </mods>
+        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+          <xpath>/Defs/ThingDef[
+              defName="RGK_SimpleResearchBench" or
+              defName="GL_HandTailoringBench" or
+              defName="GL_ElectricTailoringBench" or
+              defName="GL_FueledSmithy" or
+              defName="GL_ElectricSmithy"
+              ]</xpath>
+          <value>
+            <designationCategory>Production</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>GloomyFurniture</li>
+        </mods>
+        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+          <xpath>/Defs/ThingDef[
+              defName="RGK_Wall" or
+              defName="GL_Wall" or
+              defName="RGK_VentWall" or
+              defName="GL_VentWall" or
+              defName="RGK_window" or
+              defName="RGK_WindowWall" or
+              defName="GL_WindowWall" or
+              defName="RGK_WoodFence" or
+              defName="GL_FlowerWall" or
+              defName="RGK_DoorOld" or
+              defName="RGK_Door" or
+              defName="GL_DoorFrame"
+              ]</xpath>
+          <value>
+            <designationCategory>Structure</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>GloomyFurniture</li>
+        </mods>
+        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+          <xpath>/Defs/ThingDef[
+              defName="RGK_Fireplace" or
+              defName="RGK_FireplaceE"
+              ]</xpath>
+          <value>
+            <designationCategory>Temperature</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="XmlExtensions.FindMod">
+        <mods>
+          <li>Medieval Overhaul</li>
+        </mods>
+        <caseTrue>
+
+          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+            <xpath>/Defs/ThingDef[
+                defName="DankPyon_WoodBurningStove" or
+                defName="DankPyon_RusticHearth"
+                ]</xpath>
+            <value>
+              <designationCategory>Temperature</designationCategory>
+            </value>
+          </Operation>
+
+          <Operation Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef/designationCategory[text()="DankPyon_RusticFurniture"]</xpath>
+            <value>
+              <designationCategory>Furniture</designationCategory>
+            </value>
+          </Operation>
+
+          <Operation Class="PatchOperationRemove">
+            <xpath>/Defs/DesignationCategoryDef[defName="DankPyon_RusticFurniture"]</xpath>
+          </Operation>
 
         </caseTrue>
       </Operation>

@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This file is under the Gnu General Public License version 3, see https://www.gnu.org/licenses/gpl-3.0.txt for more information.
+-->
+
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategories</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesLighting</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+
+                    
+
+                    <!-- replace -->
+                    <Operation Class="PatchOperationReplace">
+                        <xpath>Defs/ThingDef[ @Name="LampBase"
+                    ]/designationCategory</xpath>
+                        <value>
+                            <designationCategory>DZ_Lighting</designationCategory>
+                        </value>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>/Defs/ThingDef[
+                            defName="TorchLamp"
+                            ]</xpath>
+                        <value>
+                            <designationCategory>DZ_Lighting</designationCategory>
+                        </value>
+                    </Operation>
+
+                    <!-- ideology -->
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="ludeon.rimworld.ideology">
+                        <xpath>/Defs/ThingDef[ defName="Brazier"
+                    ]</xpath>
+                        <value>
+                            <designationCategory>DZ_Lighting</designationCategory>
+                        </value>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Apothecary</li>
+                            <li>Apothecary (Continued)</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[defName="AYCandle"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Ceiling Lights</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="Lighting_CeilingLight"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Coal Expanded</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="NECCoalLamp"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Dubs Skylights</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[@Name="BasedSkyLight"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/DesignationCategoryDef[defName="DZ_Lighting"]/specialDesignatorClasses</xpath>
+                                    <value>
+                                        <li>Dubs_Skylight.Designator_RemoveSkylights</li>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Floors tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Floor Lights</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[@Name="FloorLightSquare" or @Name="FloorLightStripe" or @Name="FloorLightSmallStripe" or @Name="FloorLightPlus" or @Name="FloorLightCorner" or @Name="FloorLightInverseCorner" or @Name="FloorLightCornerSmall" or @Name="FloorLightInverseCornerSmall" or @Name="FloorTileLightSquare" or @Name="FloorLightTriangle" or @Name="FloorLightSmallStripeMiddle" or @Name="FloorLightSmallStripeDiagonal" or @Name="FloorLightStripeMiddle" or @Name="FloorLightStripe" or @Name="FloorLightTriangleCorner"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Decor and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>[ELIF] Flooring and Decorative Options</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[@Name="ELIF_FloorLight_Base"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Decor and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Genetic Rim</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="FloodLight"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Glass+Lights</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[@Name="GlCeilingLampBase" or @Name="GLWallLightBase" or defName="OutdoorGroundLamp"]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Glitter Tech</li>
+                            <li>Glitter Tech (No Surgery)</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="FloodLight"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Culinary and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Gloomy Vanilla</li>
+                            <li>Gloomy Vanilla Overhaul</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[@Name="WallLightBase" or defName="RGK_lamp" or defName="GL_lamp_White" or defName="RGK_LampM" or defName="GL_LampM_White" or defName="RGK_Street_Lamp" or defName="GL_lampE_White" or defName="GL_Street_Lamp_White" or defName="GL_Street_Lamp_L_White" or defName="RGK_Street_Lamp_Seven"  or defName="GL_Street_Lamp_Seven_White"  or defName="GL_Street_Lamp_SevenE_White"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Lighting tab, remove designation category-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Glowstone</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[defName="GLO_GlowstonePylon" or defName="GLO_GlowstoneLamp" or @Name="GlowstoneChandelierBase" or @Name="GlowstoneFloorStipBase"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+
+                    <!--Move items to Joy, Lighting, and Storage tab. #storage-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Industrial Age - Objects and Furniture (Continued)</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="Jecrell_Chandelier" or defName="Jecrell_ChandelierRoyal" or defName="Jecrell_Candelabra" or defName="Jecrell_GasStreetLampAlpha" or defName="Jecrell_GasStreetLampBeta" or defName="Jecrell_GasLamp"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[@Name="Estate_ArcLampBase"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>LED Lights</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <!--LED Lights Rope-->
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[@Name="CCP_BaseLED" or @Name="CCP_LEDGrowLightBase" or @Name="CCP_LEDRopeLightBase" or @Name="CCP_LEDWallLight" or @Name="CCP_WRLEDWallLight" or @Name="CCP_LEDLight" or @Name="CCP_WRLEDLight" or @Name="CCP_HIDLEDLight" or @Name="CCP_WRHIDLEDLight"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                                <!--
+                        <li Class="PatchOperationRemove">
+                            <xpath>/Defs/ThingDef[defName="CCP_LEDMedLight"]/designationCategory</xpath>
+                        </li>
+                    -->
+                                <li Class="PatchOperationRemove">
+                                    <xpath>/Defs/DesignationCategoryDef[defName="LEDLights"]</xpath>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Lord of the Rims - Dwarves</li>
+                            <li>Lord of the Rims - Dwarves (Continued)</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>Defs/ThingDef[defName="LotRD_Chandelier" or defName="LotRD_DwarvenCandelabra" or defName="LotRD_Brazier" or defName="LotRD_DwarvenWallLight" or defName="LotRD_DwarvenStreetLamp"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Lord of the Rims - Elves</li>
+                            <li>Lord of the Rims - Elves (Continued)</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>Defs/ThingDef[defName="LotRE_ElvenCandelabra"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds, Husbanry, and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Mechalit Core 1.1</li>
+                            <li>Mechalit Core v2</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <!--Lighting-->
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[defName="Lamp-pot" or @Name="Lamp-potBase" or defName="ObeliskMeh"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Decor, Furniture, and Lighting tab.-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>More Furniture [1.1 + 1.2]</li>
+                            <li>More Furniture (Continued)</li>
+                          </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+
+                                <!--Move all lights to Lighting category-->
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="Anon2EndTableLight" or defName="Anon2RoyalEndTableLight" or @Name="ANON2StandingLampBase"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Outdoor Lighting</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[@Name="LampBaseOutdoor"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[@Name="LanternBase"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[@Name="StreetLampBase"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="OutdoorFloodLights"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Husbandry, Industrial and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Project RimFactory Revived</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[@Name="PRF_FloorIconBase"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                                <li Class="PatchOperationConditional">
+                                    <xpath>/Defs/ThingDef[defName="PRF_WallLight" or defName="PRF_IndustrialLamp"]/designationCategory</xpath>
+                                    <match Class="PatchOperationReplace">
+                                        <xpath>/Defs/ThingDef[defName="PRF_WallLight" or defName="PRF_IndustrialLamp" or defName="PRF_FloorSpotlight"]/designationCategory</xpath>
+                                        <value>
+                                            <designationCategory>DZ_Lighting</designationCategory>
+                                        </value>
+                                    </match>
+                                    <nomatch Class="PatchOperationAdd">
+                                        <xpath>/Defs/ThingDef[defName="PRF_WallLight" or defName="PRF_IndustrialLamp" or defName="PRF_FloorSpotlight"]</xpath>
+                                        <value>
+                                            <designationCategory>DZ_Lighting</designationCategory>
+                                        </value>
+                                    </nomatch>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Culinary, Husbandry, and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>RimBees</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="RB_WaxCandle"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>RIMkea</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[@Name="RIKWallLampBase" or @Name="RIKLampBase" or @Name="RIKLampBase2" or defName="BOLTASKLamp"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Steam Light</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[defName="SL_TungstenTableLamp" or defName="SL_FlourescentTableLamp" or defName="SL_FlourescentWallLamp" or defName="SL_FlourescentChandelierLamp" or defName="SL_TungstenChandelierLamp" or defName="SL_StreetLamp"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <!--LightColumnMod-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Utility Columns</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <!--Lights-->
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="LightColumnMod" or defName="DarkColumnMod"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--==========
+    Vanilla Factions Expanded - Settlers
+    ==========-->
+
+                    <!--Move items to Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Factions Expanded - Settlers</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[defName="Chemlamp" or defName="ChemlampPost"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+
+                    <!--Move items to Beds, Furniture, and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Furniture Expanded</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="Light_ModernLamp" or 
+                                defName="Light_Streetlamp" or 
+                                defName="Table_LightEndTable"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds, Furniture, Husbandry, Lighting, and Joy tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Furniture Expanded - Spacer Module</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[defName="Light_SpacerLamp" or defName="Spacer_OutdoorLamp"]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+
+                        </match>
+                    </Operation>
+
+
+                    <!--Move items to Lighting-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Velcroboy's Japanese Revival</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <!--Lighting-->
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[@Name="VBY_JapaneseLanternBase" or defName="VBY_Andon" or defName="VBY_AndonElec" or defName="VBY_Ishidoro"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>VGP Vegetable Garden</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[defName="VG_TorchLamp"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Lighting and Husbandry tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Wall Light</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[@Name="MURWallLightBase"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+
+                    <!--Move items to Decor, Floors, Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Zen Garden</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[defName="ZEN_Tachidoro" or defName="ZEN_Andon"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Lighting</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!-- ============================ new =========================== -->
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Factions Expanded - Ancients</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="VFEA_WallLamp_Red" or 
+                                defName="VFEA_WallLamp_Green" or 
+                                defName="VFEA_WallLamp_Blue" or 
+                                defName="VFEA_WallLamp"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                     <!-- ============================ new =========================== -->
+
+                     <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Simple Utilities: Walls</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="Owl_Fencepost_Chemlamp" or 
+                                defName="Owl_Fencepost_TorchLamp" or 
+                                defName="Owl_Fencepost_Lamp" or 
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Rim-Effect: Core</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RE_PrefabStandingLamp"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Rim-Effect: Extended Cut</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RE_PrefabOutdoorLamp" or
+                                defName="RE_PreFabWallLight"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>[RH2] Uncle Boris' - Used Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RH2_Floodlight_Big" or
+                                defName="RH2_MiniFloodlight" or
+                                defName="RH2_HolmoFloorLamp"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Edo Themed Expansion</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="HSToro" or
+                                defName="HSAndon"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Wall Decorations</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="ucp_exitsigngreen" or
+                                defName="ucp_exitsignred"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Factions Expanded - Medieval</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="VFEM_WallTorchLamp"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Ideology</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="Darktorch" or
+                                defName="DarktorchFungus"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Warhammer: Skaven</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="SkavenWarpBrazier"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>RimLife Expansion Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RLE_EmbeddedLampTime" or
+                                defName="RLE_EmbeddedLampLow" or
+                                defName="RLE_EmbeddedLampSt" or
+                                defName="RLE_EmbeddedLamp" or
+                                defName="RLE_ArialeAndon" or
+                                defName="RLE_ArialeAndonOil"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Erin's Japanese Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="Erin_ElectricAndon" or
+                                defName="Erin_TorchAndon"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>[O21] Clutter Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="ClutterFloorLampA"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>[O21] Clutter Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/Clutter_Furniture.ClutterThingDefsFurniture[
+                                defName="ClutterLampYellow" or
+                                defName="ClutterLampBlue" or
+                                defName="ClutterLampRed" or
+                                defName="ClutterLampGreen" or
+                                defName="ClutterLampOrange" or
+                                defName="ClutterLampVoilet"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                          <li>GloomyFurniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                          <xpath>/Defs/ThingDef[
+                              defName="GL_Wall_Lamp"
+                              ]</xpath>
+                          <value>
+                            <designationCategory>DZ_Lighting</designationCategory>
+                          </value>
+                        </match>
+                      </Operation>
+
+
+                      <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Medieval Overhaul</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="DankPyon_Candles" or
+                                defName="DankPyon_CandleStand"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+
+
+
+
+
+
+
+
+                    <!-- patches go above this -->
+                </caseTrue>
+                <caseFalse />
+            </Operation>
+        </caseTrue>
+    </Operation>
+
+</Patch>

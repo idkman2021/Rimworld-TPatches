@@ -301,8 +301,8 @@
             <li>DocWorld_DesignationCategoriesRoyalty</li>
             <li>Core</li>
             <li>Menus</li>
-            <li>Meditation category</li>
-            <li>Should Meditation-related items be separated in its own category?</li>
+            <li>Royalty category</li>
+            <li>Should royalty-related items be separated in its own category?</li>
             <li>DZ_Meditation</li>
             <li>true</li>
             <li>DocWorld_DesignationCategories</li>
@@ -355,9 +355,38 @@
             <li>Alpha Biomes</li>
             <li>Menus</li>
             <li>Disable Alpha Biomes tab</li>
-            <li>Move Alpha Biomes items into other tabs</li>
+            <li>Move Alpha Biomes items into appropriate tabs.</li>
             <li></li>
             <li>true</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationVFEMechanoids</li>
+            <li>Vanilla Factions Expanded - Mechanoids</li>
+            <li>Menus</li>
+            <li>Disable VFE Mechanoids tab</li>
+            <li>Moves VFE Mechanoids items into industrial tab.</li>
+            <li></li>
+            <li>false</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+
+    
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationGlitterNet</li>
+            <li>GlitterNet</li>
+            <li>Menus</li>
+            <li>Disable GlitterNet tab</li>
+            <li>Moves GlitterNet items into industrial tab.</li>
+            <li></li>
+            <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
     </Operation>
@@ -368,13 +397,14 @@
             <li>DocWorld_DesignationRimatomics</li>
             <li>Dubs Rimatomics</li>
             <li>Menus</li>
-            <li>Disable Rimatomics tab</li>
-            <li>Move Rimatomics items into industrial and other tabs.  (WIP, not recommended)</li>
+            <li>Disable Rimatomics tab (WIP)</li>
+            <li>Moves Rimatomics items into industrial tab. For now also creates a harmless red error.</li>
             <li></li>
             <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
     </Operation>
+
 
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatchGrouped</patchName>
@@ -382,14 +412,15 @@
             <li>DocWorld_DesignationRimefeller</li>
             <li>Rimefeller</li>
             <li>Menus</li>
-            <li>Disable Rimefeller tab</li>
-            <li>Move Rimefeller items into industrial and other tabs.  (WIP, not recommended)</li>
+            <li>Copy Rimefeller items to industrial tab (not recommended)</li>
+            <li>Rimefeller items are forced to rimefeller tab and this setting can only duplicate their entries to the industrial tab.</li>
             <li></li>
             <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
     </Operation>
 
+    <!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatchGrouped</patchName>
         <arguments>
@@ -403,9 +434,9 @@
             <li>DocWorld_DesignationCategories</li>
         </arguments>
     </Operation>
+-->
 
-
-    
+<!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatchGrouped</patchName>
         <arguments>
@@ -419,6 +450,7 @@
             <li>DocWorld_DesignationCategories</li>
         </arguments>
     </Operation>
+-->
 
     <!-- Settings -->
 

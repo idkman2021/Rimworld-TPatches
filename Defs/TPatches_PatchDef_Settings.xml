@@ -259,24 +259,31 @@
             <li>color</li>
         </parameters>
         <apply>
-            <Operation Class="PatchOperationConditional">
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
-                <nomatch Class="PatchOperationAdd">
-                    <order>Append</order>
-                    <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
-                    <value>
-                        <li Class="XmlExtensions.Setting.SetColor">
-                            <color>{color}</color> <!-- (155,155,155) -->
-                        </li>
-                        <li Class="XmlExtensions.Setting.Text">
-                            <font>Tiny</font>
-                            <text>mod: {mod}</text>
-                        </li>
-                        <li Class="XmlExtensions.Setting.SetColor">
-                            <color>(255,255,255)</color> <!-- (155,155,155) -->
-                        </li>
-                    </value>
-                </nomatch>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>false</defaultValue>
+                <caseTrue>
+                    <Operation Class="PatchOperationConditional">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
+                        <nomatch Class="PatchOperationAdd">
+                            <order>Append</order>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
+                            <value>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>{color}</color> <!-- (155,155,155) -->
+                                </li>
+                                <li Class="XmlExtensions.Setting.Text">
+                                    <font>Tiny</font>
+                                    <text>mod: {mod}</text>
+                                </li>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(255,255,255)</color> <!-- (155,155,155) -->
+                                </li>
+                            </value>
+                        </nomatch>
+                    </Operation>
+                </caseTrue>
             </Operation>
         </apply>
     </XmlExtensions.PatchDef>
