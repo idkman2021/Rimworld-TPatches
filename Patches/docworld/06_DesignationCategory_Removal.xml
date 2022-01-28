@@ -490,15 +490,30 @@
     Vanilla Furniture Expanded
     ==========-->
 
+         <Operation Class="PatchOperationFindMod">
+            <mods>
+               <li>Vanilla Furniture Expanded</li>
+               <li>Vanilla Furniture Expanded - Spacer Module</li>
+            </mods>
+            <match Class="PatchOperationReplace">
+               <xpath>/Defs/ThingDef/designationCategory[text()="AOMorefurniture"]</xpath>
+               <value>
+                  <designationCategory>Furniture</designationCategory>
+               </value>
+            </match>
+         </Operation>
+
          <!--AOMorefurniture Designation Category removal-->
          <Operation Class="PatchOperationFindMod">
             <mods>
                <li>Vanilla Furniture Expanded</li>
+               <li>Vanilla Furniture Expanded - Spacer Module</li>
             </mods>
             <match Class="PatchOperationRemove">
                <xpath>/Defs/DesignationCategoryDef[defName="AOMorefurniture"]</xpath>
             </match>
          </Operation>
+
 
          <!--==========
     Vanilla Furniture Expanded - Props and Decor
