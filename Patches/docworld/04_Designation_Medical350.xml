@@ -13,7 +13,7 @@
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesMedical</key>
-                <defaultValue>true</defaultValue>
+                <defaultValue>false</defaultValue>
                 <caseTrue>
 
 

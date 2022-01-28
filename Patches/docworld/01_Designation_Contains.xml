@@ -209,7 +209,7 @@
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesStorage</key>
-                <defaultValue>true</defaultValue>
+                <defaultValue>false</defaultValue>
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd">
@@ -300,7 +300,7 @@
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesMedical</key>
-                <defaultValue>true</defaultValue>
+                <defaultValue>false</defaultValue>
                 <caseTrue>
 
 
@@ -357,7 +357,7 @@
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesSpots</key>
-                <defaultValue>true</defaultValue>
+                <defaultValue>false</defaultValue>
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd">
