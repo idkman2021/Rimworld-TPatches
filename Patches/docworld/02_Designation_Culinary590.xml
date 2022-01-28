@@ -752,8 +752,7 @@
                             <li>More Linkables</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="KitchenCupboard"
-                            ]
+                            <xpath>Defs/ThingDef[defName="KitchenCupboard"]/designationCategory
                         </xpath>
                             <value>
                                 <designationCategory>DZ_Culinary</designationCategory>

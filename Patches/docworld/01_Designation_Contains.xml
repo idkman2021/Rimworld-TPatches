@@ -484,11 +484,10 @@
                             <li>Save Our Ship 2</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="ShipArchotechSpore"
-                            ]
+                            <xpath>Defs/ThingDef[defName="ShipArchotechSpore"]/designationCategory
                         </xpath>
                             <value>
-                                <designationCategory Inherit="False">Ship</designationCategory>
+                                <designationCategory>Ship</designationCategory>
                             </value>
                         </match>
                     </Operation>
