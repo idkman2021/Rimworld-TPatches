@@ -337,7 +337,7 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatchGrouped</patchName>
         <arguments>
-            <li>DocWorld_DesignationCategoriesSpots</li>
+            <li>DocWorld_DesignationCategoriesStorage</li>
             <li>Core</li>
             <li>Menus</li>
             <li>Storage category</li>
