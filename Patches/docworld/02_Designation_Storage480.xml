@@ -423,6 +423,7 @@
                     <!-- idk what mod added this -->
                     <Operation Class="PatchOperationReplace">
                         <xpath>Defs/ThingDef/designationCategory[text()="FurnitureStorage"]</xpath>
+                        <success>Always</success>
                         <value>
                             <designationCategory>DZ_Storage</designationCategory>
                         </value>
