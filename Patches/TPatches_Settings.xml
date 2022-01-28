@@ -317,7 +317,7 @@
             <li>Spots category</li>
             <li>Should spots be separated in its own category?</li>
             <li>DZ_Spots</li>
-            <li>true</li>
+            <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
     </Operation>
@@ -330,7 +330,7 @@
             <li>Medical category</li>
             <li>Should medical items be separated in its own category?</li>
             <li>DZ_Medical</li>
-            <li>true</li>
+            <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
     </Operation>
@@ -343,7 +343,7 @@
             <li>Storage category</li>
             <li>Should storage items be separated in its own category? (WIP)</li>
             <li>DZ_Spots</li>
-            <li>true</li>
+            <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
     </Operation>
@@ -369,7 +369,7 @@
             <li>Vanilla Factions Expanded - Mechanoids</li>
             <li>Menus</li>
             <li>Disable VFE Mechanoids tab</li>
-            <li>Moves VFE Mechanoids items into industrial tab.</li>
+            <li>Moves VFE Mechanoids items into industrial tab. Note: creates a harmless red error.</li>
             <li></li>
             <li>false</li>
             <li>DocWorld_DesignationCategories</li>
@@ -398,7 +398,7 @@
             <li>Dubs Rimatomics</li>
             <li>Menus</li>
             <li>Disable Rimatomics tab (WIP)</li>
-            <li>Moves Rimatomics items into industrial tab. For now also creates a harmless red error.</li>
+            <li>Moves Rimatomics items into industrial tab.</li>
             <li></li>
             <li>false</li>
             <li>DocWorld_DesignationCategories</li>
