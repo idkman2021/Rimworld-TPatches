@@ -747,6 +747,20 @@
                         </match>
                     </Operation>
 
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>More Linkables</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>Defs/ThingDef[defName="KitchenCupboard"
+                            ]
+                        </xpath>
+                            <value>
+                                <designationCategory>DZ_Culinary</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
 
                     <!-- patches go above this -->
                 </caseTrue>
