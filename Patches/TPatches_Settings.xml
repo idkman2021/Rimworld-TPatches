@@ -157,7 +157,7 @@
             <li>Randomisable biomes</li>
             <li>Allows all biomes to be rolled when pressing "Select random site" button. Chances of rolling sea ice will still be low, possibly due to faction base selection weight.</li>
             <li>xpath: removes /Defs/BiomeDef/canAutoChoose</li>
-            <li>true</li>
+            <li>false</li>
         </arguments>
     </Operation>
 
