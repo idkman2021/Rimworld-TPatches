@@ -41,14 +41,13 @@
             <!-- nothing -->
         </caseFalse>
     </Operation>
-<!--
+    <!--
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesLogging</key>
         <defaultValue>false</defaultValue>
         <caseTrue>
         -->
-
 
 
     <!-- fix factions not showing in create world menu -->
@@ -602,6 +601,22 @@
         <caseFalse></caseFalse>
     </Operation>
 
+    <!-- can auto choose -->
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatches_BiomesCanAutoChoose</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+
+            <Operation Class="PatchOperationRemove">
+                <xpath>/Defs/BiomeDef/canAutoChoose</xpath>
+            </Operation>
+
+        </caseTrue>
+        <caseFalse></caseFalse>
+    </Operation>
+
 
     <!--
     <Operation Class="XmlExtensions.OptionalPatch">
@@ -609,9 +624,9 @@
     <key>TPatches???</key>
     <defaultValue>???</defaultValue>
     <caseTrue>
-    <Operation Class="???">
-    
-    </Operation>
+         
+        ?????
+
     </caseTrue>
     <caseFalse>
     

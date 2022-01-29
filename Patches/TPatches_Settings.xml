@@ -151,6 +151,19 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
+            <li>TPatches_BiomesCanAutoChoose</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Randomisable biomes</li>
+            <li>Allows all biomes to be rolled when pressing "Select random site" button. Chances of rolling sea ice will still be low, possibly due to faction base selection weight.</li>
+            <li>xpath: removes /Defs/BiomeDef/canAutoChoose</li>
+            <li>true</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>carnap2TPatchesModPatch</patchName>
+        <arguments>
             <li>TPatchesFantasyMetalSolpyrite</li>
             <li>Fantasy Metals Reforged</li>
             <li>Tweaks</li>
