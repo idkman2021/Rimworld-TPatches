@@ -303,7 +303,7 @@
             <li>Menus</li>
             <li>Ideology category</li>
             <li>Should ideology-related items be separated in its own category?</li>
-            <li>DZ_Meditation</li>
+            <li>DZ_Ideology</li>
             <li>true</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
@@ -311,7 +311,7 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatchGrouped</patchName>
         <arguments>
-            <li>DocWorld_DesignationCategoriesRoyalty</li>
+            <li>DocWorld_DesignationCategoriesMeditation</li>
             <li>Core</li>
             <li>Menus</li>
             <li>Meditation category</li>
@@ -355,7 +355,7 @@
             <li>Menus</li>
             <li>Storage category</li>
             <li>Should storage items be separated in its own category? (WIP)</li>
-            <li>DZ_Spots</li>
+            <li>DZ_Storage</li>
             <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
