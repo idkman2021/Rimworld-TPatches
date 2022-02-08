@@ -566,6 +566,7 @@
     </Operation>
 
     <!-- Enable Oversized Weapons -->
+<!--
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatches_CompOversizedReplace</key>
@@ -583,6 +584,7 @@
         </caseTrue>
         <caseFalse></caseFalse>
     </Operation>
+-->
 
     <!-- ignore illegal characters -->
     <Operation Class="XmlExtensions.OptionalPatch">

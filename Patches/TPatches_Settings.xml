@@ -94,6 +94,7 @@
         </arguments>
     </Operation>
 
+<!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
@@ -106,7 +107,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-
+-->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>carnap2TPatchesModPatch</patchName>
         <arguments>
