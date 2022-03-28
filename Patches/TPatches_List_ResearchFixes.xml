@@ -36,7 +36,7 @@
 <!-- ancient bed requires furniture research -->
             <Operation Class="PatchOperationAdd">
                 <success>Always</success>
-                <xpath>Defs/ThingDef[defName="VFEA_AncientBed"]/recipeMaker[not(researchPrerequisite)]</xpath>
+                <xpath>Defs/ThingDef[defName="VFEA_AncientBed"][not(researchPrerequisite)]</xpath>
                 <value>
                     <researchPrerequisite>ComplexFurniture</researchPrerequisite>
                 </value>
