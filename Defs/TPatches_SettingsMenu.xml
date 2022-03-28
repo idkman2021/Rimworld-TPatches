@@ -45,8 +45,10 @@
                     <li>
                         <label>Log</label>
                         <settings>
-                            <li Class="XmlExtensions.Setting.Text">
-                                <text>A list of all strings that are checked by TPatches. This is to make sure I spelled all strings correctly. Strings from mods you don't have are colored gray.</text>
+                            <li Class="XmlExtensions.Setting.Checkbox">
+                                <label>Enable logging</label>
+                                <key>TPatchesLogging</key>
+                                <defaultValue>false</defaultValue>
                             </li>
                             <li Class="XmlExtensions.Setting.GapLine"/>
                         </settings>

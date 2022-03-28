@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This file is under the Gnu General Public License version 3, see https://www.gnu.org/licenses/gpl-3.0.txt for more information.
+-->
+
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategories</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesBeds</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+
+
+                   
+
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>/Defs/ThingDef[
+                    defName="SleepingSpot" or 
+                    defName="DoubleSleepingSpot" or 
+                    defName="AnimalSleepingSpot" or
+                    @Name="BedBase" or 
+                    defName="AnimalSleepingBox" or 
+                    defName="AnimalBed"
+                    ]</xpath>
+                        <value>
+                            <designationCategory>DZ_Beds</designationCategory>
+                        </value>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Advanced Polyamory Beds</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[@Name="AdvancedPolyBed"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>CTS - Complete Tech Solutions (Continued)</li>
+                        </mods>
+                        <match Class="PatchOperationAdd">
+                            <xpath>/Defs/ThingDef[defName="CTSHiTechHospitalBed"]</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Glitter Tech</li>
+                            <li>Glitter Tech (No Surgery)</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="ambTable"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Lord of the Rims - Elves</li>
+                            <li>Lord of the Rims - Elves (Continued)</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationAdd">
+                                    <xpath>Defs/ThingDef[defName="LotRE_ElvenRoyalBed" or defName="LotRE_ElvenBed"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds, Husbanry, and Lighting tab-->
+                    <!--
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Mechalit Core 1.1</li>
+                            <li>Mechalit Core v2</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[defName="EliteBed" or defName="EliteDoubleBed" or defName="FirstClassBed"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+                -->
+
+                    <!--Move items to Beds, Production, and Storage tab. #storage-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Medical Supplements</li>
+                            <li>Medical Supplements (Continued)</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <!--Beds-->
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="MSMedicalMatEarly" or defName="MSMedicalMat" or defName="MSMedicalMatSpacer" or defName="MSMedicalMatUltra"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                                <!--Production-->
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds tab.-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>MedPod</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[@Name="MedPodBedBase"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Polyamory Beds (Vanilla Edition)</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[defName="TripleSleepingSpot" or defName="QuadSleepingSpot"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>RimJobWorld</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="ImprovedSleepingSpot"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[defName="RJW_Bed" or defName="RJW_DoubleBed" or defName="RJW_RoyalBed"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>RIMkea</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[defName="PILFURBed" or defName="SNOREGGSingle" or defName="SNOREGGDouble" or defName="KRUDNEPPSingle" or defName="SLABNEPPDouble"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+
+
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Animals, Beds, Decor, Furniture, Husbandry, Security, and Structure tab. With redundant removals. #animalbeds-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>RimPlas</li>
+                            <li>RimPlas (Continued)</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+
+                                <li Class="PatchOperationAdd">
+                                    <xpath>/Defs/ThingDef[defName="BedRoll_TSB" or defName="BedrollDouble_TSB"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                            </operations>
+                        </match>
+                    </Operation>
+
+
+                    <!--Move items to Beds tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Sparkling Worlds - Full Mod</li>
+                            <li>Sparkling Worlds - Modular Core - Reduced features</li>
+                        </mods>
+                        <match Class="PatchOperationAdd">
+                            <xpath>/Defs/ThingDef[defName="GlitterworldHospitalBedSW"]</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+
+                    <!--Move items to Beds, Furniture, and Lighting tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Furniture Expanded</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <!--Beds-->
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="Bed_StoneSlab" or defName="Bed_Simple" or defName="Bed_Ergonomic" or defName="Bed_DoubleErgonomic" or defName="Bed_Kingsize"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                                <!--Furniture-->
+                                <!--Two furniture items are excluded due to DZ_Storage category. "Shelf_1x1c" and "Shelf_WeaponRack"-->
+
+                            </operations>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Furniture Expanded - Medical Module</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[defName="Bed_OperatingTable" or defName="Bed_CryptoBed"]/designationCategory</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <!--Move items to Beds, Furniture, Husbandry, Lighting, and Joy tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Furniture Expanded - Spacer Module</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <success>Always</success>
+                            <operations>
+                                <!--Beds-->
+                                <li Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="Bed_AdvBed" or defName="Bed_AdvDoubleBed"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Beds</designationCategory>
+                                    </value>
+                                </li>
+                                <!--Furniture-->
+
+                            </operations>
+                        </match>
+                    </Operation>
+
+
+                    <!--Move items to Beds tab-->
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>[JPT] Soft Warm Beds</li>
+                        </mods>
+                        <match Class="PatchOperationAdd">
+                            <xpath>/Defs/ThingDef[defName="Rede"]</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Edo Themed Expansion</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="HS_RoughFuton" or
+                                defName="HS_FancyFuton" or
+                                defName="HS_FancyFutonDouble"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>RimLife Expansion Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="REL_Bed" or
+                                defName="REL_WoolBed" or
+                                defName="REL_WoolDoubleBed" or
+                                defName="RLE_ProsonerBed" or
+                                defName="RLE_AdHospitalBed" or
+                                defName="RLE_AnimalBed" or
+                                defName="RLE_DoubleBed"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>[RH2] Uncle Boris' - Used Furniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RH2_BarrackBed" or
+                                defName="RH2_CanvasBed" or 
+                                defName="RH2_ClassicFootlocker"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>GloomyFurniture</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="RGK_bedSingle" or
+                                defName="RGK_bedSingleB" or 
+                                defName="RGK_bedDouble" or
+                                defName="RGK_bedDoubleB" or
+                                defName="GL_ClassyDoubleBed" or
+                                defName="RGK_Dresser" or
+                                defName="RGK_EndTable" or
+                                defName="RGK_EndTableWithLamp" or
+                                defName="RGK_EndTableWithLampE"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Medieval Overhaul</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>/Defs/ThingDef[
+                                defName="DankPyon_RusticEndTable" or
+                                defName="DankPyon_RusticDresser" or
+                                defName="DankPyon_RusticCloset" or
+                                defName="DankPyon_RoyalCloset" or
+                                defName="DankPyon_RoyalEndTable" or
+                                defName="DankPyon_RoyalDresser"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+
+                       <!-- patches go above this -->
+                </caseTrue>
+                <caseFalse />
+            </Operation>
+        </caseTrue>
+    </Operation>
+</Patch>

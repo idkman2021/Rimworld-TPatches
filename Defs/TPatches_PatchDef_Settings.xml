@@ -23,7 +23,7 @@
 
             <Operation Class="PatchOperationAdd">
                 <order>Append</order>
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="{enabled}"]/settings</xpath>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="{tab}"]/settings/li[tag="{enabled}"]/settings</xpath>
                 <value>
                     <li Class="XmlExtensions.Setting.ToggleableSettings">
                         <key>{group}</key>
@@ -145,7 +145,7 @@
         <apply>
             <Operation Class="PatchOperationAdd">
                 <order>Append</order>
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="{enabled}"]/settings</xpath>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="{tab}"]/settings/li[tag="{enabled}"]/settings</xpath>
                 <value>
                     <li Class="XmlExtensions.Setting.ToggleableSettings">
                         <key>{group}</key>
@@ -259,24 +259,31 @@
             <li>color</li>
         </parameters>
         <apply>
-            <Operation Class="PatchOperationConditional">
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
-                <nomatch Class="PatchOperationAdd">
-                    <order>Append</order>
-                    <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
-                    <value>
-                        <li Class="XmlExtensions.Setting.SetColor">
-                            <color>{color}</color> <!-- (155,155,155) -->
-                        </li>
-                        <li Class="XmlExtensions.Setting.Text">
-                            <font>Tiny</font>
-                            <text>mod: {mod}</text>
-                        </li>
-                        <li Class="XmlExtensions.Setting.SetColor">
-                            <color>(255,255,255)</color> <!-- (155,155,155) -->
-                        </li>
-                    </value>
-                </nomatch>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>false</defaultValue>
+                <caseTrue>
+                    <Operation Class="PatchOperationConditional">
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
+                        <nomatch Class="PatchOperationAdd">
+                            <order>Append</order>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
+                            <value>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>{color}</color> <!-- (155,155,155) -->
+                                </li>
+                                <li Class="XmlExtensions.Setting.Text">
+                                    <font>Tiny</font>
+                                    <text>mod: {mod}</text>
+                                </li>
+                                <li Class="XmlExtensions.Setting.SetColor">
+                                    <color>(255,255,255)</color> <!-- (155,155,155) -->
+                                </li>
+                            </value>
+                        </nomatch>
+                    </Operation>
+                </caseTrue>
             </Operation>
         </apply>
     </XmlExtensions.PatchDef>
@@ -381,7 +388,7 @@
                     <!-- mod is enabled -->
                     <!-- add mod name to setting -->
                     <Operation Class="PatchOperationInsert">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
                         <value>
                             <li Class="XmlExtensions.Setting.SetColor">
                                 <color>(155,225,155)</color>
@@ -396,10 +403,10 @@
 
                     <!-- log mod name -->
                     <Operation Class="PatchOperationConditional">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
                         <nomatch Class="PatchOperationAdd">
                             <order>Append</order>
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
                             <value>
                                 <li Class="XmlExtensions.Setting.SetColor">
                                     <color>(255,255,255)</color> <!-- (155,155,155) -->
@@ -420,7 +427,7 @@
                     <!-- mod is disabled -->
                     <!-- add mod name to setting -->
                     <Operation Class="PatchOperationInsert">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
                         <value>
                             <li Class="XmlExtensions.Setting.SetColor">
                                 <color>(175,105,105)</color>
@@ -435,10 +442,10 @@
 
                     <!-- log mod name -->
                     <Operation Class="PatchOperationConditional">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="mod: {mod}"]</xpath>
                         <nomatch Class="PatchOperationAdd">
                             <order>Append</order>
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]/settings</xpath>
+                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
                             <value>
                                 <li Class="XmlExtensions.Setting.SetColor">
                                     <color>(155,155,155)</color> <!-- (155,155,155) -->
@@ -522,7 +529,7 @@
 
                     <!-- removes the original mod displayer -->
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
                     </Operation>
 
                 </caseTrue>
@@ -566,7 +573,7 @@
 
                     <!-- removes the original mod displayer -->
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
                     </Operation>
 
                 </caseFalse>
@@ -646,7 +653,7 @@
 
                     <!-- removes the original mod displayer -->
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
                     </Operation>
 
                 </caseTrue>
@@ -698,7 +705,7 @@
 
                     <!-- removes the original mod displayer -->
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
                     </Operation>
 
                 </caseFalse>
@@ -789,7 +796,7 @@
 
                     <!-- removes the original mod displayer -->
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
                     </Operation>
 
                 </caseTrue>
@@ -849,7 +856,7 @@
 
                     <!-- removes the original mod displayer -->
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
+                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li/settings/li/settings/li/caseTrue/li/settings/li/li[tag="{key}"]</xpath>
                     </Operation>
 
                 </caseFalse>
@@ -871,7 +878,7 @@
 
             <Operation Class="PatchOperationAdd">
                 <order>Append</order>
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="{tab}"]/settings/li[tag="enabled"]/settings</xpath>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="{tab}"]/settings/li[tag="enabled"]/settings</xpath>
                 <value>
                     <li Class="XmlExtensions.Setting.Gap">
                         <spacing>1</spacing>
@@ -981,7 +988,7 @@
 
             <Operation Class="PatchOperationInsert">
                 <order>Prepend</order>
-                <xpath>/Defs/XmlExtensions.SettingsMenuDef/settings/li/tabs/li[label="Log"]</xpath>
+                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]</xpath>
                 <value>
                     <li>
                         <label>{tab}</label>

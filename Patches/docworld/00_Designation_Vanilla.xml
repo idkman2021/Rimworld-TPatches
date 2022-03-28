@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+            vanilla 
+Orders      900 | Zone        800 |
+Sructure    700 | Production  600 |
+Furniture   500 | Power       400 |
+Security    300 | Misc        250 |
+Floors      200 | Joy         100 |
+Ship        50  | Temperature 25  |
+
+            patched 
+Orders      900 | Zone        800 |
+Sructure    700 | Fences      690 |
+Production  600 | Culinary    590 |
+Husbandry   580 | Industrial  570 |
+Furniture   500 | Beds        490 | 
+Storage     480 | Lighting    470 | 
+Decor       460 | Animals     450 | 
+Power       400 | Security    300 | 
+Misc        250 | Spots       240 | 
+Ideology    230 | Meditation  220 |
+Floors      200 | Joy         100 |
+Ship        50  | Temperature 25  |
+-->
+
+<Patch>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>carnap2.TPatches</modId>
+    <key>DocWorld_DesignationCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
+        <value>
+          <li>Designator_RemoveFloor</li>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Defenses Expanded</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="RazorWireObstacle" or defName="RazorWireBarrier" or defName="Gabion" or defName="HBarrier_Tan" or defName="HBarrier_Green" or defName="HBarrier_FP" or defName="HBarrier_FP_Green" or defName="TBarrier"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Security</designationCategory>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ThingDef[defName="TrapMine_M14AP"]</xpath>
+              <value>
+                <designationCategory>Security</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+      <!--Move items to Orders tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Give up your building</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
+          <value>
+            <li>ZeroTech.Designator_GiveUpBuilding</li>
+          </value>
+        </match>
+      </Operation>
+
+      <!--Move items to Joy, Lighting, and Storage tab. #storage-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Industrial Age - Objects and Furniture (Continued)</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ThingDef[defName="Estate_Telescope"]</xpath>
+              <value>
+                <designationCategory>Joy</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+      <!--Move items to Jurassic tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Jurassic Rimworld 1.1</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef//designationCategory[text()="AviaryJurassicRimworld"]</xpath>
+              <value>
+                <designationCategory>JurassicRimworld</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+      <!--Move items to Beds, Production, and Storage tab. #storage-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Medical Supplements</li>
+          <li>Medical Supplements (Continued)</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <!--Production-->
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="MSDrugMixer" or defName="MSDrugMixInput" or defName="MSDrugMixOutput"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Production</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+      <!--Move items to Decor, Furniture, and Lighting tab.-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>More Furniture [1.1 + 1.2]</li>
+          <li>More Furniture (Continued)</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <!--Move all plant pots to decor category-->
+
+            <!--Move all furniture to furniture category-->
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="Anon2Dresser" or defName="Anon2EndTable" or defName="Anon2RoyalEndTable" or defName="Anon2FileCabinet" or defName="Anon2SquareDiningChair" or defName="Anon2CushionedChair" or defName="Anon2CouchRight" or defName="Anon2CouchLeft" or defName="Anon2CouchCenter" or defName="Anon2CouchCorner" or defName="Anon2CouchCornerInv" or defName="Anon2TableTiny" or defName="Anon2CounterA" or defName="Anon2CounterAFull"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+            <!--Move all lights to Lighting category-->
+
+          </operations>
+        </match>
+      </Operation>
+
+      <!--Move items to Floors tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Natural Paths</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/TerrainDef/designationCategory[text()="NaturalPaths"]</xpath>
+              <value>
+                <designationCategory>Floors</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>[KV] Path Avoid</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
+          <value>
+            <li>PathAvoid.Designator_PathAvoid_Prefer</li>
+            <li>PathAvoid.Designator_PathAvoid_Normal</li>
+            <li>PathAvoid.Designator_PathAvoid_Dislike</li>
+            <li>PathAvoid.Designator_PathAvoid_Hate</li>
+            <li>PathAvoid.Designator_PathAvoid_Strong</li>
+            <li>PathAvoid.Designator_MapSettings</li>
+          </value>
+        </match>
+      </Operation>
+
+      <!--Move items to Security tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Preemptive Strike (v1.1 Fork)</li>
+          <li>Preemptive Strike (Fork)</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName="PES_PremitiveWatchtower_new" or defName="PES_MedievalWatchtower" or defName="PES_watchtower_new" or defName="PES_Radar" or defName="PES_SentryDroneArray" or defName="PES_SpySatellite"]/designationCategory</xpath>
+          <value>
+            <designationCategory>Security</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <!--Add "Replace Stuff" designator to more Vanilla tabs-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Replace Stuff</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/DesignationCategoryDef[defName="Furniture"]/specialDesignatorClasses</xpath>
+              <value>
+                <li>Replace_Stuff.Designator_ReplaceStuff</li>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/DesignationCategoryDef[defName="Production"]/specialDesignatorClasses</xpath>
+              <value>
+                <li>Replace_Stuff.Designator_ReplaceStuff</li>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+      <!--Move items to Production tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Revia Race</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+          <xpath> /Defs/ThingDef[defName="ReviaSacrificeSpot" or defName="ReviaBloodSigil"]/designationCategory</xpath>
+          <value>
+            <designationCategory>Production</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>RIMkea</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/TerrainDef[@Name="RIKStoneFloorBase" or @Name="RIKWoodFloorBase"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Floors</designationCategory>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[@Name="RIKFurnitureBase" or @Name="RIKTableBase" or @Name="RIKTableBaseTwo"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="FEERSTELL"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Temperature</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+      <!--Move items to Floors tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Rimoleum</li>
+          <li>Rimoleum (Continued)</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+          <xpath>/Defs/TerrainDef[@Name="RimoleumBase"]/designationCategory</xpath>
+          <value>
+            <designationCategory>Floors</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+
+      <!--Move items to Animals, Beds, Decor, Furniture, Husbandry, Security, and Structure tab. With redundant removals. #animalbeds-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>RimPlas</li>
+          <li>RimPlas (Continued)</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[@Name="RimPlasFurnitureBase"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="RPGrapheneRegenWall"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Structure</designationCategory>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="RimPlas_Barrier"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Security</designationCategory>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ThingDef[defName="RimPlas_GameOfUr" or defName="RimPlas_ChessTable"]</xpath>
+              <value>
+                <designationCategory>Joy</designationCategory>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ThingDef[defName="RPSecurityDoor"]</xpath>
+              <value>
+                <designationCategory>Structure</designationCategory>
+              </value>
+            </li>
+
+          </operations>
+        </match>
+      </Operation>
+
+      <!--Move items to Husbandry, Power, Production, and Misc tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Smokeleaf Industry Reborn</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[@ParentName="MSI_BuildingBase"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Power</designationCategory>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[@ParentName="MSI_BenchBase"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Production</designationCategory>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="TrimmingTools"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Misc</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+      <!--Move items to Misc tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Training Rack</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName="TrainingRack" or defName="TrainingRackShooting" or defName="TrainingRackMelee" or defName="TrainingRackSocial" or defName="TrainingRackAnimals" or defName="TrainingRackMedicine" or defName="TrainingRackCooking" or defName="TrainingRackConstruction" or defName="TrainingRackPlants" or defName="TrainingRackMining" or defName="TrainingRackArtistic" or defName="TrainingRackCrafting" or defName="TrainingRackResearch"]/designationCategory</xpath>
+          <value>
+            <designationCategory>Misc</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+
+      <!--Move items to Beds, Furniture, and Lighting tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Vanilla Furniture Expanded</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+
+            <!--Two furniture items are excluded due to DZ_Storage category. "Shelf_1x1c" and "Shelf_WeaponRack"-->
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="Seat_Cushion" or defName="Seat_Bench" or defName="Seat_SquareChair" or defName="Table_1x1c" or defName="Table_Counter" or defName="Table_Wardrobe" or defName="Seat_ModernChair" or defName="Table_RoyalEndTable" or defName="Table_RoyalDresser" or defName="Seat_RoyalChair" or defName="Seat_RoyalArmchair" or @Name="RoyalTableDesc"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+            <!--Lights-->
+
+          </operations>
+        </match>
+      </Operation>
+      <!--Move items to Decor tab-->
+      <!--
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Vanilla Furniture Expanded - Props and Decor</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="VFEPD_Desk" or defName="VFEPD_CoffeeTable" or defName="VFEPD_CoffeeTableSmall"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+    -->
+
+      <!--Move items to Beds, Furniture, Husbandry, Lighting, and Joy tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Vanilla Furniture Expanded - Spacer Module</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <!--Beds-->
+
+            <!--Furniture-->
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="Table_IlluminatedEndTable" or defName="Table_IlluminatedDresser" or defName="Seat_AdvChair" or defName="Table_interactive_1x1c" or defName="Table_interactive_2x2c"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+            <!--Husbandry-->
+            <!--Recreation-->
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="UltrascreenTV"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Joy</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+
+      <!--Move items to Decor, Floors, Lighting tab-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Zen Garden</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/TerrainDef[@Name="GravelFloorBase"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Floors</designationCategory>
+              </value>
+            </li>
+
+          </operations>
+        </match>
+      </Operation>
+
+      <!--==========
+    Various Misc Support
+    ==========-->
+
+      <!--==========
+    Colony Leadership {Move to Misc}
+    ==========-->
+
+      <!--Healroot recipes onto production benches-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Colony Leadership</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef/designationCategory[text()="LeadershipModTab"]</xpath>
+          <value>
+            <designationCategory>Misc</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <!--==========
+    Various Structure Support
+    ==========-->
+
+      <!--==========
+    Insulation, Insulation (Continued) {Rimplas also effected, must load below both}
+    ==========-->
+
+      <!--Move insulated items to Structure designation category-->
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Insulation</li>
+          <li>Insulation (Continued)</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef/designationCategory[text()="Insulation_Desig"]</xpath>
+              <value>
+                <designationCategory>Structure</designationCategory>
+              </value>
+            </li>
+            <!--Rimplas structures conditionally loaded if Insulation is-->
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName="RTPDoorSimple" or defName="RTPAutodoor" or defName="RTPInsulatedWall" or @Name="RTPInsulatorBuildingBase"]/designationCategory</xpath>
+              <value>
+                <designationCategory>Structure</designationCategory>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </Operation>
+
+      <Operation Class="XmlExtensions.FindMod">
+        <mods>
+          <li>Edo Themed Expansion</li>
+        </mods>
+        <caseTrue>
+
+          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+            <xpath>/Defs/ThingDef[
+                defName="HSHaka"
+                ]</xpath>
+            <value>
+              <designationCategory>Misc</designationCategory>
+            </value>
+          </Operation>
+
+          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+            <xpath>/Defs/ThingDef[
+              defName="HSHaymat" or
+              defName="HSEdoThrone" or
+              defName="HSFancy_Tatami" or
+              defName="HS_Chabudai"
+              ]</xpath>
+            <value>
+              <designationCategory>Furniture</designationCategory>
+            </value>
+          </Operation>
+
+          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+            <xpath>/Defs/ThingDef[
+            defName="HS_Shoji_Door"
+            ]</xpath>
+            <value>
+              <designationCategory>Structure</designationCategory>
+            </value>
+          </Operation>
+
+          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+            <xpath>/Defs/ThingDef[
+            defName="HS_HaikuSpot" or 
+            defName="HSShogiboard"
+            ]</xpath>
+            <value>
+              <designationCategory>Joy</designationCategory>
+            </value>
+          </Operation>
+
+          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+            <xpath>/Defs/ThingDef[
+            defName="HSEdoTailorSpot"
+            ]</xpath>
+            <value>
+              <designationCategory>Production</designationCategory>
+            </value>
+          </Operation>
+
+
+        </caseTrue>
+      </Operation>
+
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>GloomyFurniture</li>
+        </mods>
+        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+          <xpath>/Defs/ThingDef[
+                defName="GL_Bookshelf"
+                ]</xpath>
+          <value>
+            <designationCategory>Misc</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>GloomyFurniture</li>
+        </mods>
+        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+          <xpath>/Defs/ThingDef[
+              defName="RGK_SimpleResearchBench" or
+              defName="GL_HandTailoringBench" or
+              defName="GL_ElectricTailoringBench" or
+              defName="GL_FueledSmithy" or
+              defName="GL_ElectricSmithy"
+              ]</xpath>
+          <value>
+            <designationCategory>Production</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>GloomyFurniture</li>
+        </mods>
+        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+          <xpath>/Defs/ThingDef[
+              defName="RGK_Wall" or
+              defName="GL_Wall" or
+              defName="RGK_VentWall" or
+              defName="GL_VentWall" or
+              defName="RGK_window" or
+              defName="RGK_WindowWall" or
+              defName="GL_WindowWall" or
+              defName="RGK_WoodFence" or
+              defName="GL_FlowerWall" or
+              defName="RGK_DoorOld" or
+              defName="RGK_Door" or
+              defName="GL_DoorFrame"
+              ]</xpath>
+          <value>
+            <designationCategory>Structure</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>GloomyFurniture</li>
+        </mods>
+        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+          <xpath>/Defs/ThingDef[
+              defName="RGK_Fireplace" or
+              defName="RGK_FireplaceE"
+              ]</xpath>
+          <value>
+            <designationCategory>Temperature</designationCategory>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="XmlExtensions.FindMod">
+        <mods>
+          <li>Medieval Overhaul</li>
+        </mods>
+        <caseTrue>
+
+          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+            <xpath>/Defs/ThingDef[
+                defName="DankPyon_WoodBurningStove" or
+                defName="DankPyon_RusticHearth"
+                ]</xpath>
+            <value>
+              <designationCategory>Temperature</designationCategory>
+            </value>
+          </Operation>
+
+          <Operation Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef/designationCategory[text()="DankPyon_RusticFurniture"]</xpath>
+            <value>
+              <designationCategory>Furniture</designationCategory>
+            </value>
+          </Operation>
+
+          <Operation Class="PatchOperationRemove">
+            <xpath>/Defs/DesignationCategoryDef[defName="DankPyon_RusticFurniture"]</xpath>
+          </Operation>
+
+        </caseTrue>
+      </Operation>
+
+
+    </caseTrue>
+    <caseFalse />
+  </Operation>
+
+</Patch>

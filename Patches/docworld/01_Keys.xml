@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategories</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesBeds</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesCulinary</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesDecor</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesHusbandry</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesLighting</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesStorage</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesIndustrial</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesIdeology</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesMedical</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesMeditation</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationAlphaBiomes</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationDubsBadHygiene</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationGlitterNet</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationRimatomics</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationRimefeller</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationVFEMechanoids</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesSpots</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+
+</Patch>

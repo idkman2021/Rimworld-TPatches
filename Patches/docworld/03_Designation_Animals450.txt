@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This file is under the Gnu General Public License version 3, see https://www.gnu.org/licenses/gpl-3.0.txt for more information.
+-->
+
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategories</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesAnimals</key>
+                <defaultValue>false</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="XmlExtensions.FindMod">
+                        <mods>
+                            <li>Animal Medical Bed</li>
+                            <li>Dragon's Descent</li>
+                            <li>Fast regen 1.1</li>
+                            <li>Large Animal Beds</li>
+                            <li>RIMkea</li>
+                            <li>RimPlas (Continued)</li>
+                            <li>RimPlas</li>
+                            <li>[FSF] Invisible Animal Beds</li>
+                            <li>[sd] Chicken Nest (Continued)</li>
+                            <li>【1.1】Animalstrawbed</li>
+                        </mods>
+                        <caseTrue>
+                            <Operation Class="PatchOperationAdd">
+                                <xpath>/Defs</xpath>
+                                <value>
+
+                                    <DesignationCategoryDef>
+                                        <defName>DZ_Animals</defName>
+                                        <label>Animals</label>
+                                        <description>All things related to animals.</description>
+                                        <order>450</order>
+                                        <specialDesignatorClasses>
+                                            <li>Designator_Cancel</li>
+                                            <li>Designator_Deconstruct</li>
+                                            <li>Designator_Uninstall</li>
+                                        </specialDesignatorClasses>
+                                    </DesignationCategoryDef>
+
+                                </value>
+                            </Operation>
+
+                            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                                <xpath>/Defs/ThingDef[
+                            defName="AnimalSleepingSpot" or 
+                            defName="AnimalSleepingBox" or 
+                            defName="AnimalBed"
+                            ]</xpath>
+                                <value>
+                                    <designationCategory>DZ_Animals</designationCategory>
+                                </value>
+                            </Operation>
+
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>Animal Medical Bed</li>
+                                </mods>
+                                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>/Defs/ThingDef[defName="SUN_MedicalAnimalBed"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Animals</designationCategory>
+                                    </value>
+                                </match>
+                            </Operation>
+
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>【1.1】Animalstrawbed</li>
+                                </mods>
+                                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>/Defs/ThingDef[@Name="StrawBedBase"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Animals</designationCategory>
+                                    </value>
+                                </match>
+                            </Operation>
+
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>[sd] Chicken Nest (Continued)</li>
+                                </mods>
+                                <match Class="PatchOperationSequence">
+                                    <success>Always</success>
+                                    <operations>
+                                        <li Class="PatchOperationConditional">
+                                            <xpath>/Defs/ThingDef[defName="sd_chickennest"]/designationCategory</xpath>
+                                            <match Class="PatchOperationReplace">
+                                                <xpath>/Defs/ThingDef[defName="sd_chickennest"]/designationCategory</xpath>
+                                                <value>
+                                                    <designationCategory>DZ_Animals</designationCategory>
+                                                </value>
+                                            </match>
+                                            <nomatch Class="PatchOperationAdd">
+                                                <xpath>/Defs/ThingDef[defName="sd_chickennest"]</xpath>
+                                                <value>
+                                                    <designationCategory>DZ_Animals</designationCategory>
+                                                </value>
+                                            </nomatch>
+                                        </li>
+                                    </operations>
+                                </match>
+                            </Operation>
+
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>Dragon's Descent</li>
+                                </mods>
+                                <match Class="PatchOperationSequence">
+                                    <success>Always</success>
+                                    <operations>
+                                        <li Class="PatchOperationReplace">
+                                            <xpath>/Defs/ThingDef[defName="DragonNest" or defName="DragonPillow"]/designationCategory</xpath>
+                                            <value>
+                                                <designationCategory>DZ_Animals</designationCategory>
+                                            </value>
+                                        </li>
+                                    </operations>
+                                </match>
+                            </Operation>
+
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>Fast regen 1.1</li>
+                                </mods>
+                                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>/Defs/ThingDef[defName="AnimalMedic" or defName="AnimalMedicRobo"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Animals</designationCategory>
+                                    </value>
+                                </match>
+                            </Operation>
+
+                            <!--Move items to Animals tab. #animalbeds-->
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>[FSF] Invisible Animal Beds</li>
+                                </mods>
+                                <match Class="PatchOperationReplace">
+                                    <xpath>/Defs/ThingDef[defName="FSFInvisibleAnimalBed" or defName="FSFInvisibleAnimalBedPlush"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Animals</designationCategory>
+                                    </value>
+                                </match>
+                            </Operation>
+
+                            <!--Move items to Animal tab. #animalbeds-->
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>Large Animal Beds</li>
+                                </mods>
+                                <match Class="PatchOperationSequence">
+                                    <success>Always</success>
+                                    <operations>
+                                        <!--Change tab-->
+                                        <li Class="PatchOperationReplace">
+                                            <xpath>/Defs/ThingDef[@Name="PetBedWithQualityBase" or defName="CCPMAnimalSleepingSpot" or defName="CCPLAnimalSleepingSpot"]/designationCategory</xpath>
+                                            <value>
+                                                <designationCategory>DZ_Animals</designationCategory>
+                                            </value>
+                                        </li>
+                                        <li Class="PatchOperationRemove">
+                                            <xpath>/Defs/DesignationCategoryDef[defName="CCP_PetBeds"]</xpath>
+                                        </li>
+                                    </operations>
+                                </match>
+                            </Operation>
+
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>RIMkea</li>
+                                </mods>
+                                <match Class="PatchOperationSequence">
+                                    <success>Always</success>
+                                    <operations>
+                                        <li Class="PatchOperationAdd">
+                                            <xpath>/Defs/ThingDef[defName="PETSNORR" or defName="SNORHOI"]</xpath>
+                                            <value>
+                                                <designationCategory>DZ_Animals</designationCategory>
+                                            </value>
+                                        </li>
+
+                                    </operations>
+                                </match>
+                            </Operation>
+
+                            <!--Move items to Animals, Beds, Decor, Furniture, Husbandry, Security, and Structure tab. With redundant removals. #animalbeds-->
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>RimPlas</li>
+                                    <li>RimPlas (Continued)</li>
+                                </mods>
+                                <match Class="PatchOperationSequence">
+                                    <success>Always</success>
+                                    <operations>
+
+                                        <li Class="PatchOperationAdd">
+                                            <xpath>/Defs/ThingDef[defName="RimPlas_AnimalSleepingBox"]</xpath>
+                                            <value>
+                                                <designationCategory>DZ_Animals</designationCategory>
+                                            </value>
+                                        </li>
+                                    </operations>
+                                </match>
+                            </Operation>
+
+                            <Operation Class="PatchOperationFindMod">
+                                <mods>
+                                    <li>RimLife Expansion Furniture</li>
+                                </mods>
+                                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>/Defs/ThingDef[
+                                        defName="RLE_AnimalBed"
+                                        ]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Animals</designationCategory>
+                                    </value>
+                                </match>
+                            </Operation>
+
+
+                        </caseTrue>
+                    </Operation>
+
+
+                </caseTrue>
+                <caseFalse />
+            </Operation>
+        </caseTrue>
+    </Operation>
+
+</Patch>
