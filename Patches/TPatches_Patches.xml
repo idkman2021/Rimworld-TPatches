@@ -7,14 +7,14 @@
     <defaultValue>???</defaultValue>
     <caseTrue>
     <Operation Class="???">
-    
+
     </Operation>
     </caseTrue>
     <caseFalse>
-    
+
     </caseFalse>
     </Operation>
-    
+
     -->
 
     <!-- an always on key -->
@@ -388,10 +388,26 @@
                 </value>
             </Operation>
 
-            <!-- The GiantRace -->
+            <!-- Fixes -->
             <Operation Class="PatchOperationRemove">
                 <success>Always</success>
                 <xpath>/Defs/ThingDef[@Name="GIMeal"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
+            </Operation>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealSimple"]/thingCategories/li[text()="TPatchesRottable"][2]</xpath>
+            </Operation>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealFine"]/thingCategories/li[text()="TPatchesRottable"][2]</xpath>
+            </Operation>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealLavish"]/thingCategories/li[text()="TPatchesRottable"][2]</xpath>
+            </Operation>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="VFEM_SmokedFish"]/thingCategories/li[text()="TPatchesRottable"][2]</xpath>
             </Operation>
         </caseTrue>
         <caseFalse></caseFalse>
@@ -399,7 +415,7 @@
 
 
     <!-- Drug policies overhaul -->
-    <!--  
+    <!--
     <Operation Class="XmlExtensions.OptionalPatch">
     <modId>carnap2.TPatches</modId>
     <key>TPatchesDrugPolicies</key>
@@ -416,11 +432,11 @@
     </Operation>
     </caseTrue>
     <caseFalse>
-    
+
     </caseFalse>
     </Operation>
-    
-    
+
+
     -->
 
     <!--  Megafauna tame revenge chance -->
@@ -626,14 +642,14 @@
     <key>TPatches???</key>
     <defaultValue>???</defaultValue>
     <caseTrue>
-         
+
         ?????
 
     </caseTrue>
     <caseFalse>
-    
+
     </caseFalse>
     </Operation>
-    
+
     -->
 </Patch>
