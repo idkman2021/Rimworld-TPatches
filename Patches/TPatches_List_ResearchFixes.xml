@@ -5,7 +5,7 @@
         <key>TPatchesResearchFixes</key>
         <defaultValue>true</defaultValue>
         <caseTrue>
-            
+
             <!-- support shotguns require gunsmithing -->
             <Operation Class="PatchOperationReplace">
                 <success>Always</success>
@@ -13,8 +13,8 @@
                 <value>
                     <li>Gunsmithing</li>
                 </value>
-            </Operation> 
-            
+            </Operation>
+
             <!-- defence tech pistols require blowback operation -->
             <Operation Class="PatchOperationReplace">
                 <success>Always</success>
@@ -23,7 +23,7 @@
                     <li>BlowbackOperation</li>
                 </value>
             </Operation>
-            
+
             <!-- spacer medicine requires spacer medicine research -->
             <Operation Class="PatchOperationAdd">
                 <success>Always</success>
@@ -32,7 +32,16 @@
                     <researchPrerequisite>SpacerMedicineProduction</researchPrerequisite>
                 </value>
             </Operation>
-            
+
+<!-- ancient bed requires furniture research -->
+            <Operation Class="PatchOperationAdd">
+                <success>Always</success>
+                <xpath>Defs/ThingDef[defName="VFEA_AncientBed"]/recipeMaker[not(researchPrerequisite)]</xpath>
+                <value>
+                    <researchPrerequisite>ComplexFurniture</researchPrerequisite>
+                </value>
+            </Operation>
+
         </caseTrue>
         <caseFalse>
         </caseFalse>
