@@ -393,18 +393,20 @@
                 <success>Always</success>
                 <xpath>/Defs/ThingDef[@Name="GIMeal"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
             </Operation>
+            <!--
             <Operation Class="PatchOperationRemove">
                 <success>Always</success>
-                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealSimple"]/thingCategories/li[text()="TPatchesRottable"][2]</xpath>
+                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealSimple"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
             </Operation>
             <Operation Class="PatchOperationRemove">
                 <success>Always</success>
-                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealFine"]/thingCategories/li[text()="TPatchesRottable"][2]</xpath>
+                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealFine"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
             </Operation>
             <Operation Class="PatchOperationRemove">
                 <success>Always</success>
-                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealLavish"]/thingCategories/li[text()="TPatchesRottable"][2]</xpath>
+                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealLavish"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
             </Operation>
+        -->
             <Operation Class="PatchOperationRemove">
                 <success>Always</success>
                 <xpath>/Defs/ThingDef[defName="VFEM_SmokedFish"]/thingCategories/li[text()="TPatchesRottable"][2]</xpath>
