@@ -389,28 +389,23 @@
             </Operation>
 
             <!-- Fixes -->
+            <!--
             <Operation Class="PatchOperationRemove">
                 <success>Always</success>
                 <xpath>/Defs/ThingDef[@Name="GIMeal"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
             </Operation>
-            <!--
-            <Operation Class="PatchOperationRemove">
-                <success>Always</success>
-                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealSimple"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
-            </Operation>
-            <Operation Class="PatchOperationRemove">
-                <success>Always</success>
-                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealFine"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
-            </Operation>
-            <Operation Class="PatchOperationRemove">
-                <success>Always</success>
-                <xpath>/Defs/ThingDef[defName="ROM_StrangeMealLavish"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
-            </Operation>
         -->
+            <!-- certain mods have the rottable comp despite inheriting from bases that already have it, combined with thingCategories being a list this results in duplicate xml errors. -->
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[@ParentName="MealCookedIngredientless" or @ParentName="MealCooked" or @ParentName="MealFineBase" or @ParentName="MealLavishBase"]/thingCategories/li[text()="TPatchesRottable"]</xpath>
+            </Operation>
+            <!--
             <Operation Class="PatchOperationRemove">
                 <success>Always</success>
                 <xpath>/Defs/ThingDef[defName="VFEM_SmokedFish"]/thingCategories/li[text()="TPatchesRottable"][2]</xpath>
             </Operation>
+        -->
         </caseTrue>
         <caseFalse></caseFalse>
     </Operation>
@@ -584,7 +579,7 @@
     </Operation>
 
     <!-- Enable Oversized Weapons -->
-<!--
+    <!--
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatches_CompOversizedReplace</key>

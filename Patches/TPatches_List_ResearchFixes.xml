@@ -25,7 +25,7 @@
             </Operation>
 
             <!-- spacer medicine requires spacer medicine research -->
-            <!--
+
             <Operation Class="PatchOperationAdd">
                 <success>Always</success>
                 <xpath>Defs/ThingDef[defName="MedicineSpacer"]/recipeMaker[not(researchPrerequisites)]</xpath>
@@ -35,7 +35,7 @@
                     </researchPrerequisites>
                 </value>
             </Operation>
-        -->
+
         
             <!-- ancient bed requires furniture research -->
             <Operation Class="PatchOperationAdd">
@@ -43,7 +43,7 @@
                 <xpath>Defs/ThingDef[defName="VFEA_AncientBed"][not(researchPrerequisites)]</xpath>
                 <value>
                     <researchPrerequisites>
-                        <li>SpacerMedicineProduction</li>
+                        <li>ComplexFurniture</li>
                     </researchPrerequisites>
                 </value>
             </Operation>
