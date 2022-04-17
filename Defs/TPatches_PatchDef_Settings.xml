@@ -1,10 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- PatchDef - creates a new toggleable patch setting -->
+<!-- available patch defs:
+
+base patchdefs that other patchdefs use:
+
+TP_ModBaseE - adds enabled mod setting
+TP_ModBaseD - adds disabled mod setting
+TP_ModLog - adds log entry
+TP_MultiDisplay - adds a new mod into required mods display
+
+
+___________________________________________________________
+the actual patchdefs to create mod settings:
+
+
+TP_ModPatch - the main patch, checks if a mod is enabled and creates a setting in the appropriate style, and adds a log entry if logging is enabled:
+<li>key</li>key
+<li>mod</li>
+<li>tab</li> Fixes Tweaks Balancing Settings
+<li>label</li>
+<li>description</li>
+<li>tooltip</li>
+<li>default</li> ENABLED/DISABLED
+
+
+TP_ModPatch2 - identical to TP_ModPatch, but checks for 2 mods
+TP_ModPatch3 - checks for 3 mods
+TP_ModPatch4 - checks for 4 mods
+<li>key</li>key
+<li>mod</li>
+<li>2nd mod</li>
+<li>3rd mod</li> *
+<li>4th mod</li> *
+<li>logic</li> or/and
+<li>tab</li> Fixes Tweaks Balancing Settings
+<li>label</li>
+<li>description</li>
+<li>tooltip</li>
+<li>default</li> ENABLED/DISABLED
+
+
+TP_Toggle - a simple toggle setting with no description, doesn't check for mods
+<li>key</li>
+<li>tab</li>
+<li>label</li>
+<li>tooltip</li>
+
+
+TP_ModPatchGrouped - identical to TP_ModPatch but shows only when a given key is on
+<li>key</li>key
+<li>mod</li>
+<li>tab</li> Fixes Tweaks Balancing Settings
+<li>label</li>
+<li>description</li>
+<li>tooltip</li>
+<li>default</li> ENABLED/DISABLED
+<li>group</li> key of the setting that shows this
+
+
+TP_Tab - creates a tab
+<li>tab</li>
+<li>description</li>
+
+
+
+-->
 
 <Defs>
 
     <!-- mod is active, adds the setting to the top of settings list -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatchBaseEnabled" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_ModBaseE" Abstract="True">
         <parameters>
             <li>key</li> <!-- key -->
             <li>mod</li> <!-- required mod -->
@@ -127,7 +191,7 @@
 
 
     <!-- mod isn't active, setting is greyed out and added to the bottom of settings list -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatchBaseDisabled" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_ModBaseD" Abstract="True">
         <parameters>
             <li>key</li> <!-- key -->
             <li>mod</li> <!-- required mod -->
@@ -253,7 +317,7 @@
 
 
     <!-- Logs the mod name -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesModLog" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_ModLog" Abstract="True">
         <parameters>
             <li>mod</li>
             <li>color</li>
@@ -290,7 +354,7 @@
 
 
     <!-- checks if a single chosen mod is active and applies the appropriate patchdefs -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_ModPatch" Abstract="True">
         <parameters>
             <li>key</li> <!-- key -->
             <li>mod</li> <!-- required mods -->
@@ -309,7 +373,7 @@
                 <match Class="PatchOperationSequence">
                     <operations>
                         <li Class="XmlExtensions.ApplyPatch">
-                            <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                            <patchName>TP_ModBaseE</patchName>
                             <arguments>
                                 <li>{key}</li> <!-- key -->
                                 <li>{mod}</li> <!-- required mods -->
@@ -326,7 +390,7 @@
                             </arguments>
                         </li>
                         <li Class="XmlExtensions.ApplyPatch">
-                            <patchName>carnap2TPatchesModLog</patchName>
+                            <patchName>TP_ModLog</patchName>
                             <arguments>
                                 <li>{mod}</li> <!-- required mods -->
                                 <li>(255,255,255)</li>
@@ -339,7 +403,7 @@
                 <nomatch Class="PatchOperationSequence">
                     <operations>
                         <li Class="XmlExtensions.ApplyPatch">
-                            <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                            <patchName>TP_ModBaseD</patchName>
                             <arguments>
                                 <li>{key}</li> <!-- key -->
                                 <li>{mod}</li> <!-- required mods -->
@@ -356,7 +420,7 @@
                             </arguments>
                         </li>
                         <li Class="XmlExtensions.ApplyPatch">
-                            <patchName>carnap2TPatchesModLog</patchName>
+                            <patchName>TP_ModLog</patchName>
                             <arguments>
                                 <li>{mod}</li> <!-- required mods -->
                                 <li>(155,155,155)</li>
@@ -371,7 +435,7 @@
 
 
     <!-- display more than one mod in a setting -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesMultiDisplay" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_MultiDisplay" Abstract="True">
         <parameters>
             <li>key</li> <!-- key -->
             <li>mod</li> <!-- required mod -->
@@ -469,7 +533,7 @@
 
 
     <!-- checks if 2 mods are active -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch2" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_ModPatch2" Abstract="True">
         <parameters>
             <li>key</li> <!-- key -->
             <li>mod1</li> <!-- required mods -->
@@ -493,7 +557,7 @@
 
                     <!-- displays active setting -->
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                        <patchName>TP_ModBaseE</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mods -->
@@ -512,7 +576,7 @@
 
                     <!-- adds multiple mods display -->
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mod -->
@@ -520,7 +584,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod2}</li> <!-- required mod -->
@@ -537,7 +601,7 @@
                 <caseFalse>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                        <patchName>TP_ModBaseD</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mods -->
@@ -556,7 +620,7 @@
 
                     <!-- adds multiple mods display -->
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mod -->
@@ -564,7 +628,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod2}</li> <!-- required mod -->
@@ -583,7 +647,7 @@
     </XmlExtensions.PatchDef>
 
     <!-- checks if 3 mods are active -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch3" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_ModPatch3" Abstract="True">
         <parameters>
             <li>key</li> <!-- key -->
             <li>mod1</li> <!-- required mods -->
@@ -609,7 +673,7 @@
 
                     <!-- displays active setting -->
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                        <patchName>TP_ModBaseE</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mods -->
@@ -628,7 +692,7 @@
 
                     <!-- adds multiple mods display -->
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mod -->
@@ -636,7 +700,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod2}</li> <!-- required mod -->
@@ -644,7 +708,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod3}</li> <!-- required mod -->
@@ -661,7 +725,7 @@
                 <caseFalse>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                        <patchName>TP_ModBaseD</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mods -->
@@ -680,7 +744,7 @@
 
                     <!-- adds multiple mods display -->
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mod -->
@@ -688,7 +752,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod2}</li> <!-- required mod -->
@@ -696,7 +760,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod3}</li> <!-- required mod -->
@@ -716,7 +780,7 @@
 
 
     <!-- checks if 4 mods are active -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatch4" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_ModPatch4" Abstract="True">
         <parameters>
             <li>key</li> <!-- key -->
             <li>mod1</li> <!-- required mods -->
@@ -744,7 +808,7 @@
 
                     <!-- displays active setting -->
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                        <patchName>TP_ModBaseE</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mods -->
@@ -763,7 +827,7 @@
 
                     <!-- adds multiple mods display -->
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mod -->
@@ -771,7 +835,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod2}</li> <!-- required mod -->
@@ -779,7 +843,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod3}</li> <!-- required mod -->
@@ -787,7 +851,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod4}</li> <!-- required mod -->
@@ -804,7 +868,7 @@
                 <caseFalse>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                        <patchName>TP_ModBaseD</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mods -->
@@ -823,7 +887,7 @@
 
                     <!-- adds multiple mods display -->
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod1}</li> <!-- required mod -->
@@ -831,7 +895,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod2}</li> <!-- required mod -->
@@ -839,7 +903,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod3}</li> <!-- required mod -->
@@ -847,7 +911,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.ApplyPatch">
-                        <patchName>carnap2TPatchesMultiDisplay</patchName>
+                        <patchName>TP_MultiDisplay</patchName>
                         <arguments>
                             <li>{key}</li> <!-- key -->
                             <li>{mod4}</li> <!-- required mod -->
@@ -867,7 +931,7 @@
 
 
     <!-- a simple toggle for groups -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesSimpleToggle" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_Toggle" Abstract="True">
         <parameters>
             <li>key</li> <!-- key -->
             <li>tab</li> <!-- tab - Fixes Tweaks Balancing Settings-->
@@ -897,7 +961,7 @@
 
 
     <!-- shows only when a given key is true. checks if a single chosen mod is active and applies the appropriate patchdefs -->
-    <XmlExtensions.PatchDef Name="carnap2TPatchesModPatchGrouped" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_ModPatchGrouped" Abstract="True">
         <parameters>
             <li>key</li> <!-- key -->
             <li>mod</li> <!-- required mods -->
@@ -917,7 +981,7 @@
                 <match Class="PatchOperationSequence">
                     <operations>
                         <li Class="XmlExtensions.ApplyPatch">
-                            <patchName>carnap2TPatchesModPatchBaseEnabled</patchName>
+                            <patchName>TP_ModBaseE</patchName>
                             <arguments>
                                 <li>{key}</li> <!-- key -->
                                 <li>{mod}</li> <!-- required mods -->
@@ -934,7 +998,7 @@
                             </arguments>
                         </li>
                         <li Class="XmlExtensions.ApplyPatch">
-                            <patchName>carnap2TPatchesModLog</patchName>
+                            <patchName>TP_ModLog</patchName>
                             <arguments>
                                 <li>{mod}</li> <!-- required mods -->
                                 <li>(255,255,255)</li>
@@ -947,7 +1011,7 @@
                 <nomatch Class="PatchOperationSequence">
                     <operations>
                         <li Class="XmlExtensions.ApplyPatch">
-                            <patchName>carnap2TPatchesModPatchBaseDisabled</patchName>
+                            <patchName>TP_ModBaseD</patchName>
                             <arguments>
                                 <li>{key}</li> <!-- key -->
                                 <li>{mod}</li> <!-- required mods -->
@@ -964,7 +1028,7 @@
                             </arguments>
                         </li>
                         <li Class="XmlExtensions.ApplyPatch">
-                            <patchName>carnap2TPatchesModLog</patchName>
+                            <patchName>TP_ModLog</patchName>
                             <arguments>
                                 <li>{mod}</li> <!-- required mods -->
                                 <li>(155,155,155)</li>
@@ -979,7 +1043,7 @@
 
 
     <!-- creates a tab -->
-    <XmlExtensions.PatchDef Name="carnap2TPatches_CreateTab" Abstract="True">
+    <XmlExtensions.PatchDef Name="TP_Tab" Abstract="True">
         <parameters>
             <li>tab</li>
             <li>description</li>
