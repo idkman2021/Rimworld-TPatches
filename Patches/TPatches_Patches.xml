@@ -171,6 +171,7 @@
     </Operation>
 
     <!-- fantasy metals rebalance -->
+    <!--
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesFantasyMetals</key>
@@ -304,8 +305,9 @@
         </caseTrue>
         <caseFalse></caseFalse>
     </Operation>
-
+-->
     <!-- replace "golden?" with solpyrite -->
+    <!--
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesFantasyMetalSolpyrite</key>
@@ -318,6 +320,7 @@
         </caseTrue>
         <caseFalse></caseFalse>
     </Operation>
+-->
 
 
     <!-- Rottable filter -->
@@ -437,6 +440,7 @@
     -->
 
     <!--  Megafauna tame revenge chance -->
+    <!--
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesMegafauna_manhunterOnTameFailChance</key>
@@ -491,7 +495,7 @@
         </caseTrue>
         <caseFalse></caseFalse>
     </Operation>
-
+-->
 
     <!-- dubs mint storage research -->
     <Operation Class="XmlExtensions.OptionalPatch">
@@ -627,6 +631,128 @@
             <Operation Class="PatchOperationRemove">
                 <xpath>/Defs/BiomeDef/canAutoChoose</xpath>
             </Operation>
+
+        </caseTrue>
+        <caseFalse></caseFalse>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatches_XMLErrorsFix</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+
+            <!-- Probably niilos qol and stuffable turrets adding the stupid stuffable count to the turrets without a conditional -->
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Turret_Autocannon"]/costStuffCount[2]</xpath>
+            </Operation>
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Turret_Autocannon"]/stuffCategories[2]</xpath>
+            </Operation>
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Turret_Sniper"]/costStuffCount[2]</xpath>
+            </Operation>
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Turret_Sniper"]/stuffCategories[2]</xpath>
+            </Operation>
+
+            <!-- same with bows and i know its the stffable bows mod but the other mod i dont know which one it is -->
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Bow_Short"]/costStuffCount[2]</xpath>
+            </Operation>
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Bow_Short"]/stuffCategories[2]</xpath>
+            </Operation>
+
+            <!-- actually idk if stuffable bows affects pilas and stuff... -->
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Pila"]/costStuffCount[2]</xpath>
+            </Operation>
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Pila"]/stuffCategories[2]</xpath>
+            </Operation>
+
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Bow_Great"]/costStuffCount[2]</xpath>
+            </Operation>
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="Bow_Great"]/stuffCategories[2]</xpath>
+            </Operation>
+
+            <!-- Unique traits issue where a red error happens to enjoy it causal powers on my blood pressure -->
+
+            <Operation Class="PatchOperationFindMod">
+                <mods>
+                    <li>Unique traits</li>
+                </mods>
+                <match Class="PatchOperationSequence">
+                    <operations>
+                        <li Class="PatchOperationReplace">
+                            <success>Always</success>
+                            <xpath>/Defs/TraitDef[defName="knight"]/requiredWorkTypes[li="Violent"]</xpath>
+                            <value>
+                                <requiredWorkTags>
+                                    <li>Violent</li>
+                                </requiredWorkTags>
+                            </value>
+                        </li>
+
+                        <li Class="PatchOperationRemove">
+                            <success>Always</success>
+                            <xpath>/Defs/TraitDef[defName="breakBad"]/requiredWorkTypes/li[text()="Intellectual"]</xpath>
+                        </li>
+                    </operations>
+                </match>
+            </Operation>
+
+            <!-- chitin mods causing mild coronavirus -->
+
+            <Operation Class="PatchOperationFindMod">
+                <mods>
+                    <li>Chitin Matters</li>
+                </mods>
+                <match Class="PatchOperationFindMod">
+                    <mods>
+                        <li>Insects have chitin</li>
+                    </mods>
+                    <match Class="PatchOperationSequence">
+                        <operations>
+                            <li Class="PatchOperationTest">
+                                <xpath>/Defs/ThingDef[defName = "Leather_IronChitin"]</xpath>
+                                <success>Invert</success>
+                            </li>
+                            <li Class="PatchOperationRemove">
+                                <success>Always</success>
+                                <xpath>/Defs/RecipeDef[defName="AlphaChitin_ToChitinPlate" or defName="BulkAlphaChitin_ToChitinPlate"]/ingredients/li/filter/thingDefs/li[text()="Leather_IronChitin"]</xpath>
+                            </li>
+                            <li Class="PatchOperationRemove">
+                                <success>Always</success>
+                                <xpath>/Defs/RecipeDef[defName="AlphaChitin_ToChitinPlate" or defName="BulkAlphaChitin_ToChitinPlate"]/fixedIngredientFilter/thingDefs/li[text()="Leather_IronChitin"]</xpath>
+                            </li>
+                        </operations>
+                    </match>
+                </match>
+            </Operation>
+
 
         </caseTrue>
         <caseFalse></caseFalse>

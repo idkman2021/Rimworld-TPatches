@@ -2,7 +2,7 @@
 <Patch>
     <!-- 
     <Operation Class="XmlExtensions.ApplyPatch">
-    <patchName>carnap2TPatchesModPatch</patchName>
+    <patchName>TP_ModPatch</patchName>
     <arguments>
     <li>key</li>
     <li>mod</li>
@@ -17,7 +17,7 @@
 
     <!-- Fixes -->
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesDAR</li>
             <li>Core</li>
@@ -30,7 +30,7 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesDMR</li>
             <li>Core</li>
@@ -42,21 +42,36 @@
         </arguments>
     </Operation>
 
+    <!--
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
+        <arguments>
+            <li>TPatchesDWR</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Duplicate Weapon Remover</li>
+            <li>Removes duplicate weapons.</li>
+            <li>this xpath contains a manually collected list of rules for removing materials when appropriate mods are loaded.</li>
+            <li>true</li>
+        </arguments>
+    </Operation>
+-->
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesTypoCorrecter</li>
             <li>Core</li>
             <li>Fixes</li>
             <li>Text fixes</li>
-            <li>Corrects text typos in mods. For example, renames "crocodale" to "crocodile", "leopardgecko" to "leopard gecko", etc. Supports HC_Animal_1, HC_Animal_2, HC_Animal_3, HC_Animal_4.</li>
-            <li>this xpath contains a manually collected list of rules for replacing texts with corrected versions.</li>
+            <li>Retranslates HC_Animal_1, HC_Animal_2, HC_Animal_3, HC_Animal_4.</li>
+            <li>this xpath contains a manually collected list of rules for replacing texts with corrected versions, that only get applied when the appropriate mods are loaded.</li>
             <li>true</li>
         </arguments>
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesResearchFixes</li>
             <li>Core</li>
@@ -69,7 +84,20 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
+        <arguments>
+            <li>TPatches_XMLErrorsFix</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>XML error fixes</li>
+            <li>Some manual fixes for XML errors I happen to encounter in my game.</li>
+            <li>Niilos QOL and Stuffable Turrets add stuffable count to the turrets without a conditional causing duplicate XML error; Unique traits has an xml typo and causes a red error; some chitin mods cause mild coronavirus when used together.</li>
+            <li>true</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesFixSomeModdedFactionsNotShowingUpInCreateWorldMenu</li>
             <li>Core</li>
@@ -82,7 +110,7 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatches_IgnoreIllegalCharacters</li>
             <li>Core</li>
@@ -96,7 +124,7 @@
 
 <!--
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatches_CompOversizedReplace</li>
             <li>Enable Oversized Weapons</li>
@@ -109,7 +137,7 @@
     </Operation>
 -->
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesNerubiansFix</li>
             <li>World of Warcraft - Playable Nerubians</li>
@@ -124,20 +152,20 @@
 
     <!-- Tweaks -->
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesFilterRottable</li>
             <li>Core</li>
             <li>Fixes</li>
             <li>Rottable filter</li>
-            <li>Adds a filter for all items that can rot unless frozen, except corpses (including all modded items).</li>
+            <li>Adds a filter for all items that can rot unless frozen, except corpses (including all modded items). Note: it isn't perfect, it will mark all rottable items but might also contain some food that is not rottable.</li>
             <li>xpath: adds new "*rottable" category to all items with daysToRotStart. Thanks to Imranfish for making a complex patch required to add meat to the category!</li>
             <li>true</li>
         </arguments>
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatches_GreatMemoryTweak</li>
             <li>Core</li>
@@ -150,7 +178,7 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatches_BiomesCanAutoChoose</li>
             <li>Core</li>
@@ -161,9 +189,9 @@
             <li>false</li>
         </arguments>
     </Operation>
-
+<!--
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesFantasyMetalSolpyrite</li>
             <li>Fantasy Metals Reforged</li>
@@ -174,9 +202,10 @@
             <li>false</li>
         </arguments>
     </Operation>
+-->
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesHARResearchRestrictionRemover</li>
             <li>Humanoid Alien Races</li>
@@ -189,7 +218,7 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesHARthoughtSettingsRemover</li>
             <li>Humanoid Alien Races</li>
@@ -205,7 +234,7 @@
     <!-- Balancing -->
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>DocWorld_ClothBeds</li>
             <li>Core</li>
@@ -218,7 +247,7 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesVAEARangedShieldBelt</li>
             <li>Vanilla Apparel Expanded — Accessories</li>
@@ -232,7 +261,7 @@
 
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesVAEAMiniTurretPack</li>
             <li>Vanilla Apparel Expanded — Accessories</li>
@@ -245,7 +274,7 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatches_DubsMintStorageResearch</li>
             <li>Dubs Mint Storage - DEV</li>
@@ -256,9 +285,9 @@
             <li>false</li>
         </arguments>
     </Operation>
-
+<!--
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesMegafauna_manhunterOnTameFailChance</li>
             <li>Megafauna</li>
@@ -269,9 +298,10 @@
             <li>false</li>
         </arguments>
     </Operation>
-
+-->
+<!--
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatchesFantasyMetals</li>
             <li>Fantasy Metals Reforged</li>
@@ -282,10 +312,10 @@
             <li>false</li>
         </arguments>
     </Operation>
-
+-->
     <!-- Menus -->
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>DocWorld_DesignationCategories</li>
             <li>Core</li>
@@ -297,7 +327,7 @@
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationCategoriesIdeology</li>
             <li>Core</li>
@@ -310,7 +340,7 @@
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationCategoriesMeditation</li>
             <li>Core</li>
@@ -323,7 +353,7 @@
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationCategoriesSpots</li>
             <li>Core</li>
@@ -336,7 +366,7 @@
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationCategoriesMedical</li>
             <li>Core</li>
@@ -349,7 +379,7 @@
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationCategoriesStorage</li>
             <li>Core</li>
@@ -363,7 +393,7 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationAlphaBiomes</li>
             <li>Alpha Biomes</li>
@@ -377,7 +407,7 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationVFEMechanoids</li>
             <li>Vanilla Factions Expanded - Mechanoids</li>
@@ -392,7 +422,7 @@
 
     
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationGlitterNet</li>
             <li>GlitterNet</li>
@@ -406,7 +436,7 @@
     </Operation>
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationRimatomics</li>
             <li>Dubs Rimatomics</li>
@@ -421,7 +451,7 @@
 
 
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationRimefeller</li>
             <li>Rimefeller</li>
@@ -436,7 +466,7 @@
 
     <!--
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationWhatTheHack</li>
             <li>What the hack?!</li>
@@ -452,7 +482,7 @@
 
 <!--
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatchGrouped</patchName>
+        <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
             <li>DocWorld_DesignationDubsBadHygiene</li>
             <li>Dubs Bad Hygiene</li>
@@ -470,7 +500,7 @@
 
     <!-- Fun -->
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatchesModPatch</patchName>
+        <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>TPatches_InfiniteTurrets</li>
             <li>Core</li>
@@ -485,7 +515,7 @@
 
     <!-- 
     <Operation Class="XmlExtensions.ApplyPatch">
-    <patchName>carnap2TPatchesModPatch</patchName>
+    <patchName>TP_ModPatch</patchName>
     <arguments>
     <li>key</li>
     <li>mod</li>

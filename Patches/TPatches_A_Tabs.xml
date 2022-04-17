@@ -4,7 +4,7 @@
     
     <!--
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatches_CreateTab</patchName>
+        <patchName>TP_Tab</patchName>
         <arguments>
             <li>Settings</li>
         </arguments>
@@ -12,35 +12,35 @@
     -->
     
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatches_CreateTab</patchName>
+        <patchName>TP_Tab</patchName>
         <arguments>
             <li>Fixes</li>
             <li>Fixes for obvious bugs, inconsistencies and inconveniences in vanilla and between mods.</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatches_CreateTab</patchName>
+        <patchName>TP_Tab</patchName>
         <arguments>
             <li>Tweaks</li>
             <li>Various optional tweaks.</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatches_CreateTab</patchName>
+        <patchName>TP_Tab</patchName>
         <arguments>
             <li>Balancing</li>
             <li>Nerfs for items that are potentially overpowered.</li>
         </arguments>
     </Operation>
 <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatches_CreateTab</patchName>
+        <patchName>TP_Tab</patchName>
         <arguments>
             <li>Menus</li>
             <li>Changes or overhauls to the vanilla menus</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>carnap2TPatches_CreateTab</patchName>
+        <patchName>TP_Tab</patchName>
         <arguments>
             <li>Fun</li>
             <li>Addons or changes that might be overpowered or not lore-friendly.</li>

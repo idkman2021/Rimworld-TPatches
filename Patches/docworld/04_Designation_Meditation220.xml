@@ -25,7 +25,7 @@
                     @Name="NatureShrineBase" or 
                     defName="Throne" or 
                     defName="GrandThrone" or 
-                    defName="AnimusStone" or 
+                    <!--defName="AnimusStone" or -->
                     defName="Grave" or 
                     defName="Sarcophagus"
                     ]</xpath>

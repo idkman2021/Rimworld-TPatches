@@ -36,7 +36,7 @@
                 </value>
             </Operation>
 
-        
+
             <!-- ancient bed requires furniture research -->
             <Operation Class="PatchOperationAdd">
                 <success>Always</success>
@@ -47,6 +47,82 @@
                     </researchPrerequisites>
                 </value>
             </Operation>
+
+            <!-- thogs + gunpowder -->
+            <Operation Class="PatchOperationFindMod">
+                <success>Always</success>
+                <mods>
+                    <li>Vanilla Weapons Expanded</li>
+                </mods>
+                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <success>Always</success>
+                    <xpath>/Defs/ThingDef[
+                        defName="Gun_FlintlockCarbine"
+                        or defName="Gun_FlintlockPepperbox"
+                        or defName="Gun_FlintlockPistol"
+                        or defName="Gun_FlintlockRifle"
+                        or defName="Gun_FlintlockShotgun"
+                        or defName="Weapon_Handbombs"
+                        or defName="Shell_ThogsCannonball"
+                        or defName="Shell_ThogsIncendiaryCannonball"
+                        or defName="Shell_ThogsCannonballChain"
+                        or defName="Shell_ThogsClustershot"
+                        or defName="Gun_HandMortar"
+                        or defName="Gun_ToxicDartRifle"]/recipeMaker</xpath>
+                    <value>
+                        <researchPrerequisite>VWE_Gunpowder</researchPrerequisite>
+                    </value>
+                </match>
+            </Operation>
+
+            <Operation Class="PatchOperationFindMod">
+                <success>Always</success>
+                <mods>
+                    <li>Vanilla Weapons Expanded</li>
+                </mods>
+                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <success>Always</success>
+                    <xpath>/Defs/ThingDef[
+                        defName="ThogsBow_CrossbowLight" or 
+                        defName="ThogsBow_CrossbowRepeating" or
+                        defName="ThogsBow_CrossbowStone"]/recipeMaker</xpath>
+                    <value>
+                        <researchPrerequisite>VWE_Crossbow</researchPrerequisite>
+                    </value>
+                </match>
+            </Operation>
+
+            <!-- gasch + gunpowder -->
+            <Operation Class="PatchOperationFindMod">
+                <success>Always</success>
+                <mods>
+                    <li>Vanilla Weapons Expanded</li>
+                </mods>
+                <match Class="PatchOperationAdd">
+                    <success>Always</success>
+                    <xpath>/Defs/ResearchProjectDef[defName="SimpleGunsmithing"]/prerequisites[not(li="VWE_Gunpowder")]</xpath>
+                    <value>
+                        <li>VWE_Gunpowder</li>
+                    </value>
+                </match>
+            </Operation>
+
+
+            <!-- gasch + thogs -->
+            <Operation Class="PatchOperationFindMod">
+                <success>Always</success>
+                <mods>
+                    <li>Gasch's Gear - Guns and Grenades</li>
+                </mods>
+                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                    <success>Always</success>
+                    <xpath>/Defs/ThingDef[defName="Gun_ToxicDartRifle"]/recipeMaker</xpath>
+                    <value>
+                        <researchPrerequisite>GG_Rifling</researchPrerequisite>
+                    </value>
+                </match>
+            </Operation>
+
 
         </caseTrue>
         <caseFalse></caseFalse>
