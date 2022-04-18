@@ -17,8 +17,6 @@
                 <caseTrue>
 
 
-                    
-
                     <!-- replace -->
                     <Operation Class="PatchOperationReplace">
                         <xpath>Defs/ThingDef[ @Name="LampBase"
@@ -337,7 +335,7 @@
                         <mods>
                             <li>More Furniture [1.1 + 1.2]</li>
                             <li>More Furniture (Continued)</li>
-                          </mods>
+                        </mods>
                         <match Class="PatchOperationSequence">
                             <success>Always</success>
                             <operations>
@@ -629,9 +627,9 @@
                         </match>
                     </Operation>
 
-                     <!-- ============================ new =========================== -->
+                    <!-- ============================ new =========================== -->
 
-                     <Operation Class="PatchOperationFindMod">
+                    <Operation Class="PatchOperationFindMod">
                         <mods>
                             <li>Simple Utilities: Walls</li>
                         </mods>
@@ -834,20 +832,20 @@
 
                     <Operation Class="PatchOperationFindMod">
                         <mods>
-                          <li>GloomyFurniture</li>
+                            <li>GloomyFurniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                          <xpath>/Defs/ThingDef[
+                            <xpath>/Defs/ThingDef[
                               defName="GL_Wall_Lamp"
                               ]</xpath>
-                          <value>
-                            <designationCategory>DZ_Lighting</designationCategory>
-                          </value>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
                         </match>
-                      </Operation>
+                    </Operation>
 
 
-                      <Operation Class="PatchOperationFindMod">
+                    <Operation Class="PatchOperationFindMod">
                         <mods>
                             <li>Medieval Overhaul</li>
                         </mods>
@@ -863,11 +861,17 @@
                     </Operation>
 
 
-
-
-
-
-
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>【SZ】含商咀徵——神州文化扩展 Chinese Traditional Cultural Things Expanded</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>Defs/ThingDef[defName="DengLong_Red" or defName="DengLong_Blue" or defName="DengLong_Yellow" or defName="DengLong_White" or defName="Out_DengLong_Red" or defName="Out_DengLong_Blue" or defName="Out_DengLong_Yellow" or defName="Out_DengLong_White" or defName="Chi_ZhiChengZhuC" or defName="SZ_HuoPen"]</xpath>
+                            <value>
+                                <designationCategory>DZ_Lighting</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
 
 
                     <!-- patches go above this -->

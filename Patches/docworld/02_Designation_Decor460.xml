@@ -376,6 +376,18 @@
                         </match>
                     </Operation>
 
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>【SZ】含商咀徵——神州文化扩展 Chinese Traditional Cultural Things Expanded</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>Defs/ThingDef[defName="Chi_PenJing" or defName="Chi_JiaShan_A" or defName="Chi_JiaShan_B" or defName="Chi_DaoCaoRen" or defName="Chi_GaoShiPai" or defName="Chi_Gu" or defName="SZ_ZhuangShiShuJia" or defName="Chi_QiZhi" or defName="SZRug_San" or defName="SZRug_Er" or defName="Chi_XiangLu" or defName="SZ_Ding" or defName="SZ_ShuiChi" or defName="SZ_ShuiChi_B" or defName="Chi_Pingfeng"  or defName="Chi_ShuiJing"]</xpath>
+                            <value>
+                                <designationCategory>DZ_Decor</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
                     <!-- patches go above this -->
                 </caseTrue>
                 <caseFalse />

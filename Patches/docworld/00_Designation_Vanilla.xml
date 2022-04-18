@@ -680,6 +680,37 @@ Ship        50  | Temperature 25  |
         </caseTrue>
       </Operation>
 
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>【SZ】含商咀徵——神州文化扩展 Chinese Traditional Cultural Things Expanded</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[designationCategory="DaJian_Ui_Menu"]</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+
+            
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="Chi_ZhiChengZhuA" or defName="Chi_ZhiChengZhuB"]</xpath>
+              <value>
+                <designationCategory>Structure</designationCategory>
+              </value>
+            </li>
+
+            <li Class="PatchOperationRemove">
+              <xpath>Defs/DesignationCategoryDef[defName="DaJian_Ui_Menu"]</xpath>
+            </li>
+
+
+          </operations>
+        </match>
+      </Operation>
+
 
     </caseTrue>
     <caseFalse />

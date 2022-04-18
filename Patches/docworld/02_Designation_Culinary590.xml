@@ -719,7 +719,6 @@
                             </Operation>
 
 
-
                         </caseTrue>
                     </Operation>
 
@@ -778,11 +777,47 @@
                             <li>Vanilla Plants Expanded - More Plants</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="VCE_VegMilkExtractor"]/designationCategory
-                        </xpath>
+                            <xpath>Defs/ThingDef[defName="VCE_VegMilkExtractor"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Culinary</designationCategory>
                             </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>【SZ】含商咀徵——神州文化扩展 Chinese Traditional Cultural Things Expanded</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <operations>
+
+                                <li Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>Defs/ThingDef[designationCategory="SZ_Ui_Menu_ShengChan"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Culinary</designationCategory>
+                                    </value>
+                                </li>
+
+                                <li Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>Defs/ThingDef[defName="SZ_MiGang"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Culinary</designationCategory>
+                                    </value>
+                                </li>
+
+                                <li Class="PatchOperationReplace">
+                                    <xpath>Defs/ThingDef[defName="Chi_CiYao" or defName="SZ_CiYao_Fire" or defName="SZ_LinkChuJu" or defName="SZ_NianYaoLu"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>Production</designationCategory>
+                                    </value>
+                                </li>
+
+                                <li Class="PatchOperationRemove">
+                                    <xpath>Defs/DesignationCategoryDef[defName="SZ_Ui_Menu_ShengChan"]</xpath>
+                                </li>
+
+
+                            </operations>
                         </match>
                     </Operation>
 

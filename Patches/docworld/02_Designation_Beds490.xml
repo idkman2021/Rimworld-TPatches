@@ -414,6 +414,18 @@
                     </Operation>
 
 
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>【SZ】含商咀徵——神州文化扩展 Chinese Traditional Cultural Things Expanded</li>
+                        </mods>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>Defs/ThingDef[defName="EndTableSZ_ChuangTouGui_New" or defName="SZ_ShuZhuangTai" or defName="SZ_ShuZhuangJing" or defName="SZ_YiGui"]</xpath>
+                            <value>
+                                <designationCategory>DZ_Beds</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
                        <!-- patches go above this -->
                 </caseTrue>
                 <caseFalse />
