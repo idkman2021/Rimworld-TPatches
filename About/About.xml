@@ -23,9 +23,7 @@ Supports ModSync RW for checking for updates</description>
     </li>
   </modDependencies>
   <loadBefore>
-    <!--
-    <li>Niilo007.NiilosQoL</li>
-    -->
+    <!--<li>tests.patches</li>-->
   </loadBefore>
   <loadAfter>
     <li>imranfish.xmlextensions</li>
