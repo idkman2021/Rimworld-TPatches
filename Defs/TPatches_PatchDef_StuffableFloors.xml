@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+    <!-- checks all floors with a given ParentName and adds the floor if it is missing.
+    Useful for patching floors that have a known common abstract base, and concrete descendants have only defname label, color, and costlist. -->
+    <XmlExtensions.PatchDef Name="TPatches_AddFloorsAbstract" Abstract="True">
+        <parameters>
+            <li>TerrainBase</li>
+            <li>FloorName</li>
+            <li>FloorCost</li>
+            <li>MaterialDef</li>
+            <li>MaterialDefName</li>
+            <li>MaterialAdjective</li>
+            <li>MaterialLabel</li>
+            <li>MaterialColor</li>
+        </parameters>
+        <apply>
+
+            <!-- checks if floor made of this material already exists -->
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
+
+                <!-- if it doesn't, it creates the floor -->
+                <nomatch Class="PatchOperationSequence">
+                    <operations>
+                        <li Class="PatchOperationAdd">
+                            <xpath>Defs</xpath>
+                            <value>
+                                <TerrainDef ParentName="{TerrainBase}">
+                                    <defName>TPatches_{TerrainBase}{MaterialDefName}</defName>
+                                    <label>{MaterialAdjective} {FloorName}</label>
+                                    <color>{MaterialColor}</color>
+                                    <costList>
+                                        <MaterialDefName>{FloorCost}</MaterialDefName>
+                                    </costList>
+                                </TerrainDef>
+                            </value>
+                        </li>
+                        <li Class="PatchOperationSetName">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/costList/MaterialDefName</xpath>
+                            <name>{MaterialDefName}</name>
+                        </li>
+                        <li Class="PatchOperationReplace">
+                            <success>Always</success>
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/label[text()="no_adjective {FloorName}"]</xpath>
+                            <value>
+                                <label>{MaterialLabel} {FloorName}</label>
+                            </value>
+                        </li>
+                    </operations>
+                </nomatch>
+            </Operation>
+
+        </apply>
+    </XmlExtensions.PatchDef>
+
+    <!-- checks all floors with a given ParentName and adds the floor if it is missing.
+    Useful for patching floors that have a known common abstract base, but the concrete descendants are a bit more annoying than just the basic nodes. -->
+    <XmlExtensions.PatchDef Name="TPatches_AddFloorsAbstractCopy" Abstract="True">
+        <parameters>
+            <li>TerrainBase</li>
+            <li>FloorName</li>
+            <li>FloorCost</li>
+            <li>MaterialDef</li>
+            <li>MaterialDefName</li>
+            <li>MaterialAdjective</li>
+            <li>MaterialLabel</li>
+            <li>MaterialColor</li>
+        </parameters>
+        <apply>
+
+            <!-- checks if floor made of this material already exists -->
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
+
+                <!-- if it doesn't, it creates the floor -->
+                <nomatch Class="PatchOperationSequence">
+                    <operations>
+                        <li Class="PatchOperationAdd">
+                            <xpath>Defs</xpath>
+                            <value>
+                                <TerrainDef>
+                                    <defName>TPatches_{TerrainBase}{MaterialDefName}</defName>
+                                </TerrainDef>
+                            </value>
+                        </li>
+                        <li Class="XmlExtensions.PatchOperationCopy">
+                            <xpath>/Defs/TerrainDef[@ParentName="{TerrainBase}"][1]/*[not(name()="defName")]</xpath>
+                            <paste>/Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</paste>
+                        </li>
+                        <li Class="PatchOperationAttributeAdd">
+                            <xpath>/Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</xpath>
+                            <attribute>ParentName</attribute>
+                            <value>{TerrainBase}</value>
+                        </li>
+
+                        <li Class="PatchOperationSetName">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/costList/node()</xpath>
+                            <name>{MaterialDefName}</name>
+                        </li>
+                        <li Class="PatchOperationReplace">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/label</xpath>
+                            <value>
+                                <label>{MaterialAdjective} {FloorName}</label>
+                            </value>
+                        </li>
+                        <li Class="PatchOperationReplace">
+                            <success>Always</success>
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/label[text()="no_adjective {FloorName}"]</xpath>
+                            <value>
+                                <label>{MaterialLabel} {FloorName}</label>
+                            </value>
+                        </li>
+                        <li Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</xpath>
+                            <value>
+                                <color>{MaterialColor}</color>
+                            </value>
+                        </li>
+                    </operations>
+                </nomatch>
+            </Operation>
+
+        </apply>
+    </XmlExtensions.PatchDef>
+
+    <!-- checks the floor with a given defName, finds the designationDropdown, checks all floors with that designationDropdown and adds the floor if it is missing by copying it. If there is no designationDropdown, adds one and adds the missing floor.
+        Useful for patching floors that don't have a known designationDropdown so other mods may patch one in. -->
+    <XmlExtensions.PatchDef Name="TPatches_AddFloorsDefName" Abstract="True">
+        <parameters>
+            <li>TerrainDefName</li>
+            <li>FloorName</li>
+            <li>MaterialDef</li>
+            <li>MaterialDefName</li>
+            <li>MaterialAdjective</li>
+            <li>MaterialLabel</li>
+            <li>MaterialColor</li>
+        </parameters>
+        <apply>
+
+            <!-- check if floor has a designatordropdown -->
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]/designatorDropdown</xpath>
+
+                <!-- if it does, checks if a floor with that designator dropdown and that material exists. -->
+                <match Class="XmlExtensions.CreateVariable">
+                    <storeIn>designatorDropdown</storeIn>
+                    <value>/Defs/TerrainDef[defName="{TerrainDefName}"]/designatorDropdown</value>
+                    <fromXml>true</fromXml>
+                    <apply>
+                        <Operation Class="PatchOperationConditional">
+                            <xpath>/Defs/TerrainDef[designatorDropdown="{designatorDropdown}"]/costList/{MaterialDefName}</xpath>
+
+                            <!-- if it doesn't exist, creates it -->
+                            <nomatch Class="PatchOperationSequence">
+                                <operations>
+
+                                    <li Class="XmlExtensions.PatchOperationCopy">
+                                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                                        <paste>/Defs</paste>
+                                    </li>
+                                    <li Class="PatchOperationReplace">
+                                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
+                                        <value>
+                                            <defName>TPatches_{TerrainDefName}{MaterialDefName}</defName>
+                                        </value>
+                                    </li>
+
+                                    <li Class="PatchOperationSetName">
+                                        <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{MaterialDefName}"]/costList/node()</xpath>
+                                        <name>{MaterialDefName}</name>
+                                    </li>
+                                    <li Class="PatchOperationReplace">
+                                        <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{MaterialDefName}"]/label</xpath>
+                                        <value>
+                                            <label>{MaterialAdjective} {FloorName}</label>
+                                        </value>
+                                    </li>
+                                    <li Class="PatchOperationReplace">
+                                        <success>Always</success>
+                                        <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{MaterialDefName}"]/label[text()="no_adjective {FloorName}"]</xpath>
+                                        <value>
+                                            <label>{MaterialLabel} {FloorName}</label>
+                                        </value>
+                                    </li>
+                                    <li Class="XmlExtensions.PatchOperationAddOrReplace">
+                                        <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{MaterialDefName}"]</xpath>
+                                        <value>
+                                            <color>{MaterialColor}</color>
+                                        </value>
+                                    </li>
+
+                                </operations>
+                            </nomatch>
+
+                        </Operation>
+                    </apply>
+                </match>
+
+                <!-- if a dropdown doesn't exist, creates it -->
+                <nomatch Class="PatchOperationSequence">
+                    <operations>
+
+                        <li Class="PatchOperationAdd">
+                            <xpath>Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                            <value>
+                                <designatorDropdown>TPatches_{TerrainDefName}Dropdown</designatorDropdown>
+                            </value>
+                        </li>
+                        <li Class="XmlExtensions.PatchOperationCopy">
+                            <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                            <paste>/Defs</paste>
+                        </li>
+                        <li Class="PatchOperationReplace">
+                            <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
+                            <value>
+                                <defName>TPatches_{TerrainDefName}{MaterialDefName}</defName>
+                            </value>
+                        </li>
+
+                        <li Class="PatchOperationSetName">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{MaterialDefName}"]/costList/node()</xpath>
+                            <name>{MaterialDefName}</name>
+                        </li>
+                        <li Class="PatchOperationReplace">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{MaterialDefName}"]/label</xpath>
+                            <value>
+                                <label>{MaterialAdjective} {FloorName}</label>
+                            </value>
+                        </li>
+                        <li Class="PatchOperationReplace">
+                            <success>Always</success>
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{MaterialDefName}"]/label[text()="no_adjective {FloorName}"]</xpath>
+                            <value>
+                                <label>{MaterialLabel} {FloorName}</label>
+                            </value>
+                        </li>
+                        <li Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{MaterialDefName}"]</xpath>
+                            <value>
+                                <color>{MaterialColor}</color>
+                            </value>
+                        </li>
+
+                    </operations>
+                </nomatch>
+
+            </Operation>
+
+        </apply>
+    </XmlExtensions.PatchDef>
+
+    <!-- adds a fake wood floor by copying - it will have custom color and label but it costs wood. -->
+    <XmlExtensions.PatchDef Name="TPatches_AddFloorsFakeWood" Abstract="True">
+        <parameters>
+            <li>TerrainDefName</li>
+            <li>FloorName</li>
+            <li>WoodDefName</li>
+            <li>WoodLabel</li>
+            <li>WoodColor</li>
+        </parameters>
+        <apply>
+
+            <!-- check if floor has a designatordropdown -->
+            <Operation Class="XmlExtensions.ConditionalInherited">
+                <xpathDef>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpathDef>
+                <xpathLocal>designatorDropdown</xpathLocal>
+                <caseTrue>
+                    <!-- if it does, adds the new fake wood floor -->
+
+                    <Operation Class="XmlExtensions.PatchOperationCopy">
+                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                        <paste>/Defs</paste>
+                    </Operation>
+                    <Operation Class="PatchOperationReplace">
+                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
+                        <value>
+                            <defName>TPatches_{TerrainDefName}{WoodDefName}</defName>
+                        </value>
+                    </Operation>
+                    <Operation Class="PatchOperationReplace">
+                        <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{WoodDefName}"]/label</xpath>
+                        <value>
+                            <label>{WoodLabel} {FloorName}</label>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{WoodDefName}"]</xpath>
+                        <value>
+                            <color>{WoodColor}</color>
+                        </value>
+                    </Operation>
+                </caseTrue>
+                <caseFalse>
+                    <!-- if a dropdown doesn't exist, creates it -->
+
+                    <Operation Class="PatchOperationAdd">
+                        <xpath>Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                        <value>
+                            <designatorDropdown>TPatches_{TerrainDefName}Dropdown</designatorDropdown>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationCopy">
+                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                        <paste>/Defs</paste>
+                    </Operation>
+                    <Operation Class="PatchOperationReplace">
+                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
+                        <value>
+                            <defName>TPatches_{TerrainDefName}{WoodDefName}</defName>
+                        </value>
+                    </Operation>
+                    <Operation Class="PatchOperationReplace">
+                        <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{WoodDefName}"]/label</xpath>
+                        <value>
+                            <label>{WoodLabel} {FloorName}</label>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/TerrainDef[defName="TPatches_{TerrainDefName}{WoodDefName}"]</xpath>
+                        <value>
+                            <color>{WoodColor}</color>
+                        </value>
+                    </Operation>
+
+                </caseFalse>
+            </Operation>
+
+
+        </apply>
+    </XmlExtensions.PatchDef>
+
+    <!-- just adds the fake wood floors with a conditional to check if the original floor exists and a contains conditional to avoid duplicating, the lightest patch. 
+    Useful when designatordropdown is known. -->
+    <XmlExtensions.PatchDef Name="TPatches_AddFloorsLight_FakeWood" Abstract="True">
+        <parameters>
+            <li>WoodDefName</li>
+            <li>WoodLabel</li>
+            <li>WoodColor</li>
+        </parameters>
+        <apply>
+
+
+            <!-- vfe architect -->
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/TerrainDef[@ParentName="{VFEArch_WoodenParquetBase}" and not(contains(label,"{WoodLabel}"))]</xpath>
+                <match Class="PatchOperationAdd">
+                    <xpath>Defs</xpath>
+                    <value>
+
+                        <TerrainDef ParentName="VFEArch_WoodenParquetBase">
+                            <defName>VFEArch_WoodenParquet{WoodDefName}</defName>
+                            <label>{WoodLabel} wooden parquet</label>
+                            <color>{WoodColor}</color>
+                        </TerrainDef>
+
+                    </value>
+                </match>
+            </Operation>
+
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/TerrainDef[designatorDropdown="{VFEArch_WoodFloor}" and not(contains(label,"{WoodLabel}"))]</xpath>
+                <match Class="PatchOperationAdd">
+                    <xpath>Defs</xpath>
+                    <value>
+
+                        <TerrainDef ParentName="FloorBase">
+                            <defName>VFEArch_WoodPlankFloor{WoodDefName}</defName>
+                            <label>{WoodLabel} wood floor</label>
+                            <renderPrecedence>250</renderPrecedence>
+                            <description>Wood plank flooring for that warm, homey feeling. While it is quick to lay, it is also very flammable.</description>
+                            <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
+                            <burnedDef>BurnedWoodPlankFloor</burnedDef>
+                            <color>{WoodColor}</color>
+                            <statBases>
+                                <WorkToBuild>85</WorkToBuild>
+                                <Flammability>0.22</Flammability>
+                            </statBases>
+                            <costList>
+                                <WoodLog>3</WoodLog>
+                            </costList>
+                            <constructEffect>ConstructWood</constructEffect>
+                            <designatorDropdown>VFEArch_WoodFloor</designatorDropdown>
+                        </TerrainDef>
+
+                    </value>
+                </match>
+            </Operation>
+
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/TerrainDef[designatorDropdown="{VFEArch_WoodFloor}" and not(contains(label,"{WoodLabel}"))]</xpath>
+                <match Class="PatchOperationAdd">
+                    <xpath>Defs</xpath>
+                    <value>
+
+                        <TerrainDef ParentName="FloorBase">
+                            <defName>VFEArch_WoodPlankFloor{WoodDefName}</defName>
+                            <label>{WoodLabel} wood floor</label>
+                            <renderPrecedence>250</renderPrecedence>
+                            <description>Wood plank flooring for that warm, homey feeling. While it is quick to lay, it is also very flammable.</description>
+                            <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
+                            <burnedDef>BurnedWoodPlankFloor</burnedDef>
+                            <color>{WoodColor}</color>
+                            <statBases>
+                                <WorkToBuild>85</WorkToBuild>
+                                <Flammability>0.22</Flammability>
+                            </statBases>
+                            <costList>
+                                <WoodLog>3</WoodLog>
+                            </costList>
+                            <constructEffect>ConstructWood</constructEffect>
+                            <designatorDropdown>VFEArch_WoodFloor</designatorDropdown>
+                        </TerrainDef>
+
+                    </value>
+                </match>
+            </Operation>
+
+        </apply>
+    </XmlExtensions.PatchDef>
+
+</Defs>
