@@ -723,6 +723,41 @@
                                 </match>
                             </Operation>
 
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="DBHMosaicBase"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>DBHMosaicBase</li>
+                                        <li>mosaic tile</li>
+                                        <li>4</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
+                            
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="VFEC_MosaicsStoneBase"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>VFEC_MosaicsStoneBase</li>
+                                        <li>mosaics</li>
+                                        <li>10</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
 
                         </apply>
                     </Operation>
