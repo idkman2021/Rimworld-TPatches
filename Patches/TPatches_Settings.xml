@@ -99,6 +99,33 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
+            <li>TPatches_StuffableFloorsStone</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Stuffable stone floors</li>
+            <li>Adds missing stone floors for all modded stone blocks.</li>
+            <li>a semi-automatic patch, I have to manually enter the floors.</li>
+            <li>true</li>
+        </arguments>
+    </Operation>
+    <!--
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_ModPatch</patchName>
+        <arguments>
+            <li>TPatches_StuffableFloorsWood</li>
+            <li>Vanilla Furniture Expanded - Architect</li>
+            <li>Fixes</li>
+            <li>Stuffable wood floors</li>
+            <li>Adds missing wood floors for all VFE Architect fake wood types.</li>
+            <li>a semi-automatic patch, I have to manually enter the floors.</li>
+            <li>true</li>
+        </arguments>
+    </Operation>
+-->
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_ModPatch</patchName>
+        <arguments>
             <li>TPatchesFixSomeModdedFactionsNotShowingUpInCreateWorldMenu</li>
             <li>Core</li>
             <li>Fixes</li>
@@ -122,7 +149,7 @@
         </arguments>
     </Operation>
 
-<!--
+    <!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -151,6 +178,8 @@
 
 
     <!-- Tweaks -->
+
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -189,7 +218,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-<!--
+    <!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -285,7 +314,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-<!--
+    <!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -299,7 +328,7 @@
         </arguments>
     </Operation>
 -->
-<!--
+    <!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -420,7 +449,7 @@
         </arguments>
     </Operation>
 
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
@@ -480,7 +509,7 @@
     </Operation>
 -->
 
-<!--
+    <!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatchGrouped</patchName>
         <arguments>
