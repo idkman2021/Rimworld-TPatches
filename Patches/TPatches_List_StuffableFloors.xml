@@ -723,6 +723,7 @@
                                 </match>
                             </Operation>
 
+                            <!-- dubstep -->
                             <Operation Class="PatchOperationConditional">
                                 <xpath>/Defs/TerrainDef[@Name="DBHMosaicBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
@@ -740,6 +741,7 @@
                                 </match>
                             </Operation>
 
+                            <!-- vfe classical -->
                             
                             <Operation Class="PatchOperationConditional">
                                 <xpath>/Defs/TerrainDef[@Name="VFEC_MosaicsStoneBase"]</xpath>
@@ -749,6 +751,149 @@
                                         <li>VFEC_MosaicsStoneBase</li>
                                         <li>mosaics</li>
                                         <li>10</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
+                            <!-- vanilla ideology expanded - memes and structures -->
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="VME_CorporateFineStoneTiles"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>VME_CorporateFineStoneTiles</li>
+                                        <li>corporate fine tile</li>
+                                        <li>20</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
+
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="VME_ShintaoFineStoneTiles"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>VME_ShintaoFineStoneTiles</li>
+                                        <li>shintao fine tile</li>
+                                        <li>20</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
+                            <!-- alpha memes -->
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="AM_JewishTileStoneBase"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>AM_JewishTileStoneBase</li>
+                                        <li>jewish tile</li>
+                                        <li>4</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="AM_JewishFineStoneTiles"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>AM_JewishFineStoneTiles</li>
+                                        <li>jewish fine tile</li>
+                                        <li>20</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="AM_KemeticTileStoneBase"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>AM_KemeticTileStoneBase</li>
+                                        <li>kemetic tile</li>
+                                        <li>4</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
+                            
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="AM_KemeticFineStoneTiles"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>AM_KemeticFineStoneTiles</li>
+                                        <li>kemetic fine tile</li>
+                                        <li>20</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
+                                                        
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="AM_SteampunkTileStoneBase"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>AM_SteampunkTileStoneBase</li>
+                                        <li>steampunk tile</li>
+                                        <li>4</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
+
+                            <!-- Audrey's Styles: Jazzy -->
+
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="JazzyStoneBase"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>JazzyStoneBase</li>
+                                        <li>jazzy tile</li>
+                                        <li>20</li>
                                         <li>{MaterialDef}</li>
                                         <li>{MaterialDefName}</li>
                                         <li>{MaterialAdjective}</li>
