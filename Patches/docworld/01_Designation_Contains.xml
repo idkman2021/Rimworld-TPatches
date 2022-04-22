@@ -171,6 +171,7 @@
                             <designationCategory Inherit="False">DZ_Beds</designationCategory>
                         </value>
                     </Operation>
+                    
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xpath>Defs/ThingDef[
@@ -202,6 +203,7 @@
                         </value>
                     </Operation>
 
+                    
                 </caseTrue>
             </Operation>
 
@@ -243,6 +245,47 @@
                                     building/fixedStorageSettings/filter/categories/li="Root"]</xpath>
                         <value>
                             <designationCategory Inherit="False">DZ_Storage</designationCategory>
+                        </value>
+                    </Operation>
+                </caseTrue>
+            </Operation>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesTurrets</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd">
+                        <xpath>/Defs</xpath>
+                        <value>
+
+                            <DesignationCategoryDef>
+                                <defName>DZ_Turrets</defName>
+                                <label>Turrets</label>
+                                <description>Defensive turrets.</description>
+                                <order>290</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+
+                        </value>
+                    </Operation>
+
+
+                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xpath>Defs/ThingDef[
+                                    (
+                                    designationCategory and 
+                                    (thingClass="Building_TurretGun" or statBases/ShootingAccuracyTurret or building/buildingTags/li="Artillery" or building/turretBurstWarmupTime or building/turretBurstCooldownTime or building/turretGunDef or building/turretTopDrawSize)
+                                    ) 
+                                    or @ParentName="BaseArtilleryBuilding" or @ParentName="AutocannonTurret"
+                                    ]</xpath>
+                        <value>
+                            <designationCategory Inherit="False">DZ_Turrets</designationCategory>
                         </value>
                     </Operation>
                 </caseTrue>

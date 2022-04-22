@@ -694,7 +694,7 @@ Ship        50  | Temperature 25  |
               </value>
             </li>
 
-            
+
             <li Class="XmlExtensions.PatchOperationAddOrReplace">
               <xpath>Defs/ThingDef[defName="Chi_ZhiChengZhuA" or defName="Chi_ZhiChengZhuB"]</xpath>
               <value>
@@ -710,6 +710,215 @@ Ship        50  | Temperature 25  |
           </operations>
         </match>
       </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>[O21] Outland - Eastborn Empire</li>
+          <li>[O21] Outland - Core</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[designationCategory="Outland_Outland"]</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="Outland_Ballista" or defName="Outland_Mangonel" or @Name="OutlandTrapMedievalBase"]</xpath>
+              <value>
+                <designationCategory>Security</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="Outland_Kamado"]</xpath>
+              <value>
+                <designationCategory>Production</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="Outland_MedievalDoor"]</xpath>
+              <value>
+                <designationCategory>Structure</designationCategory>
+              </value>
+            </li>
+
+
+            <li Class="PatchOperationRemove">
+              <xpath>Defs/DesignationCategoryDef[defName="Outland_Outland"]</xpath>
+            </li>
+
+
+          </operations>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>[O21] Outer Rim Galaxies</li>
+          <li>[O21] Outer Rim Galaxies [DevBuild]</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[designationCategory="O21_OuterRim"]</xpath>
+              <value>
+                <designationCategory>Production</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="O21_OR_AnaxesTurret" or defName="O21_OR_PTowerTurret"]</xpath>
+              <value>
+                <designationCategory>Security</designationCategory>
+              </value>
+            </li>
+
+            <li Class="PatchOperationRemove">
+              <xpath>Defs/DesignationCategoryDef[defName="O21_OuterRim"]</xpath>
+            </li>
+
+
+          </operations>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>[O21] Halo: RimWorld Evolved [DevBuild]</li>
+          <li>[O21] Halo: RimWorld Evolved</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[designationCategory="O21_Halo_Halo"]</xpath>
+              <value>
+                <designationCategory>Security</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="O21_Halo_CovEnergyCell" or defName="O21_Halo_UNSCFusionCore"]</xpath>
+              <value>
+                <designationCategory>Power</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="O21_Halo_UNSCCampingStool" or defName="O21_Halo_CovCampingStool"]</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="O21_Halo_WorkbenchUNSC" or defName="O21_Halo_WorkbenchCov"]</xpath>
+              <value>
+                <designationCategory>Production</designationCategory>
+              </value>
+            </li>
+
+            <li Class="PatchOperationRemove">
+              <xpath>Defs/DesignationCategoryDef[defName="O21_Halo_Halo"]</xpath>
+            </li>
+
+
+          </operations>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>[O21] Stargate [DevBuild]</li>
+          <li>[O21] Stargate</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[designationCategory="SG_Stargate"]</xpath>
+              <value>
+                <designationCategory>Production</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="SG_Building_SymbioteQueenPool"]</xpath>
+              <value>
+                <designationCategory>Misc</designationCategory>
+              </value>
+            </li>
+
+            <li Class="PatchOperationRemove">
+              <xpath>Defs/DesignationCategoryDef[defName="SG_Stargate"]</xpath>
+            </li>
+
+
+          </operations>
+        </match>
+      </Operation>
+
+      
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>[O21] Star Trek [DevBuild]</li>
+          <li>[O21] Star Trek</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[designationCategory="O21_StarTrek"]</xpath>
+              <value>
+                <designationCategory>Furniture</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="O21_Trek_DilithiumGen_Large" or defName="O21_Trek_DilithiumGen_Small"]</xpath>
+              <value>
+                <designationCategory>Power</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="O21_Trek_DilithiumMiner" or defName="O21_Trek_MatterReplicator" or defName="O21_Trek_FoodReplicator" or defName="O21_Trek_FederationResearchBench"]</xpath>
+              <value>
+                <designationCategory>Production</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="O21_Trek_TransporterPad"]</xpath>
+              <value>
+                <designationCategory>Misc</designationCategory>
+              </value>
+            </li>
+
+            <li Class="XmlExtensions.PatchOperationAddOrReplace">
+              <xpath>Defs/ThingDef[defName="O21_Trek_StarfleetChess"]</xpath>
+              <value>
+                <designationCategory>Joy</designationCategory>
+              </value>
+            </li>
+
+            <li Class="PatchOperationRemove">
+              <xpath>Defs/DesignationCategoryDef[defName="O21_StarTrek"]</xpath>
+            </li>
+
+
+          </operations>
+        </match>
+      </Operation>
+
+
+
 
 
     </caseTrue>

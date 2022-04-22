@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This file is under the Gnu General Public License version 3, see https://www.gnu.org/licenses/gpl-3.0.txt for more information.
+-->
+
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategories</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesTurrets</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+
+
+                    <!-- patches go above -->
+                </caseTrue>
+                <caseFalse></caseFalse>
+            </Operation>
+        </caseTrue>
+    </Operation>
+
+</Patch>

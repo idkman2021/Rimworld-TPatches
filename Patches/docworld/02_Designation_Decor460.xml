@@ -48,6 +48,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="ludeon.rimworld.ideology">
+                        <success>Always</success>
                         <xpath>/Defs/ThingDef[
                     defName="Drape" or
                     defName="PlantPot_Bonsai"
@@ -139,7 +140,7 @@
                         <mods>
                             <li>More Furniture [1.1 + 1.2]</li>
                             <li>More Furniture (Continued)</li>
-                          </mods>
+                        </mods>
                         <match Class="PatchOperationSequence">
                             <success>Always</success>
                             <operations>
@@ -333,7 +334,7 @@
                             </value>
                         </match>
                     </Operation>
-                    
+
                     <Operation Class="PatchOperationFindMod">
                         <mods>
                             <li>Tate's Tiny Furniture Mod</li>
@@ -387,6 +388,54 @@
                             </value>
                         </match>
                     </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>[O21] Outland - Eastborn Empire</li>
+                            <li>[O21] Outland - Core</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <operations>
+
+                                <li Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>Defs/ThingDef[designationCategory="Outland_OutlandDeco" or defName="Outland_WineRack"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Decor</designationCategory>
+                                    </value>
+                                </li>
+
+
+                                <li Class="PatchOperationRemove">
+                                    <xpath>Defs/DesignationCategoryDef[defName="Outland_OutlandDeco"]</xpath>
+                                </li>
+
+
+                            </operations>
+                        </match>
+                    </Operation>
+
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>[O21] Star Trek [DevBuild]</li>
+                            <li>[O21] Star Trek</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <operations>
+
+                                <li Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <xpath>Defs/ThingDef[@Name="O21_Trek_BannerBase" or @Name="O21_Trek_RugBase"]</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Decor</designationCategory>
+                                    </value>
+                                </li>
+
+
+
+                            </operations>
+                        </match>
+                    </Operation>
+
 
                     <!-- patches go above this -->
                 </caseTrue>
