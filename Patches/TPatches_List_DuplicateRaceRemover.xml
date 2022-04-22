@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesDRR</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>Rimeffect Races [1.2+]</li>
+                    <li>Rim-Effect: Asari and Reapers</li>
+                </mods>
+                <logic>and</logic>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="AlienAsari"]</xpath>
+                    </Operation>
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/PawnKindDef[race="AlienAsari"]</xpath>
+                    </Operation>
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/AlienRace.RaceSettings[defName="AsariRaceSettings"]</xpath>
+                    </Operation>
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/FactionDef[defName="AsariFaction" or defName="AsariPlayerColony"]</xpath>
+                    </Operation>
+
+                    <Operation Class="PatchOperationRemove">
+                        <success>Always</success>
+                        <xpath>/Defs/QuestScriptDef/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_IsSet"]/node[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices/li[factionDef="AsariFaction"]</xpath>
+                    </Operation>
+
+                    <Operation Class="PatchOperationRemove">
+                        <success>Always</success>
+                        <xpath>/Defs/QuestScriptDef/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices/li[factionDef="AsariFaction"]</xpath>
+                    </Operation>
+
+                </caseTrue>
+                <caseFalse></caseFalse>
+            </Operation>
+
+            <Operation Class="XmlExtensions.FindMod">
+                <mods>
+                    <li>Rimeffect Races [1.2+]</li>
+                    <li>Rim-Effect: Drell</li>
+                </mods>
+                <logic>and</logic>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="AlienDrell"]</xpath>
+                    </Operation>
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/PawnKindDef[race="AlienDrell"]</xpath>
+                    </Operation>
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/AlienRace.RaceSettings[defName="DrellRaceSettings"]</xpath>
+                    </Operation>
+                    <Operation Class="PatchOperationRemove">
+                        <xpath>/Defs/FactionDef[defName="DrellFaction" or defName="DrellPlayerColony"]</xpath>
+                    </Operation>
+
+                </caseTrue>
+                <caseFalse></caseFalse>
+            </Operation>
+
+
+        </caseTrue>
+        <caseFalse></caseFalse>
+    </Operation>
+</Patch>

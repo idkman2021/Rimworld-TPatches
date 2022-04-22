@@ -70,60 +70,73 @@
                                 </arguments>
                             </Operation>
 
-                            <Operation Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Royalty">
-                                <patchName>TPatches_AddFloorsAbstract</patchName>
-                                <arguments>
-                                    <li>FineTileStoneBase</li>
-                                    <li>fine tile</li>
-                                    <li>20</li>
-                                    <li>{MaterialDef}</li>
-                                    <li>{MaterialDefName}</li>
-                                    <li>{MaterialAdjective}</li>
-                                    <li>{MaterialLabel}</li>
-                                    <li>{MaterialColor}</li>
-                                </arguments>
+
+                            <!-- roaylty -->
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="FineTileStoneBase"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>FineTileStoneBase</li>
+                                        <li>fine tile</li>
+                                        <li>20</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
                             </Operation>
 
-                            <Operation Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Ideology">
-                                <patchName>TPatches_AddFloorsAbstract</patchName>
-                                <arguments>
-                                    <li>MorbidStoneTile</li>
-                                    <li>morbid tile</li>
-                                    <li>20</li>
-                                    <li>{MaterialDef}</li>
-                                    <li>{MaterialDefName}</li>
-                                    <li>{MaterialAdjective}</li>
-                                    <li>{MaterialLabel}</li>
-                                    <li>{MaterialColor}</li>
-                                </arguments>
+                            <!-- ideo -->
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="MorbidStoneTile"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>MorbidStoneTile</li>
+                                        <li>morbid tile</li>
+                                        <li>20</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
                             </Operation>
-
-                            <Operation Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Ideology">
-                                <patchName>TPatches_AddFloorsAbstract</patchName>
-                                <arguments>
-                                    <li>SpikecoreStoneTile</li>
-                                    <li>spikecore tile</li>
-                                    <li>20</li>
-                                    <li>{MaterialDef}</li>
-                                    <li>{MaterialDefName}</li>
-                                    <li>{MaterialAdjective}</li>
-                                    <li>{MaterialLabel}</li>
-                                    <li>{MaterialColor}</li>
-                                </arguments>
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="SpikecoreStoneTile"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>SpikecoreStoneTile</li>
+                                        <li>spikecore tile</li>
+                                        <li>20</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
                             </Operation>
-
-                            <Operation Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Ideology">
-                                <patchName>TPatches_AddFloorsAbstract</patchName>
-                                <arguments>
-                                    <li>TotemicStoneTile</li>
-                                    <li>totemic tile</li>
-                                    <li>20</li>
-                                    <li>{MaterialDef}</li>
-                                    <li>{MaterialDefName}</li>
-                                    <li>{MaterialAdjective}</li>
-                                    <li>{MaterialLabel}</li>
-                                    <li>{MaterialColor}</li>
-                                </arguments>
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="TotemicStoneTile"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>TotemicStoneTile</li>
+                                        <li>totemic tile</li>
+                                        <li>20</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
                             </Operation>
 
                             <!-- VFE Architect -->
@@ -742,7 +755,7 @@
                             </Operation>
 
                             <!-- vfe classical -->
-                            
+
                             <Operation Class="PatchOperationConditional">
                                 <xpath>/Defs/TerrainDef[@Name="VFEC_MosaicsStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
@@ -848,7 +861,7 @@
                                 </match>
                             </Operation>
 
-                            
+
                             <Operation Class="PatchOperationConditional">
                                 <xpath>/Defs/TerrainDef[@Name="AM_KemeticFineStoneTiles"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
@@ -866,7 +879,7 @@
                                 </match>
                             </Operation>
 
-                                                        
+
                             <Operation Class="PatchOperationConditional">
                                 <xpath>/Defs/TerrainDef[@Name="AM_SteampunkTileStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
@@ -903,6 +916,24 @@
                                 </match>
                             </Operation>
 
+                            <!-- alpha animals -->
+
+                            <Operation Class="PatchOperationConditional">
+                                <xpath>/Defs/TerrainDef[@Name="AA_OcularStone"]</xpath>
+                                <match Class="XmlExtensions.ApplyPatch">
+                                    <patchName>TPatches_AddFloorsAbstract</patchName>
+                                    <arguments>
+                                        <li>AA_OcularStone</li>
+                                        <li>ocular floor</li>
+                                        <li>20</li>
+                                        <li>{MaterialDef}</li>
+                                        <li>{MaterialDefName}</li>
+                                        <li>{MaterialAdjective}</li>
+                                        <li>{MaterialLabel}</li>
+                                        <li>{MaterialColor}</li>
+                                    </arguments>
+                                </match>
+                            </Operation>
 
                         </apply>
                     </Operation>

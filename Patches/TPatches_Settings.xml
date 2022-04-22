@@ -42,6 +42,19 @@
         </arguments>
     </Operation>
 
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_ModPatch</patchName>
+        <arguments>
+            <li>TPatchesDRR</li>
+            <li>Core</li>
+            <li>Fixes</li>
+            <li>Duplicate Race Remover</li>
+            <li>Removes duplicate races and everything depending on them like their factions.</li>
+            <li>Only removes very obvious duplicates, for example if Rim-Effect: Asari And Reapers is loaded, the duplicate Asari race from RimEffect Races will be removed. I won't touch any races that are just similar.</li>
+            <li>false</li>
+        </arguments>
+    </Operation>
+
     <!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
@@ -377,6 +390,19 @@
             <li>Meditation category</li>
             <li>Should meditation-related items be separated in its own category?</li>
             <li>DZ_Meditation</li>
+            <li>true</li>
+            <li>DocWorld_DesignationCategories</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_ModPatchGrouped</patchName>
+        <arguments>
+            <li>DocWorld_DesignationCategoriesTurrets</li>
+            <li>Core</li>
+            <li>Menus</li>
+            <li>Turrets category</li>
+            <li>Should turrets be separated in their own category?</li>
+            <li>DZ_Turrets</li>
             <li>true</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
