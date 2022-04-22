@@ -3,7 +3,7 @@
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatches_StuffableFloorsStone</key>
-        <defaultValue>true</defaultValue>
+        <defaultValue>false</defaultValue>
         <caseTrue>
 
             <Operation Class="XmlExtensions.ForEachDescendant">

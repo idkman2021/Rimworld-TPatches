@@ -118,7 +118,7 @@
             <li>Stuffable stone floors</li>
             <li>Adds missing stone floors for all modded stone blocks.</li>
             <li>a semi-automatic patch, I have to manually enter the floors.</li>
-            <li>true</li>
+            <li>false</li>
         </arguments>
     </Operation>
     <!--
