@@ -8,6 +8,18 @@
         <defaultValue>false</defaultValue>
         <caseTrue>
 
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.Log">
+                        <text>Stopwatch: DMR</text>
+                    </Operation>
+                    <Operation Class="XmlExtensions.StopwatchStart"/>
+                </caseTrue>
+            </Operation>
+
             <!-- Expanded Materials - Plastics / Materials+ -->
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
@@ -89,6 +101,15 @@
                     <li>VMEu_Concrete</li>
                     <li>Stuff_ConcreteAM</li>
                 </arguments>
+            </Operation>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.StopwatchStop"/>
+                </caseTrue>
             </Operation>
 
 

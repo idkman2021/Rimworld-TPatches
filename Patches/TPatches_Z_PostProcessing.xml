@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.Log">
+                <text>Stopwatch: settings menu postprocessing</text>
+            </Operation>
+            <Operation Class="XmlExtensions.StopwatchStart" />
+        </caseTrue>
+    </Operation>
+
     <!-- "core" is not displayed as a mod -->
     <!-- remove gap for mod name -->
     <Operation Class="PatchOperationReplace">
@@ -24,4 +36,13 @@
         <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li/settings/li[(tag="disabled") and (not(settings/li/caseTrue/li/tag="DisabledCheck"))]</xpath>
     </Operation>
 
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.StopwatchStop" />
+        </caseTrue>
+    </Operation>
+    
 </Patch>

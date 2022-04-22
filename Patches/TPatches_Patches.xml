@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.Log">
+                <text>Stopwatch: patches</text>
+            </Operation>
+            <Operation Class="XmlExtensions.StopwatchStart" />
+        </caseTrue>
+    </Operation>
     <!--
     <Operation Class="XmlExtensions.OptionalPatch">
     <modId>carnap2.TPatches</modId>
@@ -418,4 +429,12 @@
     </Operation>
 
     -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.StopwatchStop" />
+        </caseTrue>
+    </Operation>
 </Patch>

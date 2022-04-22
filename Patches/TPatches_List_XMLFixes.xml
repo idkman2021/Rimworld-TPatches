@@ -6,6 +6,18 @@
         <defaultValue>false</defaultValue>
         <caseTrue>
 
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.Log">
+                        <text>Stopwatch: XML fixes</text>
+                    </Operation>
+                    <Operation Class="XmlExtensions.StopwatchStart" />
+                </caseTrue>
+            </Operation>
+
             <!-- Probably niilos qol and stuffable turrets adding the stupid stuffable count to the turrets without a conditional -->
             <Operation Class="PatchOperationRemove">
                 <success>Always</success>
@@ -117,6 +129,15 @@
                 </match>
             </Operation>
 
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.StopwatchStop" />
+                </caseTrue>
+            </Operation>
 
         </caseTrue>
         <caseFalse></caseFalse>

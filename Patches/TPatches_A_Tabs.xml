@@ -10,6 +10,17 @@
         </arguments>
     </Operation>
     -->
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.Log">
+                <text>Stopwatch: settings menu tabs</text>
+            </Operation>
+            <Operation Class="XmlExtensions.StopwatchStart" />
+        </caseTrue>
+    </Operation>
     
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_Tab</patchName>
@@ -45,6 +56,15 @@
             <li>Fun</li>
             <li>Addons or changes that might be overpowered or not lore-friendly.</li>
         </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.StopwatchStop" />
+        </caseTrue>
     </Operation>
 
 </Patch>

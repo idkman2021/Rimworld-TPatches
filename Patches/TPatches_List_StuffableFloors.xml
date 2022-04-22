@@ -6,6 +6,18 @@
         <defaultValue>false</defaultValue>
         <caseTrue>
 
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.Log">
+                        <text>Stopwatch: Stuffable stone floors</text>
+                    </Operation>
+                    <Operation Class="XmlExtensions.StopwatchStart"/>
+                </caseTrue>
+            </Operation>
+
             <Operation Class="XmlExtensions.ForEachDescendant">
                 <xpathParent>/Defs/ThingDef[@Name="StoneBlocksBase"]</xpathParent>
                 <concreteOnly>true</concreteOnly>
@@ -942,6 +954,14 @@
                 </apply>
             </Operation>
 
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.StopwatchStop"/>
+                </caseTrue>
+            </Operation>
 
         </caseTrue>
         <caseFalse></caseFalse>

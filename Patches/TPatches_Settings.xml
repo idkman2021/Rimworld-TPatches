@@ -15,6 +15,18 @@
     </Operation>
     -->
 
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.Log">
+                <text>Stopwatch: settings menu</text>
+            </Operation>
+            <Operation Class="XmlExtensions.StopwatchStart" />
+        </caseTrue>
+    </Operation>
+
     <!-- Fixes -->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
@@ -568,6 +580,15 @@
     </Operation>
 
 
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.StopwatchStop" />
+        </caseTrue>
+    </Operation>
+    
     <!-- 
     <Operation Class="XmlExtensions.ApplyPatch">
     <patchName>TP_ModPatch</patchName>
