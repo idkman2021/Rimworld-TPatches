@@ -25,7 +25,7 @@
                         <match Class="PatchOperationReplace">
                             <xpath>/Defs/ThingDef[
                                 @Name="RimlaserTuretBase"
-                                ]</xpath>
+                                ]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Turrets</designationCategory>
                             </value>
@@ -39,7 +39,7 @@
                         <match Class="PatchOperationReplace">
                             <xpath>/Defs/ThingDef[
                                 @Name="BasedWeapon"
-                                ]</xpath>
+                                ]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Turrets</designationCategory>
                             </value>

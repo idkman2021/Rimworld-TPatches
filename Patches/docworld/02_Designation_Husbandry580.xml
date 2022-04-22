@@ -395,7 +395,7 @@
                                 <li Class="PatchOperationReplace">
                                     <xpath>/Defs/ThingDef[defName="Spacer_SunLamp"]/designationCategory</xpath>
                                     <value>
-                                        <designationCategory>DZ_Husbandry</designationCategory>
+                                        <designationCategory Inherit="False">DZ_Husbandry</designationCategory>
                                     </value>
                                 </li>
                                 <!--Lighting-->

@@ -265,6 +265,7 @@
                                 defName="PensSign" or
                                 defName="PensSignTwo" or
                                 defName="PensShelf" or
+                                defName="PensFlowerBin" or
                                 defName="PensTrashCan"
                                 ]</xpath>
                             <value>
@@ -435,6 +436,27 @@
                             </operations>
                         </match>
                     </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Medieval Overhaul - Banners</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <operations>
+
+                                <li Class="PatchOperationReplace">
+                                    <xpath>Defs/ThingDef[@Name="DankPyon_BannerBase"]/designationCategory</xpath>
+                                    <value>
+                                        <designationCategory>DZ_Decor</designationCategory>
+                                    </value>
+                                </li>
+
+
+
+                            </operations>
+                        </match>
+                    </Operation>
+
 
 
                     <!-- patches go above this -->
