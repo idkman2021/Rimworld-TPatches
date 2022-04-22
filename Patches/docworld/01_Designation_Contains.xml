@@ -279,7 +279,7 @@
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xpath>Defs/ThingDef[
                                     (
-                                    designationCategory and 
+                                    designationCategory[normalize-space()] and 
                                     (thingClass="Building_TurretGun" or statBases/ShootingAccuracyTurret or building/buildingTags/li="Artillery" or building/turretBurstWarmupTime or building/turretBurstCooldownTime or building/turretGunDef or building/turretTopDrawSize)
                                     ) 
                                     or @ParentName="BaseArtilleryBuilding" or @ParentName="AutocannonTurret"

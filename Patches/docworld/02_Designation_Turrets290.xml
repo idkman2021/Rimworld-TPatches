@@ -18,6 +18,34 @@
                 <caseTrue>
 
 
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Rimlaser</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[
+                                @Name="RimlaserTuretBase"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Turrets</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Dubs Rimatomics</li>
+                        </mods>
+                        <match Class="PatchOperationReplace">
+                            <xpath>/Defs/ThingDef[
+                                @Name="BasedWeapon"
+                                ]</xpath>
+                            <value>
+                                <designationCategory>DZ_Turrets</designationCategory>
+                            </value>
+                        </match>
+                    </Operation>
+
 
                     <!-- patches go above -->
                 </caseTrue>
