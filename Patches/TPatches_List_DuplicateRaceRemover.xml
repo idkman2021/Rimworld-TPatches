@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+    <!--
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesDRR</key>
@@ -70,4 +71,5 @@
         </caseTrue>
         <caseFalse></caseFalse>
     </Operation>
+-->
 </Patch>
