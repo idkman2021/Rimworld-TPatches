@@ -11,11 +11,25 @@
         <defaultValue>true</defaultValue>
         <caseTrue>
 
+
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesBeds</key>
                 <defaultValue>true</defaultValue>
                 <caseTrue>
+
+
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.Log">
+                                <text>Stopwatch: Docworld - beds</text>
+                            </Operation>
+                            <Operation Class="XmlExtensions.StopwatchStart" />
+                        </caseTrue>
+                    </Operation>
 
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
@@ -444,6 +458,14 @@
                     </Operation>
 
                     <!-- patches go above this -->
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.StopwatchStop" />
+                        </caseTrue>
+                    </Operation>
                 </caseTrue>
                 <caseFalse />
             </Operation>

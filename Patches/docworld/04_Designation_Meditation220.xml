@@ -18,17 +18,30 @@
                 <key>DocWorld_DesignationCategoriesMeditation</key>
                 <defaultValue>true</defaultValue>
                 <caseTrue>
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.Log">
+                                <text>Stopwatch: Docworld - meditation</text>
+                            </Operation>
+                            <Operation Class="XmlExtensions.StopwatchStart" />
+                        </caseTrue>
+                    </Operation>
 
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="ludeon.rimworld.royalty">
-                        <xpath>/Defs/ThingDef[
+                        <xpath>
+                            /Defs/ThingDef[
                     @Name="NatureShrineBase" or 
                     defName="Throne" or 
-                    defName="GrandThrone" or 
-                    <!--defName="AnimusStone" or -->
-                    defName="Grave" or 
+                    defName="GrandThrone" or
+                            <!--defName="AnimusStone" or -->
+                            defName="Grave" or 
                     defName="Sarcophagus"
-                    ]</xpath>
+                    ]
+                        </xpath>
                         <value>
                             <designationCategory>DZ_Meditation</designationCategory>
                         </value>
@@ -74,6 +87,15 @@
                                 <designationCategory>DZ_Meditation</designationCategory>
                             </value>
                         </match>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.StopwatchStop" />
+                        </caseTrue>
                     </Operation>
 
 

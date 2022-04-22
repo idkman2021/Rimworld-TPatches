@@ -10,6 +10,17 @@
       <key>DocWorld_DesignationCategories</key>
       <defaultValue>true</defaultValue>
       <caseTrue>
+         <Operation Class="XmlExtensions.OptionalPatch">
+            <modId>carnap2.TPatches</modId>
+            <key>TPatchesLogging</key>
+            <defaultValue>true</defaultValue>
+            <caseTrue>
+               <Operation Class="XmlExtensions.Log">
+                  <text>Stopwatch: Docworld - category removal</text>
+               </Operation>
+               <Operation Class="XmlExtensions.StopwatchStart" />
+            </caseTrue>
+         </Operation>
 
          <!--==========
     VANILLA
@@ -602,6 +613,16 @@
             <match Class="PatchOperationRemove">
                <xpath>/Defs/DesignationCategoryDef[defName="OldStyleFurniture"]</xpath>
             </match>
+         </Operation>
+
+
+         <Operation Class="XmlExtensions.OptionalPatch">
+            <modId>carnap2.TPatches</modId>
+            <key>TPatchesLogging</key>
+            <defaultValue>true</defaultValue>
+            <caseTrue>
+               <Operation Class="XmlExtensions.StopwatchStop" />
+            </caseTrue>
          </Operation>
 
       </caseTrue>

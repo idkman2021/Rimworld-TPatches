@@ -16,6 +16,18 @@
                 <defaultValue>false</defaultValue>
                 <caseTrue>
 
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.Log">
+                                <text>Stopwatch: Docworld - spots</text>
+                            </Operation>
+                            <Operation Class="XmlExtensions.StopwatchStart" />
+                        </caseTrue>
+                    </Operation>
+
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xpath>Defs/ThingDef[designationCategory][
                             contains(label, "spot") or 
@@ -138,6 +150,17 @@
 
 
                     <!-- patches go above this -->
+
+
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.StopwatchStop" />
+                        </caseTrue>
+                    </Operation>
+
                 </caseTrue>
                 <caseFalse />
             </Operation>

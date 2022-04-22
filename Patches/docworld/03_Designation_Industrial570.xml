@@ -17,6 +17,18 @@
                 <defaultValue>true</defaultValue>
                 <caseTrue>
 
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.Log">
+                                <text>Stopwatch: Docworld - industrial</text>
+                            </Operation>
+                            <Operation Class="XmlExtensions.StopwatchStart" />
+                        </caseTrue>
+                    </Operation>
+
                     <Operation Class="XmlExtensions.FindMod">
                         <mods>
                             <li>Industrial Rollers</li>
@@ -30,7 +42,7 @@
 
                             <Operation Class="PatchOperationAdd">
                                 <success>Always</success>
-                                        <xpath>/Defs[not(DesignationCategoryDef/defName="DZ_Industrial")]</xpath>
+                                <xpath>/Defs[not(DesignationCategoryDef/defName="DZ_Industrial")]</xpath>
                                 <value>
 
                                     <DesignationCategoryDef>
@@ -88,6 +100,16 @@
                         </caseTrue>
                     </Operation>
 
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.StopwatchStop" />
+                        </caseTrue>
+                    </Operation>
+
+                    
                 </caseTrue>
                 <caseFalse />
             </Operation>

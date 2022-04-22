@@ -17,6 +17,19 @@
                 <caseTrue>
 
 
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.Log">
+                                <text>Stopwatch: Docworld - lighting</text>
+                            </Operation>
+                            <Operation Class="XmlExtensions.StopwatchStart" />
+                        </caseTrue>
+                    </Operation>
+
+
                     <!-- replace -->
                     <Operation Class="PatchOperationReplace">
                         <xpath>Defs/ThingDef[ @Name="LampBase"
@@ -894,7 +907,7 @@
                         </match>
                     </Operation>
 
-                    
+
                     <Operation Class="PatchOperationFindMod">
                         <mods>
                             <li>The Mantodean insectoid race</li>
@@ -915,6 +928,16 @@
                     </Operation>
 
                     <!-- patches go above this -->
+
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.StopwatchStop" />
+                        </caseTrue>
+                    </Operation>
+
                 </caseTrue>
                 <caseFalse />
             </Operation>

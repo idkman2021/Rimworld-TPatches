@@ -55,6 +55,13 @@
 
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
+        <key>DocWorld_DesignationCategoriesTurrets</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue></caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
         <key>DocWorld_DesignationCategoriesIndustrial</key>
         <defaultValue>true</defaultValue>
         <caseTrue></caseTrue>

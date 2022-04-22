@@ -9,6 +9,40 @@
 
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.Log">
+                        <text>Stopwatch: Docworld - contains</text>
+                    </Operation>
+                    <Operation Class="XmlExtensions.StopwatchStart" />
+                </caseTrue>
+            </Operation>
+
+            <Operation Class="XmlExtensions.CreateDocument">
+                <docName>Designations</docName>
+                <xpath>Defs/ThingDef[designationCategory[normalize-space()] or 
+                    @ParentName="LampBase" or 
+                    @ParentName="StandingLampBase" or
+                    @ParentName="FurnitureBase" or
+                    @ParentName="FurnitureWithQualityBase" or
+                    @ParentName="ArtableFurnitureBase" or
+                    @ParentName="ArtableFurnitureRegardlessOfQualityBase" or
+                    @ParentName="TableBase" or
+                    @ParentName="BaseArtilleryBuilding" or 
+                    @ParentName="AutocannonTurret" or 
+                    @ParentName="NatureShrineBase" or 
+                    @ParentName="IdeoBuildingBase" or
+                    @ParentName="AltarBase" or
+                    @ParentName="IdeoBuildingConsumableBase" or
+                    @ParentName="IdeoBurnableBase" or
+                    @ParentName="IdeoSmokerBase"
+                    
+                    ]</xpath>
+            </Operation>
+
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesCulinary</key>
                 <defaultValue>true</defaultValue>
                 <caseTrue>
@@ -34,7 +68,8 @@
 
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>Defs/ThingDef[designationCategory][
+                        <xmlDoc>Designations</xmlDoc>
+                        <xpath>Designations/ThingDef[designationCategory][
                             contains(label, "stove") or 
                             contains(label, "Stove") or 
                             contains(@Name, "stove") or 
@@ -88,7 +123,8 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>Defs/ThingDef[designationCategory or @ParentName="LampBase" or @ParentName="StandingLampBase"][
+                        <xmlDoc>Designations</xmlDoc>
+                        <xpath>Designations/ThingDef[designationCategory or @ParentName="LampBase" or @ParentName="StandingLampBase"][
                         contains(label, "lamp") or 
                         contains(label, "torch") or 
                         contains(label, "Lamp") or 
@@ -134,47 +170,27 @@
 
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <xmlDoc>Designations</xmlDoc>
                         <xpath>
-                            Defs/ThingDef[
-                            (
-                                (
-                                    designationCategory or 
-                                    @ParentName="FurnitureBase" or
-                                    @ParentName="FurnitureWithQualityBase" or
-                                    @ParentName="ArtableFurnitureBase" or
-                                    @ParentName="ArtableFurnitureRegardlessOfQualityBase"
-                                ) 
-                                and 
-                                (
-                                    comps/li/compClass="CompAssignableToPawn_Bed" or 
-                                    thingClass="Building_Bed" or 
-                                    building/buildingTags/li="Bed"
-                                )
-                            ) or
-                            @ParentName="BedBase" or
-                            @ParentName="BedWithQualityBase" or 
-                            @ParentName="ArtableBedBase"
-                            ]
-                            <!--
-                            [
-                            contains(label, "sleep") or 
-                            contains(label, "Sleep") or 
-                            contains(@Name, "sleep") or 
-                            contains(@Name, "Sleep") or
-                            contains(label, "bed") or 
-                            contains(label, "Bed") or 
-                            contains(@Name, "bed") or 
-                            contains(@Name, "Bed")]
-                            -->
-                        </xpath>
-                        <value>
-                            <designationCategory Inherit="False">DZ_Beds</designationCategory>
-                        </value>
-                    </Operation>
-                    
+                            Designations/ThingDef[designationCategory or 
+                            @ParentName="FurnitureBase" or
+                            @ParentName="FurnitureWithQualityBase" or
+                            @ParentName="ArtableFurnitureBase" or
+                            @ParentName="ArtableFurnitureRegardlessOfQualityBase"]
+                                    
+                            [comps/li/compClass="CompAssignableToPawn_Bed" or 
+                            thingClass="Building_Bed" or 
+                            building/buildingTags/li="Bed"]
 
-                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>Defs/ThingDef[
+                            |
+
+                            Designations/ThingDef[@ParentName="BedBase" or
+                            @ParentName="BedWithQualityBase" or 
+                            @ParentName="ArtableBedBase"]
+
+                            |
+
+                            Designations/ThingDef[
                             designationCategory or 
                             @ParentName="FurnitureBase" or
                             @ParentName="FurnitureWithQualityBase" or
@@ -197,13 +213,25 @@
                             contains(label, "bed") or 
                             contains(label, "Bed") or 
                             contains(@Name, "bed") or 
-                            contains(@Name, "Bed")]</xpath>
+                            contains(@Name, "Bed")]
+                            <!--
+                            [
+                            contains(label, "sleep") or 
+                            contains(label, "Sleep") or 
+                            contains(@Name, "sleep") or 
+                            contains(@Name, "Sleep") or
+                            contains(label, "bed") or 
+                            contains(label, "Bed") or 
+                            contains(@Name, "bed") or 
+                            contains(@Name, "Bed")]
+                            -->
+                        </xpath>
                         <value>
                             <designationCategory Inherit="False">DZ_Beds</designationCategory>
                         </value>
                     </Operation>
 
-                    
+
                 </caseTrue>
             </Operation>
 
@@ -235,7 +263,8 @@
 
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>Defs/ThingDef[
+                        <xmlDoc>Designations</xmlDoc>
+                        <xpath>Designations/ThingDef[
                                     designationCategory or 
                                     @ParentName="FurnitureBase" or
                                     @ParentName="FurnitureWithQualityBase" or
@@ -277,9 +306,10 @@
 
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>Defs/ThingDef[
+                        <xmlDoc>Designations</xmlDoc>
+                        <xpath>Designations/ThingDef[
                                     (
-                                    designationCategory[normalize-space()] and 
+                                    designationCategory and 
                                     (thingClass="Building_TurretGun" or statBases/ShootingAccuracyTurret or building/buildingTags/li="Artillery" or building/turretBurstWarmupTime or building/turretBurstCooldownTime or building/turretGunDef or building/turretTopDrawSize)
                                     ) 
                                     or @ParentName="BaseArtilleryBuilding" or @ParentName="AutocannonTurret"
@@ -320,7 +350,8 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>Defs/ThingDef[designationCategory or @ParentName="LampBase"][
+                        <xmlDoc>Designations</xmlDoc>
+                        <xpath>Designations/ThingDef[designationCategory or @ParentName="LampBase"][
                             contains(label, "hydroponic") or 
                             contains(label, "sun") or 
                             contains(label, "Hydroponic") or 
@@ -369,8 +400,10 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                        <success>Always</success>
+                        <xmlDoc>Designations</xmlDoc>
                         <xpath>
-                            Defs/ThingDef[designationCategory or @ParentName="LampBase"][
+                            Designations/ThingDef[designationCategory or @ParentName="LampBase"][
                             contains(label, "hospital") or 
                             contains(label, "Hospital") or 
                             contains(@Name, "hospital") or 
@@ -454,7 +487,8 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>Defs/ThingDef[
+                        <xmlDoc>Designations</xmlDoc>
+                        <xpath>Designations/ThingDef[
                             designationCategory or 
                             @ParentName="FurnitureBase" or
                             @ParentName="FurnitureWithQualityBase" or
@@ -502,7 +536,8 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>Defs/ThingDef[
+                        <xmlDoc>Designations</xmlDoc>
+                        <xpath>Designations/ThingDef[
                             designationCategory or 
                             @ParentName="IdeoBuildingBase" or
                             @ParentName="AltarBase" or
@@ -522,22 +557,36 @@
                         </value>
                     </Operation>
 
-                    <Operation Class="PatchOperationFindMod">
+                    <Operation Class="XmlExtensions.FindMod">
                         <mods>
                             <li>Save Our Ship 2</li>
                         </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="ShipArchotechSpore"]/designationCategory
-                        </xpath>
-                            <value>
-                                <designationCategory>Ship</designationCategory>
-                            </value>
-                        </match>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.PatchOperationReplace">
+                                <xmlDoc>Designations</xmlDoc>
+                                <xpath>Designations/ThingDef[defName="ShipArchotechSpore"]/designationCategory</xpath>
+                                <value>
+                                    <designationCategory>Ship</designationCategory>
+                                </value>
+                            </Operation>
+                        </caseTrue>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.MergeDocument">
+                        <docName>Designations</docName>
                     </Operation>
 
                 </caseTrue>
             </Operation>
 
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatchesLogging</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.StopwatchStop" />
+                </caseTrue>
+            </Operation>
 
         </caseTrue>
         <caseFalse />

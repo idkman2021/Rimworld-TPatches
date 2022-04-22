@@ -17,6 +17,18 @@
                 <defaultValue>false</defaultValue>
                 <caseTrue>
 
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.Log">
+                                <text>Stopwatch: Docworld - storage</text>
+                            </Operation>
+                            <Operation Class="XmlExtensions.StopwatchStart" />
+                        </caseTrue>
+                    </Operation>
+
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xpath>/Defs/ThingDef[
                     defName="Shelf"
@@ -428,7 +440,8 @@
                             <designationCategory>DZ_Storage</designationCategory>
                         </value>
                     </Operation>
-                    <Operation Class="PatchOperationRemove"><success>Always</success>
+                    <Operation Class="PatchOperationRemove">
+                        <success>Always</success>
                         <xpath>Defs/DesignationCategoryDef[defName="FurnitureStorage"]</xpath>
                     </Operation>
 
@@ -480,6 +493,15 @@
                         </caseTrue>
                     </Operation>
 
+
+                    <Operation Class="XmlExtensions.OptionalPatch">
+                        <modId>carnap2.TPatches</modId>
+                        <key>TPatchesLogging</key>
+                        <defaultValue>true</defaultValue>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.StopwatchStop" />
+                        </caseTrue>
+                    </Operation>
 
                 </caseTrue>
                 <caseFalse></caseFalse>

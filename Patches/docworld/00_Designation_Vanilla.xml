@@ -31,6 +31,19 @@ Ship        50  | Temperature 25  |
     <defaultValue>true</defaultValue>
     <caseTrue>
 
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+          <Operation Class="XmlExtensions.Log">
+            <text>Stopwatch: Docworld - vanilla</text>
+          </Operation>
+          <Operation Class="XmlExtensions.StopwatchStart" />
+        </caseTrue>
+      </Operation>
+
+
       <Operation Class="PatchOperationAdd">
         <xpath>/Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
         <value>
@@ -864,7 +877,7 @@ Ship        50  | Temperature 25  |
         </match>
       </Operation>
 
-      
+
       <Operation Class="PatchOperationFindMod">
         <mods>
           <li>[O21] Star Trek [DevBuild]</li>
@@ -918,8 +931,14 @@ Ship        50  | Temperature 25  |
       </Operation>
 
 
-
-
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+          <Operation Class="XmlExtensions.StopwatchStop" />
+        </caseTrue>
+      </Operation>
 
     </caseTrue>
     <caseFalse />

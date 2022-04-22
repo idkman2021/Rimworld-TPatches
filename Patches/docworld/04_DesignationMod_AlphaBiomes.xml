@@ -5,6 +5,19 @@
 -->
 
 <Patch>
+    
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>true</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.Log">
+                <text>Stopwatch: Docworld - mods</text>
+            </Operation>
+            <Operation Class="XmlExtensions.StopwatchStart" />
+        </caseTrue>
+    </Operation>
+
     <Operation Class="XmlExtensions.FindMod">
         <mods>
             <li>Alpha Biomes</li>
