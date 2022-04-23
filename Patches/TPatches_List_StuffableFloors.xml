@@ -18,6 +18,63 @@
                 </caseTrue>
             </Operation>
 
+            <Operation Class="XmlExtensions.CreateDocument">
+                <docName>StoneFloors</docName>
+                <xpath>Defs/TerrainDef[
+                @ParentName="TileStoneBase" or
+                @ParentName="FlagstoneBase" or
+                @ParentName="FineTileStoneBase" or
+                @ParentName="MorbidStoneTile" or
+                @ParentName="SpikecoreStoneTile" or
+                @ParentName="TotemicStoneTile" or
+                @ParentName="CobblestoneBase" or
+                @ParentName="PolishedStoneFloorBase" or
+                @ParentName="StoneSlabsBase" or
+                @ParentName="StoneBridgeBase" or
+                @ParentName="ATK_SlabStoneBase" or
+                @ParentName="ATK_PebblesBase" or
+                @ParentName="ATK_DecoratedTileStoneBase" or
+                @ParentName="TFloorBaseStoneSlabs" or
+                @ParentName="TFloorBaseStoneStaggered" or
+                @ParentName="TFloorBaseStoneRough" or
+                @ParentName="TFloorBaseStoneAlternating" or
+                @ParentName="TFloorBaseStoneChequeredSingle" or
+                @ParentName="TFloorBaseStoneHerringbone" or
+                @ParentName="TFloorBaseStoneHex" or
+                @ParentName="TFloorBaseStoneDigital" or
+                @ParentName="TFloorBaseStoneMosaic" or
+                @ParentName="TFloorBaseStoneRandom" or
+                @ParentName="TFloorBaseStoneDiamond" or
+                @ParentName="TFloorBaseStoneArabesque" or
+                @ParentName="FloorBaseEvtStoneA" or
+                @ParentName="FloorBaseEvtStoneB" or
+                @ParentName="FloorBaseEvtStoneC" or
+                @ParentName="FloorBaseEvtStoneD" or
+                @ParentName="FloorBaseEvtStoneE" or
+                @ParentName="FloorBaseEvtStoneF" or
+                @ParentName="FloorBaseEvtStoneG" or
+                @ParentName="FloorBaseEvtStoneH" or
+                @ParentName="WDRoughStoneTileBase" or
+                @ParentName="WDStoneTileBase" or
+                @ParentName="WDCheckStoneTileBase" or
+                @ParentName="WDCheckStoneFloorBase" or
+                @ParentName="WDMosaicStoneFloorBase" or
+                @ParentName="WDPolishedStoneFloorBase" or
+                @ParentName="WDStonePlateFloorBase" or
+                @ParentName="DBHMosaicBase" or
+                @ParentName="VFEC_MosaicsStoneBase" or
+                @ParentName="VME_CorporateFineStoneTiles" or
+                @ParentName="VME_ShintaoFineStoneTiles" or
+                @ParentName="AM_JewishTileStoneBase" or
+                @ParentName="AM_JewishFineStoneTiles" or
+                @ParentName="AM_KemeticTileStoneBase" or
+                @ParentName="AM_KemeticFineStoneTiles" or
+                @ParentName="AM_SteampunkTileStoneBase" or
+                @ParentName="JazzyStoneBase" or
+                @ParentName="AA_OcularStone"
+                ]</xpath>
+            </Operation>
+
             <Operation Class="XmlExtensions.ForEachDescendant">
                 <xpathParent>/Defs/ThingDef[@Name="StoneBlocksBase"]</xpathParent>
                 <concreteOnly>true</concreteOnly>
@@ -246,23 +303,6 @@
                                         <li>ATK_PebblesBase</li>
                                         <li>pebbles</li>
                                         <li>2</li>
-                                        <li>{MaterialDef}</li>
-                                        <li>{MaterialDefName}</li>
-                                        <li>{MaterialAdjective}</li>
-                                        <li>{MaterialLabel}</li>
-                                        <li>{MaterialColor}</li>
-                                    </arguments>
-                                </match>
-                            </Operation>
-
-                            <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="ATK_DecoratedTileStoneBase"]</xpath>
-                                <match Class="XmlExtensions.ApplyPatch">
-                                    <patchName>TPatches_AddFloorsAbstract</patchName>
-                                    <arguments>
-                                        <li>ATK_DecoratedTileStoneBase</li>
-                                        <li>decorated tile</li>
-                                        <li>20</li>
                                         <li>{MaterialDef}</li>
                                         <li>{MaterialDefName}</li>
                                         <li>{MaterialAdjective}</li>
@@ -952,6 +992,10 @@
 
 
                 </apply>
+            </Operation>
+
+            <Operation Class="XmlExtensions.MergeDocument">
+                <docName>StoneFloors</docName>
             </Operation>
 
             <Operation Class="XmlExtensions.OptionalPatch">

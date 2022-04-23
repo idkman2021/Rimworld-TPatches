@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Patch>
-    
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.CreateDocument">
+                <docName>Log</docName>
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
+            </Operation>
+            <Operation Class="XmlExtensions.CreateDocument">
+                <docName>Info</docName>
+                <xpath>Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Info"]/settings</xpath>
+            </Operation>
+        </caseTrue>
+    </Operation>
+
     <!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_Tab</patchName>
@@ -21,7 +36,7 @@
             <Operation Class="XmlExtensions.StopwatchStart" />
         </caseTrue>
     </Operation>
-    
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_Tab</patchName>
         <arguments>
@@ -43,7 +58,7 @@
             <li>Nerfs for items that are potentially overpowered.</li>
         </arguments>
     </Operation>
-<Operation Class="XmlExtensions.ApplyPatch">
+    <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_Tab</patchName>
         <arguments>
             <li>Menus</li>
@@ -55,6 +70,13 @@
         <arguments>
             <li>Fun</li>
             <li>Addons or changes that might be overpowered or not lore-friendly.</li>
+        </arguments>
+    </Operation>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_Tab</patchName>
+        <arguments>
+            <li>WIP</li>
+            <li>Patches in development.</li>
         </arguments>
     </Operation>
 

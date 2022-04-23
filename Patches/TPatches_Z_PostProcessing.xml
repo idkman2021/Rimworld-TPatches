@@ -13,6 +13,34 @@
         </caseTrue>
     </Operation>
 
+    <Operation Class="XmlExtensions.MergeDocument">
+        <docName>Fixes</docName>
+    </Operation>
+    <Operation Class="XmlExtensions.MergeDocument">
+        <docName>Tweaks</docName>
+    </Operation>
+    <Operation Class="XmlExtensions.MergeDocument">
+        <docName>Balancing</docName>
+    </Operation>
+    <Operation Class="XmlExtensions.MergeDocument">
+        <docName>Menus</docName>
+    </Operation>
+    <Operation Class="XmlExtensions.MergeDocument">
+        <docName>Fun</docName>
+    </Operation>
+    <Operation Class="XmlExtensions.MergeDocument">
+        <docName>WIP</docName>
+    </Operation>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.MergeDocument">
+                <docName>Log</docName>
+            </Operation>
+        </caseTrue>
+    </Operation>
     <!-- "core" is not displayed as a mod -->
     <!-- remove gap for mod name -->
     <Operation Class="PatchOperationReplace">

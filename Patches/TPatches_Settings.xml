@@ -46,9 +46,9 @@
         <arguments>
             <li>TPatchesDMR</li>
             <li>Core</li>
-            <li>Fixes</li>
-            <li>Duplicate Material Remover</li>
-            <li>Removes duplicate materials and patches everything to use new materials. This patch is currently being tested because it might affect balancing. Supports Rimfeller, Expanded Materials, materials+.</li>
+            <li>WIP</li>
+            <li>Duplicate Resource Remover</li>
+            <li>Removes duplicate resources and patches everything to use new resources. This patch is currently being tested because it might affect balancing. Supports Rimfeller, Expanded Materials, materials+.</li>
             <li>this xpath contains a manually collected list of rules for removing materials when appropriate mods are loaded. All recipes, plants, ore veins, and buildings are patched to use the alternative material instead.</li>
             <li>false</li>
         </arguments>
