@@ -10,7 +10,7 @@
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>TPatchesLogging</key>
-                <defaultValue>true</defaultValue>
+                <defaultValue>false</defaultValue>
                 <caseTrue>
                     <Operation Class="XmlExtensions.Log">
                         <text>Stopwatch: Docworld - contains</text>
@@ -582,7 +582,7 @@
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>TPatchesLogging</key>
-                <defaultValue>true</defaultValue>
+                <defaultValue>false</defaultValue>
                 <caseTrue>
                     <Operation Class="XmlExtensions.StopwatchStop" />
                 </caseTrue>
