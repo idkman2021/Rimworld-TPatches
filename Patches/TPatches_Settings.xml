@@ -18,7 +18,7 @@
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesLogging</key>
-        <defaultValue>true</defaultValue>
+        <defaultValue>false</defaultValue>
         <caseTrue>
             <Operation Class="XmlExtensions.Log">
                 <text>Stopwatch: settings menu</text>
@@ -130,7 +130,7 @@
             <li>Stuffable stone floors</li>
             <li>Adds missing stone floors for all modded stone blocks.</li>
             <li>a semi-automatic patch, I have to manually enter the floors.</li>
-            <li>false</li>
+            <li>true</li>
         </arguments>
     </Operation>
     <!--
@@ -583,7 +583,7 @@
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesLogging</key>
-        <defaultValue>true</defaultValue>
+        <defaultValue>false</defaultValue>
         <caseTrue>
             <Operation Class="XmlExtensions.StopwatchStop" />
         </caseTrue>
