@@ -17,42 +17,38 @@
         <apply>
 
             <!-- checks if floor made of this material already exists -->
-            <Operation Class="XmlExtensions.Conditional">
-                <xmlDoc>StoneFloors</xmlDoc>
-                <xpath>StoneFloors/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
 
                 <!-- if it doesn't, it creates the floor -->
-                <caseFalse>
-
-                    <Operation Class="XmlExtensions.PatchOperationAdd">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <xpath>StoneFloors</xpath>
-                        <value>
-                            <TerrainDef ParentName="{TerrainBase}">
-                                <defName>TPatches_{TerrainBase}{MaterialDefName}</defName>
-                                <label>{MaterialAdjective} {FloorName}</label>
-                                <color>{MaterialColor}</color>
-                                <costList>
-                                    <MaterialDefName>{FloorCost}</MaterialDefName>
-                                </costList>
-                            </TerrainDef>
-                        </value>
-                    </Operation>
-                    <Operation Class="XmlExtensions.PatchOperationSetName">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <xpath>StoneFloors/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/costList/MaterialDefName</xpath>
-                        <name>{MaterialDefName}</name>
-                    </Operation>
-                    <Operation Class="XmlExtensions.PatchOperationReplace">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <success>Always</success>
-                        <xpath>StoneFloors/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/label[text()="no_adjective {FloorName}"]</xpath>
-                        <value>
-                            <label>{MaterialLabel} {FloorName}</label>
-                        </value>
-                    </Operation>
-
-                </caseFalse>
+                <nomatch Class="PatchOperationSequence">
+                    <operations>
+                        <li Class="PatchOperationAdd">
+                            <xpath>Defs</xpath>
+                            <value>
+                                <TerrainDef ParentName="{TerrainBase}">
+                                    <defName>TPatches_{TerrainBase}{MaterialDefName}</defName>
+                                    <label>{MaterialAdjective} {FloorName}</label>
+                                    <color>{MaterialColor}</color>
+                                    <costList>
+                                        <MaterialDefName>{FloorCost}</MaterialDefName>
+                                    </costList>
+                                </TerrainDef>
+                            </value>
+                        </li>
+                        <li Class="PatchOperationSetName">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/costList/MaterialDefName</xpath>
+                            <name>{MaterialDefName}</name>
+                        </li>
+                        <li Class="PatchOperationReplace">
+                            <success>Always</success>
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/label[text()="no_adjective {FloorName}"]</xpath>
+                            <value>
+                                <label>{MaterialLabel} {FloorName}</label>
+                            </value>
+                        </li>
+                    </operations>
+                </nomatch>
             </Operation>
 
         </apply>
@@ -74,61 +70,55 @@
         <apply>
 
             <!-- checks if floor made of this material already exists -->
-            <Operation Class="XmlExtensions.Conditional">
-                <xmlDoc>StoneFloors</xmlDoc>
-                <xpath>StoneFloors/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
+            <Operation Class="PatchOperationConditional">
+                <xpath>/Defs/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
 
                 <!-- if it doesn't, it creates the floor -->
-                <caseFalse>
-                    <Operation Class="XmlExtensions.PatchOperationAdd">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <xpath>StoneFloors</xpath>
-                        <value>
-                            <TerrainDef>
-                                <defName>TPatches_{TerrainBase}{MaterialDefName}</defName>
-                            </TerrainDef>
-                        </value>
-                    </Operation>
-                    <Operation Class="XmlExtensions.PatchOperationCopy">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <xpath>StoneFloors/TerrainDef[@ParentName="{TerrainBase}"][1]/*[not(name()="defName")]</xpath>
-                        <paste>StoneFloors/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</paste>
-                    </Operation>
-                    <Operation Class="XmlExtensions.PatchOperationAttributeAdd">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <xpath>StoneFloors/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</xpath>
-                        <attribute>ParentName</attribute>
-                        <value>{TerrainBase}</value>
-                    </Operation>
+                <nomatch Class="PatchOperationSequence">
+                    <operations>
+                        <li Class="PatchOperationAdd">
+                            <xpath>Defs</xpath>
+                            <value>
+                                <TerrainDef>
+                                    <defName>TPatches_{TerrainBase}{MaterialDefName}</defName>
+                                </TerrainDef>
+                            </value>
+                        </li>
+                        <li Class="XmlExtensions.PatchOperationCopy">
+                            <xpath>/Defs/TerrainDef[@ParentName="{TerrainBase}"][1]/*[not(name()="defName")]</xpath>
+                            <paste>/Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</paste>
+                        </li>
+                        <li Class="PatchOperationAttributeAdd">
+                            <xpath>/Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</xpath>
+                            <attribute>ParentName</attribute>
+                            <value>{TerrainBase}</value>
+                        </li>
 
-                    <Operation Class="XmlExtensions.PatchOperationSetName">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <xpath>StoneFloors/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/costList/node()</xpath>
-                        <name>{MaterialDefName}</name>
-                    </Operation>
-                    <Operation Class="XmlExtensions.PatchOperationReplace">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <xpath>StoneFloors/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/label</xpath>
-                        <value>
-                            <label>{MaterialAdjective} {FloorName}</label>
-                        </value>
-                    </Operation>
-                    <Operation Class="XmlExtensions.PatchOperationReplace">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <success>Always</success>
-                        <xpath>StoneFloors/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/label[text()="no_adjective {FloorName}"]</xpath>
-                        <value>
-                            <label>{MaterialLabel} {FloorName}</label>
-                        </value>
-                    </Operation>
-                    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xmlDoc>StoneFloors</xmlDoc>
-                        <xpath>StoneFloors/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</xpath>
-                        <value>
-                            <color>{MaterialColor}</color>
-                        </value>
-                    </Operation>
-                </caseFalse>
+                        <li Class="PatchOperationSetName">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/costList/node()</xpath>
+                            <name>{MaterialDefName}</name>
+                        </li>
+                        <li Class="PatchOperationReplace">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/label</xpath>
+                            <value>
+                                <label>{MaterialAdjective} {FloorName}</label>
+                            </value>
+                        </li>
+                        <li Class="PatchOperationReplace">
+                            <success>Always</success>
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]/label[text()="no_adjective {FloorName}"]</xpath>
+                            <value>
+                                <label>{MaterialLabel} {FloorName}</label>
+                            </value>
+                        </li>
+                        <li Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</xpath>
+                            <value>
+                                <color>{MaterialColor}</color>
+                            </value>
+                        </li>
+                    </operations>
+                </nomatch>
             </Operation>
 
         </apply>

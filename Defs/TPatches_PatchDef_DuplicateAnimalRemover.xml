@@ -26,18 +26,22 @@
                         <defaultValue>false</defaultValue>
                         <caseTrue>
                             <!-- adds active defName to the log tab if it isn't there already -->
-                            <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefRemove}"]</xpath>
-                                <nomatch Class="PatchOperationAdd">
-                                    <order>Append</order>
-                                    <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
-                                    <value>
-                                        <li Class="XmlExtensions.Setting.Text">
-                                            <font>Tiny</font>
-                                            <text>animal: {DARAnimalDefRemove}</text>
-                                        </li>
-                                    </value>
-                                </nomatch>
+                            <Operation Class="XmlExtensions.Conditional">
+                                <xmlDoc>Log</xmlDoc>
+                                <xpath>Log/settings/li[text="animal: {DARAnimalDefRemove}"]</xpath>
+                                <caseFalse>
+                                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                                        <xmlDoc>Log</xmlDoc>
+                                        <order>Append</order>
+                                        <xpath>Log/li[label="Log"]/settings</xpath>
+                                        <value>
+                                            <li Class="XmlExtensions.Setting.Text">
+                                                <font>Tiny</font>
+                                                <text>animal: {DARAnimalDefRemove}</text>
+                                            </li>
+                                        </value>
+                                    </Operation>
+                                </caseFalse>
                             </Operation>
                         </caseTrue>
                     </li>
@@ -69,8 +73,9 @@
                         <defaultValue>false</defaultValue>
                         <caseTrue>
                             <!-- adds an entry to the info tab -->
-                            <Operation Class="PatchOperationAdd">
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Info"]/settings</xpath>
+                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                <xmlDoc>Info</xmlDoc>
+                                <xpath>Info/settings</xpath>
                                 <order>Append</order>
                                 <value>
                                     <li Class="XmlExtensions.Setting.SplitColumn">
@@ -103,60 +108,75 @@
                 <key>TPatchesLogging</key>
                 <defaultValue>false</defaultValue>
                 <caseTrue>
-                    <Operation Class="PatchOperationConditional">
+                    <Operation Class="XmlExtensions.Conditional">
                         <xpath>/Defs/ThingDef[defName="{DARAnimalDefKeep}"]</xpath>
-                        <match Class="PatchOperationConditional">
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefKeep}"]</xpath>
-                            <nomatch Class="PatchOperationAdd">
-                                <order>Append</order>
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
-                                <value>
-                                    <li Class="XmlExtensions.Setting.Text">
-                                        <font>Tiny</font>
-                                        <text>animal: {DARAnimalDefKeep}</text>
-                                    </li>
-                                </value>
-                            </nomatch>
-                        </match>
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.Conditional">
+                                <xmlDoc>Log</xmlDoc>
+                                <xpath>Log/settings/li[text="animal: {DARAnimalDefKeep}"]</xpath>
+                                <caseFalse>
+                                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                                        <order>Append</order>
+                                        <xpath>Log/settings</xpath>
+                                        <value>
+                                            <li Class="XmlExtensions.Setting.Text">
+                                                <font>Tiny</font>
+                                                <text>animal: {DARAnimalDefKeep}</text>
+                                            </li>
+                                        </value>
+                                    </Operation>
+                                </caseFalse>
+                            </Operation>
+                        </caseTrue>
                         <!-- adds inactive defNames to the log tab if they aren't there already -->
-                        <nomatch Class="PatchOperationConditional">
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefKeep}"]</xpath>
-                            <nomatch Class="PatchOperationAdd">
+                        <caseFalse>
+                            <Operation Class="XmlExtensions.Conditional">
+                                <xmlDoc>Log</xmlDoc>
+                                <xpath>Log/settings/li[text="animal: {DARAnimalDefKeep}"]</xpath>
+                                <caseFalse>
+                                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                                        <xmlDoc>Log</xmlDoc>
+                                        <order>Append</order>
+                                        <xpath>Log/settings</xpath>
+                                        <value>
+                                            <li Class="XmlExtensions.Setting.SetColor">
+                                                <color>(155,155,155)</color>
+                                            </li>
+                                            <li Class="XmlExtensions.Setting.Text">
+                                                <font>Tiny</font>
+                                                <text>animal: {DARAnimalDefKeep}</text>
+                                            </li>
+                                            <li Class="XmlExtensions.Setting.SetColor">
+                                                <color>(255,255,255)</color>
+                                            </li>
+                                        </value>
+                                    </Operation>
+                                </caseFalse>
+                            </Operation>
+                        </caseFalse>
+                    </Operation>
+                    <Operation Class="XmlExtensions.Conditional">
+                        <xmlDoc>Log</xmlDoc>
+                        <xpath>Log/settings/li[text="animal: {DARAnimalDefRemove}"]</xpath>
+                        <caseFalse>
+                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                <xmlDoc>Log</xmlDoc>
                                 <order>Append</order>
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
+                                <xpath>Log/settings</xpath>
                                 <value>
                                     <li Class="XmlExtensions.Setting.SetColor">
                                         <color>(155,155,155)</color>
                                     </li>
                                     <li Class="XmlExtensions.Setting.Text">
                                         <font>Tiny</font>
-                                        <text>animal: {DARAnimalDefKeep}</text>
+                                        <text>animal: {DARAnimalDefRemove}</text>
                                     </li>
                                     <li Class="XmlExtensions.Setting.SetColor">
                                         <color>(255,255,255)</color>
                                     </li>
                                 </value>
-                            </nomatch>
-                        </nomatch>
-                    </Operation>
-                    <Operation Class="PatchOperationConditional">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="animal: {DARAnimalDefRemove}"]</xpath>
-                        <nomatch Class="PatchOperationAdd">
-                            <order>Append</order>
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
-                            <value>
-                                <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(155,155,155)</color>
-                                </li>
-                                <li Class="XmlExtensions.Setting.Text">
-                                    <font>Tiny</font>
-                                    <text>animal: {DARAnimalDefRemove}</text>
-                                </li>
-                                <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(255,255,255)</color>
-                                </li>
-                            </value>
-                        </nomatch>
+                            </Operation>
+                        </caseFalse>
                     </Operation>
                 </caseTrue>
             </Operation>

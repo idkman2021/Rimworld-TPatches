@@ -26,18 +26,22 @@
                         <defaultValue>false</defaultValue>
                         <caseTrue>
                             <!-- adds active defName to the log tab if it isn't there already -->
-                            <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="material: {DMRMaterialDefRemove}"]</xpath>
-                                <nomatch Class="PatchOperationAdd">
-                                    <order>Append</order>
-                                    <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
-                                    <value>
-                                        <li Class="XmlExtensions.Setting.Text">
-                                            <font>Tiny</font>
-                                            <text>material: {DMRMaterialDefRemove}</text>
-                                        </li>
-                                    </value>
-                                </nomatch>
+                            <Operation Class="XmlExtensions.Conditional">
+                                <xmlDoc>Log</xmlDoc>
+                                <xpath>Log/settings/li[text="resource: {DMRMaterialDefRemove}"]</xpath>
+                                <caseFalse>
+                                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                                        <xmlDoc>Log</xmlDoc>
+                                        <order>Append</order>
+                                        <xpath>Log/li[label="Log"]/settings</xpath>
+                                        <value>
+                                            <li Class="XmlExtensions.Setting.Text">
+                                                <font>Tiny</font>
+                                                <text>resource: {DMRMaterialDefRemove}</text>
+                                            </li>
+                                        </value>
+                                    </Operation>
+                                </caseFalse>
                             </Operation>
                         </caseTrue>
                     </li>
@@ -54,16 +58,18 @@
                         <key>TPatchesLogging</key>
                         <defaultValue>false</defaultValue>
                         <caseTrue>
-                            <li Class="PatchOperationAdd">
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Info"]/settings</xpath>
+                            <!-- adds an entry to the info tab -->
+                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                <xmlDoc>Info</xmlDoc>
+                                <xpath>Info/settings</xpath>
                                 <order>Append</order>
                                 <value>
-                                    <Operation Class="XmlExtensions.Setting.SplitColumn">
+                                    <li Class="XmlExtensions.Setting.SplitColumn">
                                         <split>0.5</split>
                                         <leftCol>
                                             <li Class="XmlExtensions.Setting.Text">
                                                 <font>Tiny</font>
-                                                <text>M: replaced     "{DMRMaterialDefRemove}"</text>
+                                                <text>R: replaced     "{DMRMaterialDefRemove}";</text>
                                             </li>
                                         </leftCol>
                                         <rightCol>
@@ -72,9 +78,9 @@
                                                 <text>with     "{DMRMaterialDefKeep}"</text>
                                             </li>
                                         </rightCol>
-                                    </Operation>
+                                    </li>
                                 </value>
-                            </li>
+                            </Operation>
                         </caseTrue>
                     </li>
 
@@ -162,64 +168,75 @@
                 <key>TPatchesLogging</key>
                 <defaultValue>false</defaultValue>
                 <caseTrue>
-                    <!-- logging -->
-                    <Operation Class="PatchOperationConditional">
+                    <Operation Class="XmlExtensions.Conditional">
                         <xpath>/Defs/ThingDef[defName="{DMRMaterialDefKeep}"]</xpath>
-                        <success>Normal</success>
-                        <match Class="PatchOperationConditional">
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="material: {DMRMaterialDefKeep}"]</xpath>
-                            <nomatch Class="PatchOperationAdd">
-                                <order>Append</order>
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
-                                <value>
-                                    <li Class="XmlExtensions.Setting.Text">
-                                        <font>Tiny</font>
-                                        <text>material: {DMRMaterialDefKeep}</text>
-                                    </li>
-                                </value>
-                            </nomatch>
-                        </match>
-
+                        <caseTrue>
+                            <Operation Class="XmlExtensions.Conditional">
+                                <xmlDoc>Log</xmlDoc>
+                                <xpath>Log/settings/li[text="resource: {DMRMaterialDefKeep}"]</xpath>
+                                <caseFalse>
+                                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                                        <order>Append</order>
+                                        <xpath>Log/settings</xpath>
+                                        <value>
+                                            <li Class="XmlExtensions.Setting.Text">
+                                                <font>Tiny</font>
+                                                <text>resource: {DMRMaterialDefKeep}</text>
+                                            </li>
+                                        </value>
+                                    </Operation>
+                                </caseFalse>
+                            </Operation>
+                        </caseTrue>
                         <!-- adds inactive defNames to the log tab if they aren't there already -->
-                        <nomatch Class="PatchOperationConditional">
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="material: {DMRMaterialDefKeep}"]</xpath>
-                            <nomatch Class="PatchOperationAdd">
+                        <caseFalse>
+                            <Operation Class="XmlExtensions.Conditional">
+                                <xmlDoc>Log</xmlDoc>
+                                <xpath>Log/settings/li[text="resource: {DMRMaterialDefKeep}"]</xpath>
+                                <caseFalse>
+                                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                                        <xmlDoc>Log</xmlDoc>
+                                        <order>Append</order>
+                                        <xpath>Log/settings</xpath>
+                                        <value>
+                                            <li Class="XmlExtensions.Setting.SetColor">
+                                                <color>(155,155,155)</color>
+                                            </li>
+                                            <li Class="XmlExtensions.Setting.Text">
+                                                <font>Tiny</font>
+                                                <text>resource: {DMRMaterialDefKeep}</text>
+                                            </li>
+                                            <li Class="XmlExtensions.Setting.SetColor">
+                                                <color>(255,255,255)</color>
+                                            </li>
+                                        </value>
+                                    </Operation>
+                                </caseFalse>
+                            </Operation>
+                        </caseFalse>
+                    </Operation>
+                    <Operation Class="XmlExtensions.Conditional">
+                        <xmlDoc>Log</xmlDoc>
+                        <xpath>Log/settings/li[text="resource: {DMRMaterialDefRemove}"]</xpath>
+                        <caseFalse>
+                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                <xmlDoc>Log</xmlDoc>
                                 <order>Append</order>
-                                <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
+                                <xpath>Log/settings</xpath>
                                 <value>
                                     <li Class="XmlExtensions.Setting.SetColor">
                                         <color>(155,155,155)</color>
                                     </li>
                                     <li Class="XmlExtensions.Setting.Text">
                                         <font>Tiny</font>
-                                        <text>material: {DMRMaterialDefKeep}</text>
+                                        <text>resource: {DMRMaterialDefRemove}</text>
                                     </li>
                                     <li Class="XmlExtensions.Setting.SetColor">
                                         <color>(255,255,255)</color>
                                     </li>
                                 </value>
-                            </nomatch>
-                        </nomatch>
-                    </Operation>
-
-                    <Operation Class="PatchOperationConditional">
-                        <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings/li[text="material: {DMRMaterialDefRemove}"]</xpath>
-                        <nomatch Class="PatchOperationAdd">
-                            <order>Append</order>
-                            <xpath>/Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
-                            <value>
-                                <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(155,155,155)</color>
-                                </li>
-                                <li Class="XmlExtensions.Setting.Text">
-                                    <font>Tiny</font>
-                                    <text>material: {DMRMaterialDefRemove}</text>
-                                </li>
-                                <li Class="XmlExtensions.Setting.SetColor">
-                                    <color>(255,255,255)</color>
-                                </li>
-                            </value>
-                        </nomatch>
+                            </Operation>
+                        </caseFalse>
                     </Operation>
                 </caseTrue>
             </Operation>
