@@ -27,8 +27,14 @@ Screenshots show default settings.
 ![image](https://user-images.githubusercontent.com/76593873/137011197-77af973f-c791-46d1-a3c3-a63ec137c729.png)
 ![image](https://user-images.githubusercontent.com/76593873/137011210-e827b089-c395-4ee0-89d2-b28c49110538.png)
 
+## Compatibility
+- If you use designation categories setting, load TPatches after Niilo's QOL mod. Niilo has similar setting which overwrites TPatches causing inconsistencies, like some VFE lights will be in furniture tab instead of lights tab.
+- Should be compatible with everything, but loading order is important!
+- **Loading order** - load as low as possible, just above the performance mods.
+
 ## Bugs
-- No known bugs.
+- Rottable filter isn't perfect and might contain some non-rottable food item, but only meals, so they fit in a fridge anyway.
+- Disabling VFE Mechanoids designation category can cause a supposedly harmless red error. Something is still trying to access that category, but if I don't delete it, ther is just nothing there, and there is no XML referencing it.
 
 ## Info
 Requires [XML Extensions](https://steamcommunity.com/sharedfiles/filedetails/?id=2574315206).
@@ -36,6 +42,6 @@ Requires [XML Extensions](https://steamcommunity.com/sharedfiles/filedetails/?id
 Imranfish's XML Extensions is an incredible modding tool, using it I made a "framework" which automatically creates a fancy setting entry for each patch I make. If you have any suggestions, I can now very easily implement them into the mod.
 
 
-Load as low as possible! TPatches only affects mods loaded before it.
+Load as low as possible!
 
 To access settings menu, go to rimworld settings and press the "More Mod Settings" button which is added by XML Extensions.
