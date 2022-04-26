@@ -21,6 +21,7 @@
                     </li>
 
                     <li Class="XmlExtensions.OptionalPatch">
+                        <success>Always</success>
                         <modId>carnap2.TPatches</modId>
                         <key>TPatchesLogging</key>
                         <defaultValue>false</defaultValue>
@@ -33,7 +34,7 @@
                                     <Operation Class="XmlExtensions.PatchOperationAdd">
                                         <xmlDoc>Log</xmlDoc>
                                         <order>Append</order>
-                                        <xpath>Log/li[label="Log"]/settings</xpath>
+                                        <xpath>Log/settings</xpath>
                                         <value>
                                             <li Class="XmlExtensions.Setting.Text">
                                                 <font>Tiny</font>
@@ -68,6 +69,7 @@
                     </li>
 
                     <li Class="XmlExtensions.OptionalPatch">
+                        <success>Always</success>
                         <modId>carnap2.TPatches</modId>
                         <key>TPatchesLogging</key>
                         <defaultValue>false</defaultValue>

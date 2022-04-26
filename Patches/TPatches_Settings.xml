@@ -270,7 +270,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-
+<!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -283,7 +283,7 @@
             <li>false</li>
         </arguments>
     </Operation>
-
+-->
 
     <!-- Balancing -->
 

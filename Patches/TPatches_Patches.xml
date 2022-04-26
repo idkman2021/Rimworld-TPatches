@@ -98,6 +98,7 @@
     </Operation>
 
     <!-- HAR thoughtsettings removers -->
+    <!--
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesHARthoughtSettingsRemover</key>
@@ -109,9 +110,9 @@
             </Operation>
         </caseTrue>
         <caseFalse>
-            <!--Patch operations here-->
         </caseFalse>
     </Operation>
+-->
 
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
