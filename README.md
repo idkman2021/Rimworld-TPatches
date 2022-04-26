@@ -20,9 +20,10 @@ It is a framework which allows me to add new toggleable patches into mod setting
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
 
 **Loading order** - load as low as possible, just above the performance mods.
+
 ## Compatibility
 - If you use designation categories setting, load TPatches after Niilo's QOL mod.
-- Should be compatible with everything, but loading order is important!
+- Should be compatible with everything if you load it as low as possible.
 
 
 ## Bugs
@@ -32,6 +33,12 @@ By default all fixes are enabled, all tweaks and balancing changes are disabled.
 ## Info
 Requires [XML Extensions](https://steamcommunity.com/sharedfiles/filedetails/?id=2574315206).
 
+Imranfish's XML Extensions is an incredible modding tool, using it I made a "framework" which automatically creates a fancy setting entry for each patch I make. If you have any suggestions, I can now very easily implement them into the mod.
+
+
+Load as low as possible!
+
+To access settings menu, go to rimworld settings and press the "More Mod Settings" button which is added by XML Extensions.
 
 ## Screenshots
 Screenshots show default settings.
@@ -42,10 +49,3 @@ Screenshots show default settings.
 ![image](https://user-images.githubusercontent.com/76593873/137011197-77af973f-c791-46d1-a3c3-a63ec137c729.png)
 ![image](https://user-images.githubusercontent.com/76593873/137011210-e827b089-c395-4ee0-89d2-b28c49110538.png)
 
-
-Imranfish's XML Extensions is an incredible modding tool, using it I made a "framework" which automatically creates a fancy setting entry for each patch I make. If you have any suggestions, I can now very easily implement them into the mod.
-
-
-Load as low as possible!
-
-To access settings menu, go to rimworld settings and press the "More Mod Settings" button which is added by XML Extensions.
