@@ -20,7 +20,7 @@ It is a framework which allows me to add new toggleable patches into mod setting
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
 
 ## Compatibility
-- If you use designation categories setting, load TPatches after Niilo's QOL mod. Niilo has similar setting which overwrites TPatches causing inconsistencies, like some VFE lights will be in furniture tab instead of lights tab.
+- If you use designation categories setting, load TPatches after Niilo's QOL mod.
 - Should be compatible with everything, but loading order is important!
 - **Loading order** - load as low as possible, just above the performance mods.
 
