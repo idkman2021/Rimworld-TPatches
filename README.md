@@ -42,10 +42,9 @@ To access settings menu, go to rimworld settings and press the "More Mod Setting
 
 ## Screenshots
 Screenshots show default settings.
-![tp1](https://user-images.githubusercontent.com/76593873/141163396-b440bfdf-3465-43d0-8a3c-3399d2f1ffc7.png)
-![tp2](https://user-images.githubusercontent.com/76593873/141163402-e20055a0-8aff-4125-a058-7a6e495008cd.png)
-![tp3](https://user-images.githubusercontent.com/76593873/141163406-67d18562-620b-4d57-83ec-c22489028e85.png)
-![tp4](https://user-images.githubusercontent.com/76593873/141163416-67a1cbb8-751c-4348-9f1d-c20a26bfeb60.png)
-![image](https://user-images.githubusercontent.com/76593873/137011197-77af973f-c791-46d1-a3c3-a63ec137c729.png)
-![image](https://user-images.githubusercontent.com/76593873/137011210-e827b089-c395-4ee0-89d2-b28c49110538.png)
-
+![image](https://user-images.githubusercontent.com/76593873/165292372-96ff4022-6b03-4eb5-aba4-fb469cf38402.png)
+![image](https://user-images.githubusercontent.com/76593873/165292404-9ecf50b5-0330-4bcc-984a-b87c8584b150.png)
+![image](https://user-images.githubusercontent.com/76593873/165292438-08dbe80e-eaa9-4482-a9d8-2b8c7494c06d.png)
+![image](https://user-images.githubusercontent.com/76593873/165292477-0143ad30-b982-4a47-b0c7-d34961a2cfb8.png)
+![image](https://user-images.githubusercontent.com/76593873/165292516-bcaf3c20-b235-4a97-a29a-a07bc189c66d.png)
+![image](https://user-images.githubusercontent.com/76593873/165292532-41d0501e-4898-4084-a944-e1748e9ce781.png)
