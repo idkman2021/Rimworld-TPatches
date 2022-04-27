@@ -457,6 +457,25 @@
                         </match>
                     </Operation>
 
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Mechanoid Foundry</li>
+                        </mods>
+                        <match Class="PatchOperationSequence">
+                            <operations>
+
+                                <li Class="PatchOperationReplace">
+                                    <xpath>Defs/ThingDef[defName="MF_MechanoidPad"]/designationCategory[text()="DZ_Beds"]</xpath>
+                                    <value>
+                                        <designationCategory>Misc</designationCategory>
+                                    </value>
+                                </li>
+
+
+                            </operations>
+                        </match>
+                    </Operation>
+
                     <!-- patches go above this -->
                     <Operation Class="XmlExtensions.OptionalPatch">
                         <modId>carnap2.TPatches</modId>
