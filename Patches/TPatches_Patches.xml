@@ -251,6 +251,15 @@
                 </value>
             </Operation>
 
+            <!-- VGE -->
+            <Operation Class="PatchOperationAdd">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[@Name="GR_GeneticsBase"]/thingCategories[not(li="TPatchesRottable")]</xpath>
+                <value>
+                    <li>TPatchesRottable</li>
+                </value>
+            </Operation>
+
             <!-- Fixes -->
             <!--
             <Operation Class="PatchOperationRemove">
