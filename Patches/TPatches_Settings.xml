@@ -468,8 +468,8 @@
             <li>Alpha Biomes</li>
             <li>Menus</li>
             <li>Organize Alpha Biomes</li>
+            <li>Moves Alpha Biomes items into appropriate tabs and deletes Alpha Biomes tab.</li>
             <li></li>
-            <li>Deletes alpha biomes tab and moves Alpha Biomes items into appropriate tabs.</li>
             <li>true</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
@@ -482,8 +482,8 @@
             <li>GlitterNet</li>
             <li>Menus</li>
             <li>Organize GlitterNet</li>   
+            <li>Moves GlitterNet items into industrial tab and removes GlitterNet tab.</li>
             <li></li>
-            <li>Moves GlitterNet items into industrial tab.</li>
             <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
@@ -496,8 +496,8 @@
             <li>Vanilla Factions Expanded - Mechanoids</li>
             <li>Menus</li>
             <li>Organize VFE Mechanoids (WIP)</li>
+            <li>Moves VFE Mechanoids items into industrial tab and removes VFE Mechanoid's tab. Note: creates a supposedly harmless red error.</li>
             <li></li>
-            <li>Moves VFE Mechanoids items into industrial tab. Note: creates a supposedly harmless red error.</li>
             <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
@@ -510,9 +510,9 @@
             <li>DocWorld_DesignationRimatomics</li>
             <li>Dubs Rimatomics</li>
             <li>Menus</li>
-            <li>Disable Rimatomics (WIP)</li>
+            <li>Organize Rimatomics (WIP)</li>
+            <li>Moves Rimatomics items into industrial tab and removes Rimatomics tab.</li>
             <li></li>
-            <li>Moves Rimatomics items into industrial tab.</li>
             <li>false</li>
             <li>DocWorld_DesignationCategories</li>
         </arguments>
