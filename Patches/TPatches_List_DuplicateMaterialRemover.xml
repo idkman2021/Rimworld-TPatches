@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-
-
+<!-- use Resource Dictionary by Scorpio! -->
+<!--
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
         <key>TPatchesDMR</key>
@@ -20,7 +20,7 @@
                 </caseTrue>
             </Operation>
 
-            <!-- Expanded Materials - Plastics / Materials+ -->
+
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateMaterialRemoverDef</patchName>
                 <arguments>
@@ -55,7 +55,7 @@
             </Operation>
 
 
-            <!-- rename concrete to reinforced concrete -->
+
             <Operation Class="PatchOperationSequence">
                 <success>Always</success>
                 <operations>
@@ -117,5 +117,5 @@
         <caseFalse></caseFalse>
     </Operation>
 
-
+-->
 </Patch>

@@ -5,6 +5,7 @@
 -->
 
 <Patch>
+    <!--
     <Operation Class="XmlExtensions.FindMod">
         <mods>
             <li>Rimefeller</li>
@@ -28,11 +29,12 @@
                                 <key>DocWorld_DesignationCategoriesIndustrial</key>
                                 <defaultValue>true</defaultValue>
                                 <caseTrue>
-                                    
-                                    <Operation Class="PatchOperationAdd"><success>Always</success>
+
+                                    <Operation Class="PatchOperationAdd">
+                                        <success>Always</success>
                                         <xpath>/Defs[not(DesignationCategoryDef/defName="DZ_Industrial")]</xpath>
                                         <value>
-        
+
                                             <DesignationCategoryDef>
                                                 <defName>DZ_Industrial</defName>
                                                 <label>Industrial</label>
@@ -44,7 +46,7 @@
                                                     <li>Designator_Uninstall</li>
                                                 </specialDesignatorClasses>
                                             </DesignationCategoryDef>
-        
+
                                         </value>
                                     </Operation>
 
@@ -63,14 +65,18 @@
                                             <designationCategory>Security</designationCategory>
                                         </value>
                                     </Operation>
-                                    <!--
-                            <Operation Class="PatchOperationReplace">
-                                <xpath>/Defs/ThingDef[defName="Filth_OilSlick"]/designationCategory</xpath>
-                                <value>
-                                    <designationCategory />
-                                </value>
-                            </Operation>
-                        -->
+                                    
+
+                                    !!!
+                                    <Operation Class="PatchOperationReplace">
+                                        <xpath>/Defs/ThingDef[defName="Filth_OilSlick"]/designationCategory</xpath>
+                                        <value>
+                                            <designationCategory />
+                                        </value>
+                                    </Operation>
+                                    !!!
+
+
                                     <Operation Class="PatchOperationReplace">
                                         <xpath>/Defs/TerrainDef/designationCategory[text()="Rimefeller"]</xpath>
                                         <value>
@@ -86,11 +92,12 @@
                                         </value>
                                     </Operation>
 
-                                    <!--
+
+                                    !!!
                                     <Operation Class="PatchOperationRemove">
                                         <xpath>/Defs/DesignationCategoryDef[defName="Rimefeller"]</xpath>
                                     </Operation>
-                                -->
+                                    !!!
 
 
                                 </caseTrue>
@@ -105,5 +112,5 @@
             </Operation>
         </caseTrue>
     </Operation>
-
+-->
 </Patch>
