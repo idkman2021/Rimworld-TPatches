@@ -209,8 +209,9 @@
                         <mods>
                             <li>Replimat</li>
                         </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="ReplimatAnimalFeeder" or defName="ReplimatFeedTank"]/designationCategory</xpath>
+                        <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                            <success>Always</success>
+                            <xpath>/Defs/ThingDef[defName="ReplimatAnimalFeeder" or defName="ReplimatFeedTank"]</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -470,8 +471,9 @@
                                 <mods>
                                     <li>Replimat</li>
                                 </mods>
-                                <match Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="ReplimatAnimalFeeder" or defName="ReplimatFeedTank"]/designationCategory</xpath>
+                                <match Class="XmlExtensions.PatchOperationAddOrReplace">
+                                    <success>Always</success>
+                                    <xpath>/Defs/ThingDef[defName="ReplimatAnimalFeeder" or defName="ReplimatFeedTank"]</xpath>
                                     <value>
                                         <designationCategory>LWM_DS_Storage</designationCategory>
                                     </value>

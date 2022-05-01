@@ -164,7 +164,8 @@
                             <li>Replimat</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath> /Defs/ThingDef[defName="ReplimatTerminal" or defName="ReplimatHopper" or defName="ReplimatComputer"]/designationCategory</xpath>
+                            <success>Always</success>
+                            <xpath>/Defs/ThingDef/designationCategory[text()="Replimat_Replimat"]</xpath>
                             <value>
                                 <designationCategory>DZ_Culinary</designationCategory>
                             </value>
