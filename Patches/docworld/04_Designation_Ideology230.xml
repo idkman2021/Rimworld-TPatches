@@ -36,6 +36,7 @@
                         <xpath>/Defs/ThingDef[
                             @Name="IdeoBuildingBase" or 
                             @Name="RitualSeatBase" or 
+                            @Name="BuildingFloorCoveringBase" or
                             defName="Lectern" or 
                             defName="Reliquary" or 
                             defName="RitualSpot" or 
