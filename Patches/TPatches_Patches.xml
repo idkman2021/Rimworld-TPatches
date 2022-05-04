@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="XmlExtensions.OptionalPatch">
-        <modId>carnap2.TPatches</modId>
-        <key>TPatchesLogging</key>
-        <defaultValue>false</defaultValue>
-        <caseTrue>
-            <Operation Class="XmlExtensions.Log">
-                <text>Stopwatch: patches</text>
-            </Operation>
-            <Operation Class="XmlExtensions.StopwatchStart" />
-        </caseTrue>
-    </Operation>
+
     <!--
     <Operation Class="XmlExtensions.OptionalPatch">
     <modId>carnap2.TPatches</modId>
@@ -182,6 +172,17 @@
         <caseFalse></caseFalse>
     </Operation>
 
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.Log">
+                <text>Stopwatch: rottable filter</text>
+            </Operation>
+            <Operation Class="XmlExtensions.StopwatchStart" />
+        </caseTrue>
+    </Operation>
 
     <!-- Rottable filter -->
     <Operation Class="XmlExtensions.OptionalPatch">
@@ -282,6 +283,14 @@
         <caseFalse></caseFalse>
     </Operation>
 
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.StopwatchStop" />
+        </caseTrue>
+    </Operation>
 
     <!-- dubs mint storage research -->
     <Operation Class="XmlExtensions.OptionalPatch">
@@ -388,6 +397,17 @@
         <caseFalse></caseFalse>
     </Operation>
 -->
+<Operation Class="XmlExtensions.OptionalPatch">
+    <modId>carnap2.TPatches</modId>
+    <key>TPatchesLogging</key>
+    <defaultValue>false</defaultValue>
+    <caseTrue>
+        <Operation Class="XmlExtensions.Log">
+            <text>Stopwatch: illegal characters</text>
+        </Operation>
+        <Operation Class="XmlExtensions.StopwatchStart" />
+    </caseTrue>
+</Operation>
 
     <!-- ignore illegal characters -->
     <Operation Class="XmlExtensions.OptionalPatch">
@@ -404,6 +424,15 @@
             </Operation>
         </caseTrue>
         <caseFalse></caseFalse>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.StopwatchStop" />
+        </caseTrue>
     </Operation>
 
     <!-- can auto choose -->
@@ -423,6 +452,161 @@
     </Operation>
 
 
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatches_BuildableIdeos</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/TerrainDef/canGenerateDefaultDesignator</xpath>
+            </Operation>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[
+                            @Name="IdeoBuildingBase" or 
+                            @Name="RitualSeatBase" or 
+                            @Name="BuildingFloorCoveringBase" or 
+                            defName="AM_AnimalDatabase" or 
+                            defName="AM_TrapBlunt" or 
+                            defName="AM_RelicSmashingAltar" or 
+                            defName="AM_Pyramid" or 
+                            defName="VME_BonfireAfterRitual" or 
+                            defName="VME_MechanoidEffigy" or 
+                            defName="VME_Obelisk" or 
+                            defName="SleepAccelerator" or 
+                            defName="BiosculpterPod" or 
+                            defName="NeuralSupercharger" or 
+                            defName="Autobong" or 
+                            defName="VME_InsectNest"
+                            ]/canGenerateDefaultDesignator</xpath>
+            </Operation>
+            <Operation Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef/recipeMaker/memePrerequisitesAny</xpath>
+            </Operation>
+
+        </caseTrue>
+        <caseFalse></caseFalse>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.Log">
+                <text>Stopwatch: styles to variations</text>
+            </Operation>
+            <Operation Class="XmlExtensions.StopwatchStart" />
+        </caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatches_IdeoStylesToVTEVariations</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="PatchOperationFindMod">
+                <mods>
+                    <li>Vanilla Textures Expanded - Variations</li>
+                </mods>
+
+                <match Class="XmlExtensions.ForEach">
+                    <xpath>Defs/StyleCategoryDef/thingDefStyles/li</xpath>
+                    <storeIn>style</storeIn>
+                    <prefixLength>4</prefixLength>
+                    <apply>
+                        <Operation Class="XmlExtensions.AggregateValues">
+                            <valueOperations>
+                                <Operation Class="XmlExtensions.CreateVariable">
+                                    <storeIn>thingDef</storeIn>
+                                    <value>{style}/thingDef</value>
+                                    <fromXml>true</fromXml>
+                                    <defaultValue>idkthing</defaultValue>
+                                </Operation>
+                                <Operation Class="XmlExtensions.CreateVariable">
+                                    <storeIn>styleDef</storeIn>
+                                    <value>{style}/styleDef</value>
+                                    <fromXml>true</fromXml>
+                                    <defaultValue>idkstyle</defaultValue>
+                                </Operation>
+                            </valueOperations>
+                            <apply>
+                                <Operation Class="XmlExtensions.CreateVariable">
+                                    <storeIn>texture</storeIn>
+                                    <value>Defs/ThingStyleDef[defName="{styleDef}"]/graphicData/texPath</value>
+                                    <fromXml>true</fromXml>
+                                    <defaultValue>idktexture</defaultValue>
+                                    <apply>
+
+                                        <Operation Class="PatchOperationSequence">
+                                            <success>Always</success>
+                                            <operations>
+
+                                                <li Class="PatchOperationAdd">
+                                                    <success>Invert</success>
+                                                    <xpath>/Defs/ThingDef[defName = "{thingDef}"]/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics</xpath>
+                                                    <value>
+                                                        <li>{texture}</li>
+                                                    </value>
+                                                </li>
+
+                                                <li Class="PatchOperationAdd">
+                                                    <success>Invert</success>
+                                                    <xpath>/Defs/ThingDef[defName = "{thingDef}"]/comps</xpath>
+                                                    <value>
+                                                        <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+                                                            <randomGraphics>
+                                                                <li>{texture}</li>
+                                                            </randomGraphics>
+                                                        </li>
+                                                    </value>
+                                                </li>
+
+                                                <li Class="PatchOperationAdd">
+                                                    <xpath>/Defs/ThingDef[defName = "{thingDef}"]</xpath>
+                                                    <value>
+                                                        <comps>
+                                                            <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+                                                                <randomGraphics>
+                                                                    <li>{texture}</li>
+                                                                </randomGraphics>
+                                                            </li>
+                                                        </comps>
+                                                    </value>
+                                                </li>
+
+
+                                            </operations>
+                                        </Operation>
+
+
+                                    </apply>
+                                </Operation>
+
+
+                            </apply>
+                        </Operation>
+                    </apply>
+                </match>
+            </Operation>
+
+        </caseTrue>
+        <caseFalse></caseFalse>
+    </Operation>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.StopwatchStop" />
+        </caseTrue>
+    </Operation>
+    
+
     <!--
     <Operation Class="XmlExtensions.OptionalPatch">
     <modId>carnap2.TPatches</modId>
@@ -439,12 +623,5 @@
     </Operation>
 
     -->
-    <Operation Class="XmlExtensions.OptionalPatch">
-        <modId>carnap2.TPatches</modId>
-        <key>TPatchesLogging</key>
-        <defaultValue>false</defaultValue>
-        <caseTrue>
-            <Operation Class="XmlExtensions.StopwatchStop" />
-        </caseTrue>
-    </Operation>
+
 </Patch>

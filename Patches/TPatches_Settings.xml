@@ -223,6 +223,32 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
+            <li>TPatches_BuildableIdeos</li>
+            <li>Ideology</li>
+            <li>Tweaks</li>
+            <li>Unlock all ideology items and buildings for everyone</li>
+            <li>Meant to be used with "ideology system inactive" gamemode so that you can have access to ideological stuff like mindbend carpets.</li>
+            <li></li>
+            <li>false</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_ModPatch</patchName>
+        <arguments>
+            <li>TPatches_IdeoStylesToVTEVariations</li>
+            <li>Vanilla Textures Expanded - Variations</li>
+            <li>Tweaks</li>
+            <li>Convert all ideology styles to Vanilla Textures Expanded - Variations.</li>
+            <li>Meant to be used with "ideology system inactive" gamemode and adds all custom ideology building styles as texture variations using Vanilla Textures Expanded - Variations, so that all those great textures don't go to waste.</li>
+            <li></li>
+            <li>false</li>
+        </arguments>
+    </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_ModPatch</patchName>
+        <arguments>
             <li>TPatches_GreatMemoryTweak</li>
             <li>Core</li>
             <li>Tweaks</li>
