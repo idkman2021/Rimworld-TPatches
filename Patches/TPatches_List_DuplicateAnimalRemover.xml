@@ -387,7 +387,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Vanilla Animals Expanded — Endangered</li> -->
                     <li>AEXP_BlackRhino</li>
                     <li>ACPBlackRhinoceros</li>
                 </arguments>
@@ -401,7 +400,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Vanilla Animals Expanded — Endangered</li>  -->
                     <li>AEXP_Panda</li>
                     <li>ACPPanda</li>
                 </arguments>
@@ -409,7 +407,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Vanilla Animals Expanded — Endangered</li>  -->
                     <li>AEXP_Panda</li>
                     <li>ZW_PandaBear</li>
                 </arguments>
@@ -419,7 +416,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Vanilla Animals Expanded — Endangered</li> -->
                     <li>AEXP_Pangolin</li>
                     <li>HC_Pangolin</li>
                 </arguments>
@@ -447,7 +443,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Wildlife</li> -->
                     <li>ERN_Hedgehog</li>
                     <li>ACPHedgehog</li>
                 </arguments>
@@ -455,7 +450,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Wildlife</li> -->
                     <li>ERN_Hedgehog</li>
                     <li>ZW_Hedgehog</li>
                 </arguments>
@@ -467,7 +461,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Wildlife</li> -->
                     <li>ERN_ptarmigan</li>
                     <li>ACPPtarmigan</li>
                 </arguments>
@@ -477,7 +470,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Wildlife</li> -->
                     <li>ERN_Redpanda</li>
                     <li>ACPRedPanda</li>
                 </arguments>
@@ -495,7 +487,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Mountain Animals</li> -->
                     <li>Snow_leopard</li>
                     <li>HC_Snowleopard</li>
                 </arguments>
@@ -503,7 +494,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Mountain Animals</li> -->
                     <li>Snow_leopard</li>
                     <li>ACPSnowLeopard</li>
                 </arguments>
@@ -511,7 +501,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Mountain Animals</li> -->
                     <li>Snow_leopard</li>
                     <li>ZW_SnowLeopard</li>
                 </arguments>
@@ -523,7 +512,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Friendly Ferrets</li> -->
                     <li>ERN_Ferret</li>
                     <li>ACPFerret</li>
                 </arguments>
@@ -535,7 +523,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Biomes! Core (stripped)</li> -->
                     <li>BiomesIslands_Flamingo</li>
                     <li>ACPFlamingo</li>
                 </arguments>
@@ -547,7 +534,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Biomes! Islands (stripped)</li> -->
                     <li>BiomesIslands_KiwiBird</li>
                     <li>ACPKiwi</li>
                 </arguments>
@@ -557,7 +543,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Biomes! Islands (stripped)</li> -->
                     <li>BMT_KomodoDragon</li>
                     <li>ACPKomodo</li>
                 </arguments>
@@ -565,7 +550,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Biomes! Islands (stripped)</li> -->
                     <li>BMT_KomodoDragon</li>
                     <li>HC_KomodoDragon</li>
                 </arguments>
@@ -575,7 +559,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Biomes! Islands (stripped)</li> -->
                     <li>BiomesIslands_GalapagosTortoise</li>
                     <li>HC_Galapagostortoise</li>
                 </arguments>
@@ -587,7 +570,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>HC_Animal_1</li> -->
                     <li>HC_KomodoDragon</li>
                     <li>ACPKomodo</li>
                 </arguments>
@@ -613,7 +595,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>HC_Animal_3</li> -->
                     <li>HC_Lion</li>
                     <li>ACPLion</li>
                 </arguments>
@@ -632,7 +613,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>HC_Animal_3</li> -->
                     <li>HC_Cheetah</li>
                     <li>ACPCheetah</li>
                 </arguments>
@@ -651,7 +631,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>HC_Animal_3</li> -->
                     <li>HC_Tiger</li>
                     <li>ACPTiger</li>
                 </arguments>
@@ -668,7 +647,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>HC_Animal_3</li> -->
                     <li>HC_Snowleopard</li>
                     <li>ACPSnowLeopard</li>
                 </arguments>
@@ -676,7 +654,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Mountain Animals</li> -->
                     <li>HC_Snowleopard</li>
                     <li>ZW_SnowLeopard</li>
                 </arguments>
@@ -690,7 +667,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>HC_Animal_4</li> -->
                     <li>HC_Giraffe</li>
                     <li>ACPGiraffe</li>
                 </arguments>
@@ -711,7 +687,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>HC_Animal_4</li> -->
                     <li>HC_Hippo</li>
                     <li>ACPHippopotamus</li>
                 </arguments>
@@ -722,7 +697,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Wildlife</li> -->
                     <li>ACPHedgehog</li>
                     <li>ZW_Hedgehog</li>
                 </arguments>
@@ -731,7 +705,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Erin's Mountain Animals</li> -->
                     <li>ACPSnowLeopard</li>
                     <li>ZW_SnowLeopard</li>
                 </arguments>
@@ -740,7 +713,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>HC_Animal_3</li> -->
                     <li>ACPLion</li>
                     <li>ZW_Lion</li>
                 </arguments>
@@ -749,7 +721,6 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>Vanilla Animals Expanded — Endangered</li>  -->
                     <li>ACPPanda</li>
                     <li>ZW_PandaBear</li>
                 </arguments>
@@ -758,9 +729,35 @@
             <Operation Class="XmlExtensions.ApplyPatch">
                 <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
                 <arguments>
-                    <!--<li>HC_Animal_3</li> -->
                     <li>ACPTiger</li>
                     <li>ZW_Tiger</li>
+                </arguments>
+            </Operation>
+
+
+            <!-- regrowth -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>RG_WoollyMammoth</li>
+                    <li>ZW_Mammoth</li>
+                </arguments>
+            </Operation>
+
+            <!-- megafauna -->
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>WoollyMammoth</li>
+                    <li>ZW_Mammoth</li>
+                </arguments>
+            </Operation>
+
+            <Operation Class="XmlExtensions.ApplyPatch">
+                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                <arguments>
+                    <li>RG_WoollyMammoth</li>
+                    <li>WoollyMammoth</li>
                 </arguments>
             </Operation>
 

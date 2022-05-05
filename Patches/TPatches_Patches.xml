@@ -397,17 +397,17 @@
         <caseFalse></caseFalse>
     </Operation>
 -->
-<Operation Class="XmlExtensions.OptionalPatch">
-    <modId>carnap2.TPatches</modId>
-    <key>TPatchesLogging</key>
-    <defaultValue>false</defaultValue>
-    <caseTrue>
-        <Operation Class="XmlExtensions.Log">
-            <text>Stopwatch: illegal characters</text>
-        </Operation>
-        <Operation Class="XmlExtensions.StopwatchStart" />
-    </caseTrue>
-</Operation>
+    <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>carnap2.TPatches</modId>
+        <key>TPatchesLogging</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+            <Operation Class="XmlExtensions.Log">
+                <text>Stopwatch: illegal characters</text>
+            </Operation>
+            <Operation Class="XmlExtensions.StopwatchStart" />
+        </caseTrue>
+    </Operation>
 
     <!-- ignore illegal characters -->
     <Operation Class="XmlExtensions.OptionalPatch">
@@ -450,7 +450,6 @@
         </caseTrue>
         <caseFalse></caseFalse>
     </Operation>
-
 
 
     <Operation Class="XmlExtensions.OptionalPatch">
@@ -515,7 +514,13 @@
                 </mods>
 
                 <match Class="XmlExtensions.ForEach">
-                    <xpath>Defs/StyleCategoryDef/thingDefStyles/li</xpath>
+                    <xpath>Defs/StyleCategoryDef/thingDefStyles/li[not(
+                        contains(thingDef, "Apparel_") or 
+                        contains(thingDef, "Gun_") or 
+                        contains(thingDef, "MeleeWeapon_") or 
+                        contains(thingDef, "Bow_") or 
+                        thingDef="Pila"
+                        )]</xpath>
                     <storeIn>style</storeIn>
                     <prefixLength>4</prefixLength>
                     <apply>
@@ -554,29 +559,41 @@
                                                     </value>
                                                 </li>
 
-                                                <li Class="PatchOperationAdd">
-                                                    <success>Invert</success>
-                                                    <xpath>/Defs/ThingDef[defName = "{thingDef}"]/comps</xpath>
-                                                    <value>
-                                                        <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
-                                                            <randomGraphics>
-                                                                <li>{texture}</li>
-                                                            </randomGraphics>
-                                                        </li>
-                                                    </value>
-                                                </li>
+                                                <li Class="XmlExtensions.CreateVariable">
+                                                    <storeIn>thingtex</storeIn>
+                                                    <value>/Defs/ThingDef[defName = "{thingDef}"]/graphicData/texPath</value>
+                                                    <fromXml>true</fromXml>
+                                                    <defaultValue>idkthingtex</defaultValue>
+                                                    <apply>
 
-                                                <li Class="PatchOperationAdd">
-                                                    <xpath>/Defs/ThingDef[defName = "{thingDef}"]</xpath>
-                                                    <value>
-                                                        <comps>
-                                                            <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
-                                                                <randomGraphics>
-                                                                    <li>{texture}</li>
-                                                                </randomGraphics>
-                                                            </li>
-                                                        </comps>
-                                                    </value>
+                                                        <Operation Class="PatchOperationAdd">
+                                                            <success>Invert</success>
+                                                            <xpath>/Defs/ThingDef[defName = "{thingDef}"]/comps</xpath>
+                                                            <value>
+                                                                <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+                                                                    <randomGraphics>
+                                                                        <li>{thingtex}</li>
+                                                                        <li>{texture}</li>
+                                                                    </randomGraphics>
+                                                                </li>
+                                                            </value>
+                                                        </Operation>
+
+                                                        <Operation Class="PatchOperationAdd">
+                                                            <xpath>/Defs/ThingDef[defName = "{thingDef}"]</xpath>
+                                                            <value>
+                                                                <comps>
+                                                                    <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+                                                                        <randomGraphics>
+                                                                            <li>{thingtex}</li>
+                                                                            <li>{texture}</li>
+                                                                        </randomGraphics>
+                                                                    </li>
+                                                                </comps>
+                                                            </value>
+                                                        </Operation>
+
+                                                    </apply>
                                                 </li>
 
 
@@ -605,7 +622,7 @@
             <Operation Class="XmlExtensions.StopwatchStop" />
         </caseTrue>
     </Operation>
-    
+
 
     <!--
     <Operation Class="XmlExtensions.OptionalPatch">

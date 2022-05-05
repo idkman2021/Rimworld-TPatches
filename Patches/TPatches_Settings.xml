@@ -109,7 +109,7 @@
             <li>true</li>
         </arguments>
     </Operation>
-
+<!--
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -122,7 +122,7 @@
             <li>true</li>
         </arguments>
     </Operation>
-
+-->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
