@@ -513,13 +513,34 @@
                     <li>Vanilla Textures Expanded - Variations</li>
                 </mods>
 
+                <!-- 
+                        thingDef="VPE_GasPipe" or
+                        thingDef="VCHE_DeepchemPipe" or 
+                        thingDef="VCHE_ChemfuelPipe" or
+                        thingDef="sewagePipeStuff" or
+                        thingDef="airPipe" or 
+                        thingDef="coolantValve" or 
+                        thingDef="coolingPipe" or 
+                        thingDef="steamPipe" or 
+                        thingDef="waterPipe" or 
+                        
+
+
+                -->
                 <match Class="XmlExtensions.ForEach">
                     <xpath>Defs/StyleCategoryDef/thingDefStyles/li[not(
                         contains(thingDef, "Apparel_") or 
                         contains(thingDef, "Gun_") or 
                         contains(thingDef, "MeleeWeapon_") or 
                         contains(thingDef, "Bow_") or 
-                        thingDef="Pila"
+                        contains(thingDef, "Pipe") or 
+                        thingDef="Pila" or 
+                        thingDef="PowerConduit" or 
+                        thingDef="WaterproofConduit" or 
+                        thingDef="HighVoltage" or 
+                        thingDef="coolantValve" or 
+                        thingDef="controllerLoom" or 
+                        thingDef="GNGlitterNetCable"
                         )]</xpath>
                     <storeIn>style</storeIn>
                     <prefixLength>4</prefixLength>
