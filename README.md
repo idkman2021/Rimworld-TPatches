@@ -21,7 +21,6 @@ By default all fixes are enabled, all tweaks and balancing changes are disabled.
 **Loading order** - load as low as possible, just above the performance mods.
 
 ## Compatibility
-- If you use designation categories setting, load TPatches after Niilo's QOL mod.
 - Should be compatible with everything if you load it as low as possible.
 
 
