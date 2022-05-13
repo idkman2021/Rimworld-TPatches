@@ -10,11 +10,11 @@ It is a framework which allows me to add new toggleable patches into mod setting
 
 ## Content
 - duplicate animal remover
-- duplicate material remover (WIP)
+- Ideology styles to VFE Texture Variations converter
+- Buildable ideology stuff
 - stuffable stone floors
-- research fixes, text fixes, xml fixes
 - filter for rottable items
-- designation category overhaul based on DocWorld
+- enormous designation category overhaul based on DocWorld
 - many small fixes, tweaks and balancing changes
 
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
