@@ -13,7 +13,7 @@ It is a framework which allows me to add new toggleable patches into mod setting
 - ideology styles to VTE texture variations converter
 - stuffable stone floors
 - filter for rottable items
-- enormous designation category overhaul based on DocWorld
+- enormous architect category overhaul based on DocWorld
 - many small fixes, tweaks and balancing changes, for example: buildable ideology stuff, infinite turrets, VAE Accessories rebalance
 
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
@@ -23,9 +23,8 @@ By default all fixes are enabled, all tweaks and balancing changes are disabled.
 ## Compatibility
 - Should be compatible with everything if you load it as low as possible.
 
-
 ## Bugs
-- Rottable filter isn't perfect and might contain some non-rottable food item, but only meals, so they fit in a fridge anyway.
+- Rottable filter might cause harmless duplicate xml node errors with certain mods. I fix them when I see them but I can't test all mods.
 - Disabling VFE Mechanoids designation category can cause a supposedly harmless red error. Something is still trying to access that category, but if I don't delete it, ther is just nothing there, and there is no XML referencing it.
 
 ## Info
