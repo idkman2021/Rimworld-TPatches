@@ -10,12 +10,11 @@ It is a framework which allows me to add new toggleable patches into mod setting
 
 ## Content
 - duplicate animal remover
-- Ideology styles to VFE Texture Variations converter
-- Buildable ideology stuff
+- ideology styles to VTE texture variations converter
 - stuffable stone floors
 - filter for rottable items
 - enormous designation category overhaul based on DocWorld
-- many small fixes, tweaks and balancing changes
+- many small fixes, tweaks and balancing changes, for example: buildable ideology stuff, infinite turrets, VAE Accessories rebalance
 
 By default all fixes are enabled, all tweaks and balancing changes are disabled. You can enable/disable any feature in this mod using XML Extensions mod menu.
 
