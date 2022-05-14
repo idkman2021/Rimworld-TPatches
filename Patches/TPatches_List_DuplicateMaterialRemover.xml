@@ -60,10 +60,10 @@
                 <success>Always</success>
                 <operations>
                     <li Class="PatchOperationTest">
-                        <xpath>/Defs/ThingDef[defName="Stuff_RefConcreteAM"]</xpath>
+                        <xpath>Defs/ThingDef[defName="Stuff_RefConcreteAM"]</xpath>
                     </li>
                     <li Class="PatchOperationReplace">
-                        <xpath>/Defs/ThingDef[defName="ConcreteSlab"]/label</xpath>
+                        <xpath>Defs/ThingDef[defName="ConcreteSlab"]/label</xpath>
                         <value>
                             <label>reinforced concrete slabs</label>
                         </value>

@@ -40,7 +40,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>/Defs/ThingDef[
+                        <xpath>Defs/ThingDef[
                             defName="TorchLamp"
                             ]</xpath>
                         <value>
@@ -51,7 +51,7 @@
                     <!-- ideology -->
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="ludeon.rimworld.ideology">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[ defName="Brazier"
+                        <xpath>Defs/ThingDef[ defName="Brazier"
                     ]</xpath>
                         <value>
                             <designationCategory>DZ_Lighting</designationCategory>
@@ -64,7 +64,7 @@
                             <li>Apothecary (Continued)</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="AYCandle"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="AYCandle"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Lighting</designationCategory>
                             </value>
@@ -79,7 +79,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="Lighting_CeilingLight"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="Lighting_CeilingLight"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -96,7 +96,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="NECCoalLamp"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="NECCoalLamp"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -113,13 +113,13 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="BasedSkyLight"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="BasedSkyLight"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
                                 </li>
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/DesignationCategoryDef[defName="DZ_Lighting"]/specialDesignatorClasses</xpath>
+                                    <xpath>Defs/DesignationCategoryDef[defName="DZ_Lighting"]/specialDesignatorClasses</xpath>
                                     <value>
                                         <li>Dubs_Skylight.Designator_RemoveSkylights</li>
                                     </value>
@@ -134,7 +134,7 @@
                             <li>Floor Lights</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[@Name="FloorLightSquare" or @Name="FloorLightStripe" or @Name="FloorLightSmallStripe" or @Name="FloorLightPlus" or @Name="FloorLightCorner" or @Name="FloorLightInverseCorner" or @Name="FloorLightCornerSmall" or @Name="FloorLightInverseCornerSmall" or @Name="FloorTileLightSquare" or @Name="FloorLightTriangle" or @Name="FloorLightSmallStripeMiddle" or @Name="FloorLightSmallStripeDiagonal" or @Name="FloorLightStripeMiddle" or @Name="FloorLightStripe" or @Name="FloorLightTriangleCorner"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[@Name="FloorLightSquare" or @Name="FloorLightStripe" or @Name="FloorLightSmallStripe" or @Name="FloorLightPlus" or @Name="FloorLightCorner" or @Name="FloorLightInverseCorner" or @Name="FloorLightCornerSmall" or @Name="FloorLightInverseCornerSmall" or @Name="FloorTileLightSquare" or @Name="FloorLightTriangle" or @Name="FloorLightSmallStripeMiddle" or @Name="FloorLightSmallStripeDiagonal" or @Name="FloorLightStripeMiddle" or @Name="FloorLightStripe" or @Name="FloorLightTriangleCorner"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Lighting</designationCategory>
                             </value>
@@ -150,7 +150,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="ELIF_FloorLight_Base"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="ELIF_FloorLight_Base"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -168,7 +168,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="FloodLight"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="FloodLight"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -182,7 +182,7 @@
                             <li>Glass+Lights</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[@Name="GlCeilingLampBase" or @Name="GLWallLightBase" or defName="OutdoorGroundLamp"]</xpath>
+                            <xpath>Defs/ThingDef[@Name="GlCeilingLampBase" or @Name="GLWallLightBase" or defName="OutdoorGroundLamp"]</xpath>
                             <value>
                                 <designationCategory>DZ_Lighting</designationCategory>
                             </value>
@@ -198,7 +198,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="FloodLight"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="FloodLight"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -217,7 +217,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="WallLightBase" or defName="RGK_lamp" or defName="GL_lamp_White" or defName="RGK_LampM" or defName="GL_LampM_White" or defName="RGK_Street_Lamp" or defName="GL_lampE_White" or defName="GL_Street_Lamp_White" or defName="GL_Street_Lamp_L_White" or defName="RGK_Street_Lamp_Seven"  or defName="GL_Street_Lamp_Seven_White"  or defName="GL_Street_Lamp_SevenE_White"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="WallLightBase" or defName="RGK_lamp" or defName="GL_lamp_White" or defName="RGK_LampM" or defName="GL_LampM_White" or defName="RGK_Street_Lamp" or defName="GL_lampE_White" or defName="GL_Street_Lamp_White" or defName="GL_Street_Lamp_L_White" or defName="RGK_Street_Lamp_Seven"  or defName="GL_Street_Lamp_Seven_White"  or defName="GL_Street_Lamp_SevenE_White"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -232,7 +232,7 @@
                             <li>Glowstone</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="GLO_GlowstonePylon" or defName="GLO_GlowstoneLamp" or @Name="GlowstoneChandelierBase" or @Name="GlowstoneFloorStipBase"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="GLO_GlowstonePylon" or defName="GLO_GlowstoneLamp" or @Name="GlowstoneChandelierBase" or @Name="GlowstoneFloorStipBase"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Lighting</designationCategory>
                             </value>
@@ -249,13 +249,13 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="Jecrell_Chandelier" or defName="Jecrell_ChandelierRoyal" or defName="Jecrell_Candelabra" or defName="Jecrell_GasStreetLampAlpha" or defName="Jecrell_GasStreetLampBeta" or defName="Jecrell_GasLamp"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="Jecrell_Chandelier" or defName="Jecrell_ChandelierRoyal" or defName="Jecrell_Candelabra" or defName="Jecrell_GasStreetLampAlpha" or defName="Jecrell_GasStreetLampBeta" or defName="Jecrell_GasLamp"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
                                 </li>
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[@Name="Estate_ArcLampBase"]</xpath>
+                                    <xpath>Defs/ThingDef[@Name="Estate_ArcLampBase"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -274,18 +274,18 @@
                             <operations>
                                 <!--LED Lights Rope-->
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="CCP_BaseLED" or @Name="CCP_LEDGrowLightBase" or @Name="CCP_LEDRopeLightBase" or @Name="CCP_LEDWallLight" or @Name="CCP_WRLEDWallLight" or @Name="CCP_LEDLight" or @Name="CCP_WRLEDLight" or @Name="CCP_HIDLEDLight" or @Name="CCP_WRHIDLEDLight"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="CCP_BaseLED" or @Name="CCP_LEDGrowLightBase" or @Name="CCP_LEDRopeLightBase" or @Name="CCP_LEDWallLight" or @Name="CCP_WRLEDWallLight" or @Name="CCP_LEDLight" or @Name="CCP_WRLEDLight" or @Name="CCP_HIDLEDLight" or @Name="CCP_WRHIDLEDLight"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
                                 </li>
                                 <!--
                         <li Class="PatchOperationRemove">
-                            <xpath>/Defs/ThingDef[defName="CCP_LEDMedLight"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="CCP_LEDMedLight"]/designationCategory</xpath>
                         </li>
                     -->
                                 <li Class="PatchOperationRemove">
-                                    <xpath>/Defs/DesignationCategoryDef[defName="LEDLights"]</xpath>
+                                    <xpath>Defs/DesignationCategoryDef[defName="LEDLights"]</xpath>
                                 </li>
                             </operations>
                         </match>
@@ -335,7 +335,7 @@
                             <operations>
                                 <!--Lighting-->
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[defName="Lamp-pot" or @Name="Lamp-potBase" or defName="ObeliskMeh"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="Lamp-pot" or @Name="Lamp-potBase" or defName="ObeliskMeh"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -356,7 +356,7 @@
 
                                 <!--Move all lights to Lighting category-->
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="Anon2EndTableLight" or defName="Anon2RoyalEndTableLight" or @Name="ANON2StandingLampBase"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="Anon2EndTableLight" or defName="Anon2RoyalEndTableLight" or @Name="ANON2StandingLampBase"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -374,25 +374,25 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[@Name="LampBaseOutdoor"]</xpath>
+                                    <xpath>Defs/ThingDef[@Name="LampBaseOutdoor"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
                                 </li>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="LanternBase"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="LanternBase"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
                                 </li>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="StreetLampBase"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="StreetLampBase"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
                                 </li>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="OutdoorFloodLights"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="OutdoorFloodLights"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -410,21 +410,21 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[@Name="PRF_FloorIconBase"]</xpath>
+                                    <xpath>Defs/ThingDef[@Name="PRF_FloorIconBase"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
                                 </li>
                                 <li Class="PatchOperationConditional">
-                                    <xpath>/Defs/ThingDef[defName="PRF_WallLight" or defName="PRF_IndustrialLamp"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="PRF_WallLight" or defName="PRF_IndustrialLamp"]/designationCategory</xpath>
                                     <match Class="PatchOperationReplace">
-                                        <xpath>/Defs/ThingDef[defName="PRF_WallLight" or defName="PRF_IndustrialLamp" or defName="PRF_FloorSpotlight"]/designationCategory</xpath>
+                                        <xpath>Defs/ThingDef[defName="PRF_WallLight" or defName="PRF_IndustrialLamp" or defName="PRF_FloorSpotlight"]/designationCategory</xpath>
                                         <value>
                                             <designationCategory>DZ_Lighting</designationCategory>
                                         </value>
                                     </match>
                                     <nomatch Class="PatchOperationAdd">
-                                        <xpath>/Defs/ThingDef[defName="PRF_WallLight" or defName="PRF_IndustrialLamp" or defName="PRF_FloorSpotlight"]</xpath>
+                                        <xpath>Defs/ThingDef[defName="PRF_WallLight" or defName="PRF_IndustrialLamp" or defName="PRF_FloorSpotlight"]</xpath>
                                         <value>
                                             <designationCategory>DZ_Lighting</designationCategory>
                                         </value>
@@ -443,7 +443,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="RB_WaxCandle"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="RB_WaxCandle"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -461,7 +461,7 @@
                             <operations>
 
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="RIKWallLampBase" or @Name="RIKLampBase" or @Name="RIKLampBase2" or defName="BOLTASKLamp"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="RIKWallLampBase" or @Name="RIKLampBase" or @Name="RIKLampBase2" or defName="BOLTASKLamp"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -476,7 +476,7 @@
                             <li>Steam Light</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="SL_TungstenTableLamp" or defName="SL_FlourescentTableLamp" or defName="SL_FlourescentWallLamp" or defName="SL_FlourescentChandelierLamp" or defName="SL_TungstenChandelierLamp" or defName="SL_StreetLamp"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="SL_TungstenTableLamp" or defName="SL_FlourescentTableLamp" or defName="SL_FlourescentWallLamp" or defName="SL_FlourescentChandelierLamp" or defName="SL_TungstenChandelierLamp" or defName="SL_StreetLamp"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Lighting</designationCategory>
                             </value>
@@ -493,7 +493,7 @@
                             <operations>
                                 <!--Lights-->
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="LightColumnMod" or defName="DarkColumnMod"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="LightColumnMod" or defName="DarkColumnMod"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -512,7 +512,7 @@
                             <li>Vanilla Factions Expanded - Settlers</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="Chemlamp" or defName="ChemlampPost"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="Chemlamp" or defName="ChemlampPost"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Lighting</designationCategory>
                             </value>
@@ -526,7 +526,7 @@
                             <li>Vanilla Furniture Expanded</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="Light_ModernLamp" or 
                                 defName="Light_Streetlamp" or 
                                 defName="Table_LightEndTable"
@@ -543,7 +543,7 @@
                             <li>Vanilla Furniture Expanded - Spacer Module</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[defName="Light_SpacerLamp" or defName="Spacer_OutdoorLamp"]</xpath>
+                            <xpath>Defs/ThingDef[defName="Light_SpacerLamp" or defName="Spacer_OutdoorLamp"]</xpath>
                             <value>
                                 <designationCategory>DZ_Lighting</designationCategory>
                             </value>
@@ -562,7 +562,7 @@
                             <operations>
                                 <!--Lighting-->
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="VBY_JapaneseLanternBase" or defName="VBY_Andon" or defName="VBY_AndonElec" or defName="VBY_Ishidoro"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="VBY_JapaneseLanternBase" or defName="VBY_Andon" or defName="VBY_AndonElec" or defName="VBY_Ishidoro"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -577,7 +577,7 @@
                             <li>VGP Vegetable Garden</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="VG_TorchLamp"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="VG_TorchLamp"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Lighting</designationCategory>
                             </value>
@@ -593,7 +593,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="MURWallLightBase"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="MURWallLightBase"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -613,7 +613,7 @@
                             <operations>
 
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[defName="ZEN_Tachidoro" or defName="ZEN_Andon"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="ZEN_Tachidoro" or defName="ZEN_Andon"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Lighting</designationCategory>
                                     </value>
@@ -629,7 +629,7 @@
                             <li>Vanilla Factions Expanded - Ancients</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="VFEA_WallLamp_Red" or 
                                 defName="VFEA_WallLamp_Green" or 
                                 defName="VFEA_WallLamp_Blue" or 
@@ -648,7 +648,7 @@
                             <li>Simple Utilities: Walls</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="Owl_Fencepost_Chemlamp" or 
                                 defName="Owl_Fencepost_TorchLamp" or 
                                 defName="Owl_Fencepost_Lamp" or 
@@ -664,7 +664,7 @@
                             <li>Rim-Effect: Core</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RE_PrefabStandingLamp"
                                 ]</xpath>
                             <value>
@@ -678,7 +678,7 @@
                             <li>Rim-Effect: Extended Cut</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RE_PrefabOutdoorLamp" or
                                 defName="RE_PreFabWallLight"
                                 ]</xpath>
@@ -693,7 +693,7 @@
                             <li>[RH2] Uncle Boris' - Used Furniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RH2_Floodlight_Big" or
                                 defName="RH2_MiniFloodlight" or
                                 defName="RH2_HolmoFloorLamp"
@@ -709,7 +709,7 @@
                             <li>Edo Themed Expansion</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="HSToro" or
                                 defName="HSAndon"
                                 ]</xpath>
@@ -725,7 +725,7 @@
                             <li>Wall Decorations</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="ucp_exitsigngreen" or
                                 defName="ucp_exitsignred"
                                 ]</xpath>
@@ -740,7 +740,7 @@
                             <li>Vanilla Factions Expanded - Medieval</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="VFEM_WallTorchLamp"
                                 ]</xpath>
                             <value>
@@ -754,7 +754,7 @@
                             <li>Ideology</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="Darktorch" or
                                 defName="DarktorchFungus"
                                 ]</xpath>
@@ -769,7 +769,7 @@
                             <li>Warhammer: Skaven</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="SkavenWarpBrazier"
                                 ]</xpath>
                             <value>
@@ -783,7 +783,7 @@
                             <li>RimLife Expansion Furniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RLE_EmbeddedLampTime" or
                                 defName="RLE_EmbeddedLampLow" or
                                 defName="RLE_EmbeddedLampSt" or
@@ -802,7 +802,7 @@
                             <li>Erin's Japanese Furniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="Erin_ElectricAndon" or
                                 defName="Erin_TorchAndon"
                                 ]</xpath>
@@ -817,7 +817,7 @@
                             <li>[O21] Clutter Furniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="ClutterFloorLampA"
                                 ]</xpath>
                             <value>
@@ -830,7 +830,7 @@
                             <li>[O21] Clutter Furniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/Clutter_Furniture.ClutterThingDefsFurniture[
+                            <xpath>Defs/Clutter_Furniture.ClutterThingDefsFurniture[
                                 defName="ClutterLampYellow" or
                                 defName="ClutterLampBlue" or
                                 defName="ClutterLampRed" or
@@ -849,7 +849,7 @@
                             <li>GloomyFurniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                               defName="GL_Wall_Lamp"
                               ]</xpath>
                             <value>
@@ -864,7 +864,7 @@
                             <li>Medieval Overhaul</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="DankPyon_Candles" or
                                 defName="DankPyon_CandleStand"
                                 ]</xpath>

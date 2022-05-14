@@ -6,14 +6,17 @@
         <key>TPatchesLogging</key>
         <defaultValue>false</defaultValue>
         <caseTrue>
+            
             <Operation Class="XmlExtensions.CreateDocument">
                 <docName>Log</docName>
                 <xpath>Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
             </Operation>
+
             <Operation Class="XmlExtensions.CreateDocument">
                 <docName>Info</docName>
                 <xpath>Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Info"]/settings</xpath>
             </Operation>
+
         </caseTrue>
     </Operation>
 

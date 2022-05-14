@@ -52,7 +52,7 @@
 
 
                                     <Operation Class="PatchOperationAdd">
-                                        <xpath>/Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
+                                        <xpath>Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
                                         <value>
                                             <li>Rimefeller.Designator_CleanOil</li>
                                             <li>Rimefeller.Designator_RemovePipeline</li>
@@ -60,7 +60,7 @@
                                     </Operation>
 
                                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                        <xpath>/Defs/ThingDef[defName="Filth_NapalmTrail" or defName="SparkGrid" or defName="NapalmBomb"]</xpath>
+                                        <xpath>Defs/ThingDef[defName="Filth_NapalmTrail" or defName="SparkGrid" or defName="NapalmBomb"]</xpath>
                                         <value>
                                             <designationCategory>Security</designationCategory>
                                         </value>
@@ -69,7 +69,7 @@
 
                                     !!!
                                     <Operation Class="PatchOperationReplace">
-                                        <xpath>/Defs/ThingDef[defName="Filth_OilSlick"]/designationCategory</xpath>
+                                        <xpath>Defs/ThingDef[defName="Filth_OilSlick"]/designationCategory</xpath>
                                         <value>
                                             <designationCategory />
                                         </value>
@@ -78,7 +78,7 @@
 
 
                                     <Operation Class="PatchOperationReplace">
-                                        <xpath>/Defs/TerrainDef/designationCategory[text()="Rimefeller"]</xpath>
+                                        <xpath>Defs/TerrainDef/designationCategory[text()="Rimefeller"]</xpath>
                                         <value>
                                             <designationCategory>Floors</designationCategory>
                                         </value>
@@ -86,7 +86,7 @@
 
 
                                     <Operation Class="PatchOperationReplace">
-                                        <xpath>/Defs/ThingDef/designationCategory[text()="Rimefeller"]</xpath>
+                                        <xpath>Defs/ThingDef/designationCategory[text()="Rimefeller"]</xpath>
                                         <value>
                                             <designationCategory>DZ_Industrial</designationCategory>
                                         </value>
@@ -95,7 +95,7 @@
 
                                     !!!
                                     <Operation Class="PatchOperationRemove">
-                                        <xpath>/Defs/DesignationCategoryDef[defName="Rimefeller"]</xpath>
+                                        <xpath>Defs/DesignationCategoryDef[defName="Rimefeller"]</xpath>
                                     </Operation>
                                     !!!
 

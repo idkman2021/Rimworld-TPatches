@@ -33,7 +33,7 @@
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="ludeon.rimworld.royalty">
                         <xpath>
-                            /Defs/ThingDef[
+                            Defs/ThingDef[
                     @Name="NatureShrineBase" or 
                     defName="Throne" or 
                     defName="GrandThrone" or
@@ -52,7 +52,7 @@
                             <li>Vanilla Factions Expanded - Vikings</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="VFEV_RuneStone"
                                 ]</xpath>
                             <value>
@@ -66,7 +66,7 @@
                             <li>Edo Themed Expansion</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="HSHaka"
                                 ]</xpath>
                             <value>
@@ -80,7 +80,7 @@
                             <li>Rim-Effect: Core</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RE_GraveBodyBag"
                                 ]</xpath>
                             <value>

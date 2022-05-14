@@ -28,27 +28,27 @@
 
                             <!--Misc-->
                             <Operation Class="PatchOperationReplace">
-                                <xpath>/Defs/ThingDef[defName="FireSprinkler"]/designationCategory</xpath>
+                                <xpath>Defs/ThingDef[defName="FireSprinkler"]/designationCategory</xpath>
                                 <value>
                                     <designationCategory>Misc</designationCategory>
                                 </value>
                             </Operation>
                             <!--Structure-->
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                <xpath>/Defs/ThingDef[defName="ToiletStallDoor"]</xpath>
+                                <xpath>Defs/ThingDef[defName="ToiletStallDoor"]</xpath>
                                 <value>
                                     <designationCategory>Structure</designationCategory>
                                 </value>
                             </Operation>
                             <!--Temperature-->
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                <xpath>/Defs/ThingDef[@Name="BasedHeating" or defName="SolarHeater"]</xpath>
+                                <xpath>Defs/ThingDef[@Name="BasedHeating" or defName="SolarHeater"]</xpath>
                                 <value>
                                     <designationCategory>Temperature</designationCategory>
                                 </value>
                             </Operation>
                             <Operation Class="PatchOperationReplace">
-                                <xpath>/Defs/ThingDef[@Name="BaseAircon"  or defName="airPipe" or defName="AirConOutdoorUnit" or defName="CeilingFan" or defName="CeilingFanS"]/designationCategory</xpath>
+                                <xpath>Defs/ThingDef[@Name="BaseAircon"  or defName="airPipe" or defName="AirConOutdoorUnit" or defName="CeilingFan" or defName="CeilingFanS"]/designationCategory</xpath>
                                 <value>
                                     <designationCategory>Temperature</designationCategory>
                                 </value>
@@ -59,7 +59,7 @@
                                 <defaultValue>true</defaultValue>
                                 <caseTrue>
                                     <Operation Class="PatchOperationReplace">
-                                        <xpath>/Defs/ThingDef[defName="IrrigationSprinkler" or defName="BiosolidsComposter"]/designationCategory</xpath>
+                                        <xpath>Defs/ThingDef[defName="IrrigationSprinkler" or defName="BiosolidsComposter"]/designationCategory</xpath>
                                         <value>
                                             <designationCategory>DZ_Husbandry</designationCategory>
                                         </value>
@@ -68,7 +68,7 @@
                                 <caseFalse>
 
                                     <Operation Class="PatchOperationReplace">
-                                        <xpath>/Defs/ThingDef[defName="IrrigationSprinkler" or defName="BiosolidsComposter"]/designationCategory</xpath>
+                                        <xpath>Defs/ThingDef[defName="IrrigationSprinkler" or defName="BiosolidsComposter"]/designationCategory</xpath>
                                         <value>
                                             <designationCategory>Misc</designationCategory>
                                         </value>
@@ -89,7 +89,7 @@
                         </mods>
                         <caseTrue>
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                <xpath>/Defs/ThingDef[defName="WashingMachine"]</xpath>
+                                <xpath>Defs/ThingDef[defName="WashingMachine"]</xpath>
                                 <value>
                                     <designationCategory>Hygiene</designationCategory>
                                 </value>

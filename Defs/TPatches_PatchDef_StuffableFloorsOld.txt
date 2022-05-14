@@ -18,7 +18,7 @@
 
             <!-- checks if floor made of this material already exists -->
             <Operation Class="PatchOperationConditional">
-                <xpath>/Defs/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
+                <xpath>Defs/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
 
                 <!-- if it doesn't, it creates the floor -->
                 <nomatch Class="PatchOperationSequence">
@@ -71,7 +71,7 @@
 
             <!-- checks if floor made of this material already exists -->
             <Operation Class="PatchOperationConditional">
-                <xpath>/Defs/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
+                <xpath>Defs/TerrainDef[@ParentName="{TerrainBase}"]/costList/{MaterialDefName}</xpath>
 
                 <!-- if it doesn't, it creates the floor -->
                 <nomatch Class="PatchOperationSequence">
@@ -85,11 +85,11 @@
                             </value>
                         </li>
                         <li Class="XmlExtensions.PatchOperationCopy">
-                            <xpath>/Defs/TerrainDef[@ParentName="{TerrainBase}"][1]/*[not(name()="defName")]</xpath>
-                            <paste>/Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</paste>
+                            <xpath>Defs/TerrainDef[@ParentName="{TerrainBase}"][1]/*[not(name()="defName")]</xpath>
+                            <paste>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</paste>
                         </li>
                         <li Class="PatchOperationAttributeAdd">
-                            <xpath>/Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</xpath>
+                            <xpath>Defs/TerrainDef[defName="TPatches_{TerrainBase}{MaterialDefName}"]</xpath>
                             <attribute>ParentName</attribute>
                             <value>{TerrainBase}</value>
                         </li>
@@ -140,27 +140,27 @@
 
             <!-- check if floor has a designatordropdown -->
             <Operation Class="PatchOperationConditional">
-                <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]/designatorDropdown</xpath>
+                <xpath>Defs/TerrainDef[defName="{TerrainDefName}"]/designatorDropdown</xpath>
 
                 <!-- if it does, checks if a floor with that designator dropdown and that material exists. -->
                 <match Class="XmlExtensions.CreateVariable">
                     <storeIn>designatorDropdown</storeIn>
-                    <value>/Defs/TerrainDef[defName="{TerrainDefName}"]/designatorDropdown</value>
+                    <value>Defs/TerrainDef[defName="{TerrainDefName}"]/designatorDropdown</value>
                     <fromXml>true</fromXml>
                     <apply>
                         <Operation Class="PatchOperationConditional">
-                            <xpath>/Defs/TerrainDef[designatorDropdown="{designatorDropdown}"]/costList/{MaterialDefName}</xpath>
+                            <xpath>Defs/TerrainDef[designatorDropdown="{designatorDropdown}"]/costList/{MaterialDefName}</xpath>
 
                             <!-- if it doesn't exist, creates it -->
                             <nomatch Class="PatchOperationSequence">
                                 <operations>
 
                                     <li Class="XmlExtensions.PatchOperationCopy">
-                                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                                        <xpath>Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
                                         <paste>/Defs</paste>
                                     </li>
                                     <li Class="PatchOperationReplace">
-                                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
+                                        <xpath>Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
                                         <value>
                                             <defName>TPatches_{TerrainDefName}{MaterialDefName}</defName>
                                         </value>
@@ -208,11 +208,11 @@
                             </value>
                         </li>
                         <li Class="XmlExtensions.PatchOperationCopy">
-                            <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                            <xpath>Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
                             <paste>/Defs</paste>
                         </li>
                         <li Class="PatchOperationReplace">
-                            <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
+                            <xpath>Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
                             <value>
                                 <defName>TPatches_{TerrainDefName}{MaterialDefName}</defName>
                             </value>
@@ -263,17 +263,17 @@
 
             <!-- check if floor has a designatordropdown -->
             <Operation Class="XmlExtensions.ConditionalInherited">
-                <xpathDef>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpathDef>
+                <xpathDef>Defs/TerrainDef[defName="{TerrainDefName}"]</xpathDef>
                 <xpathLocal>designatorDropdown</xpathLocal>
                 <caseTrue>
                     <!-- if it does, adds the new fake wood floor -->
 
                     <Operation Class="XmlExtensions.PatchOperationCopy">
-                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                        <xpath>Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
                         <paste>/Defs</paste>
                     </Operation>
                     <Operation Class="PatchOperationReplace">
-                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
+                        <xpath>Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
                         <value>
                             <defName>TPatches_{TerrainDefName}{WoodDefName}</defName>
                         </value>
@@ -301,11 +301,11 @@
                         </value>
                     </Operation>
                     <Operation Class="XmlExtensions.PatchOperationCopy">
-                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
+                        <xpath>Defs/TerrainDef[defName="{TerrainDefName}"]</xpath>
                         <paste>/Defs</paste>
                     </Operation>
                     <Operation Class="PatchOperationReplace">
-                        <xpath>/Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
+                        <xpath>Defs/TerrainDef[defName="{TerrainDefName}"][2]/defName</xpath>
                         <value>
                             <defName>TPatches_{TerrainDefName}{WoodDefName}</defName>
                         </value>
@@ -343,7 +343,7 @@
 
             <!-- vfe architect -->
             <Operation Class="PatchOperationConditional">
-                <xpath>/Defs/TerrainDef[@ParentName="{VFEArch_WoodenParquetBase}" and not(contains(label,"{WoodLabel}"))]</xpath>
+                <xpath>Defs/TerrainDef[@ParentName="{VFEArch_WoodenParquetBase}" and not(contains(label,"{WoodLabel}"))]</xpath>
                 <match Class="PatchOperationAdd">
                     <xpath>Defs</xpath>
                     <value>
@@ -359,7 +359,7 @@
             </Operation>
 
             <Operation Class="PatchOperationConditional">
-                <xpath>/Defs/TerrainDef[designatorDropdown="{VFEArch_WoodFloor}" and not(contains(label,"{WoodLabel}"))]</xpath>
+                <xpath>Defs/TerrainDef[designatorDropdown="{VFEArch_WoodFloor}" and not(contains(label,"{WoodLabel}"))]</xpath>
                 <match Class="PatchOperationAdd">
                     <xpath>Defs</xpath>
                     <value>
@@ -388,7 +388,7 @@
             </Operation>
 
             <Operation Class="PatchOperationConditional">
-                <xpath>/Defs/TerrainDef[designatorDropdown="{VFEArch_WoodFloor}" and not(contains(label,"{WoodLabel}"))]</xpath>
+                <xpath>Defs/TerrainDef[designatorDropdown="{VFEArch_WoodFloor}" and not(contains(label,"{WoodLabel}"))]</xpath>
                 <match Class="PatchOperationAdd">
                     <xpath>Defs</xpath>
                     <value>

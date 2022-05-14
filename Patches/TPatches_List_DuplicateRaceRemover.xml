@@ -16,26 +16,26 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="AlienAsari"]</xpath>
+                        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="AlienAsari"]</xpath>
                     </Operation>
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/PawnKindDef[race="AlienAsari"]</xpath>
+                        <xpath>Defs/PawnKindDef[race="AlienAsari"]</xpath>
                     </Operation>
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/AlienRace.RaceSettings[defName="AsariRaceSettings"]</xpath>
+                        <xpath>Defs/AlienRace.RaceSettings[defName="AsariRaceSettings"]</xpath>
                     </Operation>
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/FactionDef[defName="AsariFaction" or defName="AsariPlayerColony"]</xpath>
-                    </Operation>
-
-                    <Operation Class="PatchOperationRemove">
-                        <success>Always</success>
-                        <xpath>/Defs/QuestScriptDef/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_IsSet"]/node[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices/li[factionDef="AsariFaction"]</xpath>
+                        <xpath>Defs/FactionDef[defName="AsariFaction" or defName="AsariPlayerColony"]</xpath>
                     </Operation>
 
                     <Operation Class="PatchOperationRemove">
                         <success>Always</success>
-                        <xpath>/Defs/QuestScriptDef/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices/li[factionDef="AsariFaction"]</xpath>
+                        <xpath>Defs/QuestScriptDef/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_IsSet"]/node[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices/li[factionDef="AsariFaction"]</xpath>
+                    </Operation>
+
+                    <Operation Class="PatchOperationRemove">
+                        <success>Always</success>
+                        <xpath>Defs/QuestScriptDef/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices/li[factionDef="AsariFaction"]</xpath>
                     </Operation>
 
                 </caseTrue>
@@ -51,16 +51,16 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="AlienDrell"]</xpath>
+                        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="AlienDrell"]</xpath>
                     </Operation>
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/PawnKindDef[race="AlienDrell"]</xpath>
+                        <xpath>Defs/PawnKindDef[race="AlienDrell"]</xpath>
                     </Operation>
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/AlienRace.RaceSettings[defName="DrellRaceSettings"]</xpath>
+                        <xpath>Defs/AlienRace.RaceSettings[defName="DrellRaceSettings"]</xpath>
                     </Operation>
                     <Operation Class="PatchOperationRemove">
-                        <xpath>/Defs/FactionDef[defName="DrellFaction" or defName="DrellPlayerColony"]</xpath>
+                        <xpath>Defs/FactionDef[defName="DrellFaction" or defName="DrellPlayerColony"]</xpath>
                     </Operation>
 
                 </caseTrue>

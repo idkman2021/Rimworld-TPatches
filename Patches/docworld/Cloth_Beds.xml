@@ -29,15 +29,15 @@
             <success>Always</success>
             <operations>
                 <li Class="PatchOperationConditional">                    <!--Vanilla Bed-->
-                    <xpath>/Defs/ThingDef[defName="Bed"]/costList</xpath>
+                    <xpath>Defs/ThingDef[defName="Bed"]/costList</xpath>
                     <match Class="PatchOperationAdd">
-                        <xpath>/Defs/ThingDef[defName="Bed"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="Bed"]/costList</xpath>
                         <value>
                             <Cloth>12</Cloth>
                         </value>
                     </match>
                     <nomatch Class="PatchOperationAdd">
-                        <xpath>/Defs/ThingDef[defName="Bed"]</xpath>
+                        <xpath>Defs/ThingDef[defName="Bed"]</xpath>
                         <value>
                             <costList>
                                 <Cloth>12</Cloth>
@@ -46,15 +46,15 @@
                     </nomatch>
                 </li>
                 <li Class="PatchOperationConditional">                    <!--Vanilla Hospital Bed-->
-                    <xpath>/Defs/ThingDef[defName="HospitalBed"]/costList</xpath>
+                    <xpath>Defs/ThingDef[defName="HospitalBed"]/costList</xpath>
                     <match Class="PatchOperationAdd">
-                        <xpath>/Defs/ThingDef[defName="HospitalBed"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="HospitalBed"]/costList</xpath>
                         <value>
                             <Cloth>12</Cloth>
                         </value>
                     </match>
                     <nomatch Class="PatchOperationAdd">
-                        <xpath>/Defs/ThingDef[defName="HospitalBed"]</xpath>
+                        <xpath>Defs/ThingDef[defName="HospitalBed"]</xpath>
                         <value>
                             <costList>
                                 <Cloth>12</Cloth>
@@ -63,15 +63,15 @@
                     </nomatch>
                 </li>
                 <li Class="PatchOperationConditional">                    <!--Vanilla Double Bed-->
-                    <xpath>/Defs/ThingDef[defName="DoubleBed"]/costList</xpath>
+                    <xpath>Defs/ThingDef[defName="DoubleBed"]/costList</xpath>
                     <match Class="PatchOperationAdd">
-                        <xpath>/Defs/ThingDef[defName="DoubleBed"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="DoubleBed"]/costList</xpath>
                         <value>
                             <Cloth>18</Cloth>
                         </value>
                     </match>
                     <nomatch Class="PatchOperationAdd">
-                        <xpath>/Defs/ThingDef[defName="DoubleBed"]</xpath>
+                        <xpath>Defs/ThingDef[defName="DoubleBed"]</xpath>
                         <value>
                             <costList>
                                 <Cloth>18</Cloth>
@@ -80,15 +80,15 @@
                     </nomatch>
                 </li>
                 <li Class="PatchOperationConditional">                    <!--Vanilla Royal Double Bed-->
-                    <xpath>/Defs/ThingDef[defName="RoyalBed"]/costList</xpath>
+                    <xpath>Defs/ThingDef[defName="RoyalBed"]/costList</xpath>
                     <match Class="PatchOperationAdd">
-                        <xpath>/Defs/ThingDef[defName="RoyalBed"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="RoyalBed"]/costList</xpath>
                         <value>
                             <Cloth>24</Cloth>
                         </value>
                     </match>
                     <nomatch Class="PatchOperationAdd">
-                        <xpath>/Defs/ThingDef[defName="RoyalBed"]</xpath>
+                        <xpath>Defs/ThingDef[defName="RoyalBed"]</xpath>
                         <value>
                             <costList>
                                 <Cloth>24</Cloth>
@@ -121,15 +121,15 @@
                 <success>Always</success>
                 <operations>
                     <li Class="PatchOperationConditional">                        <!--RGK_bedSingle/B Bed-->
-                        <xpath>/Defs/ThingDef[defName="RGK_bedSingle" or defName="RGK_bedSingleB"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="RGK_bedSingle" or defName="RGK_bedSingleB"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RGK_bedSingle" or defName="RGK_bedSingleB"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="RGK_bedSingle" or defName="RGK_bedSingleB"]/costList</xpath>
                             <value>
                                 <Cloth>12</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RGK_bedSingle" or defName="RGK_bedSingleB"]</xpath>
+                            <xpath>Defs/ThingDef[defName="RGK_bedSingle" or defName="RGK_bedSingleB"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>12</Cloth>
@@ -138,15 +138,15 @@
                         </nomatch>
                     </li>
                     <li Class="PatchOperationConditional">                        <!--RGK_bedDouble/B Bed-->
-                        <xpath>/Defs/ThingDef[defName="RGK_bedDouble" or defName="RGK_bedDoubleB"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="RGK_bedDouble" or defName="RGK_bedDoubleB"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RGK_bedDouble" or defName="RGK_bedDoubleB"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="RGK_bedDouble" or defName="RGK_bedDoubleB"]/costList</xpath>
                             <value>
                                 <Cloth>18</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RGK_bedDouble" or defName="RGK_bedDoubleB"]</xpath>
+                            <xpath>Defs/ThingDef[defName="RGK_bedDouble" or defName="RGK_bedDoubleB"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>18</Cloth>
@@ -180,15 +180,15 @@
                 <success>Always</success>
                 <operations>
                     <li Class="PatchOperationConditional">                        <!--RJW_Bed-->
-                        <xpath>/Defs/ThingDef[defName="RJW_Bed"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="RJW_Bed"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RJW_Bed"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="RJW_Bed"]/costList</xpath>
                             <value>
                                 <Cloth>12</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RJW_Bed"]</xpath>
+                            <xpath>Defs/ThingDef[defName="RJW_Bed"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>12</Cloth>
@@ -197,15 +197,15 @@
                         </nomatch>
                     </li>
                     <li Class="PatchOperationConditional">                        <!--RJW_DoubleBed-->
-                        <xpath>/Defs/ThingDef[defName="RJW_DoubleBed"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="RJW_DoubleBed"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RJW_DoubleBed"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="RJW_DoubleBed"]/costList</xpath>
                             <value>
                                 <Cloth>18</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RJW_DoubleBed"]</xpath>
+                            <xpath>Defs/ThingDef[defName="RJW_DoubleBed"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>18</Cloth>
@@ -214,15 +214,15 @@
                         </nomatch>
                     </li>
                     <li Class="PatchOperationConditional">                        <!--RJW_RoyalBed-->
-                        <xpath>/Defs/ThingDef[defName="RJW_RoyalBed"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="RJW_RoyalBed"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RJW_RoyalBed"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="RJW_RoyalBed"]/costList</xpath>
                             <value>
                                 <Cloth>24</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="RJW_RoyalBed"]</xpath>
+                            <xpath>Defs/ThingDef[defName="RJW_RoyalBed"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>24</Cloth>
@@ -256,15 +256,15 @@
                 <success>Always</success>
                 <operations>
                     <li Class="PatchOperationConditional">                        <!--SNOREGGSingle/KRUDNEPPSingle Bed-->
-                        <xpath>/Defs/ThingDef[defName="SNOREGGSingle" or defName="KRUDNEPPSingle"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="SNOREGGSingle" or defName="KRUDNEPPSingle"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="SNOREGGSingle" or defName="KRUDNEPPSingle"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="SNOREGGSingle" or defName="KRUDNEPPSingle"]/costList</xpath>
                             <value>
                                 <Cloth>12</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="SNOREGGSingle" or defName="KRUDNEPPSingle"]</xpath>
+                            <xpath>Defs/ThingDef[defName="SNOREGGSingle" or defName="KRUDNEPPSingle"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>12</Cloth>
@@ -273,15 +273,15 @@
                         </nomatch>
                     </li>
                     <li Class="PatchOperationConditional">                        <!--SNOREGGDouble/SLABNEPPDouble Bed-->
-                        <xpath>/Defs/ThingDef[defName="SNOREGGDouble" or defName="SLABNEPPDouble"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="SNOREGGDouble" or defName="SLABNEPPDouble"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="SNOREGGDouble" or defName="SLABNEPPDouble"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="SNOREGGDouble" or defName="SLABNEPPDouble"]/costList</xpath>
                             <value>
                                 <Cloth>18</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="SNOREGGDouble" or defName="SLABNEPPDouble"]</xpath>
+                            <xpath>Defs/ThingDef[defName="SNOREGGDouble" or defName="SLABNEPPDouble"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>18</Cloth>
@@ -315,15 +315,15 @@
                 <success>Always</success>
                 <operations>
                     <li Class="PatchOperationConditional">                        <!--Bed_Simple-->
-                        <xpath>/Defs/ThingDef[defName="Bed_Simple"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="Bed_Simple"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_Simple"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_Simple"]/costList</xpath>
                             <value>
                                 <Cloth>6</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_Simple"]</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_Simple"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>6</Cloth>
@@ -333,15 +333,15 @@
                     </li>
 
                     <li Class="PatchOperationConditional">                        <!--Bed_Ergonomic-->
-                        <xpath>/Defs/ThingDef[defName="Bed_Ergonomic"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="Bed_Ergonomic"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_Ergonomic"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_Ergonomic"]/costList</xpath>
                             <value>
                                 <Cloth>12</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_Ergonomic"]</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_Ergonomic"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>12</Cloth>
@@ -350,15 +350,15 @@
                         </nomatch>
                     </li>
                     <li Class="PatchOperationConditional">                        <!--Bed_DoubleErgonomic-->
-                        <xpath>/Defs/ThingDef[defName="Bed_DoubleErgonomic"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="Bed_DoubleErgonomic"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_DoubleErgonomic"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_DoubleErgonomic"]/costList</xpath>
                             <value>
                                 <Cloth>18</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_DoubleErgonomic"]</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_DoubleErgonomic"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>18</Cloth>
@@ -367,15 +367,15 @@
                         </nomatch>
                     </li>
                     <li Class="PatchOperationConditional">                        <!--Bed_Kingsize-->
-                        <xpath>/Defs/ThingDef[defName="Bed_Kingsize"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="Bed_Kingsize"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_Kingsize"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_Kingsize"]/costList</xpath>
                             <value>
                                 <Cloth>24</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_Kingsize"]</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_Kingsize"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>24</Cloth>
@@ -408,15 +408,15 @@
                 <success>Always</success>
                 <operations>
                     <li Class="PatchOperationConditional">                        <!--Bed_AdvBed-->
-                        <xpath>/Defs/ThingDef[defName="Bed_AdvBed"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="Bed_AdvBed"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_AdvBed"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_AdvBed"]/costList</xpath>
                             <value>
                                 <Cloth>12</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_AdvBed"]</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_AdvBed"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>12</Cloth>
@@ -425,15 +425,15 @@
                         </nomatch>
                     </li>
                     <li Class="PatchOperationConditional">                        <!--Bed_AdvDoubleBed-->
-                        <xpath>/Defs/ThingDef[defName="Bed_AdvDoubleBed"]/costList</xpath>
+                        <xpath>Defs/ThingDef[defName="Bed_AdvDoubleBed"]/costList</xpath>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_AdvDoubleBed"]/costList</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_AdvDoubleBed"]/costList</xpath>
                             <value>
                                 <Cloth>18</Cloth>
                             </value>
                         </match>
                         <nomatch Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Bed_AdvDoubleBed"]</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_AdvDoubleBed"]</xpath>
                             <value>
                                 <costList>
                                     <Cloth>18</Cloth>

@@ -49,33 +49,33 @@
 
 
                                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                        <xpath>/Defs/ThingDef[defName="DU_Blastdoor" or defName="RadiationShielding"]</xpath>
+                                        <xpath>Defs/ThingDef[defName="DU_Blastdoor" or defName="RadiationShielding"]</xpath>
                                         <value>
                                             <designationCategory>Structure</designationCategory>
                                         </value>
                                     </Operation>
                                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                        <xpath>/Defs/ThingDef[@Name="BasedWeapon"]</xpath>
+                                        <xpath>Defs/ThingDef[@Name="BasedWeapon"]</xpath>
                                         <value>
                                             <designationCategory>Security</designationCategory>
                                         </value>
                                     </Operation>
 
                                     <Operation Class="PatchOperationAdd">
-                                        <xpath>/Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
+                                        <xpath>Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
                                         <value>
                                             <li>Rimatomics.Designator_RemovePipe</li>
                                         </value>
                                     </Operation>
                                     <Operation Class="PatchOperationReplace">
-                                        <xpath>/Defs/ThingDef/designationCategory[text()="Rimatomics"]</xpath>
+                                        <xpath>Defs/ThingDef/designationCategory[text()="Rimatomics"]</xpath>
                                         <value>
                                             <designationCategory>DZ_Industrial</designationCategory>
                                         </value>
                                     </Operation>
                                     
                                     <Operation Class="PatchOperationRemove">
-                                        <xpath>/Defs/DesignationCategoryDef[defName="Rimatomics"]</xpath>
+                                        <xpath>Defs/DesignationCategoryDef[defName="Rimatomics"]</xpath>
                                     </Operation>
                                 
                                 </caseTrue>

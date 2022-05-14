@@ -29,28 +29,8 @@
                         </caseTrue>
                     </Operation>
 
-                    <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
-                        <value>
-
-                            <DesignationCategoryDef>
-                                <defName>DZ_Decor</defName>
-                                <label>Decor</label>
-                                <description>Beautify your base.</description>
-                                <order>460</order>
-                                <specialDesignatorClasses>
-                                    <li>Designator_Cancel</li>
-                                    <li>Designator_Deconstruct</li>
-                                    <li>Designator_Uninstall</li>
-                                </specialDesignatorClasses>
-                            </DesignationCategoryDef>
-
-                        </value>
-                    </Operation>
-
-
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>/Defs/ThingDef[
+                        <xpath>Defs/ThingDef[
                     @Name="SteleBase" or
                     defName="PlantPot"
                     ]</xpath>
@@ -61,7 +41,7 @@
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="ludeon.rimworld.ideology">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[
+                        <xpath>Defs/ThingDef[
                     defName="Drape" or
                     defName="PlantPot_Bonsai"
                     ]</xpath>
@@ -78,7 +58,7 @@
                         <match Class="PatchOperationSequence">
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="LT_MatBase" or @Name="DoorMatBase"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="LT_MatBase" or @Name="DoorMatBase"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -92,7 +72,7 @@
                             <li>Fantastic Decor</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="Bonzai" or defName="BonzaiTree" or defName="BonzaiFlower" or defName="Ferris" or defName="MiniBirch" or defName="MiniBroach" or defName="MiniMangrove" or defName="MiniMuhly" or defName="MiniPine" or defName="MiniPoplar" or defName="MiniSaguaro"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="Bonzai" or defName="BonzaiTree" or defName="BonzaiFlower" or defName="Ferris" or defName="MiniBirch" or defName="MiniBroach" or defName="MiniMangrove" or defName="MiniMuhly" or defName="MiniPine" or defName="MiniPoplar" or defName="MiniSaguaro"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Decor</designationCategory>
                             </value>
@@ -108,7 +88,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="ELIF_Banner_Base" or @Name="ELIF_FloorDeco_Base" or @Name="ELIF_TableDeco_Base"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="ELIF_Banner_Base" or @Name="ELIF_FloorDeco_Base" or @Name="ELIF_TableDeco_Base"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -126,7 +106,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[defName="GR_HugeBearRug" or defName="GR_HugeBearCatRug" or defName="GR_WolfRug" or defName="GR_MuffaloRug" or defName="GR_BoarTuskStatuette"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="GR_HugeBearRug" or defName="GR_HugeBearCatRug" or defName="GR_WolfRug" or defName="GR_MuffaloRug" or defName="GR_BoarTuskStatuette"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -140,7 +120,7 @@
                             <li>GloomyFurniture</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef//designationCategory[text()="OldStyleDeco"]</xpath>
+                            <xpath>Defs/ThingDef//designationCategory[text()="OldStyleDeco"]</xpath>
                             <value>
                                 <designationCategory>DZ_Decor</designationCategory>
                             </value>
@@ -158,7 +138,7 @@
                             <operations>
                                 <!--Move all plant pots to decor category-->
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="Anon2SquarePlantPot" or defName="Anon2PlantSpot"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="Anon2SquarePlantPot" or defName="Anon2PlantSpot"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -177,7 +157,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="Armorysignbase" or @Name="BARsignbase" or @Name="Femalesignbase" or @Name="Malesignbase" or @Name="OPENsignbase" or @Name="PLUSsignbase"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="Armorysignbase" or @Name="BARsignbase" or @Name="Femalesignbase" or @Name="Malesignbase" or @Name="OPENsignbase" or @Name="PLUSsignbase"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -195,7 +175,7 @@
                             <operations>
 
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[defName="BLUMTASK" or defName="POTBLUM" or defName="RUGUN" or defName="RUGDWA" or defName="FUTSTENTRug" or defName="STEPFUTRug" or defName="RUGTRE" or defName="RUGFIR" or defName="HOISTEPRug" or defName="MISKANTAARug" or defName="MATIPESSIRug" or defName="aFLIKFUTRug"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="BLUMTASK" or defName="POTBLUM" or defName="RUGUN" or defName="RUGDWA" or defName="FUTSTENTRug" or defName="STEPFUTRug" or defName="RUGTRE" or defName="RUGFIR" or defName="HOISTEPRug" or defName="MISKANTAARug" or defName="MATIPESSIRug" or defName="aFLIKFUTRug"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -217,7 +197,7 @@
                             <operations>
 
                                 <li Class="XmlExtensions.PatchOperationAddOrReplace">
-                                    <xpath>/Defs/ThingDef[defName="RimPlas_PlantPot"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="RimPlas_PlantPot"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -227,6 +207,7 @@
                     </Operation>
 
                     <!--Move items to Decor tab-->
+                    <!--
                     <Operation Class="PatchOperationFindMod">
                         <mods>
                             <li>Vanilla Furniture Expanded - Props and Decor</li>
@@ -235,7 +216,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef/designationCategory[text()="PropsandDecor"]</xpath>
+                                    <xpath>Defs/ThingDef/designationCategory[text()="PropsandDecor"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -243,6 +224,7 @@
                             </operations>
                         </match>
                     </Operation>
+                -->
 
 
                     <!--Move items to Decor, Floors, Lighting tab-->
@@ -254,7 +236,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="ZenBase" or @Name="RakedBase" or defName="ZEN_FlowerArch"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="ZenBase" or @Name="RakedBase" or defName="ZEN_FlowerArch"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Decor</designationCategory>
                                     </value>
@@ -269,7 +251,7 @@
                             <li>Pen's Decor</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="PensFlowerOne" or
                                 defName="PensFlowerTwo" or
                                 defName="PensTreeOne" or
@@ -291,7 +273,7 @@
                             <li>[RH2] Uncle Boris' - Used Furniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RH2_Trashcan_Office" or
                                 defName="RH2_CzechHedgehogBarricade"
                                 ]</xpath>
@@ -306,7 +288,7 @@
                             <li>Edo Themed Expansion</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="HSSashimono" or
                                 defName="HSKatanastand" or
                                 defName="HSToriiGate" or
@@ -325,7 +307,7 @@
                             <li>Wall Decorations</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="ucp_ivyleaves" or
                                 defName="ucp_ivyleavesorange" or
                                 defName="ucp_ivyleavescorner" or
@@ -353,7 +335,7 @@
                             <li>Tate's Tiny Furniture Mod</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="TatesTinyFurnitureMod_1x2Tatami" or
                                 defName="TatesTinyFurnitureMod_1x3Tatami" or
                                 defName="TatesTinyFurnitureMod_AreaRug" or
@@ -372,7 +354,7 @@
                             <li>Rimstro</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RS_tableflower" or
                                 defName="RS_KitchenUtensilsHolder" or
                                 defName="RS_plate" or

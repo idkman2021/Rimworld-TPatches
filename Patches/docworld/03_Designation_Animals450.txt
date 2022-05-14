@@ -50,7 +50,7 @@
                             </Operation>
 
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                <xpath>/Defs/ThingDef[
+                                <xpath>Defs/ThingDef[
                             defName="AnimalSleepingSpot" or 
                             defName="AnimalSleepingBox" or 
                             defName="AnimalBed"
@@ -65,7 +65,7 @@
                                     <li>Animal Medical Bed</li>
                                 </mods>
                                 <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                                    <xpath>/Defs/ThingDef[defName="SUN_MedicalAnimalBed"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="SUN_MedicalAnimalBed"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Animals</designationCategory>
                                     </value>
@@ -77,7 +77,7 @@
                                     <li>【1.1】Animalstrawbed</li>
                                 </mods>
                                 <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                                    <xpath>/Defs/ThingDef[@Name="StrawBedBase"]</xpath>
+                                    <xpath>Defs/ThingDef[@Name="StrawBedBase"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Animals</designationCategory>
                                     </value>
@@ -92,15 +92,15 @@
                                     <success>Always</success>
                                     <operations>
                                         <li Class="PatchOperationConditional">
-                                            <xpath>/Defs/ThingDef[defName="sd_chickennest"]/designationCategory</xpath>
+                                            <xpath>Defs/ThingDef[defName="sd_chickennest"]/designationCategory</xpath>
                                             <match Class="PatchOperationReplace">
-                                                <xpath>/Defs/ThingDef[defName="sd_chickennest"]/designationCategory</xpath>
+                                                <xpath>Defs/ThingDef[defName="sd_chickennest"]/designationCategory</xpath>
                                                 <value>
                                                     <designationCategory>DZ_Animals</designationCategory>
                                                 </value>
                                             </match>
                                             <nomatch Class="PatchOperationAdd">
-                                                <xpath>/Defs/ThingDef[defName="sd_chickennest"]</xpath>
+                                                <xpath>Defs/ThingDef[defName="sd_chickennest"]</xpath>
                                                 <value>
                                                     <designationCategory>DZ_Animals</designationCategory>
                                                 </value>
@@ -118,7 +118,7 @@
                                     <success>Always</success>
                                     <operations>
                                         <li Class="PatchOperationReplace">
-                                            <xpath>/Defs/ThingDef[defName="DragonNest" or defName="DragonPillow"]/designationCategory</xpath>
+                                            <xpath>Defs/ThingDef[defName="DragonNest" or defName="DragonPillow"]/designationCategory</xpath>
                                             <value>
                                                 <designationCategory>DZ_Animals</designationCategory>
                                             </value>
@@ -132,7 +132,7 @@
                                     <li>Fast regen 1.1</li>
                                 </mods>
                                 <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                                    <xpath>/Defs/ThingDef[defName="AnimalMedic" or defName="AnimalMedicRobo"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="AnimalMedic" or defName="AnimalMedicRobo"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Animals</designationCategory>
                                     </value>
@@ -145,7 +145,7 @@
                                     <li>[FSF] Invisible Animal Beds</li>
                                 </mods>
                                 <match Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="FSFInvisibleAnimalBed" or defName="FSFInvisibleAnimalBedPlush"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="FSFInvisibleAnimalBed" or defName="FSFInvisibleAnimalBedPlush"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Animals</designationCategory>
                                     </value>
@@ -162,13 +162,13 @@
                                     <operations>
                                         <!--Change tab-->
                                         <li Class="PatchOperationReplace">
-                                            <xpath>/Defs/ThingDef[@Name="PetBedWithQualityBase" or defName="CCPMAnimalSleepingSpot" or defName="CCPLAnimalSleepingSpot"]/designationCategory</xpath>
+                                            <xpath>Defs/ThingDef[@Name="PetBedWithQualityBase" or defName="CCPMAnimalSleepingSpot" or defName="CCPLAnimalSleepingSpot"]/designationCategory</xpath>
                                             <value>
                                                 <designationCategory>DZ_Animals</designationCategory>
                                             </value>
                                         </li>
                                         <li Class="PatchOperationRemove">
-                                            <xpath>/Defs/DesignationCategoryDef[defName="CCP_PetBeds"]</xpath>
+                                            <xpath>Defs/DesignationCategoryDef[defName="CCP_PetBeds"]</xpath>
                                         </li>
                                     </operations>
                                 </match>
@@ -182,7 +182,7 @@
                                     <success>Always</success>
                                     <operations>
                                         <li Class="PatchOperationAdd">
-                                            <xpath>/Defs/ThingDef[defName="PETSNORR" or defName="SNORHOI"]</xpath>
+                                            <xpath>Defs/ThingDef[defName="PETSNORR" or defName="SNORHOI"]</xpath>
                                             <value>
                                                 <designationCategory>DZ_Animals</designationCategory>
                                             </value>
@@ -203,7 +203,7 @@
                                     <operations>
 
                                         <li Class="PatchOperationAdd">
-                                            <xpath>/Defs/ThingDef[defName="RimPlas_AnimalSleepingBox"]</xpath>
+                                            <xpath>Defs/ThingDef[defName="RimPlas_AnimalSleepingBox"]</xpath>
                                             <value>
                                                 <designationCategory>DZ_Animals</designationCategory>
                                             </value>
@@ -217,7 +217,7 @@
                                     <li>RimLife Expansion Furniture</li>
                                 </mods>
                                 <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                                    <xpath>/Defs/ThingDef[
+                                    <xpath>Defs/ThingDef[
                                         defName="RLE_AnimalBed"
                                         ]</xpath>
                                     <value>

@@ -16,7 +16,7 @@
 
                     <!-- tests if DARAnimalRemove exists and terminates if it doesn't -->
                     <li Class="PatchOperationTest">
-                        <xpath>/Defs/ThingDef[defName="{DARAnimalDefRemove}"]</xpath>
+                        <xpath>Defs/ThingDef[defName="{DARAnimalDefRemove}"]</xpath>
                         <success>Normal</success>
                     </li>
 
@@ -49,23 +49,23 @@
 
                     <!-- tests if DARAnimalKeep exists and terminates if it doesn't -->
                     <li Class="PatchOperationTest">
-                        <xpath>/Defs/ThingDef[defName="{DARAnimalDefKeep}"]</xpath>
+                        <xpath>Defs/ThingDef[defName="{DARAnimalDefKeep}"]</xpath>
                         <success>Normal</success>
                     </li>
 
                     <!-- removes the animal -->
                     <li Class="PatchOperationRemove">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[defName="{DARAnimalDefRemove}"]</xpath>
+                        <xpath>Defs/ThingDef[defName="{DARAnimalDefRemove}"]</xpath>
                     </li>
                     <li Class="PatchOperationRemove">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[defName="{DARAnimalDefRemove}"]</xpath>
+                        <xpath>Defs/PawnKindDef[defName="{DARAnimalDefRemove}"]</xpath>
                     </li>
                     <!-- removes eggs -->
                     <li Class="PatchOperationRemove">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[comps/li/hatcherPawn="{DARAnimalDefRemove}"]</xpath>
+                        <xpath>Defs/ThingDef[comps/li/hatcherPawn="{DARAnimalDefRemove}"]</xpath>
                     </li>
 
                     <li Class="XmlExtensions.OptionalPatch">
@@ -111,7 +111,7 @@
                 <defaultValue>false</defaultValue>
                 <caseTrue>
                     <Operation Class="XmlExtensions.Conditional">
-                        <xpath>/Defs/ThingDef[defName="{DARAnimalDefKeep}"]</xpath>
+                        <xpath>Defs/ThingDef[defName="{DARAnimalDefKeep}"]</xpath>
                         <caseTrue>
                             <Operation Class="XmlExtensions.Conditional">
                                 <xmlDoc>Log</xmlDoc>

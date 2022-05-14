@@ -68,7 +68,7 @@
                 </mods>
                 <match Class="XmlExtensions.PatchOperationAddOrReplace">
                     <success>Always</success>
-                    <xpath>/Defs/ThingDef[
+                    <xpath>Defs/ThingDef[
                         defName="Gun_FlintlockCarbine"
                         or defName="Gun_FlintlockPepperbox"
                         or defName="Gun_FlintlockPistol"
@@ -94,7 +94,7 @@
                 </mods>
                 <match Class="XmlExtensions.PatchOperationAddOrReplace">
                     <success>Always</success>
-                    <xpath>/Defs/ThingDef[
+                    <xpath>Defs/ThingDef[
                         defName="ThogsBow_CrossbowLight" or 
                         defName="ThogsBow_CrossbowRepeating" or
                         defName="ThogsBow_CrossbowStone"]/recipeMaker</xpath>
@@ -112,7 +112,7 @@
                 </mods>
                 <match Class="PatchOperationAdd">
                     <success>Always</success>
-                    <xpath>/Defs/ResearchProjectDef[defName="SimpleGunsmithing"]/prerequisites[not(li="VWE_Gunpowder")]</xpath>
+                    <xpath>Defs/ResearchProjectDef[defName="SimpleGunsmithing"]/prerequisites[not(li="VWE_Gunpowder")]</xpath>
                     <value>
                         <li>VWE_Gunpowder</li>
                     </value>
@@ -128,7 +128,7 @@
                 </mods>
                 <match Class="XmlExtensions.PatchOperationAddOrReplace">
                     <success>Always</success>
-                    <xpath>/Defs/ThingDef[defName="Gun_ToxicDartRifle"]/recipeMaker</xpath>
+                    <xpath>Defs/ThingDef[defName="Gun_ToxicDartRifle"]/recipeMaker</xpath>
                     <value>
                         <researchPrerequisite>GG_Rifling</researchPrerequisite>
                     </value>

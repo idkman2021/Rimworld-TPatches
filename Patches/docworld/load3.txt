@@ -14,7 +14,7 @@
          <li>【1.1】Animalstrawbed</li>
       </mods>
       <nomatch Class="PatchOperationRemove">
-         <xpath>/Defs/DesignationCategoryDef[defName="DZ_Animals"]</xpath>
+         <xpath>Defs/DesignationCategoryDef[defName="DZ_Animals"]</xpath>
       </nomatch>
    </Operation>
 
@@ -27,6 +27,6 @@
          <li>Rimatomics</li>
       </mods>
       <nomatch Class="PatchOperationRemove">
-         <xpath>/Defs/DesignationCategoryDef[defName="DZ_Industrial"]</xpath>
+         <xpath>Defs/DesignationCategoryDef[defName="DZ_Industrial"]</xpath>
       </nomatch>
    </Operation>

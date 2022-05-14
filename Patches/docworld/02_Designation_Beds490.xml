@@ -33,7 +33,7 @@
 
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>/Defs/ThingDef[
+                        <xpath>Defs/ThingDef[
                     defName="SleepingSpot" or 
                     defName="DoubleSleepingSpot" or 
                     defName="AnimalSleepingSpot" or
@@ -51,7 +51,7 @@
                             <li>Advanced Polyamory Beds</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[@Name="AdvancedPolyBed"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[@Name="AdvancedPolyBed"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Beds</designationCategory>
                             </value>
@@ -63,7 +63,7 @@
                             <li>CTS - Complete Tech Solutions (Continued)</li>
                         </mods>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="CTSHiTechHospitalBed"]</xpath>
+                            <xpath>Defs/ThingDef[defName="CTSHiTechHospitalBed"]</xpath>
                             <value>
                                 <designationCategory>DZ_Beds</designationCategory>
                             </value>
@@ -79,7 +79,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="ambTable"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="ambTable"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
@@ -119,7 +119,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[defName="EliteBed" or defName="EliteDoubleBed" or defName="FirstClassBed"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="EliteBed" or defName="EliteDoubleBed" or defName="FirstClassBed"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
@@ -140,7 +140,7 @@
                             <operations>
                                 <!--Beds-->
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="MSMedicalMatEarly" or defName="MSMedicalMat" or defName="MSMedicalMatSpacer" or defName="MSMedicalMatUltra"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="MSMedicalMatEarly" or defName="MSMedicalMat" or defName="MSMedicalMatSpacer" or defName="MSMedicalMatUltra"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
@@ -160,7 +160,7 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[@Name="MedPodBedBase"]</xpath>
+                                    <xpath>Defs/ThingDef[@Name="MedPodBedBase"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
@@ -176,7 +176,7 @@
                             <li>Polyamory Beds (Vanilla Edition)</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="TripleSleepingSpot" or defName="QuadSleepingSpot"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="TripleSleepingSpot" or defName="QuadSleepingSpot"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Beds</designationCategory>
                             </value>
@@ -191,13 +191,13 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="ImprovedSleepingSpot"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="ImprovedSleepingSpot"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
                                 </li>
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[defName="RJW_Bed" or defName="RJW_DoubleBed" or defName="RJW_RoyalBed"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="RJW_Bed" or defName="RJW_DoubleBed" or defName="RJW_RoyalBed"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
@@ -215,7 +215,7 @@
                             <operations>
 
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[defName="PILFURBed" or defName="SNOREGGSingle" or defName="SNOREGGDouble" or defName="KRUDNEPPSingle" or defName="SLABNEPPDouble"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="PILFURBed" or defName="SNOREGGSingle" or defName="SNOREGGDouble" or defName="KRUDNEPPSingle" or defName="SLABNEPPDouble"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
@@ -237,7 +237,7 @@
                             <operations>
 
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[defName="BedRoll_TSB" or defName="BedrollDouble_TSB"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="BedRoll_TSB" or defName="BedrollDouble_TSB"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
@@ -254,7 +254,7 @@
                             <li>Sparkling Worlds - Modular Core - Reduced features</li>
                         </mods>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="GlitterworldHospitalBedSW"]</xpath>
+                            <xpath>Defs/ThingDef[defName="GlitterworldHospitalBedSW"]</xpath>
                             <value>
                                 <designationCategory>DZ_Beds</designationCategory>
                             </value>
@@ -272,7 +272,7 @@
                             <operations>
                                 <!--Beds-->
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="Bed_StoneSlab" or defName="Bed_Simple" or defName="Bed_Ergonomic" or defName="Bed_DoubleErgonomic" or defName="Bed_Kingsize"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="Bed_StoneSlab" or defName="Bed_Simple" or defName="Bed_Ergonomic" or defName="Bed_DoubleErgonomic" or defName="Bed_Kingsize"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
@@ -290,7 +290,7 @@
                             <li>Vanilla Furniture Expanded - Medical Module</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="Bed_OperatingTable" or defName="Bed_CryptoBed"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="Bed_OperatingTable" or defName="Bed_CryptoBed"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Beds</designationCategory>
                             </value>
@@ -307,7 +307,7 @@
                             <operations>
                                 <!--Beds-->
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="Bed_AdvBed" or defName="Bed_AdvDoubleBed"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="Bed_AdvBed" or defName="Bed_AdvDoubleBed"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Beds</designationCategory>
                                     </value>
@@ -325,7 +325,7 @@
                             <li>[JPT] Soft Warm Beds</li>
                         </mods>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Rede"]</xpath>
+                            <xpath>Defs/ThingDef[defName="Rede"]</xpath>
                             <value>
                                 <designationCategory>DZ_Beds</designationCategory>
                             </value>
@@ -337,7 +337,7 @@
                             <li>Edo Themed Expansion</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="HS_RoughFuton" or
                                 defName="HS_FancyFuton" or
                                 defName="HS_FancyFutonDouble"
@@ -353,7 +353,7 @@
                             <li>RimLife Expansion Furniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="REL_Bed" or
                                 defName="REL_WoolBed" or
                                 defName="REL_WoolDoubleBed" or
@@ -373,7 +373,7 @@
                             <li>[RH2] Uncle Boris' - Used Furniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RH2_BarrackBed" or
                                 defName="RH2_CanvasBed" or 
                                 defName="RH2_ClassicFootlocker"
@@ -389,7 +389,7 @@
                             <li>GloomyFurniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RGK_bedSingle" or
                                 defName="RGK_bedSingleB" or 
                                 defName="RGK_bedDouble" or
@@ -411,7 +411,7 @@
                             <li>Medieval Overhaul</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="DankPyon_RusticEndTable" or
                                 defName="DankPyon_RusticDresser" or
                                 defName="DankPyon_RusticCloset" or

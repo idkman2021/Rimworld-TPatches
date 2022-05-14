@@ -49,7 +49,7 @@
 
                                     
                                     <Operation Class="PatchOperationAdd">
-                                        <xpath>/Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
+                                        <xpath>Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
                                         <value>
                                             <li>Designator_DeconstructGlitterNetCable</li>
                                         </value>
@@ -57,7 +57,7 @@
                                 
 
                                     <Operation Class="PatchOperationReplace">
-                                        <xpath>/Defs/ThingDef/designationCategory[text()="GlitterNet"]</xpath>
+                                        <xpath>Defs/ThingDef/designationCategory[text()="GlitterNet"]</xpath>
                                         <value>
                                             <designationCategory>DZ_Industrial</designationCategory>
                                         </value>
@@ -65,7 +65,7 @@
 
                                     
                                     <Operation Class="PatchOperationRemove">
-                                        <xpath>/Defs/DesignationCategoryDef[defName="GlitterNet"]</xpath>
+                                        <xpath>Defs/DesignationCategoryDef[defName="GlitterNet"]</xpath>
                                     </Operation>
                                 
                                 </caseTrue>

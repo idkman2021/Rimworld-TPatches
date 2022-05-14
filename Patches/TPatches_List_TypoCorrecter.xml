@@ -29,7 +29,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Serval"]/lifeStages/li[label="Serval baby"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Serval"]/lifeStages/li[label="Serval baby"]/label</xpath>
                         <value>
                             <label>Serval kitten</label>
                         </value>
@@ -37,7 +37,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Serval"]/lifeStages/li[labelPlural="Serval babys"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[label="Serval"]/lifeStages/li[labelPlural="Serval babys"]/labelPlural</xpath>
                         <value>
                             <labelPlural>Serval kittens</labelPlural>
                         </value>
@@ -45,7 +45,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Weasel"]/lifeStages/li[labelPlural="Weasel baby"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[label="Weasel"]/lifeStages/li[labelPlural="Weasel baby"]/labelPlural</xpath>
                         <value>
                             <labelPlural>Weasel babies</labelPlural>
                         </value>
@@ -53,7 +53,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Pangolin"]/lifeStages/li[label="PangolinBaby"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Pangolin"]/lifeStages/li[label="PangolinBaby"]/label</xpath>
                         <value>
                             <label>pangolin puppy</label>
                         </value>
@@ -61,7 +61,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Pangolin"]/lifeStages/li[labelPlural="PangolinBaby"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[label="Pangolin"]/lifeStages/li[labelPlural="PangolinBaby"]/labelPlural</xpath>
                         <value>
                             <labelPlural>pangolin puppies</labelPlural>
                         </value>
@@ -69,7 +69,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="KomodoDragon"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="KomodoDragon"]/label</xpath>
                         <value>
                             <label>komodo dragon</label>
                         </value>
@@ -77,7 +77,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="KomodoDragon"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="KomodoDragon"]/label</xpath>
                         <value>
                             <label>komodo dragon</label>
                         </value>
@@ -85,7 +85,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="KomodoDragon"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="KomodoDragon"]/labelPlural</xpath>
                         <value>
                             <labelPlural>komodo dragons</labelPlural>
                         </value>
@@ -93,7 +93,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Pangolin"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Pangolin"]/labelPlural</xpath>
                         <value>
                             <labelPlural>pangolins</labelPlural>
                         </value>
@@ -101,7 +101,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="Komodo dragon is a lizard with an enormous body, and it has high intelligence. It can hunt down large herbivores by producing venom and using bacterias inside its mouth."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="Komodo dragon is a lizard with an enormous body, and it has high intelligence. It can hunt down large herbivores by producing venom and using bacterias inside its mouth."]/description</xpath>
                         <value>
                             <description>An enormous lizard with high intelligence. It hunts large herbivores by producing venom using bacterias inside its mouth.</description>
                         </value>
@@ -109,7 +109,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="A mammal with a shell. they roll their body to protect themselves from an emergency, and their shells can even bounce bullets."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="A mammal with a shell. they roll their body to protect themselves from an emergency, and their shells can even bounce bullets."]/description</xpath>
                         <value>
                             <description>A mammal with a shell. They can roll up into a ball, using their scales like armor, and their shells can even bounce off bullets.</description>
                         </value>
@@ -117,7 +117,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="They are medium-sized working-dogs with a rich amount of white fur to endure cold weather. They are very friendly toward humans and they have outstanding stamina and full of charms."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="They are medium-sized working-dogs with a rich amount of white fur to endure cold weather. They are very friendly toward humans and they have outstanding stamina and full of charms."]/description</xpath>
                         <value>
                             <description>A medium-sized dog with thick white coats, bred for hard work in the world's coldest locales. It is very friendly and full of energy.</description>
                         </value>
@@ -125,7 +125,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Samoyed"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Samoyed"]/labelPlural</xpath>
                         <value>
                             <labelPlural>samoyeds</labelPlural>
                         </value>
@@ -133,7 +133,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="These nimble predators with beautiful patterns may be small, but their agility grants them a high success rate."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="These nimble predators with beautiful patterns may be small, but their agility grants them a high success rate."]/description</xpath>
                         <value>
                             <description>This nimble cat with beautiful coat patterns may be small, but it is very agile, making it a dangerous predator.</description>
                         </value>
@@ -141,7 +141,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Serval"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Serval"]/labelPlural</xpath>
                         <value>
                             <labelPlural>servals</labelPlural>
                         </value>
@@ -149,7 +149,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Weasel"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Weasel"]/labelPlural</xpath>
                         <value>
                             <labelPlural>weasels</labelPlural>
                         </value>
@@ -158,7 +158,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="KomodoDragon egg (fert.)"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="KomodoDragon egg (fert.)"]/label</xpath>
                         <value>
                             <label>komodo dragon egg (fert.)</label>
                         </value>
@@ -166,7 +166,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="These are Komodo dragon eggs. It tastes like huge, unique reptile eggs."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="These are Komodo dragon eggs. It tastes like huge, unique reptile eggs."]/description</xpath>
                         <value>
                             <description>Fertilized komodo dragon eggs. If all goes well, it should hatch into a baby komodo dragon. It can be eaten raw, but it's much better cooked.</description>
                         </value>
@@ -186,7 +186,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Alligatorturtle"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Alligatorturtle"]/label</xpath>
                         <value>
                             <label>alligator turtle</label>
                         </value>
@@ -194,7 +194,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Alligatorturtle"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Alligatorturtle"]/label</xpath>
                         <value>
                             <label>alligator turtle</label>
                         </value>
@@ -202,7 +202,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="It is called the Alligator snapping turtle with a rough skin like an alligator and a tooth grip of more than 1004 psi."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="It is called the Alligator snapping turtle with a rough skin like an alligator and a tooth grip of more than 1004 psi."]/description</xpath>
                         <value>
                             <description>A dangerous turtle with a rough alligator-like skin and a bite force of 400 kg.</description>
                         </value>
@@ -210,7 +210,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Alligatorturtle"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Alligatorturtle"]/labelPlural</xpath>
                         <value>
                             <labelPlural>alligator turtles</labelPlural>
                         </value>
@@ -218,7 +218,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Anacondas"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Anacondas"]/label</xpath>
                         <value>
                             <label>anaconda</label>
                         </value>
@@ -226,7 +226,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Anacondas"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Anacondas"]/label</xpath>
                         <value>
                             <label>anaconda</label>
                         </value>
@@ -234,7 +234,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="This snake is very heavy, and it is a huge snake that grows more than 6 meters."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="This snake is very heavy, and it is a huge snake that grows more than 6 meters."]/description</xpath>
                         <value>
                             <description>A very heavy snake that can grow to more than 6 meters. Adults are able to consume much larger animals, including deer, capybara, caimans and large birds.</description>
                         </value>
@@ -242,7 +242,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="It is a large frog with lumpy skin, making a bull-like cry."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="It is a large frog with lumpy skin, making a bull-like cry."]/description</xpath>
                         <value>
                             <description>A large frog with lumpy skin. It makes a deep, loud call, which sounds similar to the moo of a cow or bull.</description>
                         </value>
@@ -250,7 +250,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Bullfrog"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Bullfrog"]/labelPlural</xpath>
                         <value>
                             <labelPlural>bullfrogs</labelPlural>
                         </value>
@@ -258,7 +258,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Galapagostortoise"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Galapagostortoise"]/label</xpath>
                         <value>
                             <label>galapagos tortoise</label>
                         </value>
@@ -266,7 +266,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Galapagostortoise"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Galapagostortoise"]/label</xpath>
                         <value>
                             <label>galapagos tortoise</label>
                         </value>
@@ -274,7 +274,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Galapagostortoise"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Galapagostortoise"]/labelPlural</xpath>
                         <value>
                             <labelPlural>galapagos tortoises</labelPlural>
                         </value>
@@ -282,7 +282,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Leopardgecko"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Leopardgecko"]/label</xpath>
                         <value>
                             <label>leopard gecko</label>
                         </value>
@@ -290,7 +290,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Leopardgecko"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Leopardgecko"]/label</xpath>
                         <value>
                             <label>leopard gecko</label>
                         </value>
@@ -298,7 +298,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Leopardgecko"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Leopardgecko"]/labelPlural</xpath>
                         <value>
                             <labelPlural>leopard geckos</labelPlural>
                         </value>
@@ -306,7 +306,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Watermonitor"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Watermonitor"]/label</xpath>
                         <value>
                             <label>water monitor</label>
                         </value>
@@ -314,7 +314,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Watermonitor"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Watermonitor"]/label</xpath>
                         <value>
                             <label>water monitor</label>
                         </value>
@@ -322,7 +322,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Watermonitor"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Watermonitor"]/labelPlural</xpath>
                         <value>
                             <labelPlural>water monitors</labelPlural>
                         </value>
@@ -330,7 +330,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="It is good at swimming, has a long body and is armed with strong scales."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="It is good at swimming, has a long body and is armed with strong scales."]/description</xpath>
                         <value>
                             <description>A large lizard with a long body. It can use powerful jaws and sharp claws for both predation and defense.</description>
                         </value>
@@ -338,7 +338,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="It has various patterns and is a small lizard that accumulates fat on its tail."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="It has various patterns and is a small lizard that accumulates fat on its tail."]/description</xpath>
                         <value>
                             <description>A small lizard that can have various skin patterns. It stores fat on its tail.</description>
                         </value>
@@ -346,7 +346,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="It is a giant tortoise that grows to 500kg and has a very long lifespan."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="It is a giant tortoise that grows to 500kg and has a very long lifespan."]/description</xpath>
                         <value>
                             <description>A giant tortoise that grows to 500kg and has a very long lifespan.</description>
                         </value>
@@ -355,7 +355,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Alligatorturtle egg (fert.)"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Alligatorturtle egg (fert.)"]/label</xpath>
                         <value>
                             <label>alligator turtle egg (fert.)</label>
                         </value>
@@ -363,7 +363,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="These are Alligatorturtle eggs. It tastes like huge, unique reptile eggs."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="These are Alligatorturtle eggs. It tastes like huge, unique reptile eggs."]/description</xpath>
                         <value>
                             <description>Fertilized alligator turtle eggs. If all goes well, it should hatch into a baby alligator turtle. It can be eaten raw, but it's much better cooked.</description>
                         </value>
@@ -371,7 +371,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Galapagostortoise egg (fert.)"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Galapagostortoise egg (fert.)"]/label</xpath>
                         <value>
                             <label>galapagos tortoise egg (fert.)</label>
                         </value>
@@ -379,7 +379,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="These are Galapagostortoise eggs. It tastes like huge, unique reptile eggs."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="These are Galapagostortoise eggs. It tastes like huge, unique reptile eggs."]/description</xpath>
                         <value>
                             <description>Fertilized galapagos tortoise eggs. If all goes well, it should hatch into a baby galapagos tortoise. It can be eaten raw, but it's much better cooked.</description>
                         </value>
@@ -387,7 +387,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Anacondas egg (fert.)"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Anacondas egg (fert.)"]/label</xpath>
                         <value>
                             <label>anaconda egg (fert.)</label>
                         </value>
@@ -395,7 +395,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="These are Anacondas eggs. It tastes like huge, unique reptile eggs."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="These are Anacondas eggs. It tastes like huge, unique reptile eggs."]/description</xpath>
                         <value>
                             <description>Fertilized anaconda eggs. If all goes well, it should hatch into a baby anaconda. It can be eaten raw, but it's much better cooked.</description>
                         </value>
@@ -403,7 +403,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Bullfrog egg (fert.)"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Bullfrog egg (fert.)"]/label</xpath>
                         <value>
                             <label>bullfrog egg (fert.)</label>
                         </value>
@@ -411,7 +411,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="These are Bullfrog eggs. It tastes like small and unique Amphibian eggs."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="These are Bullfrog eggs. It tastes like small and unique Amphibian eggs."]/description</xpath>
                         <value>
                             <description>Fertilized bullfrog eggs. If all goes well, it should hatch into a baby bullfrog. It can be eaten raw, but it's much better cooked.</description>
                         </value>
@@ -419,7 +419,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Leopardgecko egg (fert.)"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Leopardgecko egg (fert.)"]/label</xpath>
                         <value>
                             <label>leopard gecko egg (fert.)</label>
                         </value>
@@ -427,7 +427,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="These are Leopardgecko eggs. It tastes like small and unique reptile eggs."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="These are Leopardgecko eggs. It tastes like small and unique reptile eggs."]/description</xpath>
                         <value>
                             <description>Fertilized leopard gecko eggs. If all goes well, it should hatch into a baby leopard gecko. It can be eaten raw, but it's much better cooked.</description>
                         </value>
@@ -435,7 +435,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Watermonitor egg (fert.)"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Watermonitor egg (fert.)"]/label</xpath>
                         <value>
                             <label>water monitor egg (fert.)</label>
                         </value>
@@ -443,7 +443,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="These are watermonitor eggs. It tastes like a unique reptile egg."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="These are watermonitor eggs. It tastes like a unique reptile egg."]/description</xpath>
                         <value>
                             <description>Fertilized water monitor eggs. If all goes well, it should hatch into a baby water monitor. It can be eaten raw, but it's much better cooked.</description>
                         </value>
@@ -464,7 +464,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Lion"]/lifeStages/li[label="Lion baby"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Lion"]/lifeStages/li[label="Lion baby"]/label</xpath>
                         <value>
                             <label>lion cub</label>
                         </value>
@@ -472,7 +472,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Lion"]/lifeStages/li[labelPlural="Lion babys"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[label="Lion"]/lifeStages/li[labelPlural="Lion babys"]/labelPlural</xpath>
                         <value>
                             <labelPlural>lion cubs</labelPlural>
                         </value>
@@ -480,7 +480,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Jaguar"]/lifeStages/li[label="Jaguar baby"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Jaguar"]/lifeStages/li[label="Jaguar baby"]/label</xpath>
                         <value>
                             <label>jaguar cub</label>
                         </value>
@@ -488,7 +488,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Jaguar"]/lifeStages/li[labelPlural="Jaguar babys"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[label="Jaguar"]/lifeStages/li[labelPlural="Jaguar babys"]/labelPlural</xpath>
                         <value>
                             <labelPlural>jaguar cubs</labelPlural>
                         </value>
@@ -496,7 +496,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Hyena"]/lifeStages/li[label="Hyena baby"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Hyena"]/lifeStages/li[label="Hyena baby"]/label</xpath>
                         <value>
                             <label>hyena cub</label>
                         </value>
@@ -504,7 +504,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Hyena"]/lifeStages/li[labelPlural="Hyena babys"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[label="Hyena"]/lifeStages/li[labelPlural="Hyena babys"]/labelPlural</xpath>
                         <value>
                             <labelPlural>hyena cubs</labelPlural>
                         </value>
@@ -512,7 +512,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Cheetah"]/lifeStages/li[label="Cheetah baby"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Cheetah"]/lifeStages/li[label="Cheetah baby"]/label</xpath>
                         <value>
                             <label>cheetah cub</label>
                         </value>
@@ -520,7 +520,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Cheetah"]/lifeStages/li[labelPlural="Cheetah babys"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[label="Cheetah"]/lifeStages/li[labelPlural="Cheetah babys"]/labelPlural</xpath>
                         <value>
                             <labelPlural>cheetah cubs</labelPlural>
                         </value>
@@ -528,7 +528,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Snowleopard"]/lifeStages/li[label="Snowleopard baby"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Snowleopard"]/lifeStages/li[label="Snowleopard baby"]/label</xpath>
                         <value>
                             <label>snow leopard cub</label>
                         </value>
@@ -536,7 +536,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Snowleopard"]/lifeStages/li[labelPlural="Snowleopard babys"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[label="Snowleopard"]/lifeStages/li[labelPlural="Snowleopard babys"]/labelPlural</xpath>
                         <value>
                             <labelPlural>snow leopard cubs</labelPlural>
                         </value>
@@ -544,7 +544,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Tiger"]/lifeStages/li[label="Tiger baby"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Tiger"]/lifeStages/li[label="Tiger baby"]/label</xpath>
                         <value>
                             <label>tiger cub</label>
                         </value>
@@ -552,7 +552,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Tiger"]/lifeStages/li[labelPlural="Tiger babys"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[label="Tiger"]/lifeStages/li[labelPlural="Tiger babys"]/labelPlural</xpath>
                         <value>
                             <labelPlural>tiger cubs</labelPlural>
                         </value>
@@ -560,7 +560,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="It is a cat family with a body structure that can produce a formidable speed of up to 130 km/h."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="It is a cat family with a body structure that can produce a formidable speed of up to 130 km/h."]/description</xpath>
                         <value>
                             <description>A large, lightly built, spotted cat capable of reaching up to to 130 km/h.</description>
                         </value>
@@ -568,7 +568,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="A dangerous predator who hunts with powerful teeth and leads a scavenger life."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="A dangerous predator who hunts with powerful teeth and leads a scavenger life."]/description</xpath>
                         <value>
                             <description>A dangerous predator which can hunt with powerful teeth, but it prefers to scavenge.</description>
                         </value>
@@ -576,7 +576,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="It is a large cat and predator with beautiful patterns."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="It is a large cat and predator with beautiful patterns."]/description</xpath>
                         <value>
                             <description>A large heavily built cat that has a coat with beautiful patterns.</description>
                         </value>
@@ -584,7 +584,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="A carnivore at the peak of a powerful ecosystem that lives in a herd."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="A carnivore at the peak of a powerful ecosystem that lives in a herd."]/description</xpath>
                         <value>
                             <description>A large heavily built carnivore cat, a chief predator known to even kill large herbivores such as elephants and giraffes. Prefers to live in herds.</description>
                         </value>
@@ -592,7 +592,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="It is a very rare big cat animal. It has a unique gray fur coat and patterns."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="It is a very rare big cat animal. It has a unique gray fur coat and patterns."]/description</xpath>
                         <value>
                             <description>A very rare cat species. It is big and has a gray fur coat with unique patterns.</description>
                         </value>
@@ -600,7 +600,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="It has stripes and is the largest predator of the Felidae creatures."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="It has stripes and is the largest predator of the Felidae creatures."]/description</xpath>
                         <value>
                             <description>A very large and dangerous solitary cat with a coat of orange fur and black stripes.</description>
                         </value>
@@ -608,7 +608,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Lion"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Lion"]/labelPlural</xpath>
                         <value>
                             <labelPlural>lions</labelPlural>
                         </value>
@@ -616,7 +616,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Jaguar"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Jaguar"]/labelPlural</xpath>
                         <value>
                             <labelPlural>jaguars</labelPlural>
                         </value>
@@ -624,7 +624,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Hyena"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Hyena"]/labelPlural</xpath>
                         <value>
                             <labelPlural>hyenas</labelPlural>
                         </value>
@@ -632,7 +632,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Cheetah"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Cheetah"]/labelPlural</xpath>
                         <value>
                             <labelPlural>cheetahs</labelPlural>
                         </value>
@@ -640,7 +640,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Snowleopard"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Snowleopard"]/labelPlural</xpath>
                         <value>
                             <labelPlural>snow leopards</labelPlural>
                         </value>
@@ -648,7 +648,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Tiger"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Tiger"]/labelPlural</xpath>
                         <value>
                             <labelPlural>tigers</labelPlural>
                         </value>
@@ -656,7 +656,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="Snowleopard"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="Snowleopard"]/label</xpath>
                         <value>
                             <label>snow leopard</label>
                         </value>
@@ -664,7 +664,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Snowleopard"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Snowleopard"]/label</xpath>
                         <value>
                             <label>snow leopard</label>
                         </value>
@@ -685,7 +685,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="large carnivorous reptile Hunting large animals with powerful jaw strength, usually inhabiting rivers and sometimes climbing land and swamps."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="large carnivorous reptile Hunting large animals with powerful jaw strength, usually inhabiting rivers and sometimes climbing land and swamps."]/description</xpath>
                         <value>
                             <description>A large carnivorous reptile with a powerful bite that hunts large animals. Usually inhabits rivers and sometimes wanders on land and swamps.</description>
                         </value>
@@ -693,7 +693,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="medium-sized omnivorous primates having a long muzzle like the muzzle of a dog; having fangs like large carnivores."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="medium-sized omnivorous primates having a long muzzle like the muzzle of a dog; having fangs like large carnivores."]/description</xpath>
                         <value>
                             <description>A medium-sized omnivorous primate with a long muzzle, similar to a dog; it also has fangs.</description>
                         </value>
@@ -701,7 +701,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="A large reptile. inhabiting rivers and seas, sometimes rising to land. It can grow up to 7 meters long and has a teeth grip of up to 2 tons."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="A large reptile. inhabiting rivers and seas, sometimes rising to land. It can grow up to 7 meters long and has a teeth grip of up to 2 tons."]/description</xpath>
                         <value>
                             <description>A large reptile that that inhabits rivers and seas and sometimes wanders on land. It can grow up to 7 meters long and has a bite strength of up to 2 tons.</description>
                         </value>
@@ -709,7 +709,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="a large herbivore of 5 meters in height A dangerous creature that runs fast on long legs and has a size of two tons."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="a large herbivore of 5 meters in height A dangerous creature that runs fast on long legs and has a size of two tons."]/description</xpath>
                         <value>
                             <description>A large herbivore mammal with a very long neck and forelegs. It can reach 5 meters in height.</description>
                         </value>
@@ -717,7 +717,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="This ferocious creature, which lives mainly in the river, pierces other animals with its huge mouth and teeth."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="This ferocious creature, which lives mainly in the river, pierces other animals with its huge mouth and teeth."]/description</xpath>
                         <value>
                             <description>A large thick-skinned semiaquatic mammal with massive jaws and large tusks. It has a thick hairless body, short legs, and a large head and muzzle.</description>
                         </value>
@@ -725,7 +725,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="hippo"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="hippo"]/label</xpath>
                         <value>
                             <label>hippopotamus</label>
                         </value>
@@ -733,7 +733,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="hippo"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="hippo"]/label</xpath>
                         <value>
                             <label>hippopotamus</label>
                         </value>
@@ -741,7 +741,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[label="crocodale"]/label</xpath>
+                        <xpath>Defs/PawnKindDef[label="crocodale"]/label</xpath>
                         <value>
                             <label>crocodile</label>
                         </value>
@@ -749,7 +749,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Alligator"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Alligator"]/labelPlural</xpath>
                         <value>
                             <labelPlural>alligators</labelPlural>
                         </value>
@@ -757,7 +757,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Crocodale"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Crocodale"]/labelPlural</xpath>
                         <value>
                             <labelPlural>crocodiles</labelPlural>
                         </value>
@@ -765,7 +765,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[labelPlural="Hippo"]/labelPlural</xpath>
+                        <xpath>Defs/PawnKindDef[labelPlural="Hippo"]/labelPlural</xpath>
                         <value>
                             <labelPlural>hippopotamuses</labelPlural>
                         </value>
@@ -773,7 +773,7 @@
 
                     <Operation Class="PatchOperationAdd">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[defName="HC_Baboon" and not(labelPlural)]</xpath>
+                        <xpath>Defs/PawnKindDef[defName="HC_Baboon" and not(labelPlural)]</xpath>
                         <value>
                             <labelPlural>baboons</labelPlural>
                         </value>
@@ -781,7 +781,7 @@
 
                     <Operation Class="PatchOperationAdd">
                         <success>Always</success>
-                        <xpath>/Defs/PawnKindDef[defName="HC_Giraffe" and not(labelPlural)]</xpath>
+                        <xpath>Defs/PawnKindDef[defName="HC_Giraffe" and not(labelPlural)]</xpath>
                         <value>
                             <labelPlural>giraffes</labelPlural>
                         </value>
@@ -789,7 +789,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[defName="EggAlligatorFertilized" and description="eggs."]/description</xpath>
+                        <xpath>Defs/ThingDef[defName="EggAlligatorFertilized" and description="eggs."]/description</xpath>
                         <value>
                             <description>Fertilized alligator eggs. If all goes well, it should hatch into a baby alligator. It can be eaten raw, but it's much better cooked.</description>
                         </value>
@@ -797,7 +797,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[label="Crocodale egg (fert.)"]/label</xpath>
+                        <xpath>Defs/ThingDef[label="Crocodale egg (fert.)"]/label</xpath>
                         <value>
                             <label>Crocodile egg (fert.)</label>
                         </value>
@@ -805,7 +805,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[defName="EggCrocodaleFertilized" and description="eggs."]/description</xpath>
+                        <xpath>Defs/ThingDef[defName="EggCrocodaleFertilized" and description="eggs."]/description</xpath>
                         <value>
                             <description>Fertilized crocodile eggs. If all goes well, it should hatch into a baby crocodile. It can be eaten raw, but it's much better cooked.</description>
                         </value>
@@ -827,7 +827,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[description="The tanned skin of cold-blooded reptiles. HeavyLizardskin is quite strong and tough, but they are not insulated at all."]/description</xpath>
+                        <xpath>Defs/ThingDef[description="The tanned skin of cold-blooded reptiles. HeavyLizardskin is quite strong and tough, but they are not insulated at all."]/description</xpath>
                         <value>
                             <description>The tanned skin of cold-blooded reptiles. It is quite strong and tough, but not insulated at all.</description>
                         </value>
@@ -835,7 +835,7 @@
 
                     <Operation Class="PatchOperationReplace">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef/label[text()="Heavylizardskin"]</xpath>
+                        <xpath>Defs/ThingDef/label[text()="Heavylizardskin"]</xpath>
                         <value>
                             <label>heavy lizardskin</label>
                         </value>

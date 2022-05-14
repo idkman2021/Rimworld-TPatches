@@ -70,7 +70,7 @@
                                     <success>Always</success>
                                     <operations>
                                         <li Class="PatchOperationReplace">
-                                            <xpath>/Defs/ThingDef//designationCategory[text()="Industrial"]</xpath>
+                                            <xpath>Defs/ThingDef//designationCategory[text()="Industrial"]</xpath>
                                             <value>
                                                 <designationCategory>DZ_Industrial</designationCategory>
                                             </value>
@@ -88,7 +88,7 @@
                                     <success>Always</success>
                                     <operations>
                                         <li Class="PatchOperationReplace">
-                                            <xpath>/Defs/ThingDef//designationCategory[text()="Industrial"]</xpath>
+                                            <xpath>Defs/ThingDef//designationCategory[text()="Industrial"]</xpath>
                                             <value>
                                                 <designationCategory>DZ_Industrial</designationCategory>
                                             </value>

@@ -45,7 +45,7 @@ Ship        50  | Temperature 25  |
 
 
       <Operation Class="PatchOperationAdd">
-        <xpath>/Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
+        <xpath>Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
         <value>
           <li>Designator_RemoveFloor</li>
         </value>
@@ -59,13 +59,13 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="RazorWireObstacle" or defName="RazorWireBarrier" or defName="Gabion" or defName="HBarrier_Tan" or defName="HBarrier_Green" or defName="HBarrier_FP" or defName="HBarrier_FP_Green" or defName="TBarrier"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="RazorWireObstacle" or defName="RazorWireBarrier" or defName="Gabion" or defName="HBarrier_Tan" or defName="HBarrier_Green" or defName="HBarrier_FP" or defName="HBarrier_FP_Green" or defName="TBarrier"]/designationCategory</xpath>
               <value>
                 <designationCategory>Security</designationCategory>
               </value>
             </li>
             <li Class="PatchOperationAdd">
-              <xpath>/Defs/ThingDef[defName="TrapMine_M14AP"]</xpath>
+              <xpath>Defs/ThingDef[defName="TrapMine_M14AP"]</xpath>
               <value>
                 <designationCategory>Security</designationCategory>
               </value>
@@ -80,7 +80,7 @@ Ship        50  | Temperature 25  |
           <li>Give up your building</li>
         </mods>
         <match Class="PatchOperationAdd">
-          <xpath>/Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
           <value>
             <li>ZeroTech.Designator_GiveUpBuilding</li>
           </value>
@@ -96,7 +96,7 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationAdd">
-              <xpath>/Defs/ThingDef[defName="Estate_Telescope"]</xpath>
+              <xpath>Defs/ThingDef[defName="Estate_Telescope"]</xpath>
               <value>
                 <designationCategory>Joy</designationCategory>
               </value>
@@ -114,7 +114,7 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef//designationCategory[text()="AviaryJurassicRimworld"]</xpath>
+              <xpath>Defs/ThingDef//designationCategory[text()="AviaryJurassicRimworld"]</xpath>
               <value>
                 <designationCategory>JurassicRimworld</designationCategory>
               </value>
@@ -134,7 +134,7 @@ Ship        50  | Temperature 25  |
           <operations>
             <!--Production-->
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="MSDrugMixer" or defName="MSDrugMixInput" or defName="MSDrugMixOutput"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="MSDrugMixer" or defName="MSDrugMixInput" or defName="MSDrugMixOutput"]/designationCategory</xpath>
               <value>
                 <designationCategory>Production</designationCategory>
               </value>
@@ -156,7 +156,7 @@ Ship        50  | Temperature 25  |
 
             <!--Move all furniture to furniture category-->
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="Anon2Dresser" or defName="Anon2EndTable" or defName="Anon2RoyalEndTable" or defName="Anon2FileCabinet" or defName="Anon2SquareDiningChair" or defName="Anon2CushionedChair" or defName="Anon2CouchRight" or defName="Anon2CouchLeft" or defName="Anon2CouchCenter" or defName="Anon2CouchCorner" or defName="Anon2CouchCornerInv" or defName="Anon2TableTiny" or defName="Anon2CounterA" or defName="Anon2CounterAFull"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="Anon2Dresser" or defName="Anon2EndTable" or defName="Anon2RoyalEndTable" or defName="Anon2FileCabinet" or defName="Anon2SquareDiningChair" or defName="Anon2CushionedChair" or defName="Anon2CouchRight" or defName="Anon2CouchLeft" or defName="Anon2CouchCenter" or defName="Anon2CouchCorner" or defName="Anon2CouchCornerInv" or defName="Anon2TableTiny" or defName="Anon2CounterA" or defName="Anon2CounterAFull"]/designationCategory</xpath>
               <value>
                 <designationCategory>Furniture</designationCategory>
               </value>
@@ -176,7 +176,7 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/TerrainDef/designationCategory[text()="NaturalPaths"]</xpath>
+              <xpath>Defs/TerrainDef/designationCategory[text()="NaturalPaths"]</xpath>
               <value>
                 <designationCategory>Floors</designationCategory>
               </value>
@@ -190,7 +190,7 @@ Ship        50  | Temperature 25  |
           <li>[KV] Path Avoid</li>
         </mods>
         <match Class="PatchOperationAdd">
-          <xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
           <value>
             <li>PathAvoid.Designator_PathAvoid_Prefer</li>
             <li>PathAvoid.Designator_PathAvoid_Normal</li>
@@ -209,7 +209,7 @@ Ship        50  | Temperature 25  |
           <li>Preemptive Strike (Fork)</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/ThingDef[defName="PES_PremitiveWatchtower_new" or defName="PES_MedievalWatchtower" or defName="PES_watchtower_new" or defName="PES_Radar" or defName="PES_SentryDroneArray" or defName="PES_SpySatellite"]/designationCategory</xpath>
+          <xpath>Defs/ThingDef[defName="PES_PremitiveWatchtower_new" or defName="PES_MedievalWatchtower" or defName="PES_watchtower_new" or defName="PES_Radar" or defName="PES_SentryDroneArray" or defName="PES_SpySatellite"]/designationCategory</xpath>
           <value>
             <designationCategory>Security</designationCategory>
           </value>
@@ -225,13 +225,13 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationAdd">
-              <xpath>/Defs/DesignationCategoryDef[defName="Furniture"]/specialDesignatorClasses</xpath>
+              <xpath>Defs/DesignationCategoryDef[defName="Furniture"]/specialDesignatorClasses</xpath>
               <value>
                 <li>Replace_Stuff.Designator_ReplaceStuff</li>
               </value>
             </li>
             <li Class="PatchOperationAdd">
-              <xpath>/Defs/DesignationCategoryDef[defName="Production"]/specialDesignatorClasses</xpath>
+              <xpath>Defs/DesignationCategoryDef[defName="Production"]/specialDesignatorClasses</xpath>
               <value>
                 <li>Replace_Stuff.Designator_ReplaceStuff</li>
               </value>
@@ -246,7 +246,7 @@ Ship        50  | Temperature 25  |
           <li>Revia Race</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath> /Defs/ThingDef[defName="ReviaSacrificeSpot" or defName="ReviaBloodSigil"]/designationCategory</xpath>
+          <xpath> Defs/ThingDef[defName="ReviaSacrificeSpot" or defName="ReviaBloodSigil"]/designationCategory</xpath>
           <value>
             <designationCategory>Production</designationCategory>
           </value>
@@ -261,19 +261,19 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/TerrainDef[@Name="RIKStoneFloorBase" or @Name="RIKWoodFloorBase"]/designationCategory</xpath>
+              <xpath>Defs/TerrainDef[@Name="RIKStoneFloorBase" or @Name="RIKWoodFloorBase"]/designationCategory</xpath>
               <value>
                 <designationCategory>Floors</designationCategory>
               </value>
             </li>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[@Name="RIKFurnitureBase" or @Name="RIKTableBase" or @Name="RIKTableBaseTwo"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[@Name="RIKFurnitureBase" or @Name="RIKTableBase" or @Name="RIKTableBaseTwo"]/designationCategory</xpath>
               <value>
                 <designationCategory>Furniture</designationCategory>
               </value>
             </li>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="FEERSTELL"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="FEERSTELL"]/designationCategory</xpath>
               <value>
                 <designationCategory>Temperature</designationCategory>
               </value>
@@ -289,7 +289,7 @@ Ship        50  | Temperature 25  |
           <li>Rimoleum (Continued)</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/TerrainDef[@Name="RimoleumBase"]/designationCategory</xpath>
+          <xpath>Defs/TerrainDef[@Name="RimoleumBase"]/designationCategory</xpath>
           <value>
             <designationCategory>Floors</designationCategory>
           </value>
@@ -307,31 +307,31 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[@Name="RimPlasFurnitureBase"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[@Name="RimPlasFurnitureBase"]/designationCategory</xpath>
               <value>
                 <designationCategory>Furniture</designationCategory>
               </value>
             </li>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="RPGrapheneRegenWall"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="RPGrapheneRegenWall"]/designationCategory</xpath>
               <value>
                 <designationCategory>Structure</designationCategory>
               </value>
             </li>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="RimPlas_Barrier"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="RimPlas_Barrier"]/designationCategory</xpath>
               <value>
                 <designationCategory>Security</designationCategory>
               </value>
             </li>
             <li Class="PatchOperationAdd">
-              <xpath>/Defs/ThingDef[defName="RimPlas_GameOfUr" or defName="RimPlas_ChessTable"]</xpath>
+              <xpath>Defs/ThingDef[defName="RimPlas_GameOfUr" or defName="RimPlas_ChessTable"]</xpath>
               <value>
                 <designationCategory>Joy</designationCategory>
               </value>
             </li>
             <li Class="PatchOperationAdd">
-              <xpath>/Defs/ThingDef[defName="RPSecurityDoor"]</xpath>
+              <xpath>Defs/ThingDef[defName="RPSecurityDoor"]</xpath>
               <value>
                 <designationCategory>Structure</designationCategory>
               </value>
@@ -350,19 +350,19 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[@ParentName="MSI_BuildingBase"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[@ParentName="MSI_BuildingBase"]/designationCategory</xpath>
               <value>
                 <designationCategory>Power</designationCategory>
               </value>
             </li>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[@ParentName="MSI_BenchBase"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[@ParentName="MSI_BenchBase"]/designationCategory</xpath>
               <value>
                 <designationCategory>Production</designationCategory>
               </value>
             </li>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="TrimmingTools"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="TrimmingTools"]/designationCategory</xpath>
               <value>
                 <designationCategory>Misc</designationCategory>
               </value>
@@ -377,7 +377,7 @@ Ship        50  | Temperature 25  |
           <li>Training Rack</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/ThingDef[defName="TrainingRack" or defName="TrainingRackShooting" or defName="TrainingRackMelee" or defName="TrainingRackSocial" or defName="TrainingRackAnimals" or defName="TrainingRackMedicine" or defName="TrainingRackCooking" or defName="TrainingRackConstruction" or defName="TrainingRackPlants" or defName="TrainingRackMining" or defName="TrainingRackArtistic" or defName="TrainingRackCrafting" or defName="TrainingRackResearch"]/designationCategory</xpath>
+          <xpath>Defs/ThingDef[defName="TrainingRack" or defName="TrainingRackShooting" or defName="TrainingRackMelee" or defName="TrainingRackSocial" or defName="TrainingRackAnimals" or defName="TrainingRackMedicine" or defName="TrainingRackCooking" or defName="TrainingRackConstruction" or defName="TrainingRackPlants" or defName="TrainingRackMining" or defName="TrainingRackArtistic" or defName="TrainingRackCrafting" or defName="TrainingRackResearch"]/designationCategory</xpath>
           <value>
             <designationCategory>Misc</designationCategory>
           </value>
@@ -396,7 +396,7 @@ Ship        50  | Temperature 25  |
 
             <!--Two furniture items are excluded due to DZ_Storage category. "Shelf_1x1c" and "Shelf_WeaponRack"-->
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="Seat_Cushion" or defName="Seat_Bench" or defName="Seat_SquareChair" or defName="Table_1x1c" or defName="Table_Counter" or defName="Table_Wardrobe" or defName="Seat_ModernChair" or defName="Table_RoyalEndTable" or defName="Table_RoyalDresser" or defName="Seat_RoyalChair" or defName="Seat_RoyalArmchair" or @Name="RoyalTableDesc"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="Seat_Cushion" or defName="Seat_Bench" or defName="Seat_SquareChair" or defName="Table_1x1c" or defName="Table_Counter" or defName="Table_Wardrobe" or defName="Seat_ModernChair" or defName="Table_RoyalEndTable" or defName="Table_RoyalDresser" or defName="Seat_RoyalChair" or defName="Seat_RoyalArmchair" or @Name="RoyalTableDesc"]/designationCategory</xpath>
               <value>
                 <designationCategory>Furniture</designationCategory>
               </value>
@@ -416,7 +416,7 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="VFEPD_Desk" or defName="VFEPD_CoffeeTable" or defName="VFEPD_CoffeeTableSmall"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="VFEPD_Desk" or defName="VFEPD_CoffeeTable" or defName="VFEPD_CoffeeTableSmall"]/designationCategory</xpath>
               <value>
                 <designationCategory>Furniture</designationCategory>
               </value>
@@ -438,7 +438,7 @@ Ship        50  | Temperature 25  |
 
             <!--Furniture-->
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="Table_IlluminatedEndTable" or defName="Table_IlluminatedDresser" or defName="Seat_AdvChair" or defName="Table_interactive_1x1c" or defName="Table_interactive_2x2c"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="Table_IlluminatedEndTable" or defName="Table_IlluminatedDresser" or defName="Seat_AdvChair" or defName="Table_interactive_1x1c" or defName="Table_interactive_2x2c"]/designationCategory</xpath>
               <value>
                 <designationCategory>Furniture</designationCategory>
               </value>
@@ -446,7 +446,7 @@ Ship        50  | Temperature 25  |
             <!--Husbandry-->
             <!--Recreation-->
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="UltrascreenTV"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="UltrascreenTV"]/designationCategory</xpath>
               <value>
                 <designationCategory>Joy</designationCategory>
               </value>
@@ -466,7 +466,7 @@ Ship        50  | Temperature 25  |
           <operations>
 
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/TerrainDef[@Name="GravelFloorBase"]/designationCategory</xpath>
+              <xpath>Defs/TerrainDef[@Name="GravelFloorBase"]/designationCategory</xpath>
               <value>
                 <designationCategory>Floors</designationCategory>
               </value>
@@ -490,7 +490,7 @@ Ship        50  | Temperature 25  |
           <li>Colony Leadership</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/ThingDef/designationCategory[text()="LeadershipModTab"]</xpath>
+          <xpath>Defs/ThingDef/designationCategory[text()="LeadershipModTab"]</xpath>
           <value>
             <designationCategory>Misc</designationCategory>
           </value>
@@ -515,14 +515,14 @@ Ship        50  | Temperature 25  |
           <success>Always</success>
           <operations>
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef/designationCategory[text()="Insulation_Desig"]</xpath>
+              <xpath>Defs/ThingDef/designationCategory[text()="Insulation_Desig"]</xpath>
               <value>
                 <designationCategory>Structure</designationCategory>
               </value>
             </li>
             <!--Rimplas structures conditionally loaded if Insulation is-->
             <li Class="PatchOperationReplace">
-              <xpath>/Defs/ThingDef[defName="RTPDoorSimple" or defName="RTPAutodoor" or defName="RTPInsulatedWall" or @Name="RTPInsulatorBuildingBase"]/designationCategory</xpath>
+              <xpath>Defs/ThingDef[defName="RTPDoorSimple" or defName="RTPAutodoor" or defName="RTPInsulatedWall" or @Name="RTPInsulatorBuildingBase"]/designationCategory</xpath>
               <value>
                 <designationCategory>Structure</designationCategory>
               </value>
@@ -538,7 +538,7 @@ Ship        50  | Temperature 25  |
         <caseTrue>
 
           <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-            <xpath>/Defs/ThingDef[
+            <xpath>Defs/ThingDef[
                 defName="HSHaka"
                 ]</xpath>
             <value>
@@ -547,7 +547,7 @@ Ship        50  | Temperature 25  |
           </Operation>
 
           <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-            <xpath>/Defs/ThingDef[
+            <xpath>Defs/ThingDef[
               defName="HSHaymat" or
               defName="HSEdoThrone" or
               defName="HSFancy_Tatami" or
@@ -559,7 +559,7 @@ Ship        50  | Temperature 25  |
           </Operation>
 
           <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-            <xpath>/Defs/ThingDef[
+            <xpath>Defs/ThingDef[
             defName="HS_Shoji_Door"
             ]</xpath>
             <value>
@@ -568,7 +568,7 @@ Ship        50  | Temperature 25  |
           </Operation>
 
           <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-            <xpath>/Defs/ThingDef[
+            <xpath>Defs/ThingDef[
             defName="HS_HaikuSpot" or 
             defName="HSShogiboard"
             ]</xpath>
@@ -578,7 +578,7 @@ Ship        50  | Temperature 25  |
           </Operation>
 
           <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-            <xpath>/Defs/ThingDef[
+            <xpath>Defs/ThingDef[
             defName="HSEdoTailorSpot"
             ]</xpath>
             <value>
@@ -596,7 +596,7 @@ Ship        50  | Temperature 25  |
           <li>GloomyFurniture</li>
         </mods>
         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-          <xpath>/Defs/ThingDef[
+          <xpath>Defs/ThingDef[
                 defName="GL_Bookshelf"
                 ]</xpath>
           <value>
@@ -610,7 +610,7 @@ Ship        50  | Temperature 25  |
           <li>GloomyFurniture</li>
         </mods>
         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-          <xpath>/Defs/ThingDef[
+          <xpath>Defs/ThingDef[
               defName="RGK_SimpleResearchBench" or
               defName="GL_HandTailoringBench" or
               defName="GL_ElectricTailoringBench" or
@@ -628,7 +628,7 @@ Ship        50  | Temperature 25  |
           <li>GloomyFurniture</li>
         </mods>
         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-          <xpath>/Defs/ThingDef[
+          <xpath>Defs/ThingDef[
               defName="RGK_Wall" or
               defName="GL_Wall" or
               defName="RGK_VentWall" or
@@ -653,7 +653,7 @@ Ship        50  | Temperature 25  |
           <li>GloomyFurniture</li>
         </mods>
         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-          <xpath>/Defs/ThingDef[
+          <xpath>Defs/ThingDef[
               defName="RGK_Fireplace" or
               defName="RGK_FireplaceE"
               ]</xpath>
@@ -670,7 +670,7 @@ Ship        50  | Temperature 25  |
         <caseTrue>
 
           <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-            <xpath>/Defs/ThingDef[
+            <xpath>Defs/ThingDef[
                 defName="DankPyon_WoodBurningStove" or
                 defName="DankPyon_RusticHearth"
                 ]</xpath>
@@ -680,14 +680,14 @@ Ship        50  | Temperature 25  |
           </Operation>
 
           <Operation Class="PatchOperationReplace">
-            <xpath>/Defs/ThingDef/designationCategory[text()="DankPyon_RusticFurniture"]</xpath>
+            <xpath>Defs/ThingDef/designationCategory[text()="DankPyon_RusticFurniture"]</xpath>
             <value>
               <designationCategory>Furniture</designationCategory>
             </value>
           </Operation>
 
           <Operation Class="PatchOperationRemove">
-            <xpath>/Defs/DesignationCategoryDef[defName="DankPyon_RusticFurniture"]</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="DankPyon_RusticFurniture"]</xpath>
           </Operation>
 
         </caseTrue>

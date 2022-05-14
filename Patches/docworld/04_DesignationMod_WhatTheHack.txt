@@ -23,19 +23,19 @@
                         </mods>
                         <caseTrue>
                             <Operation Class="PatchOperationReplace">
-                                <xpath>/Defs/ThingDef[defName="WTH_HackingTable" or defName="WTH_TableMechanoidWorkshop" or defName="WTH_PortableDisassemblingBench"]/designationCategory</xpath>
+                                <xpath>Defs/ThingDef[defName="WTH_HackingTable" or defName="WTH_TableMechanoidWorkshop" or defName="WTH_PortableDisassemblingBench"]/designationCategory</xpath>
                                 <value>
                                     <designationCategory>Production</designationCategory>
                                 </value>
                             </Operation>
                             <Operation Class="PatchOperationReplace">
-                                <xpath>/Defs/ThingDef[defName="WTH_MechanoidPlatform" or defName="WTH_PortableChargingPlatform" or defName="WTH_MechanoidBeacon" or defName="WTH_RogueAI"]/designationCategory</xpath>
+                                <xpath>Defs/ThingDef[defName="WTH_MechanoidPlatform" or defName="WTH_PortableChargingPlatform" or defName="WTH_MechanoidBeacon" or defName="WTH_RogueAI"]/designationCategory</xpath>
                                 <value>
                                     <designationCategory>Misc</designationCategory>
                                 </value>
                             </Operation>
                             <Operation Class="PatchOperationRemove">
-                                <xpath>/Defs/DesignationCategoryDef[defName="WTH_Hacking"]</xpath>
+                                <xpath>Defs/DesignationCategoryDef[defName="WTH_Hacking"]</xpath>
                             </Operation>
                         </caseTrue>
                     </Operation>

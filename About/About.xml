@@ -33,6 +33,7 @@ Supports ModSync RW for checking for updates</description>
     <li>VanillaExpanded.VFESpacer</li>
     <li>VanillaExpanded.VFEPower</li>
     <li>VanillaExpanded.VTEXVariations</li>
+    <li>carnap2.TMaterials.Stone</li>
   </loadAfter>
   <incompatibleWith></incompatibleWith>
 </ModMetaData>

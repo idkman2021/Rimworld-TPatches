@@ -41,49 +41,6 @@
         </arguments>
     </Operation>
 
-    <!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatchesDMR</li>
-            <li>Core</li>
-            <li>WIP</li>
-            <li>Duplicate Resource Remover</li>
-            <li>Use Resource Dictionary by Scorpio! Removes duplicate resources and patches everything to use new resources. This patch is currently being tested because it might affect balancing. Supports Rimfeller, Expanded Materials, materials+.</li>
-            <li>this xpath contains a manually collected list of rules for removing materials when appropriate mods are loaded. All recipes, plants, ore veins, and buildings are patched to use the alternative material instead.</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
--->
-<!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatchesDRR</li>
-            <li>Core</li>
-            <li>Fixes</li>
-            <li>Duplicate Race Remover</li>
-            <li>Removes duplicate races and everything depending on them like their factions.</li>
-            <li>Only removes very obvious duplicates, for example if Rim-Effect: Asari And Reapers is loaded, the duplicate Asari race from RimEffect Races will be removed. I won't touch any races that are just similar.</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
--->
-    <!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatchesDWR</li>
-            <li>Core</li>
-            <li>Fixes</li>
-            <li>Duplicate Weapon Remover</li>
-            <li>Removes duplicate weapons.</li>
-            <li>this xpath contains a manually collected list of rules for removing materials when appropriate mods are loaded.</li>
-            <li>true</li>
-        </arguments>
-    </Operation>
--->
-
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -109,20 +66,7 @@
             <li>true</li>
         </arguments>
     </Operation>
-<!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatches_XMLErrorsFix</li>
-            <li>Core</li>
-            <li>Fixes</li>
-            <li>XML error fixes</li>
-            <li>Some manual fixes for XML errors I happen to encounter in my game.</li>
-            <li>Niilos QOL and Stuffable Turrets add stuffable count to the turrets without a conditional causing duplicate XML error; Unique traits has an xml typo and causes a red error; some chitin mods lead to mild coronavirus when used together.</li>
-            <li>true</li>
-        </arguments>
-    </Operation>
--->
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -163,33 +107,8 @@
         </arguments>
     </Operation>
 
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatches_IgnoreIllegalCharacters</li>
-            <li>Core</li>
-            <li>Fixes</li>
-            <li>Prevent "illegal characters" log spam</li>
-            <li>Prevents "label contains illegal character(s): "[]{}"." from being spammed into the log. Doesn't remove the illegal characters, just adds the ignore flag!</li>
-            <li>adds ignoreIllegalLabelCharacterConfigError to all Defs/node()[(not(ignoreIllegalLabelCharacterConfigError)) and ((label[contains(., "{")]) or (label[contains(., "}")]) or (label[contains(., "[")]) or (label[contains(., "]")]))]</li>
-            <li>true</li>
-        </arguments>
-    </Operation>
 
-    <!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatches_CompOversizedReplace</li>
-            <li>Enable Oversized Weapons</li>
-            <li>Fixes</li>
-            <li>Replace CompOversized with Enabled Oversized Weapons</li>
-            <li>NOT TESTED! Replaces the old CompOversized method for drawing weapons with the new one from Enable Oversized Weapons mod for better performance.</li>
-            <li>Patch by Bradson on dubs discord.</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
--->
+
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
@@ -267,24 +186,11 @@
             <li>Tweaks</li>
             <li>Randomisable biomes</li>
             <li>Allows all biomes to be rolled when pressing "Select random site" button. Chances of rolling sea ice will still be low, possibly due to faction base selection weight.</li>
-            <li>xpath: removes /Defs/BiomeDef/canAutoChoose</li>
+            <li>xpath: removes Defs/BiomeDef/canAutoChoose</li>
             <li>false</li>
         </arguments>
     </Operation>
-    <!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatchesFantasyMetalSolpyrite</li>
-            <li>Fantasy Metals Reforged</li>
-            <li>Tweaks</li>
-            <li>Replace "golden?" with solpyrite</li>
-            <li>Items made from solpyrite will have "solpyrite" adjective instead of "golden?".</li>
-            <li>xpath: removes /Defs/ThingDef[defName="Solorite"]/stuffAdjective</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
--->
+
 
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
@@ -294,24 +200,11 @@
             <li>Tweaks</li>
             <li>Remove research restrictions</li>
             <li>Allows all races to research all research projects. Useful if you use mods like Random Research, since it might choose a project restricted to some race you don't have and you will be stuck.</li>
-            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/raceRestriction/researchList</li>
+            <li>xpath: removes Defs/AlienRace.ThingDef_AlienRace/alienRace/raceRestriction/researchList</li>
             <li>false</li>
         </arguments>
     </Operation>
-<!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatchesHARthoughtSettingsRemover</li>
-            <li>Humanoid Alien Races</li>
-            <li>Tweaks</li>
-            <li>Remove custom thoughts</li>
-            <li>Removes custom thoughts from all races, making them identical to vanilla human thoughts. Might make the game more balanced by reintroducing mood debuffs to races that had them disabled.</li>
-            <li>xpath: removes /Defs/AlienRace.ThingDef_AlienRace/alienRace/thoughtSettings</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
--->
+
 
     <!-- Balancing -->
 
@@ -367,34 +260,8 @@
             <li>false</li>
         </arguments>
     </Operation>
-    <!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatchesMegafauna_manhunterOnTameFailChance</li>
-            <li>Megafauna</li>
-            <li>Tweaks</li>
-            <li>Fix tame revenge chance</li>
-            <li>Fixes several megafauna tame revenge chances being 0.28% instead of 28% (which is probably a bug).</li>
-            <li>Chalicotherium, Procoptodon, Castoroides, Sivatherium, Macrauchenia, Megaloceros</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
--->
-    <!--
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>TPatchesFantasyMetals</li>
-            <li>Fantasy Metals Reforged</li>
-            <li>Balancing</li>
-            <li>Fantasy Metals Reforge deep drilling rebalance</li>
-            <li>Makes Fantasy Metals appear less when using ground-penetrating scanner, which makes vanilla materials more common. Makes lumps smaller. Those materials are very expensive, but without this patch too easy to mine and sell.</li>
-            <li>commonalities reduced from 0.3 to 0.06, reduced lump sizes and portion sizes.</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
--->
+
+    
     <!-- Menus -->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
@@ -402,12 +269,13 @@
             <li>DocWorld_DesignationCategories</li>
             <li>Core</li>
             <li>Menus</li>
-            <li>Designation Categories</li>
-            <li>Unifies, cleans up, and extends vanilla designation categories, based on DocWorld. Adds culinary, husbandry, bedroom, and lighting categories, as well as a few optional ones. Aimed at supporting ALL mods.</li>
+            <li>Architect categories overhaul</li>
+            <li>Unifies, cleans up, and extends architect categories, based on DocWorld's. Adds culinary, husbandry, bedroom, and lighting categories, as well as a few optional ones. Aimed at supporting ALL mods.</li>
             <li>Removes most modded-in DesignationCategoryDef.</li>
             <li>true</li>
         </arguments>
     </Operation>
+    
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatchGrouped</patchName>
         <arguments>

@@ -6,61 +6,61 @@
         <success>Always</success>
         <operations>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Floors"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Floors"]/order</xpath>
             <value>
               <order>700</order>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Furniture"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Furniture"]/order</xpath>
             <value>
               <order>600</order>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Power"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Power"]/order</xpath>
             <value>
               <order>500</order>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Production"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Production"]/order</xpath>
             <value>
               <order>400</order>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Joy"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Joy"]/order</xpath>
             <value>
               <order>300</order>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Security"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Security"]/order</xpath>
             <value>
               <order>250</order>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Ship"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Ship"]/order</xpath>
             <value>
               <order>200</order>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Structure"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Structure"]/order</xpath>
             <value>
               <order>100</order>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Temperature"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Temperature"]/order</xpath>
             <value>
               <order>50</order>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/DesignationCategoryDef[defName="Misc"]/order</xpath>
+            <xpath>Defs/DesignationCategoryDef[defName="Misc"]/order</xpath>
             <value>
               <order>25</order>
             </value>
@@ -77,7 +77,7 @@
           <li>Android tiers</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="ATPP_DesignationAndroidTiers"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="ATPP_DesignationAndroidTiers"]/order</xpath>
           <value>
             <order>730</order>
           </value>
@@ -94,7 +94,7 @@
           <li>Boats</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="RimShips"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="RimShips"]/order</xpath>
           <value>
             <order>724</order>
           </value>
@@ -110,7 +110,7 @@
           <li>Dubs Bad Hygiene</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="Hygiene"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="Hygiene"]/order</xpath>
           <value>
             <order>590</order>
           </value>
@@ -126,7 +126,7 @@
           <li>Fertile Fields [1.1]</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="RFF_Adds"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="RFF_Adds"]/order</xpath>
           <value>
             <order>40</order>
           </value>
@@ -142,7 +142,7 @@
           <li>Genetic Rim</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="GR_GeneticsTab"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="GR_GeneticsTab"]/order</xpath>
           <value>
             <order>596</order>
           </value>
@@ -158,7 +158,7 @@
           <li>GlitterNet</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="GlitterNet"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="GlitterNet"]/order</xpath>
           <value>
             <order>600</order>
           </value>
@@ -174,7 +174,7 @@
           <li>Jurassic Rimworld 1.1</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="JurassicRimworld"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="JurassicRimworld"]/order</xpath>
           <value>
             <order>565</order>
           </value>
@@ -190,7 +190,7 @@
           <li>LWM's Deep Storage</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="LWM_DS_Storage"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="LWM_DS_Storage"]/order</xpath>
           <value>
             <order>150</order>
           </value>
@@ -206,7 +206,7 @@
           <li>More Planning</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="Planning"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="Planning"]/order</xpath>
           <value>
             <order>733</order>
           </value>
@@ -222,7 +222,7 @@
           <li>Remote Tech</li>
         </mods>
         <match Class="PatchOperationReplace">
-          <xpath>/Defs/DesignationCategoryDef[defName="rxRemoteTech"]/order</xpath>
+          <xpath>Defs/DesignationCategoryDef[defName="rxRemoteTech"]/order</xpath>
           <value>
             <order>275</order>
           </value>

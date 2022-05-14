@@ -30,7 +30,7 @@
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                        <xpath>/Defs/ThingDef[
+                        <xpath>Defs/ThingDef[
                     defName="Shelf"
                     ]</xpath>
                         <value>
@@ -44,7 +44,7 @@
                             <li>Apothecary (Continued)</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="AYPreserveBarrel"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="AYPreserveBarrel"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -60,15 +60,15 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationConditional">
-                                    <xpath>/Defs/ThingDef[defName="Storage_Basket" or defName="Storage_HazMatContainer" or defName="Storage_Locker" or defName="Storage_MedicineCabinet" or defName="Storage_TrayRack" or defName="Storage_FabricHamper" or defName="Storage_Skip" or defName="Storage_WoodenPallet"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="Storage_Basket" or defName="Storage_HazMatContainer" or defName="Storage_Locker" or defName="Storage_MedicineCabinet" or defName="Storage_TrayRack" or defName="Storage_FabricHamper" or defName="Storage_Skip" or defName="Storage_WoodenPallet"]/designationCategory</xpath>
                                     <nomatch Class="PatchOperationAdd">
-                                        <xpath>/Defs/ThingDef[defName="Storage_Basket" or defName="Storage_HazMatContainer" or defName="Storage_Locker" or defName="Storage_MedicineCabinet" or defName="Storage_TrayRack" or defName="Storage_FabricHamper" or defName="Storage_Skip" or defName="Storage_WoodenPallet"]</xpath>
+                                        <xpath>Defs/ThingDef[defName="Storage_Basket" or defName="Storage_HazMatContainer" or defName="Storage_Locker" or defName="Storage_MedicineCabinet" or defName="Storage_TrayRack" or defName="Storage_FabricHamper" or defName="Storage_Skip" or defName="Storage_WoodenPallet"]</xpath>
                                         <value>
                                             <designationCategory>DZ_Storage</designationCategory>
                                         </value>
                                     </nomatch>
                                     <match Class="PatchOperationReplace">
-                                        <xpath>/Defs/ThingDef[defName="Storage_Basket" or defName="Storage_HazMatContainer" or defName="Storage_Locker" or defName="Storage_MedicineCabinet" or defName="Storage_TrayRack" or defName="Storage_FabricHamper" or defName="Storage_Skip" or defName="Storage_WoodenPallet"]/designationCategory</xpath>
+                                        <xpath>Defs/ThingDef[defName="Storage_Basket" or defName="Storage_HazMatContainer" or defName="Storage_Locker" or defName="Storage_MedicineCabinet" or defName="Storage_TrayRack" or defName="Storage_FabricHamper" or defName="Storage_Skip" or defName="Storage_WoodenPallet"]/designationCategory</xpath>
                                         <value>
                                             <designationCategory>DZ_Storage</designationCategory>
                                         </value>
@@ -86,13 +86,13 @@
                             <success>Always</success>
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="ExtendedStorageExtended_FurnitureBase"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="ExtendedStorageExtended_FurnitureBase"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Storage</designationCategory>
                                     </value>
                                 </li>
                                 <li Class="PatchOperationRemove">
-                                    <xpath>/Defs/DesignationCategoryDef[defName="ExtendedStorageExtended_FurnitureStorage"]</xpath>
+                                    <xpath>Defs/DesignationCategoryDef[defName="ExtendedStorageExtended_FurnitureStorage"]</xpath>
                                 </li>
                             </operations>
                         </match>
@@ -103,7 +103,7 @@
                             <li>Industrial Age - Objects and Furniture (Continued)</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="Estate_Refrigerator"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="Estate_Refrigerator"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -116,7 +116,7 @@
                             <li>Medical Supplements (Continued)</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="DrugCabinet" or defName="DrugCabinetFridge"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="DrugCabinet" or defName="DrugCabinetFridge"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -130,7 +130,7 @@
                             <li>RimWriter - Books, Scrolls, Tablets, and Libraries (Continued)</li>
                         </mods>
                         <match Class="PatchOperationAdd">
-                            <xpath>/Defs/ThingDef[defName="Jecrell_StoneShelf"]</xpath>
+                            <xpath>Defs/ThingDef[defName="Jecrell_StoneShelf"]</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -144,15 +144,15 @@
                             <li>Storage Solutions</li>
                         </mods>
                         <match Class="PatchOperationConditional">
-                            <xpath>/Defs/ThingDef[@Name="CCPSS_StorageBase" or @Name="CCPSS_ArtableStorageBase" or defName="CCPSS_NestingBox" or defName="CCPSS_Crate"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[@Name="CCPSS_StorageBase" or @Name="CCPSS_ArtableStorageBase" or defName="CCPSS_NestingBox" or defName="CCPSS_Crate"]/designationCategory</xpath>
                             <match Class="PatchOperationReplace">
-                                <xpath>/Defs/ThingDef[@Name="CCPSS_StorageBase" or @Name="CCPSS_ArtableStorageBase" or defName="CCPSS_NestingBox" or defName="CCPSS_Crate"]/designationCategory</xpath>
+                                <xpath>Defs/ThingDef[@Name="CCPSS_StorageBase" or @Name="CCPSS_ArtableStorageBase" or defName="CCPSS_NestingBox" or defName="CCPSS_Crate"]/designationCategory</xpath>
                                 <value>
                                     <designationCategory>DZ_Storage</designationCategory>
                                 </value>
                             </match>
                             <nomatch Class="PatchOperationAdd">
-                                <xpath>/Defs/ThingDef[@Name="CCPSS_StorageBase" or @Name="CCPSS_ArtableStorageBase" or defName="CCPSS_NestingBox" or defName="CCPSS_Crate"]</xpath>
+                                <xpath>Defs/ThingDef[@Name="CCPSS_StorageBase" or @Name="CCPSS_ArtableStorageBase" or defName="CCPSS_NestingBox" or defName="CCPSS_Crate"]</xpath>
                                 <value>
                                     <designationCategory>DZ_Storage</designationCategory>
                                 </value>
@@ -167,7 +167,7 @@
                             <li>Vanilla Furniture Expanded - Security</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="VFES_AmmoCrate"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="VFES_AmmoCrate"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -180,7 +180,7 @@
                             <li>Gloomy Vanilla Overhaul</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="RKGWineRackB" or defName="WardrobeA" or defName="GL_Cupboard" or defName="RGK_Manger" or defName="GL_Locker" or defName="RGK_DogBowl"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="RKGWineRackB" or defName="WardrobeA" or defName="GL_Cupboard" or defName="RGK_Manger" or defName="GL_Locker" or defName="RGK_DogBowl"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -197,7 +197,7 @@
                             <li>Project RimFactory Revived</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[@Name="PRFMassStorageBase"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[@Name="PRFMassStorageBase"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -211,7 +211,7 @@
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
                             <success>Always</success>
-                            <xpath>/Defs/ThingDef[defName="ReplimatAnimalFeeder" or defName="ReplimatFeedTank"]</xpath>
+                            <xpath>Defs/ThingDef[defName="ReplimatAnimalFeeder" or defName="ReplimatFeedTank"]</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -231,7 +231,7 @@
                         <match Class="PatchOperationSequence">
                             <operations>
                                 <li Class="PatchOperationAdd">
-                                    <xpath>/Defs/ThingDef[defName="RimPlas_DrugCabinet" or defName="RimPlas_Shelf" or defName="RimPlas_Rack"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="RimPlas_DrugCabinet" or defName="RimPlas_Shelf" or defName="RimPlas_Rack"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Storage</designationCategory>
                                     </value>
@@ -245,7 +245,7 @@
                             <li>"Ancient" Buildings</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                         defName="ABVending"
                                         ]</xpath>
                             <value>
@@ -259,7 +259,7 @@
                             <li>Rim-Effect: Core</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                         defName="RE_PrefabShelf"
                                         ]</xpath>
                             <value>
@@ -273,7 +273,7 @@
                             <li>Vanilla Furniture Expanded</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="Shelf_1x1c" or defName="Shelf_WeaponRack"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="Shelf_1x1c" or defName="Shelf_WeaponRack"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -285,7 +285,7 @@
                             <li>Vanilla Furniture Expanded - Farming</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="VFE_AnimalFeeder"]</xpath>
+                            <xpath>Defs/ThingDef[defName="VFE_AnimalFeeder"]</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -297,7 +297,7 @@
                             <li>Vanilla Furniture Expanded - Spacer Module</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="Shelf_RepairRack"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="Shelf_RepairRack"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -310,7 +310,7 @@
                             <li>[JPT] Human Resources</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[defName="BookShelf"]/designationCategory</xpath>
+                            <xpath>Defs/ThingDef[defName="BookShelf"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Storage</designationCategory>
                             </value>
@@ -324,13 +324,13 @@
                         <match Class="PatchOperationSequence">
                             <operations>
                                 <li Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef/designationCategory[text()="CCP_StorageSolutions"]</xpath>
+                                    <xpath>Defs/ThingDef/designationCategory[text()="CCP_StorageSolutions"]</xpath>
                                     <value>
                                         <designationCategory>DZ_Storage</designationCategory>
                                     </value>
                                 </li>
                                 <li Class="PatchOperationRemove">
-                                    <xpath>/Defs/DesignationCategoryDef[defName="CCP_StorageSolutions"]</xpath>
+                                    <xpath>Defs/DesignationCategoryDef[defName="CCP_StorageSolutions"]</xpath>
                                 </li>
                             </operations>
                         </match>
@@ -341,7 +341,7 @@
                             <li>Tate's Tiny Furniture Mod</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="TatesTinyFurnitureMod_Shelf"
                                 ]</xpath>
                             <value>
@@ -355,7 +355,7 @@
                             <li>Ultima Storage</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="WoodChest" or
                                 defName="MetalChest" or
                                 defName="Crate" or
@@ -373,7 +373,7 @@
                             <li>[SS] Mass Storage</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="MassStoragePlatform"
                                 ]</xpath>
                             <value>
@@ -387,7 +387,7 @@
                             <li>GloomyFurniture</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="RGK_Manger" or
                                 defName="RKGWineRackB" or
                                 defName="GL_Shelf" or
@@ -405,7 +405,7 @@
                             <li>[KV] Weapon Storage</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="WeaponStorage" or
                                 defName="RepairWeaponStorage"
                                 ]</xpath>
@@ -420,7 +420,7 @@
                             <li>[KV] Infinite Storage</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="IS_BodyPartStorage" or
                                 defName="IS_MeatStorage" or
                                 defName="IS_SilverStorage" or
@@ -459,7 +459,7 @@
                                     <li>Apothecary (Continued)</li>
                                 </mods>
                                 <match Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="AYPreserveBarrel"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="AYPreserveBarrel"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>LWM_DS_Storage</designationCategory>
                                     </value>
@@ -473,7 +473,7 @@
                                 </mods>
                                 <match Class="XmlExtensions.PatchOperationAddOrReplace">
                                     <success>Always</success>
-                                    <xpath>/Defs/ThingDef[defName="ReplimatAnimalFeeder" or defName="ReplimatFeedTank"]</xpath>
+                                    <xpath>Defs/ThingDef[defName="ReplimatAnimalFeeder" or defName="ReplimatFeedTank"]</xpath>
                                     <value>
                                         <designationCategory>LWM_DS_Storage</designationCategory>
                                     </value>

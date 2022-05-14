@@ -46,7 +46,7 @@
                         </mods>
                         <caseTrue>
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                <xpath>/Defs/ThingDef[
+                                <xpath>Defs/ThingDef[
                                 defName="HSEdoTailorSpot"
                                 ]</xpath>
                                 <value>
@@ -55,7 +55,7 @@
                             </Operation>
 
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                <xpath>/Defs/ThingDef[
+                                <xpath>Defs/ThingDef[
                                 defName="HS_HaikuSpot" or 
                                 defName="HSShogiboard"
                                 ]</xpath>
@@ -73,7 +73,7 @@
                         </mods>
                         <caseTrue>
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                <xpath>/Defs/ThingDef[
+                                <xpath>Defs/ThingDef[
                                 defName="Anon2PlantSpot"
                                 ]</xpath>
                                 <value>
@@ -90,7 +90,7 @@
                         </mods>
                         <caseTrue>
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-                                <xpath>/Defs/ThingDef[
+                                <xpath>Defs/ThingDef[
                                 defName="DankPyon_RusticTable1x2c" or
                                 defName="DankPyon_ReinforcedRusticTable1x2c" or
                                 defName="DankPyon_RusticTable2x2c" or
@@ -124,7 +124,7 @@
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
                             <success>Always</success>
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="VEF_OutpostDeliverySpot"
                                 ]</xpath>
                             <value>
@@ -139,7 +139,7 @@
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
                             <success>Always</success>
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 defName="VESWW_RewardDropSpot"
                                 ]</xpath>
                             <value>

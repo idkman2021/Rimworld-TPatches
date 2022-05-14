@@ -76,7 +76,7 @@
             </Operation>
 
             <Operation Class="XmlExtensions.ForEachDescendant">
-                <xpathParent>/Defs/ThingDef[@Name="StoneBlocksBase"]</xpathParent>
+                <xpathParent>Defs/ThingDef[@Name="StoneBlocksBase"]</xpathParent>
                 <concreteOnly>true</concreteOnly>
                 <storeIn>MaterialDef</storeIn>
                 <apply>
@@ -142,7 +142,7 @@
 
                             <!-- roaylty -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="FineTileStoneBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="FineTileStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -160,7 +160,7 @@
 
                             <!-- ideo -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="MorbidStoneTile"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="MorbidStoneTile"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -176,7 +176,7 @@
                                 </match>
                             </Operation>
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="SpikecoreStoneTile"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="SpikecoreStoneTile"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -192,7 +192,7 @@
                                 </match>
                             </Operation>
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TotemicStoneTile"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TotemicStoneTile"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -210,7 +210,7 @@
 
                             <!-- VFE Architect -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="CobblestoneBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="CobblestoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -227,7 +227,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="PolishedStoneFloorBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="PolishedStoneFloorBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -244,7 +244,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="StoneSlabsBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="StoneSlabsBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -261,7 +261,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="StoneBridgeBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="StoneBridgeBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstractCopy</patchName>
                                     <arguments>
@@ -279,7 +279,7 @@
 
                             <!-- Refined Floors -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="ATK_SlabStoneBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="ATK_SlabStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -296,7 +296,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="ATK_PebblesBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="ATK_PebblesBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -313,7 +313,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="ATK_DecoratedTileStoneBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="ATK_DecoratedTileStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -331,7 +331,7 @@
 
                             <!-- [T] MoreFloors -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneSlabs"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneSlabs"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -348,7 +348,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneStaggered"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneStaggered"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -365,7 +365,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneRough"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneRough"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -382,7 +382,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneAlternating"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneAlternating"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -399,7 +399,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneChequeredSingle"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneChequeredSingle"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -416,7 +416,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneHerringbone"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneHerringbone"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -433,7 +433,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneHex"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneHex"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -450,7 +450,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneDigital"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneDigital"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -467,7 +467,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneMosaic"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneMosaic"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -484,7 +484,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneRandom"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneRandom"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -501,7 +501,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneDiamond"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneDiamond"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -518,7 +518,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="TFloorBaseStoneArabesque"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="TFloorBaseStoneArabesque"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -536,7 +536,7 @@
 
                             <!-- evt -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="FloorBaseEvtStoneA"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="FloorBaseEvtStoneA"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -552,7 +552,7 @@
                                 </match>
                             </Operation>
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="FloorBaseEvtStoneB"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="FloorBaseEvtStoneB"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstractCopy</patchName>
                                     <arguments>
@@ -568,7 +568,7 @@
                                 </match>
                             </Operation>
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="FloorBaseEvtStoneC"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="FloorBaseEvtStoneC"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -584,7 +584,7 @@
                                 </match>
                             </Operation>
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="FloorBaseEvtStoneD"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="FloorBaseEvtStoneD"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -601,7 +601,7 @@
                             </Operation>
                             <!-- E -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="FloorBaseEvtStoneE"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="FloorBaseEvtStoneE"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -617,7 +617,7 @@
                                 </match>
                             </Operation>
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="FloorBaseEvtStoneF"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="FloorBaseEvtStoneF"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -633,7 +633,7 @@
                                 </match>
                             </Operation>
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="FloorBaseEvtStoneG"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="FloorBaseEvtStoneG"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -650,7 +650,7 @@
                             </Operation>
                             <!-- H -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="FloorBaseEvtStoneH"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="FloorBaseEvtStoneH"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstractCopy</patchName>
                                     <arguments>
@@ -669,7 +669,7 @@
 
                             <!-- [WD] Expanded Floors -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="WDRoughStoneTileBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="WDRoughStoneTileBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -686,7 +686,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="WDStoneTileBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="WDStoneTileBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -703,7 +703,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="WDCheckStoneTileBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="WDCheckStoneTileBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -721,7 +721,7 @@
 
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="WDCheckStoneFloorBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="WDCheckStoneFloorBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -738,7 +738,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="WDMosaicStoneFloorBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="WDMosaicStoneFloorBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -755,7 +755,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="WDPolishedStoneFloorBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="WDPolishedStoneFloorBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -772,7 +772,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="WDStonePlateFloorBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="WDStonePlateFloorBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -790,7 +790,7 @@
 
                             <!-- dubstep -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="DBHMosaicBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="DBHMosaicBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -809,7 +809,7 @@
                             <!-- vfe classical -->
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="VFEC_MosaicsStoneBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="VFEC_MosaicsStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -827,7 +827,7 @@
 
                             <!-- vanilla ideology expanded - memes and structures -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="VME_CorporateFineStoneTiles"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="VME_CorporateFineStoneTiles"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -845,7 +845,7 @@
 
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="VME_ShintaoFineStoneTiles"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="VME_ShintaoFineStoneTiles"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -863,7 +863,7 @@
 
                             <!-- alpha memes -->
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="AM_JewishTileStoneBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="AM_JewishTileStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -880,7 +880,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="AM_JewishFineStoneTiles"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="AM_JewishFineStoneTiles"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -897,7 +897,7 @@
                             </Operation>
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="AM_KemeticTileStoneBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="AM_KemeticTileStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -915,7 +915,7 @@
 
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="AM_KemeticFineStoneTiles"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="AM_KemeticFineStoneTiles"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -933,7 +933,7 @@
 
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="AM_SteampunkTileStoneBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="AM_SteampunkTileStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -952,7 +952,7 @@
                             <!-- Audrey's Styles: Jazzy -->
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="JazzyStoneBase"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="JazzyStoneBase"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -971,7 +971,7 @@
                             <!-- alpha animals -->
 
                             <Operation Class="PatchOperationConditional">
-                                <xpath>/Defs/TerrainDef[@Name="AA_OcularStone"]</xpath>
+                                <xpath>Defs/TerrainDef[@Name="AA_OcularStone"]</xpath>
                                 <match Class="XmlExtensions.ApplyPatch">
                                     <patchName>TPatches_AddFloorsAbstract</patchName>
                                     <arguments>
@@ -1020,7 +1020,7 @@
 
             <Operation Class="XmlExtensions.ForEachDescendant">
                 <success>Always</success>
-                <xpathParent>/Defs/ThingDef[@Name="FakeWoodBase"]</xpathParent>
+                <xpathParent>Defs/ThingDef[@Name="FakeWoodBase"]</xpathParent>
                 <concreteOnly>true</concreteOnly>
                 <storeIn>FakeWoodDef</storeIn>
                 <apply>

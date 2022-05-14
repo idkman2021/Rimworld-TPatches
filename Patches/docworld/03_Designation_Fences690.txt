@@ -68,7 +68,7 @@
                                     <li>Architect Expanded - Fences (Tab Patch)</li>
                                 </mods>
                                 <match Class="PatchOperationRemove">
-                                    <xpath>/Defs/DesignationCategoryDef[defName="ArchitectExpandedFence"]</xpath>
+                                    <xpath>Defs/DesignationCategoryDef[defName="ArchitectExpandedFence"]</xpath>
                                 </match>
                             </Operation>
 
@@ -79,7 +79,7 @@
                                     <li>Architect Expanded - Fences (Tab Patch)</li>
                                 </mods>
                                 <match Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[@Name="FenceBase" or @Name="GateBase"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[@Name="FenceBase" or @Name="GateBase"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Fences</designationCategory>
                                     </value>
@@ -96,7 +96,7 @@
                                     <li>[O21] Clutter Structures</li>
                                 </mods>
                                 <match Class="PatchOperationReplace">
-                                    <xpath>/Defs/ThingDef[defName="ClutterFence" or defName="ClutterConcreteFenceA"]/designationCategory</xpath>
+                                    <xpath>Defs/ThingDef[defName="ClutterFence" or defName="ClutterConcreteFenceA"]/designationCategory</xpath>
                                     <value>
                                         <designationCategory>DZ_Fences</designationCategory>
                                     </value>
@@ -121,10 +121,10 @@
                                         <success>Always</success>
                                         <operations>
                                             <li Class="PatchOperationRemove">
-                                                <xpath>/Defs/ResearchProjectDef[defName="Fences"]</xpath>
+                                                <xpath>Defs/ResearchProjectDef[defName="Fences"]</xpath>
                                             </li>
                                             <li Class="PatchOperationReplace">
-                                                <xpath>/Defs/ThingDef[defName="Fence"]/researchPrerequisites</xpath>
+                                                <xpath>Defs/ThingDef[defName="Fence"]/researchPrerequisites</xpath>
                                                 <value>
                                                     <researchPrerequisites>
                                                         <li>Machining</li>
@@ -132,7 +132,7 @@
                                                 </value>
                                             </li>
                                             <li Class="PatchOperationReplace">
-                                                <xpath>/Defs/ThingDef[defName="Fence"]/designationCategory</xpath>
+                                                <xpath>Defs/ThingDef[defName="Fence"]/designationCategory</xpath>
                                                 <value>
                                                     <designationCategory>DZ_Fences</designationCategory>
                                                 </value>
@@ -140,7 +140,7 @@
                                         </operations>
                                     </match>
                                     <nomatch Class="PatchOperationReplace">
-                                        <xpath>/Defs/ThingDef[defName="Fence"]/designationCategory</xpath>
+                                        <xpath>Defs/ThingDef[defName="Fence"]/designationCategory</xpath>
                                         <value>
                                             <designationCategory>DZ_Fences</designationCategory>
                                         </value>
@@ -161,21 +161,21 @@
                                     <success>Always</success>
                                     <operations>
                                         <li Class="PatchOperationReplace">
-                                            <xpath>/Defs/ThingDef[defName="Fence"]/designationCategory</xpath>
+                                            <xpath>Defs/ThingDef[defName="Fence"]/designationCategory</xpath>
                                             <value>
                                                 <designationCategory>DZ_Fences</designationCategory>
                                             </value>
                                         </li>
                                         <li Class="PatchOperationConditional">
-                                            <xpath>/Defs/ThingDef[defName="FenceGate"]/designationCategory</xpath>
+                                            <xpath>Defs/ThingDef[defName="FenceGate"]/designationCategory</xpath>
                                             <match Class="PatchOperationReplace">
-                                                <xpath>/Defs/ThingDef[defName="FenceGate"]/designationCategory</xpath>
+                                                <xpath>Defs/ThingDef[defName="FenceGate"]/designationCategory</xpath>
                                                 <value>
                                                     <designationCategory>DZ_Fences</designationCategory>
                                                 </value>
                                             </match>
                                             <nomatch Class="PatchOperationAdd">
-                                                <xpath>/Defs/ThingDef[defName="FenceGate"]</xpath>
+                                                <xpath>Defs/ThingDef[defName="FenceGate"]</xpath>
                                                 <value>
                                                     <designationCategory>DZ_Fences</designationCategory>
                                                 </value>
@@ -200,10 +200,10 @@
                                     <success>Always</success>
                                     <operations>
                                         <li Class="PatchOperationRemove">
-                                            <xpath>/Defs/DesignationCategoryDef[defName="Fences"]</xpath>
+                                            <xpath>Defs/DesignationCategoryDef[defName="Fences"]</xpath>
                                         </li>
                                         <li Class="PatchOperationReplace">
-                                            <xpath>/Defs/ThingDef[@Name="FencesAFGateBase" or defName="WoodFence" or defName="WoodFenceGate" or defName="WoodFenceGateB" or defName="ChainFence" or defName="ChainFenceGate" or defName="ChainFenceGateB" or defName="TechFence" or defName="TechFenceGate" or defName="TechFenceGateB" or defName="SecurityBarrier"]/designationCategory</xpath>
+                                            <xpath>Defs/ThingDef[@Name="FencesAFGateBase" or defName="WoodFence" or defName="WoodFenceGate" or defName="WoodFenceGateB" or defName="ChainFence" or defName="ChainFenceGate" or defName="ChainFenceGateB" or defName="TechFence" or defName="TechFenceGate" or defName="TechFenceGateB" or defName="SecurityBarrier"]/designationCategory</xpath>
                                             <value>
                                                 <designationCategory>DZ_Fences</designationCategory>
                                             </value>
@@ -226,15 +226,15 @@
                                     <success>Always</success>
                                     <operations>
                                         <li Class="PatchOperationConditional">
-                                            <xpath>/Defs/ThingDef[defName="RGK_Door" or defName="RGK_WoodFence"]/designationCategory</xpath>
+                                            <xpath>Defs/ThingDef[defName="RGK_Door" or defName="RGK_WoodFence"]/designationCategory</xpath>
                                             <match Class="PatchOperationReplace">
-                                                <xpath>/Defs/ThingDef[defName="RGK_Door" or defName="RGK_WoodFence"]/designationCategory</xpath>
+                                                <xpath>Defs/ThingDef[defName="RGK_Door" or defName="RGK_WoodFence"]/designationCategory</xpath>
                                                 <value>
                                                     <designationCategory>DZ_Fences</designationCategory>
                                                 </value>
                                             </match>
                                             <nomatch Class="PatchOperationAdd">
-                                                <xpath>/Defs/ThingDef[defName="RGK_Door" or defName="RGK_WoodFence"]</xpath>
+                                                <xpath>Defs/ThingDef[defName="RGK_Door" or defName="RGK_WoodFence"]</xpath>
                                                 <value>
                                                     <designationCategory>DZ_Fences</designationCategory>
                                                 </value>
@@ -286,7 +286,7 @@
                                     <success>Always</success>
                                     <operations>
                                         <li Class="PatchOperationAdd">
-                                            <xpath>/Defs/ThingDef[defName="ZEN_Fence" or defName="ZEN_BonboriFence"]</xpath>
+                                            <xpath>Defs/ThingDef[defName="ZEN_Fence" or defName="ZEN_BonboriFence"]</xpath>
                                             <value>
                                                 <designationCategory>DZ_Fences</designationCategory>
                                             </value>

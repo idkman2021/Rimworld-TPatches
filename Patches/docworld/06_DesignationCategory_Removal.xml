@@ -38,7 +38,7 @@
          <li>LWM's Deep Storage</li>
       </mods>
       <match Class="PatchOperationRemove">
-         <xpath>/Defs/DesignationCategoryDef[defName="DZ_Storage"]</xpath>
+         <xpath>Defs/DesignationCategoryDef[defName="DZ_Storage"]</xpath>
       </match>
    </Operation>
 -->
@@ -50,7 +50,7 @@
                <li>Alpha Biomes</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="AB_AlphaBiomesBuildings"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="AB_AlphaBiomesBuildings"]</xpath>
             </match>
          </Operation>
       -->
@@ -64,7 +64,7 @@
                <li>Colony Leadership</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="LeadershipModTab"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="LeadershipModTab"]</xpath>
             </match>
          </Operation>
 
@@ -91,7 +91,7 @@
                <li>Dubs Skylights</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="skylights"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="skylights"]</xpath>
             </match>
          </Operation>
 
@@ -105,7 +105,7 @@
                <li>Fantastic Decor</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="FantasticDecor"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="FantasticDecor"]</xpath>
             </match>
          </Operation>
 
@@ -119,7 +119,7 @@
                <li>Fertile Fields [1.1]</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="RFF_Farm"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="RFF_Farm"]</xpath>
             </match>
          </Operation>
 
@@ -133,7 +133,7 @@
                <li>Floor Lights</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Lamps"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Lamps"]</xpath>
             </match>
          </Operation>
 
@@ -147,7 +147,7 @@
                <li>[ELIF] Flooring and Decorative Options</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Decorations"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Decorations"]</xpath>
             </match>
          </Operation>
 
@@ -161,7 +161,7 @@
                <li>Give up your building</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="ZoreTechTool"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="ZoreTechTool"]</xpath>
             </match>
          </Operation>
 
@@ -175,7 +175,7 @@
                <li>GloomyFurniture</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="OldStyleDeco"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="OldStyleDeco"]</xpath>
             </match>
          </Operation>
 
@@ -189,7 +189,7 @@
                <li>Glowstone</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="GLO_Glowstone"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="GLO_Glowstone"]</xpath>
             </match>
          </Operation>
 
@@ -203,7 +203,7 @@
                <li>Industrial Rollers</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Industrial"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Industrial"]</xpath>
             </match>
          </Operation>
 
@@ -218,7 +218,7 @@
                <li>Insulation (Continued)</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Insulation_Desig"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Insulation_Desig"]</xpath>
             </match>
          </Operation>
 
@@ -232,7 +232,7 @@
                <li>Jurassic Rimworld 1.1</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="AviaryJurassicRimworld"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="AviaryJurassicRimworld"]</xpath>
             </match>
          </Operation>
 
@@ -246,7 +246,7 @@
                <li>Medieval - Vanilla</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Power" or defName="Ship"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Power" or defName="Ship"]</xpath>
             </match>
          </Operation>
 
@@ -261,7 +261,7 @@
                <li>More Furniture (Continued)</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="ANON2MF"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="ANON2MF"]</xpath>
             </match>
          </Operation>
 
@@ -275,7 +275,7 @@
                <li>Natural Paths</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="NaturalPaths"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="NaturalPaths"]</xpath>
             </match>
          </Operation>
 
@@ -288,7 +288,7 @@
                <li>[KV] Path Avoid</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Pathing"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Pathing"]</xpath>
             </match>
          </Operation>
 
@@ -303,7 +303,7 @@
                <li>Preemptive Strike (Fork)</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="PES_Reconnaissance"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="PES_Reconnaissance"]</xpath>
             </match>
          </Operation>
 
@@ -321,7 +321,7 @@
                   <li>Industrial Rollers</li>
                </mods>
                <nomatch Class="PatchOperationRemove">
-                  <xpath>/Defs/DesignationCategoryDef[defName="Industrial"]</xpath>
+                  <xpath>Defs/DesignationCategoryDef[defName="Industrial"]</xpath>
                </nomatch>
             </match>
          </Operation>
@@ -336,7 +336,7 @@
                <li>Replimat</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Replimat_Replimat"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Replimat_Replimat"]</xpath>
             </match>
          </Operation>
 
@@ -350,7 +350,7 @@
                <li>Revia Race</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="ReviaCategory"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="ReviaCategory"]</xpath>
             </match>
          </Operation>
 
@@ -365,7 +365,7 @@
                <li>Rimatomics</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Rimatomics"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Rimatomics"]</xpath>
             </match>
          </Operation>
       -->
@@ -379,7 +379,7 @@
                <li>RimBees</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="RB_Bees"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="RB_Bees"]</xpath>
             </match>
          </Operation>
 
@@ -394,7 +394,7 @@
                <li>Rimefeller</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Rimefeller"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Rimefeller"]</xpath>
             </match>
          </Operation>
       -->
@@ -410,7 +410,7 @@
                <li>RIMkea</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/designationCategoryDef[defName="RIMkea"]</xpath>
+               <xpath>Defs/designationCategoryDef[defName="RIMkea"]</xpath>
             </match>
          </Operation>
 
@@ -426,7 +426,7 @@
                <li>Rimoleum (Continued)</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Rimoleum"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Rimoleum"]</xpath>
             </match>
          </Operation>
 
@@ -441,7 +441,7 @@
                <li>RimPlas (Continued)</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="RimPlas_FurnDesig"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="RimPlas_FurnDesig"]</xpath>
             </match>
          </Operation>
 
@@ -455,7 +455,7 @@
                <li>Smokeleaf Industry Reborn</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="MSI"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="MSI"]</xpath>
             </match>
          </Operation>
 
@@ -476,7 +476,7 @@
                            <li>Storage Solutions</li>
                         </mods>
                         <match Class="PatchOperationRemove">
-                           <xpath>/Defs/DesignationCategoryDef[defName="CCP_StorageSolutions"]</xpath>
+                           <xpath>Defs/DesignationCategoryDef[defName="CCP_StorageSolutions"]</xpath>
                         </match>
                      </Operation>
                   </caseTrue>
@@ -493,7 +493,7 @@
                <li>Training Rack</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="Training_Racks"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="Training_Racks"]</xpath>
             </match>
          </Operation>
 
@@ -507,7 +507,7 @@
                <li>Vanilla Furniture Expanded - Spacer Module</li>
             </mods>
             <match Class="PatchOperationReplace">
-               <xpath>/Defs/ThingDef/designationCategory[text()="AOMorefurniture"]</xpath>
+               <xpath>Defs/ThingDef/designationCategory[text()="AOMorefurniture"]</xpath>
                <value>
                   <designationCategory>Furniture</designationCategory>
                </value>
@@ -521,7 +521,7 @@
                <li>Vanilla Furniture Expanded - Spacer Module</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="AOMorefurniture"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="AOMorefurniture"]</xpath>
             </match>
          </Operation>
 
@@ -536,7 +536,7 @@
                <li>Vanilla Furniture Expanded - Props and Decor</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="PropsandDecor"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="PropsandDecor"]</xpath>
             </match>
          </Operation>
 
@@ -550,7 +550,7 @@
                <li>VGP Garden Tools</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="GardenTools"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="GardenTools"]</xpath>
             </match>
          </Operation>
 
@@ -565,7 +565,7 @@
                <li>What the hack?!</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="WTH_Hacking"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="WTH_Hacking"]</xpath>
             </match>
          </Operation>
       -->
@@ -580,7 +580,7 @@
                      <li>Zen Garden</li>
                   </mods>
                   <match Class="PatchOperationRemove">
-                     <xpath>/Defs/DesignationCategoryDef[defName="ZEN_Decoration"]</xpath>
+                     <xpath>Defs/DesignationCategoryDef[defName="ZEN_Decoration"]</xpath>
                   </match>
                </Operation>
             -->
@@ -591,7 +591,7 @@
                <li>Edo Themed Expansion</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="HSEdoBuildingsTab"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="HSEdoBuildingsTab"]</xpath>
             </match>
          </Operation>
 
@@ -600,7 +600,7 @@
                <li>GloomyFurniture</li>
             </mods>
             <match Class="PatchOperationReplace">
-               <xpath>/Defs/ThingDef/designationCategory[text()="OldStyleFurniture"]</xpath>
+               <xpath>Defs/ThingDef/designationCategory[text()="OldStyleFurniture"]</xpath>
                <value>
                   <designationCategory>Furniture</designationCategory>
                </value>
@@ -611,7 +611,7 @@
                <li>GloomyFurniture</li>
             </mods>
             <match Class="PatchOperationRemove">
-               <xpath>/Defs/DesignationCategoryDef[defName="OldStyleFurniture"]</xpath>
+               <xpath>Defs/DesignationCategoryDef[defName="OldStyleFurniture"]</xpath>
             </match>
          </Operation>
 

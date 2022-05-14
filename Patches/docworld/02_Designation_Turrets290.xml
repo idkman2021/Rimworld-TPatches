@@ -34,7 +34,7 @@
                             <li>Rimlaser</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 @Name="RimlaserTuretBase"
                                 ]/designationCategory</xpath>
                             <value>
@@ -48,7 +48,7 @@
                             <li>Dubs Rimatomics</li>
                         </mods>
                         <match Class="PatchOperationReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                                 @Name="BasedWeapon"
                                 ]/designationCategory</xpath>
                             <value>

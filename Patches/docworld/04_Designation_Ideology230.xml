@@ -33,7 +33,7 @@
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="ludeon.rimworld.ideology">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[
+                        <xpath>Defs/ThingDef[
                             @Name="IdeoBuildingBase" or 
                             @Name="RitualSeatBase" or 
                             @Name="BuildingFloorCoveringBase" or
@@ -59,7 +59,7 @@
                             <li>Vanilla Factions Expanded - Vikings</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                         defName="VFEV_FuneralPyre"
                         ]</xpath>
                             <value>
@@ -70,7 +70,7 @@
 
                     <Operation Class="PatchOperationReplace" MayRequire="ludeon.rimworld.ideology">
                         <success>Always</success>
-                        <xpath>/Defs/ThingDef[
+                        <xpath>Defs/ThingDef[
                             defName="DryadCocoon" or 
                             defName="DryadHealingPod" or 
                             defName="GaumakerCocoon" or
@@ -87,7 +87,7 @@
                             <li>Vanilla Factions Expanded - Vikings</li>
                         </mods>
                         <match Class="XmlExtensions.PatchOperationAddOrReplace">
-                            <xpath>/Defs/ThingDef[
+                            <xpath>Defs/ThingDef[
                         defName="VFEV_FuneralPyre"
                         ]</xpath>
                             <value>
