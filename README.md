@@ -38,10 +38,9 @@ Load as low as possible!
 To access settings menu, go to rimworld settings and press the "More Mod Settings" button which is added by XML Extensions.
 
 ## Screenshots
-Screenshots show default settings.
-![image](https://user-images.githubusercontent.com/76593873/165292372-96ff4022-6b03-4eb5-aba4-fb469cf38402.png)
-![image](https://user-images.githubusercontent.com/76593873/165292404-9ecf50b5-0330-4bcc-984a-b87c8584b150.png)
-![image](https://user-images.githubusercontent.com/76593873/165292438-08dbe80e-eaa9-4482-a9d8-2b8c7494c06d.png)
-![image](https://user-images.githubusercontent.com/76593873/165292477-0143ad30-b982-4a47-b0c7-d34961a2cfb8.png)
-![image](https://user-images.githubusercontent.com/76593873/165292516-bcaf3c20-b235-4a97-a29a-a07bc189c66d.png)
-![image](https://user-images.githubusercontent.com/76593873/165292532-41d0501e-4898-4084-a944-e1748e9ce781.png)
+![image](https://user-images.githubusercontent.com/76593873/168417497-aea994ef-3127-40b1-b354-90678e19cd35.png)
+![image](https://user-images.githubusercontent.com/76593873/168417505-ed09f250-d43b-4968-acd3-dfc68bb5baec.png)
+![image](https://user-images.githubusercontent.com/76593873/168417514-770c9804-5f14-45b1-beb1-d05128ed2b56.png)
+![image](https://user-images.githubusercontent.com/76593873/168417518-6569d9f8-d99b-4d07-85d6-bd6aa32d870f.png)
+![image](https://user-images.githubusercontent.com/76593873/168417528-4c66afda-2b51-4025-8d26-0a9b0af790b3.png)
+
