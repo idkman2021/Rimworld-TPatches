@@ -64,8 +64,8 @@
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_Tab</patchName>
         <arguments>
-            <li>Menus</li>
-            <li>Changes or overhauls to the vanilla menus</li>
+            <li>DocWorld</li>
+            <li>DocWorld. \n \n \nThis will be moved into a separate mod when I upload everything to steam workshop.</li>
         </arguments>
     </Operation>
     <Operation Class="XmlExtensions.ApplyPatch">

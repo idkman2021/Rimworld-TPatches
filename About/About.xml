@@ -35,5 +35,7 @@ Supports ModSync RW for checking for updates</description>
     <li>VanillaExpanded.VTEXVariations</li>
     <li>carnap2.TMaterials.Stone</li>
   </loadAfter>
-  <incompatibleWith></incompatibleWith>
+  <incompatibleWith>
+    <li>styles.variations.converter</li>
+  </incompatibleWith>
 </ModMetaData>

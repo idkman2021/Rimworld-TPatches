@@ -213,7 +213,7 @@
         <arguments>
             <li>DocWorld_ClothBeds</li>
             <li>Core</li>
-            <li>Balancing</li>
+            <li>DocWorld</li>
             <li>Cloth required for bedding</li>
             <li>Makes beds necessitate a cloth material when constructing.</li>
             <li>Beds need cloth, right?</li>
@@ -262,13 +262,13 @@
     </Operation>
 
     
-    <!-- Menus -->
+    <!-- DocWorld -->
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
         <arguments>
             <li>DocWorld_DesignationCategories</li>
             <li>Core</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Architect categories overhaul</li>
             <li>Unifies, cleans up, and extends architect categories, based on DocWorld's. Adds culinary, husbandry, bedroom, and lighting categories, as well as a few optional ones. Aimed at supporting ALL mods.</li>
             <li>Removes most modded-in DesignationCategoryDef.</li>
@@ -281,7 +281,7 @@
         <arguments>
             <li>DocWorld_DesignationCategoriesIdeology</li>
             <li>Core</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Enable Ideology category</li>
             <li></li>
             <li>DZ_Ideology</li>
@@ -294,7 +294,7 @@
         <arguments>
             <li>DocWorld_DesignationCategoriesMeditation</li>
             <li>Core</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Enable Royalty category - for items related to meditation</li>
             <li></li>
             <li>DZ_Meditation</li>
@@ -307,7 +307,7 @@
         <arguments>
             <li>DocWorld_DesignationCategoriesTurrets</li>
             <li>Core</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Enable turrets category - for turrets and mortars</li>
             <li></li>
             <li>DZ_Turrets</li>
@@ -320,7 +320,7 @@
         <arguments>
             <li>DocWorld_DesignationCategoriesSpots</li>
             <li>Core</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Enable spots category</li>
             <li></li>
             <li>DZ_Spots</li>
@@ -333,7 +333,7 @@
         <arguments>
             <li>DocWorld_DesignationCategoriesMedical</li>
             <li>Core</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Enable medical category - for medical beds and linkables</li>
             <li></li>
             <li>DZ_Medical</li>
@@ -346,7 +346,7 @@
         <arguments>
             <li>DocWorld_DesignationCategoriesStorage</li>
             <li>Core</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Enable storage category (WIP)</li>
             <li></li>
             <li>DZ_Storage</li>
@@ -360,7 +360,7 @@
         <arguments>
             <li>DocWorld_DesignationAlphaBiomes</li>
             <li>Alpha Biomes</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Organize Alpha Biomes</li>
             <li>Moves Alpha Biomes items into appropriate tabs and deletes Alpha Biomes tab.</li>
             <li></li>
@@ -374,7 +374,7 @@
         <arguments>
             <li>DocWorld_DesignationGlitterNet</li>
             <li>GlitterNet</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Organize GlitterNet</li>   
             <li>Moves GlitterNet items into industrial tab and removes GlitterNet tab.</li>
             <li></li>
@@ -388,7 +388,7 @@
         <arguments>
             <li>DocWorld_DesignationVFEMechanoids</li>
             <li>Vanilla Factions Expanded - Mechanoids</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Organize VFE Mechanoids (WIP)</li>
             <li>Moves VFE Mechanoids items into industrial tab and removes VFE Mechanoid's tab. Note: creates a supposedly harmless red error.</li>
             <li></li>
@@ -403,7 +403,7 @@
         <arguments>
             <li>DocWorld_DesignationRimatomics</li>
             <li>Dubs Rimatomics</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Organize Rimatomics (WIP)</li>
             <li>Moves Rimatomics items into industrial tab and removes Rimatomics tab.</li>
             <li></li>
@@ -418,7 +418,7 @@
         <arguments>
             <li>DocWorld_DesignationRimefeller</li>
             <li>Rimefeller</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Organize Rimefeller (WIP, not recommended)</li>
             <li></li>
             <li>Rimefeller items are forced to rimefeller tab and this setting can only duplicate their entries to the industrial tab.</li>
@@ -433,7 +433,7 @@
         <arguments>
             <li>DocWorld_DesignationWhatTheHack</li>
             <li>What the hack?!</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Disable What the hack tab</li>
             <li>Move What the hack items into other tabs.  (WIP, not recommended)</li>
             <li></li>
@@ -449,7 +449,7 @@
         <arguments>
             <li>DocWorld_DesignationDubsBadHygiene</li>
             <li>Dubs Bad Hygiene</li>
-            <li>Menus</li>
+            <li>DocWorld</li>
             <li>Disable Dubs Bad Hygiene tab</li>
             <li>Move Dubs Bad Hygiene items into other tabs (not recommended)</li>
             <li></li>

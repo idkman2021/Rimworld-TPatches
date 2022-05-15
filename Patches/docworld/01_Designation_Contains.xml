@@ -497,7 +497,7 @@
 
                             <DesignationCategoryDef>
                                 <defName>DZ_Meditation</defName>
-                                <label>Royalty</label>
+                                <label>Meditation</label>
                                 <description>Objects that help one regain psyfocus.</description>
                                 <order>220</order>
                                 <specialDesignatorClasses>

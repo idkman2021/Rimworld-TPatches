@@ -502,6 +502,8 @@
                         thingDef="Pila" or 
                         thingDef="PowerConduit" or 
                         thingDef="WaterproofConduit" or 
+                        thingDef="Sandbags" or 
+                        thingDef="Barricade" or 
                         thingDef="HighVoltage" or 
                         thingDef="controllerLoom" or 
                         thingDef="GNGlitterNetCable" or 
@@ -514,7 +516,6 @@
                         thingDef="VFEArch_LowFence" or 
                         thingDef="VFEArch_HedgeWall" or 
                         thingDef="VFEArch_CellWall" or 
-                        thingDef="VFEArch_ArmoredWall" or 
                         thingDef="VFEArch_ArmoredWall"
                         )]</xpath>
                     <storeIn>style</storeIn>

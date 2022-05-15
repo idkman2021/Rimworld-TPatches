@@ -23,7 +23,7 @@
         <docName>Balancing</docName>
     </Operation>
     <Operation Class="XmlExtensions.MergeDocument">
-        <docName>Menus</docName>
+        <docName>DocWorld</docName>
     </Operation>
     <Operation Class="XmlExtensions.MergeDocument">
         <docName>Fun</docName>
