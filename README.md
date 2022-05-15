@@ -43,4 +43,4 @@ To access settings menu, go to rimworld settings and press the "More Mod Setting
 ![image](https://user-images.githubusercontent.com/76593873/168417514-770c9804-5f14-45b1-beb1-d05128ed2b56.png)
 ![image](https://user-images.githubusercontent.com/76593873/168417518-6569d9f8-d99b-4d07-85d6-bd6aa32d870f.png)
 ![image](https://user-images.githubusercontent.com/76593873/168417528-4c66afda-2b51-4025-8d26-0a9b0af790b3.png)
-
+![image](https://user-images.githubusercontent.com/76593873/168470009-a64a8b48-4214-4478-b74a-9ab36a4d3dde.png)
