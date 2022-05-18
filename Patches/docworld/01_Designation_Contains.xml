@@ -93,7 +93,8 @@
                             contains(label, "Butcher") or 
                             contains(@Name, "butcher") or 
                             contains(@Name, "Butcher") or
-                            thingClass="Building_FermentingBarrel"
+                            thingClass="Building_FermentingBarrel" or 
+                            defName="AM_GrogDispenser"
                             ]</xpath>
                         <value>
                             <designationCategory Inherit="False">DZ_Culinary</designationCategory>
@@ -580,6 +581,17 @@
                             building/buildingTags/li="RitualFocus" or
                             placeWorkers/li="PlaceWorker_RitualFocusNoArrow" or
                             ideoBuildingNamerBase
+                            ]
+
+                            |
+
+                            Designations/ThingDef[
+                            defName="AM_RelicSmashingAltar" or 
+                            defName="AM_Megalith" or 
+                            defName="VME_Obelisk" or 
+                            defName="AM_AnimalDatabase" or 
+                            defName="VME_MechanoidEffigy"
+                            
                             ]
                         </xpath>
                         <value>
