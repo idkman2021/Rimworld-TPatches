@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- the SettingsMenuDef with two tabs defined. All other tabs are added by patches -->
 <Defs>
-    
+
     <XmlExtensions.SettingsMenuDef>
         <defName>TPatches_SettingsMenu</defName> <!--Can be anything unique with no periods-->
-        <modId>carnap2.TPatches</modId> <!--MUST be the same as the one entered earlier-->    
-        <label>TPatches</label> <!-- This is what displays as your mod's name-->    
-        <settings> <!--This is where you define what settings are in the settings menu-->
-            
+        <modId>carnap2.TPatches</modId> <!--MUST be the same as the one entered earlier-->
+        <label>TPatches</label> <!-- This is what displays as your mod's name-->
+        <settings>
+            <!--This is where you define what settings are in the settings menu-->
+
             <li Class="XmlExtensions.Setting.TabView">
                 <tabs>
-                    
+
                     <li>
                         <label>Info</label>
                         <settings>
@@ -30,35 +31,83 @@
                             <li Class="XmlExtensions.Setting.Text">
                                 <text>Settings in this mod should have zero performance impact. Settings for mods you don't have are greyed out, but it is still safe to enable those settings.</text>
                             </li>
-                            <li Class="XmlExtensions.Setting.GapLine"/>
+                            <li Class="XmlExtensions.Setting.GapLine" />
                             <li Class="XmlExtensions.Setting.Text">
                                 <text>logs:</text>
                             </li>
                             <li Class="XmlExtensions.Setting.Group">
-                                <settings>
-                                    
-                                </settings>
+                                <settings></settings>
                             </li>
                         </settings>
                     </li>
-                    
+
                     <li>
                         <label>Log</label>
                         <settings>
-                            <li Class="XmlExtensions.Setting.Checkbox">
-                                <label>Enable logging</label>
-                                <key>TPatchesLogging</key>
-                                <defaultValue>false</defaultValue>
+                            <li Class="XmlExtensions.Setting.Text">
+                                <text>displays debug information into log and info tab, may impact loading times.</text>
                             </li>
-                            <li Class="XmlExtensions.Setting.GapLine"/>
+                            <li Class="XmlExtensions.Setting.Checkbox">
+                                <label>show debug options</label>
+                                <key>TPatchesDebugMenu</key>
+                                <defaultValue>false</defaultValue>
+                                <highlight>false</highlight>
+                            </li>
+                            <li Class="XmlExtensions.Setting.ToggleableSettings">
+                                <key>TPatchesDebugMenu</key>
+                                <caseTrue>
+                                    <li Class="XmlExtensions.Setting.GapLine" />
+                                    <li Class="XmlExtensions.Setting.Checkbox">
+                                        <label>Log duplicate animal remover</label>
+                                        <key>TPatchesLogging</key>
+                                        <defaultValue>false</defaultValue>
+                                        <tooltip>displays which animal replaced which, and lists all supported animals, highlighting ones that are loaded.</tooltip>
+                                    </li>
+                                    <li Class="XmlExtensions.Setting.Checkbox">
+                                        <label>Log ideo styles to VTE variations converter</label>
+                                        <key>TPatchesLogging_IdeoVTE</key>
+                                        <defaultValue>false</defaultValue>
+                                        <tooltip>Displays all converted and filtered variations and their info. Red variations are filtered to avoid issues or to reduce loading times where VTEV doesn't support this kind of variation. Textures are only displayed for items with Graphics_Single.</tooltip>
+                                    </li>
+                                </caseTrue>
+                                <caseFalse>
+                                    <li Class="XmlExtensions.Setting.GapLine" />
+                                    <li Class="XmlExtensions.Setting.SetColor">
+                                        <color>(255,0,0)</color>
+                                    </li>
+                                    <li Class="XmlExtensions.Setting.ToggleableSettings">
+                                        <key>TPatchesLogging</key>
+                                        <caseTrue>
+                                            <li Class="XmlExtensions.Setting.Text">
+                                                <text>Duplicate animal remover logging is currently enabled, recommended to disable.</text>
+                                            </li>
+                                        </caseTrue>
+                                    </li>
+                                    <li Class="XmlExtensions.Setting.ToggleableSettings">
+                                        <key>TPatchesLogging_IdeoVTE</key>
+                                        <caseTrue>
+                                            <li Class="XmlExtensions.Setting.Text">
+                                                <text>Ideo styles to VTE log is currently enabled, recommended to disable.</text>
+                                            </li>
+                                        </caseTrue>
+                                    </li>
+                                    <li Class="XmlExtensions.Setting.SetColor">
+                                        <color>(255,255,255)</color>
+                                    </li>
+
+                                </caseFalse>
+                            </li>
+
+
+                            <li Class="XmlExtensions.Setting.GapLine" />
                         </settings>
                     </li>
-                    
+
                 </tabs>
             </li>
-            
+
         </settings>
     </XmlExtensions.SettingsMenuDef>
-    
-    
+
+
 </Defs>

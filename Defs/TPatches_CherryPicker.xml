@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<CherryPicker.DefList MayRequire="owlchemist.cherrypicker">
+		<defName>TPatches_DuplicateItems</defName>
+		<label>duplicate weapons and apparel (disable this to remove duplicates)</label>
+		<defs>
+			<li MayRequire="VanillaExpanded.VWE">ThingDef/Gun_RSAMRifle</li>
+			<li MayRequire="VanillaExpanded.VWE">RecipeDef/Make_Gun_RSAMRifle</li>
+			<li MayRequire="VanillaExpanded.VWE">ThingDef/TMW_Musket</li>
+            <li MayRequire="VanillaExpanded.VWE">RecipeDef/Make_TMW_Musket</li>
+            <li MayRequire="VanillaExpanded.VWE">ThingDef/Gun_MarksmanRifle</li>
+            <li MayRequire="VanillaExpanded.VWE">RecipeDef/Make_Gun_MarksmanRifle</li>
+            <li MayRequire="VanillaExpanded.VWE">ThingDef/Gun_RSCarbine</li>
+            <li MayRequire="VanillaExpanded.VWE">RecipeDef/Make_Gun_RSCarbine</li>
+            <li MayRequire="VanillaExpanded.VWE">ThingDef/Gun_RSBattleRifle</li>
+            <li MayRequire="VanillaExpanded.VWE">RecipeDef/Make_Gun_RSBattleRifle</li>
+            <li MayRequire="VanillaExpanded.VWE, rimsenal.EVP">ThingDef/SmokeGrenades</li>
+            <li MayRequire="VanillaExpanded.VWE, rimsenal.EVP">RecipeDef/Make_SmokeGrenades</li>
+            <li MayRequire="VanillaExpanded.VWE">ThingDef/Weapon_GrenadeSmoke</li>
+            <li MayRequire="VanillaExpanded.VWE">RecipeDef/Make_Weapon_GrenadeSmoke</li>
+            <li MayRequire="VanillaExpanded.VWE">ThingDef/Bow_Compound</li>
+            <li MayRequire="VanillaExpanded.VWE">RecipeDef/Make_Bow_Compound</li>
+            <li MayRequire="OskarPotocki.VFE.Vikings">ThingDef/Gun_ThrowingAxes</li>
+            <li MayRequire="OskarPotocki.VFE.Vikings">RecipeDef/Make_Gun_ThrowingAxes</li>
+            <!--
+            <li MayRequire="VanillaExpanded.VWE">ThingDef/TMW_Musket_Bayonet</li>
+            <li MayRequire="VanillaExpanded.VWE">RecipeDef/Make_TMW_Musket_Bayonet</li>
+            -->
+
+		</defs>
+	</CherryPicker.DefList>
+</Defs>

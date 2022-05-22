@@ -458,15 +458,162 @@
 
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
-        <key>TPatches_IdeoStylesToVTEVariations</key>
+        <key>TPatchesLogging_IdeoVTE</key>
         <defaultValue>false</defaultValue>
         <caseTrue>
-            <Operation Class="PatchOperationFindMod">
-                <mods>
-                    <li>Vanilla Textures Expanded - Variations</li>
-                </mods>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatches_IdeoStylesToVTEVariations</key>
+                <defaultValue>false</defaultValue>
+                <caseTrue>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xmlDoc>Log</xmlDoc>
+                        <xpath>Log/settings</xpath>
+                        <value>
+                            <li Class="XmlExtensions.Setting.GapLine" />
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(255,128,128)</color>
+                            </li>
+                        </value>
+                    </Operation>
+                    <Operation Class="XmlExtensions.ForEach">
+                        <!--<success>Always</success>-->
+                        <xpath>Defs/StyleCategoryDef/thingDefStyles/li[
 
-                <!-- 
+                            
+                            contains(thingDef, "Apparel") or 
+                            contains(thingDef, "Gun") or 
+                            contains(thingDef, "Weapon") or 
+                            contains(thingDef, "Melee") or 
+                            contains(thingDef, "Bow") or 
+                            contains(thingDef, "Pipe") or 
+                            thingDef="Pila" or 
+                            thingDef="PowerConduit" or 
+                            thingDef="WaterproofConduit" or 
+                            thingDef="Sandbags" or 
+                            thingDef="Barricade" or 
+                            thingDef="HighVoltage" or 
+                            thingDef="controllerLoom" or 
+                            thingDef="GNGlitterNetCable" or 
+                            thingDef="Wall" or 
+                            thingDef="Fence" or 
+                            thingDef="VFEArch_LogWall" or 
+                            thingDef="VFEArch_ChainlinkFence" or 
+                            thingDef="VFEArch_PicketFence" or 
+                            thingDef="VFEArch_BrickFence" or 
+                            thingDef="VFEArch_LowFence" or 
+                            thingDef="VFEArch_HedgeWall" or 
+                            thingDef="VFEArch_CellWall" or 
+                            thingDef="ComponentIndustrial" or 
+                            thingDef="MealNutrientPaste" or 
+                            thingDef="IM_Cyrogatana"
+                            
+
+                            ]/thingDef</xpath>
+                        <storeIn>stylelog</storeIn>
+                        <prefixLength>4</prefixLength>
+                        <apply>
+                            <Operation Class="XmlExtensions.CreateVariable">
+                                <storeIn>thingDeflog</storeIn>
+                                <value>{stylelog}/thingDef</value>
+                                <fromXml>true</fromXml>
+                                <defaultValue>idkthinglog</defaultValue>
+                                <apply>
+                                    <Operation Class="XmlExtensions.Conditional">
+                                        <xpath>Defs/ThingDef[defName = "{thingDeflog}"]/graphicData[graphicClass="Graphic_Single"]</xpath>
+                                        <caseTrue>
+
+                                            <Operation Class="XmlExtensions.CreateVariable">
+                                                <storeIn>thingtexlog</storeIn>
+                                                <value>Defs/ThingDef[defName = "{thingDeflog}"]/graphicData/texPath</value>
+                                                <fromXml>true</fromXml>
+                                                <defaultValue>World/WorldObjects/Expanding/PeaceTalks</defaultValue>
+                                                <apply>
+
+
+                                                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                                                        <success>Always</success>
+                                                        <xmlDoc>Log</xmlDoc>
+                                                        <xpath>Log/settings[not(li/tag="{thingDeflog}")]</xpath>
+                                                        <value>
+                                                            <li Class="XmlExtensions.Setting.SplitColumns">
+                                                                <tag>{thingDeflog}</tag>
+                                                                <gapSize>6</gapSize>
+                                                                <splits>
+                                                                    <li>0.05</li>
+                                                                </splits>
+                                                                <settings>
+                                                                    <li>
+                                                                        <li Class="XmlExtensions.Setting.DrawImage">
+                                                                            <texPath>{thingtexlog}</texPath>
+                                                                            <anchor>Left</anchor>
+                                                                        </li>
+                                                                    </li>
+                                                                    <li>
+                                                                        <li Class="XmlExtensions.Setting.Text">
+                                                                            <text>{thingDeflog}</text>
+                                                                        </li>
+                                                                    </li>
+                                                                </settings>
+                                                            </li>
+
+
+                                                        </value>
+                                                    </Operation>
+                                                </apply>
+                                            </Operation>
+                                        </caseTrue>
+                                        <caseFalse>
+                                            <Operation Class="XmlExtensions.PatchOperationAdd">
+                                                <success>Always</success>
+                                                <xmlDoc>Log</xmlDoc>
+                                                <xpath>Log/settings[not(li/tag="{thingDeflog}")]</xpath>
+                                                <value>
+                                                    <li Class="XmlExtensions.Setting.SplitColumns">
+                                                        <tag>{thingDeflog}</tag>
+                                                        <gapSize>6</gapSize>
+                                                        <splits>
+                                                            <li>0.05</li>
+                                                        </splits>
+                                                        <settings>
+                                                            <li>
+                                                                <li Class="XmlExtensions.Setting.Text">
+                                                                    <font>Medium</font>
+                                                                    <text>NO</text>
+                                                                </li>
+                                                            </li>
+                                                            <li>
+                                                                <li Class="XmlExtensions.Setting.Text">
+                                                                    <text>{thingDeflog}</text>
+                                                                </li>
+                                                            </li>
+                                                        </settings>
+                                                    </li>
+                                                </value>
+                                            </Operation>
+                                        </caseFalse>
+                                    </Operation>
+                                </apply>
+                            </Operation>
+                        </apply>
+                    </Operation>
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xmlDoc>Log</xmlDoc>
+                        <xpath>Log/settings</xpath>
+                        <value>
+                            <li Class="XmlExtensions.Setting.SetColor">
+                                <color>(255,255,255)</color>
+                            </li>
+                            <li Class="XmlExtensions.Setting.GapLine" />
+                        </value>
+                    </Operation>
+
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Textures Expanded - Variations</li>
+                        </mods>
+
+                        <!-- 
                         thingDef="VPE_GasPipe" or
                         thingDef="VCHE_DeepchemPipe" or 
                         thingDef="VCHE_ChemfuelPipe" or
@@ -479,140 +626,416 @@
 
 
                 -->
-                <match Class="XmlExtensions.ForEach">
-                    <xpath>Defs/StyleCategoryDef/thingDefStyles/li[not(
-                        contains(thingDef, "Apparel_") or 
-                        contains(thingDef, "Gun_") or 
-                        contains(thingDef, "MeleeWeapon_") or 
-                        contains(thingDef, "Bow_") or 
-                        contains(thingDef, "Pipe") or 
-                        thingDef="Pila" or 
-                        thingDef="PowerConduit" or 
-                        thingDef="WaterproofConduit" or 
-                        thingDef="Sandbags" or 
-                        thingDef="Barricade" or 
-                        thingDef="HighVoltage" or 
-                        thingDef="controllerLoom" or 
-                        thingDef="GNGlitterNetCable" or 
-                        thingDef="Wall" or 
-                        thingDef="Fence" or 
-                        thingDef="VFEArch_LogWall" or 
-                        thingDef="VFEArch_ChainlinkFence" or 
-                        thingDef="VFEArch_PicketFence" or 
-                        thingDef="VFEArch_BrickFence" or 
-                        thingDef="VFEArch_LowFence" or 
-                        thingDef="VFEArch_HedgeWall" or 
-                        thingDef="VFEArch_CellWall" or 
-                        thingDef="VFEArch_ArmoredWall"
+
+                        <match Class="XmlExtensions.ForEach">
+                            <xpath>Defs/StyleCategoryDef/thingDefStyles/li[not(
+
+
+                                contains(thingDef, "Apparel") or 
+                                contains(thingDef, "Gun") or 
+                                contains(thingDef, "Weapon") or 
+                                contains(thingDef, "Melee") or 
+                                contains(thingDef, "Bow") or 
+                                contains(thingDef, "Pipe") or 
+                                thingDef="Pila" or 
+                                thingDef="PowerConduit" or 
+                                thingDef="WaterproofConduit" or 
+                                thingDef="Sandbags" or 
+                                thingDef="Barricade" or 
+                                thingDef="HighVoltage" or 
+                                thingDef="controllerLoom" or 
+                                thingDef="GNGlitterNetCable" or 
+                                thingDef="Wall" or 
+                                thingDef="Fence" or 
+                                thingDef="VFEArch_LogWall" or 
+                                thingDef="VFEArch_ChainlinkFence" or 
+                                thingDef="VFEArch_PicketFence" or 
+                                thingDef="VFEArch_BrickFence" or 
+                                thingDef="VFEArch_LowFence" or 
+                                thingDef="VFEArch_HedgeWall" or 
+                                thingDef="VFEArch_CellWall" or 
+                                thingDef="ComponentIndustrial" or 
+                                thingDef="MealNutrientPaste" or 
+                                thingDef="IM_Cyrogatana"
+
+
                         )]</xpath>
-                    <storeIn>style</storeIn>
-                    <prefixLength>4</prefixLength>
-                    <apply>
-                        <Operation Class="XmlExtensions.AggregateValues">
-                            <valueOperations>
-                                <Operation Class="XmlExtensions.CreateVariable">
-                                    <storeIn>thingDef</storeIn>
-                                    <value>{style}/thingDef</value>
-                                    <fromXml>true</fromXml>
-                                    <defaultValue>idkthing</defaultValue>
-                                </Operation>
-                                <Operation Class="XmlExtensions.CreateVariable">
-                                    <storeIn>styleDef</storeIn>
-                                    <value>{style}/styleDef</value>
-                                    <fromXml>true</fromXml>
-                                    <defaultValue>idkstyle</defaultValue>
-                                </Operation>
-                            </valueOperations>
+                            <storeIn>style</storeIn>
+                            <prefixLength>4</prefixLength>
                             <apply>
-                                <Operation Class="XmlExtensions.CreateVariable">
-                                    <storeIn>texture</storeIn>
-                                    <value>Defs/ThingStyleDef[defName="{styleDef}"]/graphicData/texPath</value>
-                                    <fromXml>true</fromXml>
-                                    <defaultValue>idktexture</defaultValue>
+                                <Operation Class="XmlExtensions.AggregateValues">
+                                    <valueOperations>
+                                        <Operation Class="XmlExtensions.CreateVariable">
+                                            <storeIn>thingDef</storeIn>
+                                            <value>{style}/thingDef</value>
+                                            <fromXml>true</fromXml>
+                                            <defaultValue>idkthing</defaultValue>
+                                        </Operation>
+                                        <Operation Class="XmlExtensions.CreateVariable">
+                                            <storeIn>styleDef</storeIn>
+                                            <value>{style}/styleDef</value>
+                                            <fromXml>true</fromXml>
+                                            <defaultValue>idkstyle</defaultValue>
+                                        </Operation>
+                                    </valueOperations>
                                     <apply>
-                                        <!--
+                                        <Operation Class="XmlExtensions.CreateVariable">
+                                            <storeIn>texture</storeIn>
+                                            <value>Defs/ThingStyleDef[defName="{styleDef}"]/graphicData/texPath</value>
+                                            <fromXml>true</fromXml>
+                                            <defaultValue>World/WorldObjects/Expanding/PeaceTalks</defaultValue>
+                                            <apply>
+                                                <Operation Class="PatchOperationSequence">
+                                                    <success>Always</success>
+                                                    <operations>
+                                                        <li Class="XmlExtensions.Conditional">
+                                                            <xpath>Defs/ThingDef[defName = "{thingDef}"]/graphicData[graphicClass="Graphic_Single"]</xpath>
+                                                            <caseTrue>
+
+                                                                <Operation Class="XmlExtensions.CreateVariable">
+                                                                    <storeIn>thingtexlog</storeIn>
+                                                                    <value>Defs/ThingDef[defName = "{thingDef}"]/graphicData/texPath</value>
+                                                                    <fromXml>true</fromXml>
+                                                                    <defaultValue>World/WorldObjects/Expanding/PeaceTalks</defaultValue>
+                                                                    <apply>
+
+
+                                                                        <Operation Class="XmlExtensions.PatchOperationAdd">
+                                                                            <success>Always</success>
+                                                                            <xmlDoc>Log</xmlDoc>
+                                                                            <xpath>Log/settings[not(li/tag="{thingDef}")]</xpath>
+                                                                            <value>
+                                                                                <li Class="XmlExtensions.Setting.SplitColumns">
+                                                                                    <tag>{thingDef}</tag>
+                                                                                    <gapSize>6</gapSize>
+                                                                                    <splits>
+                                                                                        <li>0.05</li>
+                                                                                    </splits>
+                                                                                    <settings>
+                                                                                        <li>
+                                                                                            <li Class="XmlExtensions.Setting.DrawImage">
+                                                                                                <texPath>{thingtexlog}</texPath>
+                                                                                                <anchor>Left</anchor>
+                                                                                            </li>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <li Class="XmlExtensions.Setting.Text">
+                                                                                                <text>{thingDef}</text>
+                                                                                            </li>
+                                                                                        </li>
+                                                                                    </settings>
+                                                                                </li>
+
+
+                                                                            </value>
+                                                                        </Operation>
+                                                                    </apply>
+                                                                </Operation>
+                                                            </caseTrue>
+                                                            <caseFalse>
+                                                                <Operation Class="XmlExtensions.PatchOperationAdd">
+                                                                    <success>Always</success>
+                                                                    <xmlDoc>Log</xmlDoc>
+                                                                    <xpath>Log/settings[not(li/tag="{thingDef}")]</xpath>
+                                                                    <value>
+
+                                                                        <li Class="XmlExtensions.Setting.SplitColumns">
+                                                                            <tag>{thingDef}</tag>
+                                                                            <gapSize>6</gapSize>
+                                                                            <splits>
+                                                                                <li>0.05</li>
+                                                                            </splits>
+                                                                            <settings>
+                                                                                <li>
+                                                                                    <li Class="XmlExtensions.Setting.Text">
+                                                                                        <font>Medium</font>
+                                                                                        <text>NO</text>
+                                                                                    </li>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <li Class="XmlExtensions.Setting.Text">
+                                                                                        <text>{thingDef}</text>
+                                                                                    </li>
+                                                                                </li>
+                                                                            </settings>
+                                                                        </li>
+
+                                                                    </value>
+                                                                </Operation>
+                                                            </caseFalse>
+                                                        </li>
+
+                                                        <li Class="XmlExtensions.Log">
+                                                            <text>thingDef: {thingDef}; styleDef: {styleDef}; texture: {texture}</text>
+                                                        </li>
+
+                                                        <li Class="PatchOperationAdd">
+                                                            <success>Invert</success>
+                                                            <xpath>Defs/ThingDef[defName = "{thingDef}"]/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics</xpath>
+                                                            <value>
+                                                                <li>{texture}</li>
+                                                            </value>
+                                                        </li>
+
+
+                                                        <li Class="XmlExtensions.CreateVariable">
+                                                            <storeIn>thingtex</storeIn>
+                                                            <value>Defs/ThingDef[defName = "{thingDef}"]/graphicData/texPath</value>
+                                                            <fromXml>true</fromXml>
+                                                            <defaultValue>World/WorldObjects/Expanding/PeaceTalks</defaultValue>
+                                                            <apply>
+
+                                                                <Operation Class="XmlExtensions.Log">
+                                                                    <text>---thing texture: {thingtex}</text>
+                                                                </Operation>
+
+                                                                <Operation Class="PatchOperationAdd">
+                                                                    <success>Invert</success>
+                                                                    <xpath>Defs/ThingDef[defName = "{thingDef}"]/comps</xpath>
+                                                                    <value>
+                                                                        <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+                                                                            <randomGraphics>
+                                                                                <li>{thingtex}</li>
+                                                                                <li>{texture}</li>
+                                                                            </randomGraphics>
+                                                                        </li>
+                                                                    </value>
+                                                                </Operation>
+
+                                                                <!--
+                                                                <Operation Class="XmlExtensions.Log">
+                                                                    <text>no comps</text>
+                                                                </Operation>
+                                                            -->
+
+                                                                <Operation Class="PatchOperationAdd">
+                                                                    <xpath>Defs/ThingDef[defName = "{thingDef}"]</xpath>
+                                                                    <value>
+                                                                        <comps>
+                                                                            <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+                                                                                <randomGraphics>
+                                                                                    <li>{thingtex}</li>
+                                                                                    <li>{texture}</li>
+                                                                                </randomGraphics>
+                                                                            </li>
+                                                                        </comps>
+                                                                    </value>
+                                                                </Operation>
+
+                                                            </apply>
+                                                        </li>
+
+
+                                                    </operations>
+                                                </Operation>
+                                                <!--
+                                                <Operation Class="XmlExtensions.Log">
+                                                    <text>______________</text>
+                                                </Operation>
+                                            -->
+
+
+                                            </apply>
+                                        </Operation>
+
+
+                                    </apply>
+                                </Operation>
+                            </apply>
+                        </match>
+                    </Operation>
+
+                    <Operation Class="PatchOperationRemove">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics/li[text()="World/WorldObjects/Expanding/PeaceTalks"]</xpath>
+                    </Operation>
+
+                    <Operation Class="PatchOperationRemove">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics/li[text()="Things/Building/Misc/Ideogram/IconChristian/IconChristianA"][2]</xpath>
+                    </Operation>
+
+                    <Operation Class="XmlExtensions.PatchOperationAdd">
+                        <xmlDoc>Log</xmlDoc>
+                        <xpath>Log/settings</xpath>
+                        <value>
+                            <li Class="XmlExtensions.Setting.GapLine" />
+                        </value>
+                    </Operation>
+
+                </caseTrue>
+                <caseFalse></caseFalse>
+            </Operation>
+
+        </caseTrue>
+        <caseFalse>
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>TPatches_IdeoStylesToVTEVariations</key>
+                <defaultValue>false</defaultValue>
+                <caseTrue>
+                    <Operation Class="PatchOperationFindMod">
+                        <mods>
+                            <li>Vanilla Textures Expanded - Variations</li>
+                        </mods>
+
+                        <!-- 
+                        thingDef="VPE_GasPipe" or
+                        thingDef="VCHE_DeepchemPipe" or 
+                        thingDef="VCHE_ChemfuelPipe" or
+                        thingDef="sewagePipeStuff" or
+                        thingDef="airPipe" or 
+                        thingDef="coolingPipe" or 
+                        thingDef="steamPipe" or 
+                        thingDef="waterPipe" or 
+                        
+
+
+                -->
+                        <match Class="XmlExtensions.ForEach">
+                            <xpath>Defs/StyleCategoryDef/thingDefStyles/li[not(
+
+
+                                contains(thingDef, "Apparel") or 
+                                contains(thingDef, "Gun") or 
+                                contains(thingDef, "Weapon") or 
+                                contains(thingDef, "Melee") or 
+                                contains(thingDef, "Bow") or 
+                                contains(thingDef, "Pipe") or 
+                                thingDef="Pila" or 
+                                thingDef="PowerConduit" or 
+                                thingDef="WaterproofConduit" or 
+                                thingDef="Sandbags" or 
+                                thingDef="Barricade" or 
+                                thingDef="HighVoltage" or 
+                                thingDef="controllerLoom" or 
+                                thingDef="GNGlitterNetCable" or 
+                                thingDef="Wall" or 
+                                thingDef="Fence" or 
+                                thingDef="VFEArch_LogWall" or 
+                                thingDef="VFEArch_ChainlinkFence" or 
+                                thingDef="VFEArch_PicketFence" or 
+                                thingDef="VFEArch_BrickFence" or 
+                                thingDef="VFEArch_LowFence" or 
+                                thingDef="VFEArch_HedgeWall" or 
+                                thingDef="VFEArch_CellWall" or 
+                                thingDef="VFEArch_ArmoredWall" or 
+                                thingDef="ComponentIndustrial" or 
+                                thingDef="MealNutrientPaste" or 
+                                thingDef="IM_Cyrogatana"
+
+
+                        )]</xpath>
+                            <storeIn>style</storeIn>
+                            <prefixLength>4</prefixLength>
+                            <apply>
+                                <Operation Class="XmlExtensions.AggregateValues">
+                                    <valueOperations>
+                                        <Operation Class="XmlExtensions.CreateVariable">
+                                            <storeIn>thingDef</storeIn>
+                                            <value>{style}/thingDef</value>
+                                            <fromXml>true</fromXml>
+                                            <defaultValue>idkthing</defaultValue>
+                                        </Operation>
+                                        <Operation Class="XmlExtensions.CreateVariable">
+                                            <storeIn>styleDef</storeIn>
+                                            <value>{style}/styleDef</value>
+                                            <fromXml>true</fromXml>
+                                            <defaultValue>idkstyle</defaultValue>
+                                        </Operation>
+                                    </valueOperations>
+                                    <apply>
+                                        <Operation Class="XmlExtensions.CreateVariable">
+                                            <storeIn>texture</storeIn>
+                                            <value>Defs/ThingStyleDef[defName="{styleDef}"]/graphicData/texPath</value>
+                                            <fromXml>true</fromXml>
+                                            <defaultValue>World/WorldObjects/Expanding/PeaceTalks</defaultValue>
+                                            <apply>
+                                                <!--
                                         <Operation Class="XmlExtensions.Log">
                                             <text>STYLE: {style};   thingDef: {thingDef};   styleDef: {styleDef}; texture: {texture}</text>
                                         </Operation>
 
                                         <Operation Class="XmlExtensions.StopwatchStart" />
                                     -->
-                                        <Operation Class="PatchOperationSequence">
-                                            <success>Always</success>
-                                            <operations>
+                                                <Operation Class="PatchOperationSequence">
+                                                    <success>Always</success>
+                                                    <operations>
 
-                                                <li Class="PatchOperationAdd">
-                                                    <success>Invert</success>
-                                                    <xpath>Defs/ThingDef[defName = "{thingDef}"]/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics</xpath>
-                                                    <value>
-                                                        <li>{texture}</li>
-                                                    </value>
-                                                </li>
-
-                                                <li Class="XmlExtensions.CreateVariable">
-                                                    <storeIn>thingtex</storeIn>
-                                                    <value>Defs/ThingDef[defName = "{thingDef}"]/graphicData/texPath</value>
-                                                    <fromXml>true</fromXml>
-                                                    <defaultValue>idkthingtex</defaultValue>
-                                                    <apply>
-
-                                                        <Operation Class="PatchOperationAdd">
+                                                        <li Class="PatchOperationAdd">
                                                             <success>Invert</success>
-                                                            <xpath>Defs/ThingDef[defName = "{thingDef}"]/comps</xpath>
+                                                            <xpath>Defs/ThingDef[defName = "{thingDef}"]/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics</xpath>
                                                             <value>
-                                                                <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
-                                                                    <randomGraphics>
-                                                                        <li>{thingtex}</li>
-                                                                        <li>{texture}</li>
-                                                                    </randomGraphics>
-                                                                </li>
+                                                                <li>{texture}</li>
                                                             </value>
-                                                        </Operation>
+                                                        </li>
 
-                                                        <Operation Class="PatchOperationAdd">
-                                                            <xpath>Defs/ThingDef[defName = "{thingDef}"]</xpath>
-                                                            <value>
-                                                                <comps>
-                                                                    <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
-                                                                        <randomGraphics>
-                                                                            <li>{thingtex}</li>
-                                                                            <li>{texture}</li>
-                                                                        </randomGraphics>
-                                                                    </li>
-                                                                </comps>
-                                                            </value>
-                                                        </Operation>
+                                                        <li Class="XmlExtensions.CreateVariable">
+                                                            <storeIn>thingtex</storeIn>
+                                                            <value>Defs/ThingDef[defName = "{thingDef}"]/graphicData/texPath</value>
+                                                            <fromXml>true</fromXml>
+                                                            <defaultValue>World/WorldObjects/Expanding/PeaceTalks</defaultValue>
+                                                            <apply>
 
-                                                    </apply>
-                                                </li>
+                                                                <Operation Class="PatchOperationAdd">
+                                                                    <success>Invert</success>
+                                                                    <xpath>Defs/ThingDef[defName = "{thingDef}"]/comps</xpath>
+                                                                    <value>
+                                                                        <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+                                                                            <randomGraphics>
+                                                                                <li>{thingtex}</li>
+                                                                                <li>{texture}</li>
+                                                                            </randomGraphics>
+                                                                        </li>
+                                                                    </value>
+                                                                </Operation>
+
+                                                                <Operation Class="PatchOperationAdd">
+                                                                    <xpath>Defs/ThingDef[defName = "{thingDef}"]</xpath>
+                                                                    <value>
+                                                                        <comps>
+                                                                            <li Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic">
+                                                                                <randomGraphics>
+                                                                                    <li>{thingtex}</li>
+                                                                                    <li>{texture}</li>
+                                                                                </randomGraphics>
+                                                                            </li>
+                                                                        </comps>
+                                                                    </value>
+                                                                </Operation>
+
+                                                            </apply>
+                                                        </li>
 
 
-                                            </operations>
+                                                    </operations>
+                                                </Operation>
+
+
+                                            </apply>
                                         </Operation>
 
 
                                     </apply>
                                 </Operation>
-
-
                             </apply>
-                        </Operation>
-                    </apply>
-                </match>
-            </Operation>
+                        </match>
+                    </Operation>
 
-            <Operation Class="PatchOperationRemove">
-                <success>Always</success>
-                <xpath>Defs/ThingDef/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics/li[text()="idktexture" or text()="idkthingtex"]</xpath>
-            </Operation>
+                    <Operation Class="PatchOperationRemove">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics/li[text()="World/WorldObjects/Expanding/PeaceTalks"]</xpath>
+                    </Operation>
 
-            <Operation Class="PatchOperationRemove">
-                <success>Always</success>
-                <xpath>Defs/ThingDef/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics/li[text()="Things/Building/Misc/Ideogram/IconChristian/IconChristianA"][2]</xpath>
-            </Operation>
+                    <Operation Class="PatchOperationRemove">
+                        <success>Always</success>
+                        <xpath>Defs/ThingDef/comps/li[@Class="VanillaFurnitureExpanded.CompProperties_RandomBuildingGraphic"]/randomGraphics/li[text()="Things/Building/Misc/Ideogram/IconChristian/IconChristianA"][2]</xpath>
+                    </Operation>
 
-        </caseTrue>
-        <caseFalse></caseFalse>
+                </caseTrue>
+                <caseFalse></caseFalse>
+            </Operation>
+        </caseFalse>
     </Operation>
 
     <Operation Class="XmlExtensions.OptionalPatch">
