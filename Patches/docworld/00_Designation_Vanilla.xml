@@ -106,6 +106,7 @@ Ship        50  | Temperature 25  |
       </Operation>
 
       <!--Move items to Jurassic tab-->
+      <!--
       <Operation Class="PatchOperationFindMod">
         <mods>
           <li>Jurassic Rimworld 1.1</li>
@@ -122,6 +123,7 @@ Ship        50  | Temperature 25  |
           </operations>
         </match>
       </Operation>
+    -->
 
       <!--Move items to Beds, Production, and Storage tab. #storage-->
       <Operation Class="PatchOperationFindMod">
@@ -385,27 +387,6 @@ Ship        50  | Temperature 25  |
       </Operation>
 
 
-      <!--Move items to Beds, Furniture, and Lighting tab-->
-      <Operation Class="PatchOperationFindMod">
-        <mods>
-          <li>Vanilla Furniture Expanded</li>
-        </mods>
-        <match Class="PatchOperationSequence">
-          <success>Always</success>
-          <operations>
-
-            <!--Two furniture items are excluded due to DZ_Storage category. "Shelf_1x1c" and "Shelf_WeaponRack"-->
-            <li Class="PatchOperationReplace">
-              <xpath>Defs/ThingDef[defName="Seat_Cushion" or defName="Seat_Bench" or defName="Seat_SquareChair" or defName="Table_1x1c" or defName="Table_Counter" or defName="Table_Wardrobe" or defName="Seat_ModernChair" or defName="Table_RoyalEndTable" or defName="Table_RoyalDresser" or defName="Seat_RoyalChair" or defName="Seat_RoyalArmchair" or @Name="RoyalTableDesc"]/designationCategory</xpath>
-              <value>
-                <designationCategory>Furniture</designationCategory>
-              </value>
-            </li>
-            <!--Lights-->
-
-          </operations>
-        </match>
-      </Operation>
       <!--Move items to Decor tab-->
       <!--
       <Operation Class="PatchOperationFindMod">
@@ -426,34 +407,6 @@ Ship        50  | Temperature 25  |
       </Operation>
     -->
 
-      <!--Move items to Beds, Furniture, Husbandry, Lighting, and Joy tab-->
-      <Operation Class="PatchOperationFindMod">
-        <mods>
-          <li>Vanilla Furniture Expanded - Spacer Module</li>
-        </mods>
-        <match Class="PatchOperationSequence">
-          <success>Always</success>
-          <operations>
-            <!--Beds-->
-
-            <!--Furniture-->
-            <li Class="PatchOperationReplace">
-              <xpath>Defs/ThingDef[defName="Table_IlluminatedEndTable" or defName="Table_IlluminatedDresser" or defName="Seat_AdvChair" or defName="Table_interactive_1x1c" or defName="Table_interactive_2x2c"]/designationCategory</xpath>
-              <value>
-                <designationCategory>Furniture</designationCategory>
-              </value>
-            </li>
-            <!--Husbandry-->
-            <!--Recreation-->
-            <li Class="PatchOperationReplace">
-              <xpath>Defs/ThingDef[defName="UltrascreenTV"]/designationCategory</xpath>
-              <value>
-                <designationCategory>Joy</designationCategory>
-              </value>
-            </li>
-          </operations>
-        </match>
-      </Operation>
 
 
       <!--Move items to Decor, Floors, Lighting tab-->
@@ -663,35 +616,6 @@ Ship        50  | Temperature 25  |
         </match>
       </Operation>
 
-      <Operation Class="XmlExtensions.FindMod">
-        <mods>
-          <li>Medieval Overhaul</li>
-        </mods>
-        <caseTrue>
-
-          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-            <xpath>Defs/ThingDef[
-                defName="DankPyon_WoodBurningStove" or
-                defName="DankPyon_RusticHearth"
-                ]</xpath>
-            <value>
-              <designationCategory>Temperature</designationCategory>
-            </value>
-          </Operation>
-
-          <Operation Class="PatchOperationReplace">
-            <xpath>Defs/ThingDef/designationCategory[text()="DankPyon_RusticFurniture"]</xpath>
-            <value>
-              <designationCategory>Furniture</designationCategory>
-            </value>
-          </Operation>
-
-          <Operation Class="PatchOperationRemove">
-            <xpath>Defs/DesignationCategoryDef[defName="DankPyon_RusticFurniture"]</xpath>
-          </Operation>
-
-        </caseTrue>
-      </Operation>
 
       <Operation Class="PatchOperationFindMod">
         <mods>

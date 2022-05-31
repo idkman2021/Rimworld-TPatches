@@ -157,38 +157,6 @@
                         </match>
                     </Operation>
 
-                    <!--Move items to Culinary tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Replimat</li>
-                        </mods>
-                        <match Class="PatchOperationReplace">
-                            <success>Always</success>
-                            <xpath>Defs/ThingDef/designationCategory[text()="Replimat_Replimat"]</xpath>
-                            <value>
-                                <designationCategory>DZ_Culinary</designationCategory>
-                            </value>
-                        </match>
-                    </Operation>
-
-                    <!--Move items to Culinary, Husbandry, and Lighting tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>RimBees</li>
-                        </mods>
-                        <match Class="PatchOperationSequence">
-                            <success>Always</success>
-                            <operations>
-                                <li Class="PatchOperationReplace">
-                                    <xpath>Defs/ThingDef[defName="RB_Beekeeping_Workbench_Building"]/designationCategory</xpath>
-                                    <value>
-                                        <designationCategory>DZ_Culinary</designationCategory>
-                                    </value>
-                                </li>
-
-                            </operations>
-                        </match>
-                    </Operation>
 
                     <!--Move items to Culinary tab-->
                     <Operation Class="PatchOperationFindMod">
@@ -245,141 +213,6 @@
                         </mods>
                         <match Class="PatchOperationReplace">
                             <xpath>Defs/ThingDef[defName="DMicrowave"]/designationCategory</xpath>
-                            <value>
-                                <designationCategory>DZ_Culinary</designationCategory>
-                            </value>
-                        </match>
-                    </Operation>
-
-                    <!--Move items to Culinary tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>[SYR] Universal Fermenter</li>
-                        </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="UniversalFermenter"]/designationCategory</xpath>
-                            <value>
-                                <designationCategory>DZ_Culinary</designationCategory>
-                            </value>
-                        </match>
-                    </Operation>
-
-                    <!--Move items to Culinary tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Vanilla Brewing Expanded</li>
-                        </mods>
-                        <match Class="PatchOperationSequence">
-                            <success>Always</success>
-                            <operations>
-                                <li Class="PatchOperationReplace">
-                                    <xpath>Defs/ThingDef[defName="VBE_Bar" or defName="VBE_SodaFountain" or defName="VBE_AmbrandyDistillery" or defName="VBE_WhiskeyCask" or defName="VBE_TequilaBarrel" or defName="VBE_VodkaDrum" or defName="VBE_GinStill"]/designationCategory</xpath>
-                                    <value>
-                                        <designationCategory>DZ_Culinary</designationCategory>
-                                    </value>
-                                </li>
-                            </operations>
-                        </match>
-                    </Operation>
-
-
-                    <!--Move items to Culinary tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Vanilla Brewing Expanded - Coffees and Teas</li>
-                        </mods>
-                        <match Class="PatchOperationSequence">
-                            <success>Always</success>
-                            <operations>
-                                <li Class="PatchOperationReplace">
-                                    <xpath>Defs/ThingDef[defName="VBE_EspressoMachineBuilding"]/designationCategory</xpath>
-                                    <value>
-                                        <designationCategory>DZ_Culinary</designationCategory>
-                                    </value>
-                                </li>
-                            </operations>
-                        </match>
-                    </Operation>
-
-                    <!--==========
-    Vanilla Cooking Expanded
-    ==========-->
-
-                    <!--Move items to Culinary tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Vanilla Cooking Expanded</li>
-                        </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="VCE_CheesePress" or defName="VCE_CondimentPrepTable" or defName="VCE_CanningMachine" or defName="VCE_DeepFrier"  or defName="VCE_ElectricPot" or defName="VCE_Grill"]/designationCategory</xpath>
-                            <value>
-                                <designationCategory>DZ_Culinary</designationCategory>
-                            </value>
-                        </match>
-                    </Operation>
-
-                    <!--==========
-    Vanilla Cooking Expanded - Stews
-    ==========-->
-
-                    <!--Move items to Culinary tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Vanilla Cooking Expanded - Stews</li>
-                        </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="VCE_StewPot"]/designationCategory</xpath>
-                            <value>
-                                <designationCategory>DZ_Culinary</designationCategory>
-                            </value>
-                        </match>
-                    </Operation>
-
-                    <!--==========
-    Vanilla Cooking Expanded - Sushi
-    ==========-->
-
-                    <!--Move items to Culinary tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Vanilla Cooking Expanded - Sushi</li>
-                        </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="VCE_SushiPrepTable" or defName="VCE_SoyFermenter"]/designationCategory</xpath>
-                            <value>
-                                <designationCategory>DZ_Culinary</designationCategory>
-                            </value>
-                        </match>
-                    </Operation>
-
-
-                    <!--Move items to Husbandry and Culinary tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Vanilla Factions Expanded - Vikings</li>
-                        </mods>
-                        <match Class="PatchOperationSequence">
-                            <success>Always</success>
-                            <operations>
-
-                                <li Class="PatchOperationReplace">
-                                    <xpath>Defs/ThingDef[defName="VFEV_MeadFermentingBarrel"]/designationCategory</xpath>
-                                    <value>
-                                        <designationCategory>DZ_Culinary</designationCategory>
-                                    </value>
-                                </li>
-                            </operations>
-                        </match>
-                    </Operation>
-
-
-                    <!--Move items to Culinary tab-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Vanilla Furniture Expanded - Production</li>
-                        </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="VFE_TableStoveLarge" or defName="VFE_TableButcherElectric" or defName="VPE_GasStove"]/designationCategory</xpath>
                             <value>
                                 <designationCategory>DZ_Culinary</designationCategory>
                             </value>
@@ -491,9 +324,6 @@
                         </match>
                     </Operation>
 
-                    <!--==========
-    Universal Fermenter {Vanilla Factions Expanded - Medieval, Vanilla Factions Expanded - Settlers, RimBees}
-    ==========-->
 
                     <!--Move items to Culinary tab. #uf-->
                     <Operation Class="PatchOperationFindMod">
@@ -506,42 +336,6 @@
                             </mods>
                             <match Class="PatchOperationReplace">
                                 <xpath>Defs/ThingDef[defName="RB_MeadFermentingBarrel"]/designationCategory</xpath>
-                                <value>
-                                    <designationCategory>DZ_Culinary</designationCategory>
-                                </value>
-                            </match>
-                        </nomatch>
-                    </Operation>
-
-                    <!--Move items to Culinary tab. #uf-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>[SYR] Universal Fermenter</li>
-                        </mods>
-                        <nomatch Class="PatchOperationFindMod">
-                            <mods>
-                                <li>Vanilla Factions Expanded - Medieval</li>
-                            </mods>
-                            <match Class="PatchOperationReplace">
-                                <xpath>Defs/ThingDef[defName="VFEM_WineBarrel"]/designationCategory</xpath>
-                                <value>
-                                    <designationCategory>DZ_Culinary</designationCategory>
-                                </value>
-                            </match>
-                        </nomatch>
-                    </Operation>
-
-                    <!--Move items to Culinary tab. #uf-->
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>[SYR] Universal Fermenter</li>
-                        </mods>
-                        <nomatch Class="PatchOperationFindMod">
-                            <mods>
-                                <li>Vanilla Factions Expanded - Settlers</li>
-                            </mods>
-                            <match Class="PatchOperationReplace">
-                                <xpath>Defs/ThingDef[defName="Building_ChemshineBarrel"]/designationCategory</xpath>
                                 <value>
                                     <designationCategory>DZ_Culinary</designationCategory>
                                 </value>
@@ -713,16 +507,6 @@
                         </mods>
                         <caseTrue>
 
-                            <Operation Class="PatchOperationReplace">
-                                <xpath>Defs/ThingDef/designationCategory[text()="RS_Category"]</xpath>
-                                <value>
-                                    <designationCategory>DZ_Culinary</designationCategory>
-                                </value>
-                            </Operation>
-                            <Operation Class="PatchOperationRemove">
-                                <xpath>Defs/DesignationCategoryDef[defName="RS_Category"]</xpath>
-                            </Operation>
-
                             <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                                 <xpath>Defs/ThingDef[ defName="RS_Sofachair" or defName="RS_smallTable" or defName="RS_Stool"
                                 ]</xpath>
@@ -750,8 +534,9 @@
                                 defName="DankPyon_Presser" or
                                 defName="DankPyon_TanningRack" or
                                 defName="DankPyon_DryingRack" or
-                                defName="DankPyon_DryingRack1x2c"
-                                or defName="DankPyon_StoneOven" or defName="DankPyon_RusticCookingTools"
+                                defName="DankPyon_DryingRack1x2c" or 
+                                defName="DankPyon_StoneOven" or 
+                                defName="DankPyon_RusticCookingTools"
                                 ]</xpath>
                             <value>
                                 <designationCategory>DZ_Culinary</designationCategory>
@@ -759,43 +544,6 @@
                         </match>
                     </Operation>
 
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>More Linkables</li>
-                        </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="KitchenCupboard"]/designationCategory
-                        </xpath>
-                            <value>
-                                <designationCategory>DZ_Culinary</designationCategory>
-                            </value>
-                        </match>
-                    </Operation>
-
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Vanilla Factions Expanded - Classical</li>
-                        </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="VFEC_MeatDryingRack"]/designationCategory
-                        </xpath>
-                            <value>
-                                <designationCategory>DZ_Culinary</designationCategory>
-                            </value>
-                        </match>
-                    </Operation>
-
-                    <Operation Class="PatchOperationFindMod">
-                        <mods>
-                            <li>Vanilla Plants Expanded - More Plants</li>
-                        </mods>
-                        <match Class="PatchOperationReplace">
-                            <xpath>Defs/ThingDef[defName="VCE_VegMilkExtractor"]/designationCategory</xpath>
-                            <value>
-                                <designationCategory>DZ_Culinary</designationCategory>
-                            </value>
-                        </match>
-                    </Operation>
 
                     <Operation Class="PatchOperationFindMod">
                         <mods>
@@ -875,7 +623,6 @@
                             </operations>
                         </match>
                     </Operation>
-
 
 
                     <!-- patches go above this -->

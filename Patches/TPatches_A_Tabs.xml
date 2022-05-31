@@ -3,14 +3,9 @@
 <Patch>
     <Operation Class="XmlExtensions.OptionalPatch">
         <modId>carnap2.TPatches</modId>
-        <key>TPatchesLogging</key>
+        <key>TPatchesDARLogging</key>
         <defaultValue>false</defaultValue>
         <caseTrue>
-            
-            <Operation Class="XmlExtensions.CreateDocument">
-                <docName>Log</docName>
-                <xpath>Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
-            </Operation>
 
             <Operation Class="XmlExtensions.CreateDocument">
                 <docName>Info</docName>
@@ -18,6 +13,11 @@
             </Operation>
 
         </caseTrue>
+    </Operation>
+
+    <Operation Class="XmlExtensions.CreateDocument">
+        <docName>Log</docName>
+        <xpath>Defs/XmlExtensions.SettingsMenuDef[defName="TPatches_SettingsMenu"]/settings/li/tabs/li[label="Log"]/settings</xpath>
     </Operation>
 
     <!--

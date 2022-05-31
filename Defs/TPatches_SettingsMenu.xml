@@ -45,7 +45,7 @@
                         <label>Log</label>
                         <settings>
                             <li Class="XmlExtensions.Setting.Text">
-                                <text>displays debug information into log and info tab, may impact loading times.</text>
+                                <text>displays debug information into log and info tab, may impact loading times if enabled.</text>
                             </li>
                             <li Class="XmlExtensions.Setting.Checkbox">
                                 <label>show debug options</label>
@@ -58,10 +58,16 @@
                                 <caseTrue>
                                     <li Class="XmlExtensions.Setting.GapLine" />
                                     <li Class="XmlExtensions.Setting.Checkbox">
-                                        <label>Log duplicate animal remover</label>
+                                        <label>Log startup time impact</label>
                                         <key>TPatchesLogging</key>
                                         <defaultValue>false</defaultValue>
-                                        <tooltip>displays which animal replaced which, and lists all supported animals, highlighting ones that are loaded.</tooltip>
+                                        <tooltip>Records how long each part of TPatches took to load, outputs that into rimworld log (using stopwatch)</tooltip>
+                                    </li>
+                                    <li Class="XmlExtensions.Setting.Checkbox">
+                                        <label>Log duplicate animal remover</label>
+                                        <key>TPatchesDARLogging</key>
+                                        <defaultValue>false</defaultValue>
+                                        <tooltip>Displays which animal replaced which, and lists all supported animals, highlighting ones that are loaded.</tooltip>
                                     </li>
                                     <li Class="XmlExtensions.Setting.Checkbox">
                                         <label>Log ideo styles to VTE variations converter</label>
@@ -69,9 +75,31 @@
                                         <defaultValue>false</defaultValue>
                                         <tooltip>Displays all converted and filtered variations and their info. Red variations are filtered to avoid issues or to reduce loading times where VTEV doesn't support this kind of variation. Textures are only displayed for items with Graphics_Single.</tooltip>
                                     </li>
+                                    <li Class="XmlExtensions.Setting.Checkbox">
+                                        <label>Log mod names</label>
+                                        <key>TPatchesModNameLogging</key>
+                                        <defaultValue>false</defaultValue>
+                                        <tooltip>Lists all mods that menus check for, highlighting ones that are loaded.</tooltip>
+                                    </li>
+                                    <li Class="XmlExtensions.Setting.GapLine" />
                                 </caseTrue>
                                 <caseFalse>
-                                    <li Class="XmlExtensions.Setting.GapLine" />
+                                    <li Class="XmlExtensions.Setting.ToggleableSettings">
+                                        <key>TPatchesLogging</key>
+                                        <caseTrue>
+                                            <li Class="XmlExtensions.Setting.GapLine" />
+                                        </caseTrue>
+                                        <caseFalse>
+                                            <li Class="XmlExtensions.Setting.ToggleableSettings">
+                                                <key>TPatchesLogging_IdeoVTE</key>
+                                                <caseTrue>
+                                                    <li Class="XmlExtensions.Setting.GapLine" />
+                                                </caseTrue>
+                                                <caseFalse></caseFalse>
+                                            </li>
+                                        </caseFalse>
+                                    </li>
+
                                     <li Class="XmlExtensions.Setting.SetColor">
                                         <color>(255,0,0)</color>
                                     </li>
@@ -79,10 +107,20 @@
                                         <key>TPatchesLogging</key>
                                         <caseTrue>
                                             <li Class="XmlExtensions.Setting.Text">
+                                                <text>Startup time logging is currently enabled, will fill up the rimworld log!</text>
+                                            </li>
+                                        </caseTrue>
+                                    </li>
+                                    <!--
+                                    <li Class="XmlExtensions.Setting.ToggleableSettings">
+                                        <key>TPatchesDARLogging</key>
+                                        <caseTrue>
+                                            <li Class="XmlExtensions.Setting.Text">
                                                 <text>Duplicate animal remover logging is currently enabled, recommended to disable.</text>
                                             </li>
                                         </caseTrue>
                                     </li>
+                                -->
                                     <li Class="XmlExtensions.Setting.ToggleableSettings">
                                         <key>TPatchesLogging_IdeoVTE</key>
                                         <caseTrue>
@@ -94,12 +132,12 @@
                                     <li Class="XmlExtensions.Setting.SetColor">
                                         <color>(255,255,255)</color>
                                     </li>
+                                    <li Class="XmlExtensions.Setting.GapLine" />
 
                                 </caseFalse>
                             </li>
 
 
-                            <li Class="XmlExtensions.Setting.GapLine" />
                         </settings>
                     </li>
 

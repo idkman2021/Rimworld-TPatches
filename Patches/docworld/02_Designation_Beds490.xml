@@ -478,6 +478,28 @@
                         </match>
                     </Operation>
 
+                    <!-- PATCHES GO INTO THIS SEQUENCE -->
+                    <Operation Class="PatchOperationSequence">
+                        <operations>
+
+                            <li Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="LimeTreeSnake.Furnishing">
+                                <xpath>Defs/ThingDef[
+                                    defName="LTS_KoppangD" or 
+                                    defName="LTS_IdanasN" or 
+                                    defName="LTS_IdanasD"
+                                    ]</xpath>
+                                <value>
+                                    <designationCategory>DZ_Beds</designationCategory>
+                                </value>
+                            </li>
+                            <li Class="XmlExtensions.Log" MayRequire="LimeTreeSnake.Furnishing">
+                                <text>LTS is loaded soo....</text>
+                            </li>
+
+                        </operations>
+                    </Operation>
+
+
                     <!-- patches go above this -->
                     <Operation Class="XmlExtensions.OptionalPatch">
                         <modId>carnap2.TPatches</modId>

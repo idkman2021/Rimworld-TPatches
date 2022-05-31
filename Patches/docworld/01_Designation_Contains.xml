@@ -7,6 +7,7 @@
         <defaultValue>true</defaultValue>
         <caseTrue>
 
+            <!-- stopwatch -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>TPatchesLogging</key>
@@ -19,6 +20,7 @@
                 </caseTrue>
             </Operation>
 
+            <!-- document -->
             <Operation Class="XmlExtensions.CreateDocument">
                 <docName>Designations</docName>
                 <xpath>Defs/ThingDef[
@@ -43,6 +45,87 @@
                     ]</xpath>
             </Operation>
 
+            <!-- vanilla groups -->
+            <!-- FURNITURE -->
+            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                <success>Always</success>
+                <xmlDoc>Designations</xmlDoc>
+                <xpath>
+                    Designations/ThingDef[
+                    <!-- LTS -->
+                    designationCategory="LTSFurniture" or
+                    <!-- VE -->
+                    designationCategory="AOMorefurniture" or
+                    <!-- MO -->
+                    designationCategory="DankPyon_RusticFurniture"
+                    ]
+                </xpath>
+                <value>
+                    <designationCategory>Furniture</designationCategory>
+                </value>
+            </Operation>
+            <!-- STRUCTURE -->
+            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                <success>Always</success>
+                <xmlDoc>Designations</xmlDoc>
+                <xpath>
+                    Designations/ThingDef[
+                    <!-- LTS -->
+                    designationCategory="LTSStructure"
+                    ]
+                </xpath>
+                <value>
+                    <designationCategory>Structure</designationCategory>
+                </value>
+            </Operation>
+            <!-- JOY -->
+            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                <success>Always</success>
+                <xmlDoc>Designations</xmlDoc>
+                <xpath>
+                    Designations/ThingDef[
+                    <!-- LTS -->
+                    @Name="LTS_TabletopBase" or
+                    <!-- VE -->
+                    defName="UltrascreenTV"
+                    ]
+                </xpath>
+                <value>
+                    <designationCategory>Joy</designationCategory>
+                </value>
+            </Operation>
+            <!-- TMPERATURE -->
+            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                <success>Always</success>
+                <xmlDoc>Designations</xmlDoc>
+                <xpath>
+                    Designations/ThingDef[
+                    <!-- MO -->
+                    defName="DankPyon_WoodBurningStove" or
+                    defName="DankPyon_RusticHearth"
+                    ]
+                </xpath>
+                <value>
+                    <designationCategory>Temperature</designationCategory>
+                </value>
+            </Operation>
+            <!-- PRODUCTION -->
+            <!--
+            <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+                <success>Always</success>
+                <xmlDoc>Designations</xmlDoc>
+                <xpath>Designations/ThingDef[
+
+                    
+                    ]</xpath>
+                <value>
+                    <designationCategory>Production</designationCategory>
+                </value>
+            </Operation>
+        -->
+
+
+            <!-- culinary -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesCulinary</key>
@@ -50,9 +133,8 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
+                        <xpath>Defs</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>DZ_Culinary</defName>
                                 <label>Culinary</label>
@@ -64,19 +146,22 @@
                                     <li>Designator_Uninstall</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
                         </value>
                     </Operation>
 
-
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xmlDoc>Designations</xmlDoc>
-                        <xpath>Designations/ThingDef[
+                        <xpath>
+                            Designations/ThingDef[
+                            <!-- definitely doesn't have any of the parent names that are in the doc, so I filter them out right away, and whitelist is also filtered. -->
                             designationCategory and 
 
-                            (not(defName="GR_NutrientVat"))
-
-                            ][
+                            (not(
+                            <!-- CULINARY BLACKLIST -->
+                            defName="GR_NutrientVat"
+                            
+                            ))]
+                            [
                             contains(label, "stove") or 
                             contains(label, "Stove") or 
                             contains(@Name, "stove") or 
@@ -93,18 +178,67 @@
                             contains(label, "Butcher") or 
                             contains(@Name, "butcher") or 
                             contains(@Name, "Butcher") or
-                            thingClass="Building_FermentingBarrel" or 
-                            defName="AM_GrogDispenser"
-                            ]</xpath>
+                            thingClass="Building_FermentingBarrel" or
+                            <!-- CULINARY WHITELIST -->
+                            <!-- alpha memes -->
+                            defName="AM_GrogDispenser" or
+                            <!-- replimat -->
+                            designationCategory="Replimat_Replimat" or
+                            <!-- rimbees -->
+                            defName="RB_Beekeeping_Workbench_Building" or
+                            <!-- VFEC -->
+                            defName="VFEC_MeatDryingRack" or
+                            <!-- VPEMP -->
+                            defName="VCE_VegMilkExtractor" or
+                            <!-- more linkables -->
+                            defName="KitchenCupboard" or
+                            <!-- rimstro -->
+                            designationCategory="RS_Category" or
+                            <!-- VFES -->
+                            defName="Building_ChemshineBarrel" or
+                            <!-- VFEM -->
+                            defName="VFEM_WineBarrel" or
+                            <!-- VFEP -->
+                            defName="VFE_TableStoveLarge" or 
+                            defName="VFE_TableButcherElectric" or 
+                            defName="VPE_GasStove" or
+                            <!-- VFEV -->
+                            defName="VFEV_MeadFermentingBarrel" or
+                            <!-- VCES -->
+                            defName="VCE_SushiPrepTable" or 
+                            defName="VCE_SoyFermenter" or
+                            <!-- VCES -->
+                            defName="VCE_StewPot" or
+                            <!-- VCE -->
+                            defName="VCE_CheesePress" or 
+                            defName="VCE_CondimentPrepTable" or 
+                            defName="VCE_CanningMachine" or 
+                            defName="VCE_DeepFrier" or 
+                            defName="VCE_ElectricPot" or 
+                            defName="VCE_Grill" or
+                            <!-- VBECaT -->
+                            defName="VBE_EspressoMachineBuilding" or 
+                            <!-- VBE -->
+                            defName="VBE_Bar" or 
+                            defName="VBE_SodaFountain" or 
+                            defName="VBE_AmbrandyDistillery" or 
+                            defName="VBE_WhiskeyCask" or 
+                            defName="VBE_TequilaBarrel" or 
+                            defName="VBE_VodkaDrum" or 
+                            defName="VBE_GinStill" or
+                            <!-- universal fermenter -->
+                            defName="UniversalFermenter"
+                            ]
+                        </xpath>
                         <value>
-                            <designationCategory Inherit="False">DZ_Culinary</designationCategory>
+                            <designationCategory>DZ_Culinary</designationCategory>
                         </value>
                     </Operation>
-
 
                 </caseTrue>
             </Operation>
 
+            <!-- lighting -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesLighting</key>
@@ -112,9 +246,8 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
+                        <xpath>Defs</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>DZ_Lighting</defName>
                                 <label>Lighting</label>
@@ -126,14 +259,16 @@
                                     <li>Designator_Uninstall</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
-
                         </value>
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xmlDoc>Designations</xmlDoc>
-                        <xpath>Designations/ThingDef[designationCategory or @ParentName="LampBase" or @ParentName="StandingLampBase"][
+                        <xpath>
+                            Designations/ThingDef[
+
+                        @ParentName="LampBase" or 
+                        @ParentName="StandingLampBase" or
                         contains(label, "lamp") or 
                         contains(label, "torch") or 
                         contains(label, "Lamp") or 
@@ -147,16 +282,21 @@
                         contains(label, "lantern") or 
                         contains(label, "Lantern") or 
                         contains(@Name, "lantern") or 
-                        contains(@Name, "Lantern")
-                        ]</xpath>
+                        contains(@Name, "Lantern") or
+                            <!-- LIGHTING WHITELIST -->
+                            @Name="LTS_LightBase"
+                        
+                        ]
+                        </xpath>
                         <value>
-                            <designationCategory Inherit="False">DZ_Lighting</designationCategory>
+                            <designationCategory>DZ_Lighting</designationCategory>
                         </value>
                     </Operation>
 
                 </caseTrue>
             </Operation>
 
+            <!-- bedroom -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesBeds</key>
@@ -164,9 +304,8 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
+                        <xpath>Defs</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>DZ_Beds</defName>
                                 <label>Bedroom</label>
@@ -178,7 +317,6 @@
                                     <li>Designator_Uninstall</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
                         </value>
                     </Operation>
 
@@ -186,6 +324,7 @@
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xmlDoc>Designations</xmlDoc>
                         <xpath>
+                            <!-- buildings with bed nodes -->
                             Designations/ThingDef[designationCategory or 
                             @ParentName="FurnitureBase" or
                             @ParentName="FurnitureWithQualityBase" or
@@ -197,13 +336,13 @@
                             building/buildingTags/li="Bed"]
 
                             |
-
+                            <!-- straightforward beds -->
                             Designations/ThingDef[@ParentName="BedBase" or
                             @ParentName="BedWithQualityBase" or 
                             @ParentName="ArtableBedBase"]
 
                             |
-
+                            <!-- linkables -->
                             Designations/ThingDef[
                             designationCategory or 
                             @ParentName="FurnitureBase" or
@@ -230,11 +369,16 @@
                             contains(@Name, "Bed")]
 
                             |
-
+                            <!-- BEDROOM WHITELIST -->
                             Designations/ThingDef[
+                            <!-- not in doc anymore
                             defName="LTS_KoppangD" or 
                             defName="LTS_IdanasN" or 
-                            defName="LTS_IdanasD"
+                            defName="LTS_IdanasD" or 
+                            -->
+                            @Name="LTS_BedBase" or 
+                            @Name="LTS_ArtBedBase"
+                            
                             ]
                             <!--
                             [
@@ -249,15 +393,15 @@
                             -->
                         </xpath>
                         <value>
-                            <designationCategory Inherit="False">DZ_Beds</designationCategory>
+                            <designationCategory>DZ_Beds</designationCategory>
                         </value>
                     </Operation>
-
 
                 </caseTrue>
             </Operation>
 
 
+            <!-- storage -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesStorage</key>
@@ -265,9 +409,8 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
+                        <xpath>Defs</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>DZ_Storage</defName>
                                 <label>Storage</label>
@@ -279,7 +422,6 @@
                                     <li>Designator_Uninstall</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
                         </value>
                     </Operation>
 
@@ -295,12 +437,13 @@
                                     ][
                                     building/fixedStorageSettings/filter/categories/li="Root"]</xpath>
                         <value>
-                            <designationCategory Inherit="False">DZ_Storage</designationCategory>
+                            <designationCategory>DZ_Storage</designationCategory>
                         </value>
                     </Operation>
                 </caseTrue>
             </Operation>
 
+            <!-- turrets -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesTurrets</key>
@@ -308,9 +451,8 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
+                        <xpath>Defs</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>DZ_Turrets</defName>
                                 <label>Turrets</label>
@@ -322,32 +464,34 @@
                                     <li>Designator_Uninstall</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
                         </value>
                     </Operation>
 
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xmlDoc>Designations</xmlDoc>
-                        <xpath>Designations/ThingDef[
+                        <xpath>
+                            Designations/ThingDef[
                                     (
                                     designationCategory and 
                                     (thingClass="Building_TurretGun" or statBases/ShootingAccuracyTurret or building/buildingTags/li="Artillery" or building/turretBurstWarmupTime or building/turretBurstCooldownTime or building/turretGunDef or building/turretTopDrawSize)
                                     ) 
                                     or @ParentName="BaseArtilleryBuilding" or @ParentName="AutocannonTurret"
                                     ][
-
-                                    not(defName="VFES_Turret_Decoy")
+                            <!-- TURRETS BLACKLIST -->
+                            not(defName="VFES_Turret_Decoy")
                                     
-                                    ]</xpath>
+                                    ]
+                        </xpath>
                         <value>
-                            <designationCategory Inherit="False">DZ_Turrets</designationCategory>
+                            <designationCategory>DZ_Turrets</designationCategory>
                         </value>
                     </Operation>
                 </caseTrue>
             </Operation>
 
 
+            <!-- husbandry -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesHusbandry</key>
@@ -355,9 +499,8 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
+                        <xpath>Defs</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>DZ_Husbandry</defName>
                                 <label>Husbandry</label>
@@ -371,13 +514,13 @@
                                     <li>Designator_RemoveFloor</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
                         </value>
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xmlDoc>Designations</xmlDoc>
-                        <xpath>Designations/ThingDef[designationCategory or @ParentName="LampBase"][
+                        <xpath>
+                            Designations/ThingDef[designationCategory or @ParentName="LampBase"][
                             contains(label, "hydroponic") or 
                             contains(label, "sun") or 
                             contains(label, "Hydroponic") or 
@@ -388,15 +531,25 @@
                             contains(@Name, "Sun") or
                             thingClass="Building_PlantGrower" or 
                             thingClass="Building_SunLamp" or 
-                            building/defaultPlantToGrow]</xpath>
+                            building/defaultPlantToGrow]
+                        
+                        |
+                    
+                        Designations/ThingDef[
+                            <!-- HUSBANDRY WHITELIST -->
+                            @Name="LTS_GrowingBase"
+                        
+                        ]
+                        </xpath>
                         <value>
-                            <designationCategory Inherit="False">DZ_Husbandry</designationCategory>
+                            <designationCategory>DZ_Husbandry</designationCategory>
                         </value>
                     </Operation>
 
                 </caseTrue>
             </Operation>
 
+            <!-- medical -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesMedical</key>
@@ -406,9 +559,8 @@
 
                     <Operation Class="PatchOperationAdd">
                         <success>Always</success>
-                        <xpath>/Defs[not(DesignationCategoryDef/defName="NQoL_Medical")]</xpath>
+                        <xpath>Defs[not(DesignationCategoryDef/defName="NQoL_Medical")]</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>NQoL_Medical</defName> <!-- niilo's qol compat -->
                                 <label>Medical</label>
@@ -420,8 +572,6 @@
                                     <li>Designator_Uninstall</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
-
                         </value>
                     </Operation>
 
@@ -434,12 +584,12 @@
                             contains(label, "Hospital") or 
                             contains(@Name, "hospital") or 
                             contains(@Name, "Hospital") or
-                            <!--
+
                             contains(@Name, "medical") or 
                             contains(@Name, "Medical") or
                             contains(label, "medical") or 
                             contains(label, "Medical") or 
-                            -->
+
                             contains(label, "surgical") or 
                             contains(label, "Surgical") or 
                             contains(@Name, "surgical") or 
@@ -447,7 +597,7 @@
                             ]
                         </xpath>
                         <value>
-                            <designationCategory Inherit="False">NQoL_Medical</designationCategory>
+                            <designationCategory>NQoL_Medical</designationCategory>
                         </value>
                     </Operation>
 
@@ -456,6 +606,7 @@
             </Operation>
 
 
+            <!-- spots -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesSpots</key>
@@ -464,9 +615,8 @@
 
                     <Operation Class="PatchOperationAdd">
                         <success>Always</success>
-                        <xpath>/Defs[not(DesignationCategoryDef/defName="NQoL_Spots")]</xpath>
+                        <xpath>Defs[not(DesignationCategoryDef/defName="NQoL_Spots")]</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>NQoL_Spots</defName> <!-- compat with niilos qol -->
                                 <label>Spots</label>
@@ -477,15 +627,14 @@
                                     <li>Designator_Deconstruct</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
                         </value>
                     </Operation>
-
 
                 </caseTrue>
             </Operation>
 
 
+            <!-- royalty/meditation -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesMeditation</key>
@@ -493,9 +642,8 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.royalty">
-                        <xpath>/Defs</xpath>
+                        <xpath>Defs</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>DZ_Meditation</defName>
                                 <label>Meditation</label>
@@ -507,8 +655,6 @@
                                     <li>Designator_Uninstall</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
-
                         </value>
                     </Operation>
 
@@ -528,14 +674,14 @@
                             ]
                         </xpath>
                         <value>
-                            <designationCategory Inherit="False">DZ_Meditation</designationCategory>
+                            <designationCategory>DZ_Meditation</designationCategory>
                         </value>
                     </Operation>
-
 
                 </caseTrue>
             </Operation>
 
+            <!-- ideology -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesIdeology</key>
@@ -543,9 +689,8 @@
                 <caseTrue>
 
                     <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.ideology">
-                        <xpath>/Defs</xpath>
+                        <xpath>Defs</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>DZ_Ideology</defName>
                                 <label>Ideology</label>
@@ -557,13 +702,13 @@
                                     <li>Designator_Uninstall</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
                         </value>
                     </Operation>
 
                     <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
                         <xmlDoc>Designations</xmlDoc>
-                        <xpath>Designations/ThingDef[(
+                        <xpath>
+                            Designations/ThingDef[(
                             designationCategory or 
                             @ParentName="IdeoBuildingBase" or
                             @ParentName="AltarBase" or
@@ -572,7 +717,11 @@
                             @ParentName="IdeoSmokerBase")
                             and 
 
-                            (not(defName="ShipArchotechSpore"))
+                            (not(
+                            <!-- IDEOLOGY BLACKLIST -->
+                            defName="ShipArchotechSpore"
+                                
+                            ))
 
                             
                             ][
@@ -584,7 +733,7 @@
                             ]
 
                             |
-
+                            <!-- IDEOLOGY WHITELIST -->
                             Designations/ThingDef[
                             defName="AM_RelicSmashingAltar" or 
                             defName="AM_Megalith" or 
@@ -595,13 +744,14 @@
                             ]
                         </xpath>
                         <value>
-                            <designationCategory Inherit="False">DZ_Ideology</designationCategory>
+                            <designationCategory>DZ_Ideology</designationCategory>
                         </value>
                     </Operation>
 
                 </caseTrue>
             </Operation>
 
+            <!-- decor -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
                 <key>DocWorld_DesignationCategoriesDecor</key>
@@ -610,9 +760,8 @@
 
 
                     <Operation Class="PatchOperationAdd">
-                        <xpath>/Defs</xpath>
+                        <xpath>Defs</xpath>
                         <value>
-
                             <DesignationCategoryDef>
                                 <defName>DZ_Decor</defName>
                                 <label>Decor</label>
@@ -624,7 +773,6 @@
                                     <li>Designator_Uninstall</li>
                                 </specialDesignatorClasses>
                             </DesignationCategoryDef>
-
                         </value>
                     </Operation>
 
@@ -633,6 +781,7 @@
                         <xmlDoc>Designations</xmlDoc>
                         <xpath>
                             Designations/ThingDef[
+                            <!-- DECOR WHITELIST -->
                             designationCategory="PropsandDecor" or
                             defName="LTS_StoneBorderCorner" or 
                             defName="LTS_StoneBorderEdge" or 
@@ -641,14 +790,42 @@
                             defName="LTS_PathA" or 
                             defName="LTS_PathB" or 
                             defName="LTS_BearRug" or 
-                            defName="LTS_RugCarpet"
+                            defName="LTS_RugCarpet" or
+                            @Name="LTS_ArchBase" or 
+                            @Name="LTS_DoorFrameBase"
                             ]
                         </xpath>
                         <value>
-                            <designationCategory Inherit="False">DZ_Decor</designationCategory>
+                            <designationCategory>DZ_Decor</designationCategory>
                         </value>
                     </Operation>
 
+                </caseTrue>
+            </Operation>
+
+            <!-- Industrial -->
+            <Operation Class="XmlExtensions.OptionalPatch">
+                <modId>carnap2.TPatches</modId>
+                <key>DocWorld_DesignationCategoriesDecor</key>
+                <defaultValue>true</defaultValue>
+                <caseTrue>
+
+                    <Operation Class="PatchOperationAdd">
+                        <xpath>Defs</xpath>
+                        <value>
+                            <DesignationCategoryDef>
+                                <defName>DZ_Industrial</defName>
+                                <label>Industrial</label>
+                                <description>For all your industrial production.</description>
+                                <order>570</order>
+                                <specialDesignatorClasses>
+                                    <li>Designator_Cancel</li>
+                                    <li>Designator_Deconstruct</li>
+                                    <li>Designator_Uninstall</li>
+                                </specialDesignatorClasses>
+                            </DesignationCategoryDef>
+                        </value>
+                    </Operation>
 
                 </caseTrue>
             </Operation>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>TPatches</name>
   <author>test</author>
@@ -33,7 +33,22 @@ Supports ModSync RW for checking for updates</description>
     <li>VanillaExpanded.VFESpacer</li>
     <li>VanillaExpanded.VFEPower</li>
     <li>VanillaExpanded.VTEXVariations</li>
-    <li>carnap2.TMaterials.Stone</li>
+    <li>Niilo007.NiilosQoL</li>
+        <!-- stuffable floors -->
+        <!--
+    <li>wemd.expandedfloors</li>
+    <li>telkir.tmods.morefloors</li>
+    <li>vanillaexpanded.vfearchitect</li>
+    <li>sarg.alphamemes</li>
+    <li>vanillaexpanded.vmemese</li>
+    <li>averythekitty.refinedfloors</li>
+    <li>everytea.floors</li>
+    <li>dubwise.dubsbadhygiene</li>
+    <li>oskarpotocki.vfe.classical</li>
+    <li>audreysstyles.jazzy</li>
+    <li>sarg.alphaanimals</li>
+    <li>dajian.chiteaditional.expanded</li>
+        -->
   </loadAfter>
   <incompatibleWith>
     <li>styles.variations.converter</li>

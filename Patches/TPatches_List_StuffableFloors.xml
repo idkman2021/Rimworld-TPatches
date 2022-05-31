@@ -88,7 +88,7 @@
             </Operation>
 
             <Operation Class="XmlExtensions.ForEachDescendant">
-                <xpathParent>Defs/ThingDef[@Name="StoneBlocksBase" or @Name="GU_StoneBlocksBase"]</xpathParent>
+                <xpathParent>Defs/ThingDef[@Name="StoneBlocksBase"]</xpathParent>
                 <concreteOnly>true</concreteOnly>
                 <storeIn>MaterialDef</storeIn>
                 <apply>

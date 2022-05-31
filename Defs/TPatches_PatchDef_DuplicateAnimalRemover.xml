@@ -23,7 +23,7 @@
                     <li Class="XmlExtensions.OptionalPatch">
                         <success>Always</success>
                         <modId>carnap2.TPatches</modId>
-                        <key>TPatchesLogging</key>
+                        <key>TPatchesDARLogging</key>
                         <defaultValue>false</defaultValue>
                         <caseTrue>
                             <!-- adds active defName to the log tab if it isn't there already -->
@@ -71,7 +71,7 @@
                     <li Class="XmlExtensions.OptionalPatch">
                         <success>Always</success>
                         <modId>carnap2.TPatches</modId>
-                        <key>TPatchesLogging</key>
+                        <key>TPatchesDARLogging</key>
                         <defaultValue>false</defaultValue>
                         <caseTrue>
                             <!-- adds an entry to the info tab -->
@@ -107,7 +107,7 @@
             <!-- adds active defName to the log tab if it isn't there already -->
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
-                <key>TPatchesLogging</key>
+                <key>TPatchesDARLogging</key>
                 <defaultValue>false</defaultValue>
                 <caseTrue>
                     <Operation Class="XmlExtensions.Conditional">

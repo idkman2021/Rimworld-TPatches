@@ -327,7 +327,7 @@ TP_Tab - creates a tab
         <apply>
             <Operation Class="XmlExtensions.OptionalPatch">
                 <modId>carnap2.TPatches</modId>
-                <key>TPatchesLogging</key>
+                <key>TPatchesModNameLogging</key>
                 <defaultValue>false</defaultValue>
                 <caseTrue>
                     <Operation Class="XmlExtensions.Conditional">

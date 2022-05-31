@@ -27,27 +27,6 @@
                                 <defaultValue>true</defaultValue>
                                 <caseTrue>
 
-                                    
-                                    <Operation Class="PatchOperationAdd">
-                                        <success>Always</success>
-                                        <xpath>/Defs[not(DesignationCategoryDef/defName="DZ_Industrial")]</xpath>
-                                        <value>
-                                            <DesignationCategoryDef>
-                                                <defName>DZ_Industrial</defName>
-                                                <label>Industrial</label>
-                                                <description>For all your industrial production.</description>
-                                                <order>570</order>
-                                                <specialDesignatorClasses>
-                                                    <li>Designator_Cancel</li>
-                                                    <li>Designator_Deconstruct</li>
-                                                    <li>Designator_Uninstall</li>
-                                                </specialDesignatorClasses>
-                                            </DesignationCategoryDef>
-        
-                                        </value>
-                                    </Operation>
-
-                                    
                                     <Operation Class="PatchOperationAdd">
                                         <xpath>Defs/DesignationCategoryDef[defName="DZ_Industrial"]/specialDesignatorClasses</xpath>
                                         <value>
