@@ -792,7 +792,10 @@
                             defName="LTS_BearRug" or 
                             defName="LTS_RugCarpet" or
                             @Name="LTS_ArchBase" or 
-                            @Name="LTS_DoorFrameBase"
+                            @Name="LTS_DoorFrameBase" or 
+                            @Name="LTS_BorderBase" or 
+                            @Name="LTS_PathBase" or 
+                            @Name="LTS_CarpetBase"
                             ]
                         </xpath>
                         <value>

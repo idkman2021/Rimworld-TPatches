@@ -208,18 +208,7 @@
 
     <!-- Balancing -->
 
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>TP_ModPatch</patchName>
-        <arguments>
-            <li>DocWorld_ClothBeds</li>
-            <li>Core</li>
-            <li>DocWorld</li>
-            <li>Cloth required for bedding</li>
-            <li>Makes beds necessitate a cloth material when constructing.</li>
-            <li>Beds need cloth, right?</li>
-            <li>false</li>
-        </arguments>
-    </Operation>
+
 
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
@@ -247,6 +236,20 @@
             <li>false</li>
         </arguments>
     </Operation>
+
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>TP_ModPatch</patchName>
+        <arguments>
+            <li>DocWorld_ClothBeds</li>
+            <li>Core</li>
+            <li>Balancing</li>
+            <li>Cloth required for bedding (WIP)</li>
+            <li>Makes beds necessitate a cloth material when constructing.</li>
+            <li>Beds need cloth, right?</li>
+            <li>false</li>
+        </arguments>
+    </Operation>
+
 
     <Operation Class="XmlExtensions.ApplyPatch">
         <patchName>TP_ModPatch</patchName>
