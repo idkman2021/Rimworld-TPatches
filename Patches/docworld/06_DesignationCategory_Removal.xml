@@ -83,8 +83,19 @@
             text()="NQoL_Spots" or 
             text()="DZ_Meditation" or 
             text()="DZ_Ideology" or 
-            text()="DZ_Decor"
-            
+            text()="DZ_Decor" or
+               <!-- BLACKLIST -->
+               <!-- rimmsqol -->
+               text()="PFDir" or
+               <!-- more planning -->
+               text()="Planning" or
+               <!-- path avoid -->
+               text()="Pathing" or
+               <!-- blueprints -->
+               text()="Blueprints"
+
+
+
             )]
             </xpath>
             <storeIn>defNamePath</storeIn>
