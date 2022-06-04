@@ -98,6 +98,7 @@
                             <Operation Class="XmlExtensions.CreateVariable">
                                 <storeIn>MaterialDefName</storeIn>
                                 <value>{MaterialDef}/defName</value>
+                                <!--<defaultValue>BlocksSandstone</defaultValue>-->
                                 <fromXml>true</fromXml>
                             </Operation>
                             <Operation Class="XmlExtensions.CreateVariable">

@@ -35,7 +35,7 @@ Supports ModSync RW for checking for updates</description>
     <li>VanillaExpanded.VTEXVariations</li>
     <li>Niilo007.NiilosQoL</li>
         <!-- stuffable floors -->
-        <!--
+
     <li>wemd.expandedfloors</li>
     <li>telkir.tmods.morefloors</li>
     <li>vanillaexpanded.vfearchitect</li>
@@ -48,7 +48,8 @@ Supports ModSync RW for checking for updates</description>
     <li>audreysstyles.jazzy</li>
     <li>sarg.alphaanimals</li>
     <li>dajian.chiteaditional.expanded</li>
-        -->
+
+    <li>carnap2.TMaterials.Stone</li>
   </loadAfter>
   <incompatibleWith>
     <li>styles.variations.converter</li>
