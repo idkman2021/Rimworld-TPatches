@@ -506,7 +506,10 @@
                             thingDef="VFEArch_CellWall" or 
                             thingDef="ComponentIndustrial" or 
                             thingDef="MealNutrientPaste" or 
-                            thingDef="IM_Cyrogatana"
+                            thingDef="IM_Cyrogatana" or 
+                            thingDef="VWE_Sling" or 
+                            thingDef="VWE_ThrowingShards" or 
+                            thingDef="Owl_Heater"
                             
 
                             ]/thingDef</xpath>
@@ -656,7 +659,10 @@
                                 thingDef="VFEArch_CellWall" or 
                                 thingDef="ComponentIndustrial" or 
                                 thingDef="MealNutrientPaste" or 
-                                thingDef="IM_Cyrogatana"
+                                thingDef="IM_Cyrogatana" or 
+                                thingDef="VWE_Sling" or 
+                                thingDef="VWE_ThrowingShards" or 
+                                thingDef="Owl_Heater"
 
 
                         )]</xpath>
@@ -922,7 +928,10 @@
                                 thingDef="VFEArch_ArmoredWall" or 
                                 thingDef="ComponentIndustrial" or 
                                 thingDef="MealNutrientPaste" or 
-                                thingDef="IM_Cyrogatana"
+                                thingDef="IM_Cyrogatana" or 
+                                thingDef="VWE_Sling" or 
+                                thingDef="VWE_ThrowingShards" or 
+                                thingDef="Owl_Heater"
 
 
                         )]</xpath>

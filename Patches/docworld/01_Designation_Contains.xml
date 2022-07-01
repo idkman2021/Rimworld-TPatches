@@ -377,7 +377,8 @@
                             defName="LTS_IdanasD" or 
                             -->
                             @Name="LTS_BedBase" or 
-                            @Name="LTS_ArtBedBase"
+                            @Name="LTS_ArtBedBase" or
+                            defName="Table_LightEndTable"
                             
                             ]
                             <!--

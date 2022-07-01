@@ -492,9 +492,6 @@
                                     <designationCategory>DZ_Beds</designationCategory>
                                 </value>
                             </li>
-                            <li Class="XmlExtensions.Log" MayRequire="LimeTreeSnake.Furnishing">
-                                <text>LTS is loaded soo....</text>
-                            </li>
 
                         </operations>
                     </Operation>

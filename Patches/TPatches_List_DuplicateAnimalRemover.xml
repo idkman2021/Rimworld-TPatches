@@ -16,7 +16,7 @@
                     <Operation Class="XmlExtensions.Log">
                         <text>Stopwatch: DAR</text>
                     </Operation>
-                    <Operation Class="XmlExtensions.StopwatchStart"/>
+                    <Operation Class="XmlExtensions.StopwatchStart" />
                 </caseTrue>
             </Operation>
 
@@ -753,12 +753,18 @@
                 </arguments>
             </Operation>
 
-            <Operation Class="XmlExtensions.ApplyPatch">
-                <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
-                <arguments>
-                    <li>RG_WoollyMammoth</li>
-                    <li>WoollyMammoth</li>
-                </arguments>
+            <!-- avoid red errors -->
+            <Operation Class="PatchOperationFindMod">
+                <mods>
+                    <li>Vanilla Genetics Expanded</li>
+                </mods>
+                <nomatch Class="XmlExtensions.ApplyPatch">
+                    <patchName>carnap2TPatchesDuplicateAnimalRemoverDef</patchName>
+                    <arguments>
+                        <li>RG_WoollyMammoth</li>
+                        <li>WoollyMammoth</li>
+                    </arguments>
+                </nomatch>
             </Operation>
 
             <Operation Class="XmlExtensions.OptionalPatch">
@@ -766,7 +772,7 @@
                 <key>TPatchesLogging</key>
                 <defaultValue>false</defaultValue>
                 <caseTrue>
-                    <Operation Class="XmlExtensions.StopwatchStop"/>
+                    <Operation Class="XmlExtensions.StopwatchStop" />
                 </caseTrue>
             </Operation>
 
