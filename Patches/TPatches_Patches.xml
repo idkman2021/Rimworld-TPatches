@@ -432,7 +432,8 @@
                             defName="AM_Megalith" or 
                             defName="AM_StoneBedroll" or
                             @Name="AM_NoDesignatorTableBaseStone" or
-                            @Name="AM_NoDesignatorTableBaseWood"
+                            @Name="AM_NoDesignatorTableBaseWood" or 
+                            @ParentName="SculptureBase"
                             ]/canGenerateDefaultDesignator</xpath>
             </Operation>
             <Operation Class="PatchOperationRemove">
